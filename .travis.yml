@@ -1,5 +1,3 @@
-TRAVIS_EVENT_TYPE
-
 os: linux
 language: node_js
 node_js: node
