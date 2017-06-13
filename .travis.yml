@@ -22,4 +22,6 @@ after_success:
     bash travis/deploy.sh
   elif [ ${TRAVIS_PULL_REQUEST} = "false" ]; then
     bash deploy.sh
+  else
+    echo "Nothing to deploy"
   fi
