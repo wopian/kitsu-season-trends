@@ -8,10 +8,6 @@ then
   exit 0
 fi
 
-timestamp() {
-  date +"%Y/%m/%d %H:%M"
-}
-
 git config user.name "$GH_USERNAME"
 git config user.email "$GH_EMAIL"
 git remote add upstream "https://$GH_TOKEN@github.com/wopian/kitsu-season-trends.git"
@@ -21,5 +17,5 @@ git reset upstream/master
 touch .
 
 git add -A .
-git commit -a -m "chore: add ratings for ${timestamp}"
+git commit -a -m "chore: add ratings for $(date +%F)"
 git push -q upstream HEAD:master > /dev/null 2>&1
