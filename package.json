@@ -17,6 +17,7 @@
   "license": "MIT",
   "homepage": "https://github.com/wopian/kitsu-season-trends#readme",
   "dependencies": {
+    "classnames": "^2.2.5",
     "lowdb": "~0.16.2",
     "node-sass": "~4.5.3",
     "react": "~15.5.4",

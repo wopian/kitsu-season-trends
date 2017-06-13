@@ -1,15 +1,67 @@
 import React from 'react'
 import Trend from 'react-trend'
+import classnames from 'classnames'
 import { season, year } from './season'
 import '../styles/index.scss'
 
 const { data } = require(`../data/${year()}-${season()}.json`)
 
-const dataSorted = Object.values(data).sort((a, b) => {
-  const A = a.mean.slice(-1)[0]
-  const B = b.mean.slice(-1)[0]
-  return A > B ? -1 : A < B ? 1 : 0
-})
+let dataSorted = sort('mean')
+let thisApp
+
+function sort (by) {
+  return Object.values(data).sort((A,B) => {
+    let a, b
+    if (by === 'rated') {
+      a = A['usersRated'].slice(-1)[0] / A['users'].slice(-1)[0]
+      b = B['usersRated'].slice(-1)[0] / B['users'].slice(-1)[0]
+    } else {
+      a = A[by] instanceof Array ? A[by].slice(-1)[0] : A[by]
+      b = B[by] instanceof Array ? B[by].slice(-1)[0] : B[by]
+    }
+    return a > b ? -1 : a < b ? 1 : 0
+  })
+}
+
+// props.ratings / props.users * 100
+
+function sortData (by) {
+  dataSorted = sort(by)
+  thisApp.forceUpdate()
+}
+
+/*
+class Button extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {active: false}
+  }
+
+  click () {
+    this.setState({active: !this.state.active})
+  }
+
+  render () {
+    let classes = classnames({active: this.state.active})
+    return <button className={classes} onClick={this.click.bind(this)}>Click Me</button>
+  }
+}
+*/
+
+function Bar (props) {
+  return (
+    <div className='bar'>
+      <div>
+        Sort By
+        <button onClick={() => sortData('mean')}>Rating</button>
+        <button onClick={() => sortData('users')}>Popularity</button>
+        <button onClick={() => sortData('favorites')}>Favorites</button>
+        <button onClick={() => sortData('rated')}>Percent Rated</button>
+        <span className='info'>All airing shows this season, updated daily</span>
+      </div>
+    </div>
+  )
+}
 
 function Header (props) {
   return (
@@ -77,9 +129,11 @@ function TrendContainer (props) {
 
 export default class App extends React.Component {
   render() {
+    thisApp = this
     return (
       <div>
         <Header/>
+        <Bar/>
         <div className='container'>
           {dataSorted.map((entry, index) => {
             return <TrendContainer

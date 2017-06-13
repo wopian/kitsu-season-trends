@@ -3,9 +3,18 @@ body {
   margin: 0;
 }
 
-.container {
+body,
+button {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+%container {
   max-width: 1200px;
   margin: auto auto;
+}
+
+.container {
+  @extend %container;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -91,6 +100,9 @@ header {
   text-align: center;
   background: #332532;
   color: #fefefe;
+  position: relative;
+  user-select: none;
+  cursor: default;
 }
 
 h1 {
@@ -100,8 +112,51 @@ h1 {
 
 h2 {
   margin-top: -3vw;
-  margin-bottom: 3rem;
+  margin-bottom: 0;
   padding-bottom: 2vw;
   font-size: 5vw;
   font-weight: 400;
+}
+
+.bar {
+  height: 3rem;
+  background: darken(#fefefe, 2);
+  border-bottom: 1px solid darken(#fefefe, 5);
+  margin-bottom: 3rem;
+
+  > div {
+    @extend %container;
+    width: 100%;
+    line-height: 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    font-size: .9rem;
+  }
+
+  button {
+    border: 1px solid darken(#fefefe, 7);
+    border-left: none;
+    background: darken(#fefefe, 2);
+    padding: .45rem 1rem;
+    cursor: pointer;
+    &:first-of-type {
+      margin-left: .5rem;
+      border-left: 1px solid darken(#fefefe, 7)
+    }
+    &:last-of-type {
+      margin-right: .5rem;
+    }
+    &:hover {
+      background: lighten(rgba(#332532, .8), 70);
+    }
+  }
+
+  .info {
+    flex: 1;
+    text-align: right;
+  }
 }
