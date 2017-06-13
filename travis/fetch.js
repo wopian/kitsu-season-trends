@@ -31,23 +31,26 @@ async function get (path, offset) {
   return JSON.parse(await rp(`${base}/${path}?page[offset]=${offset}&${q.limit}&${q.filter}&${q.sort}&${q.fields}`))
 }
 
-async function add (id, attributes) {
-  const ratings = Object.keys(attributes.ratingFrequencies).map(k => [k / 2, +attributes.ratingFrequencies[k]])
+async function add (id, attr) {
+  const ratings = Object.keys(attr.ratingFrequencies).map(k => [k / 2, +attr.ratingFrequencies[k]])
 
   if (db.get('data').find({ id }).value() !== undefined) {
     db.get(`data.${id}.mean`).push(
       +mean(ratings).toFixed(2) || 0 // Changing 0 (no ratings) to null is ideal
     ).write()
+
+    db.get(`data.${id}.users`).push(attr.userCount).write()
+    db.get(`data.${id}.favorites`).push(attr.favoritesCount).write()
   }
   else {
     // Update media metadata
     db.set(`data.${id}`, {
       id,
-      slug: attributes.slug,
-      title: attributes.canonicalTitle,
-      users: attributes.userCount,
-      favorites: attributes.favoritesCount,
-      poster: attributes.posterImage.medium,
+      slug: attr.slug,
+      title: attr.canonicalTitle,
+      users: [attr.userCount],
+      favorites: [attr.favoritesCount],
+      poster: attr.posterImage.medium,
       mean: [+mean(ratings).toFixed(2) || 0] // Changing 0 (no ratings) to null is ideal
     }).write()
   }
