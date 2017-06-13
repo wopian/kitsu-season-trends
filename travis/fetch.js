@@ -1,11 +1,10 @@
 import rp from 'request-promise'
 import low from 'lowdb'
 import mean from 'weighted-mean'
-import { season, year } from './season'
+import { season, year } from '../src/season'
 
 const version = 'edge'
 const base = `https://kitsu.io/api/${version}`
-const time = +new Date()
 
 const q = {
   // 20 results per request
@@ -21,7 +20,7 @@ const q = {
 const db = low(`./data/${year()}-${season()}.json`)
 
 // Set defaults if new season
-db.defaults({ ratings: [], meta: {} }).write()
+db.defaults({ data: {} }).write()
 
 function display (count, processed, offset) {
   if (offset + 20 > count) offset = count
@@ -35,20 +34,23 @@ async function get (path, offset) {
 async function add (id, attributes) {
   const ratings = Object.keys(attributes.ratingFrequencies).map(k => [k / 2, +attributes.ratingFrequencies[k]])
 
-  db.get('ratings').push({
-    id,
-    time,
-    mean: +mean(ratings).toFixed(2) || null
-  }).write()
-
-  // Update media metadata
-  db.set(`meta.${id}`, {
-    slug: attributes.slug,
-    title: attributes.canonicalTitle,
-    users: attributes.userCount,
-    favorites: attributes.favoritesCount,
-    poster: attributes.posterImage.medium
-  }).write()
+  if (db.get('data').find({ id }).value() !== undefined) {
+    db.get(`data.${id}.mean`).push(
+      +mean(ratings).toFixed(2) || null
+    ).write()
+  }
+  else {
+    // Update media metadata
+    db.set(`data.${id}`, {
+      id,
+      slug: attributes.slug,
+      title: attributes.canonicalTitle,
+      users: attributes.userCount,
+      favorites: attributes.favoritesCount,
+      poster: attributes.posterImage.medium,
+      mean: [+mean(ratings).toFixed(2) || null]
+    }).write()
+  }
 }
 
 (async function main (offset) {
