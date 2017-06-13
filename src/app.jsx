@@ -110,7 +110,7 @@ function TrendContainer (props) {
         autoDraw
         autoDrawDuration={1500}
         autoDrawEasing="ease-in-out"
-        data={props.mean}
+        data={props.mean.length > 1 ? props.mean : props.mean.concat(props.mean)}
         gradient={['#332532']}
         radius={2}
         strokeWidth={2}
