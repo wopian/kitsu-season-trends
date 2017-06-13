@@ -18,4 +18,4 @@ script:
 
 after_success:
 - test $TRAVIS_EVENT_TYPE == "cron" && bash travis/deploy.sh
-- test $TRAVIS_EVENT_TYPE == "cron" && test $TRAVIS_PULL_REQUEST == "false && bash deploy.sh
+- test $TRAVIS_EVENT_TYPE != "cron" && test $TRAVIS_PULL_REQUEST == "false && bash deploy.sh
