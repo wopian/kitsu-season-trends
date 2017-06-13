@@ -47,7 +47,7 @@ All code released under the [MIT license][4]
 [0]:https://kitsu.io
 [1]:https://help.github.com/articles/fork-a-repo/#fork-an-example-repository
 [2]:https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request
-[3]:https://travis-ci.org/wopian/kitsu-season/trends
+[3]:https://travis-ci.org/wopian/kitsu-season-trends
 [4]:https://github.com/wopian/kitsu-season-trends/blob/master/LICENSE.md
 [5]:https://season.wopian.me
 
