@@ -1,6 +1,6 @@
 body {
   background: #fefefe;
-  margin: 1rem;
+  margin: 0;
 }
 
 .container {
@@ -88,11 +88,20 @@ img {
 
 header {
   text-transform: uppercase;
-  font-size: 2rem;
   text-align: center;
+  background: #332532;
+  color: #fefefe;
 }
 
 h1 {
   margin: 0;
-  margin-bottom: -4rem;
+  font-size: 10vw;
+}
+
+h2 {
+  margin-top: -3vw;
+  margin-bottom: 3rem;
+  padding-bottom: 2vw;
+  font-size: 5vw;
+  font-weight: 400;
 }

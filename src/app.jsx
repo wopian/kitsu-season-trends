@@ -15,98 +15,85 @@ function Header (props) {
   return (
     <header>
       <h1>Kitsu</h1>
-      <h2>2017</h2>
-      <h3>Spring</h3>
+      <h2>
+        {season().toUpperCase()}
+        <strong>{year()}</strong>
+      </h2>
     </header>
   )
 }
 
-function TrendContainer (props) {
-  dataSorted.map((entry, index) => {
-    return (
-      <div
-        key={index}
-        className='trend'
-      >
-        <a href={"//kitsu.io/anime/" + entry.slug}>
-          <img src={entry.poster}/>
-          <span>{entry.title}</span>
-        </a>
-        <Trend
-          smooth
-          autoDraw
-          autoDrawDuration={3000}
-          autoDrawEasing="ease-out"
-          //data={entry[1].mean}
-          data={[1,2]}
-          gradient={['#222']}
-          radius={2}
-          strokeWidth={2}
-          strokeLinecap={'round'}
-        />
-        <div className='overlay'>
-          <div>
-            Users
-            <span>{entry.users.slice(-1)[0]}</span>
-          </div>
-          <div>
-            Mean
-            <span>{entry.mean.slice(-1)[0]}</span>
-          </div>
-          <div>
-            Favorites
-            <span>{entry.favorites.slice(-1)[0]}</span>
-          </div>
-        </div>
+function Overlay (props) {
+  return (
+    <div className='overlay'>
+      <div>
+        Users
+        <span>{props.users}</span>
       </div>
-    )
-  })
+      <div>
+        Rated
+        <span>{(props.ratings / props.users * 100).toFixed(0)}%</span>
+      </div>
+      <div>
+        Mean
+        <span>{props.mean}</span>
+      </div>
+      <div>
+        Favorites
+        <span>{props.favorites}</span>
+      </div>
+    </div>
+  )
+}
+
+function TrendContainer (props) {
+  return (
+    <div className='trend'>
+      <a href={"//kitsu.io/anime/" + props.slug}>
+        <img src={props.poster}/>
+        <span>{props.title}</span>
+      </a>
+      <Trend
+        smooth
+        autoDraw
+        autoDrawDuration={1500}
+        autoDrawEasing="ease-in-out"
+        //data={props.mean}
+        data={[1,2]}
+        gradient={['#332532']}
+        radius={2}
+        strokeWidth={2}
+        strokeLinecap={'round'}
+      />
+      <Overlay
+        mean={props.mean.slice(-1)[0]}
+        users={props.users.slice(-1)[0]}
+        favorites={props.favorites.slice(-1)[0]}
+        ratings={props.usersRated.slice(-1)[0]}
+      />
+    </div>
+  )
 }
 
 export default class App extends React.Component {
   render() {
-    return (/*
-      <div className='container'>
-        {Object.entries(data).map((entry, index) => {
-          */
-      <div className='container'>
-        {dataSorted.map((entry, index) => {
-          return <div
-            key={index}
-            className='trend'
-          >
-            <a href={"//kitsu.io/anime/" + entry.slug}>
-              <img src={entry.poster}/>
-              <span>{entry.title}</span>
-            </a>
-            <Trend
-              smooth
-              autoDraw
-              autoDrawDuration={3000}
-              autoDrawEasing="ease-out"
-              //data={entry[1].mean}
-              data={[1,2]}
-              gradient={['#222']}
-              radius={2}
-              strokeWidth={2}
-              strokeLinecap={'round'}
+    return (
+      <div>
+        <Header/>
+        <div className='container'>
+          {dataSorted.map((entry, index) => {
+            return <TrendContainer
+              key={index}
+              slug={entry.slug}
+              poster={entry.poster}
+              title={entry.title}
+              mean={entry.mean}
+              users={entry.users}
+              usersRated={entry.usersRated}
+              favorites={entry.favorites}
             />
-            <div className='overlay'>
-              <div>
-                Users
-                <span>{entry.users.slice(-1)[0]}</span>
-              </div>
-              <div>
-                Mean
-                <span>{entry.mean.slice(-1)[0]}</span>
-              </div>
-              <div>
-                Favorites
-                <span>{entry.favorites.slice(-1)[0]}</span>
-              </div>
-            </div>
-          </div>
-        })}
+          })}
+        </div>
       </div>
     )
   }

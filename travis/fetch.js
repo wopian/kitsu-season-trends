@@ -34,6 +34,12 @@ async function get (path, offset) {
 async function add (id, attr) {
   const ratings = Object.keys(attr.ratingFrequencies).map(k => [k / 2, +attr.ratingFrequencies[k]])
 
+  let usersRated = 0
+
+  ratings.forEach(rating => {
+    usersRated += rating[1]
+  })
+
   if (db.get('data').find({ id }).value() !== undefined) {
     db.get(`data.${id}.mean`).push(
       +mean(ratings).toFixed(2) || 0 // Changing 0 (no ratings) to null is ideal
@@ -41,7 +47,8 @@ async function add (id, attr) {
 
     db.get(`data.${id}.users`).push(attr.userCount).write()
     db.get(`data.${id}.favorites`).push(attr.favoritesCount).write()
-  }
+    db.get(`data.${id}.usersRated`).push(usersRated).write()
+}
   else {
     // Update media metadata
     db.set(`data.${id}`, {
@@ -49,6 +56,7 @@ async function add (id, attr) {
       slug: attr.slug,
       title: attr.canonicalTitle,
       users: [attr.userCount],
+      usersRated: [usersRated],
       favorites: [attr.favoritesCount],
       poster: attr.posterImage.medium,
       mean: [+mean(ratings).toFixed(2) || 0] // Changing 0 (no ratings) to null is ideal
