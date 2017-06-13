@@ -1,0 +1,46 @@
+{
+  "name": "kitsu-season-trends",
+  "version": "1.0.0",
+  "description": "Kitsu seasonal anime trends",
+  "scripts": {
+    "build": "webpack --config webpack.production.config.js --progress --profile --colors",
+    "start": "webpack-dev-server --progress --profile --colors",
+    "lint": "eslint --ext js --ext jsx src || exit 0",
+    "dev": " webpack-dashboard -- webpack-dev-server --progress --profile --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wopian/kitsu-season-trends"
+  },
+  "author": "James Harris <wopian@wopian.me>",
+  "license": "MIT",
+  "homepage": "https://github.com/wopian/kitsu-season-trends#readme",
+  "dependencies": {
+    "node-sass": "~4.5.3",
+    "react": "~15.5.4",
+    "react-dom": "~15.5.4",
+    "sass-loader": "~6.0.2"
+  },
+  "devDependencies": {
+    "babel-core": "~6.25.0",
+    "babel-loader": "~7.0.0",
+    "babel-plugin-transform-class-properties": "~6.24.1",
+    "babel-plugin-transform-decorators-legacy": "~1.3.4",
+    "babel-plugin-transform-runtime": "~6.23.0",
+    "babel-preset-es2015": "~6.24.1",
+    "babel-preset-react": "~6.24.1",
+    "babel-runtime": "~6.23.0",
+    "css-loader": "~0.28.4",
+    "extract-text-webpack-plugin": "~2.1.2",
+    "file-loader": "~0.11.2",
+    "html-webpack-plugin": "~2.28.0",
+    "postcss-loader": "~2.0.5",
+    "react-hot-loader": "~3.0.0-beta.6",
+    "style-loader": "~0.18.2",
+    "url-loader": "~0.5.9",
+    "webpack": "~2.6.1",
+    "webpack-cleanup-plugin": "~0.5.1",
+    "webpack-dashboard": "~0.4.0",
+    "webpack-dev-server": "~2.4.1"
+  }
+}
