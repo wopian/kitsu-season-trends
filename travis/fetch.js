@@ -36,7 +36,7 @@ async function add (id, attributes) {
 
   if (db.get('data').find({ id }).value() !== undefined) {
     db.get(`data.${id}.mean`).push(
-      +mean(ratings).toFixed(2) || null
+      +mean(ratings).toFixed(2) || 0 // Changing 0 (no ratings) to null is ideal
     ).write()
   }
   else {
@@ -48,7 +48,7 @@ async function add (id, attributes) {
       users: attributes.userCount,
       favorites: attributes.favoritesCount,
       poster: attributes.posterImage.medium,
-      mean: [+mean(ratings).toFixed(2) || null]
+      mean: [+mean(ratings).toFixed(2) || 0] // Changing 0 (no ratings) to null is ideal
     }).write()
   }
 }
