@@ -135,6 +135,9 @@ h2 {
     align-content: center;
     align-items: center;
     font-size: .9rem;
+    @media screen and (max-width: 1200px) {
+      padding: 0 1rem;
+    }
   }
 
   button {
