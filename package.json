@@ -17,7 +17,7 @@
   "license": "MIT",
   "homepage": "https://github.com/wopian/kitsu-season-trends#readme",
   "dependencies": {
-    "classnames": "^2.2.5",
+    "classnames": "~2.2.5",
     "lowdb": "~0.16.2",
     "node-sass": "~4.5.3",
     "react": "~15.5.4",
@@ -29,7 +29,7 @@
     "weighted-mean": "~1.0.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
+    "babel-cli": "~6.24.1",
     "babel-core": "~6.25.0",
     "babel-loader": "~7.0.0",
     "babel-plugin-transform-class-properties": "~6.24.1",
@@ -39,8 +39,8 @@
     "babel-preset-react": "~6.24.1",
     "babel-runtime": "~6.23.0",
     "css-loader": "~0.28.4",
-    "eslint": "^4.0.0",
-    "eslint-plugin-react": "^7.1.0",
+    "eslint": "~4.0.0",
+    "eslint-plugin-react": "~7.1.0",
     "extract-text-webpack-plugin": "~2.1.2",
     "file-loader": "~0.11.2",
     "html-webpack-plugin": "~2.28.0",
