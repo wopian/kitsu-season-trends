@@ -11,17 +11,15 @@ install:
 - travis_retry yarn install
 
 script:
-- if [ ${TRAVIS_EVENT_TYPE} = "cron" ]; then
-    yarn run travis;
-  else
-    yarn run build;
+- if [ ${TRAVIS_EVENT_TYPE} = "cron" ]; 
+  then yarn run travis;
+  else yarn run build;
   fi
 
 after_success:
-- if [ ${TRAVIS_EVENT_TYPE} = "cron" ]; then
-    bash travis/deploy.sh
-  elif [ ${TRAVIS_PULL_REQUEST} = "false" ]; then
-    bash deploy.sh
-  else
-    echo "Nothing to deploy"
+- if [ ${TRAVIS_EVENT_TYPE} = "cron" ];
+  then bash travis/deploy.sh;
+  elif [ ${TRAVIS_PULL_REQUEST} = "false" ];
+  then bash deploy.sh;
+  else echo "Nothing to deploy";
   fi
