@@ -1,0 +1,21 @@
+TRAVIS_EVENT_TYPE
+
+os: linux
+language: node_js
+node_js: node
+cache:
+  yarn: true
+sudo: false
+matrix:
+  fast_finish: true
+
+install:
+- travis_retry yarn install
+
+script:
+- test $TRAVIS_EVENT_TYPE == "cron" && yarn run travis
+- test $TRAVIS_EVENT_TYPE != "cron" && yarn run build
+
+after_success:
+- test $TRAVIS_EVENT_TYPE == "cron" && bash travis/deploy.sh
+- test $TRAVIS_EVENT_TYPE == "cron" && test $TRAVIS_PULL_REQUEST == "false && bash deploy.sh

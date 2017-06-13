@@ -6,7 +6,8 @@
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
     "start": "webpack-dev-server --progress --profile --colors",
     "lint": "eslint --ext js --ext jsx src || exit 0",
-    "dev": " webpack-dashboard -- webpack-dev-server --progress --profile --colors"
+    "dev": "webpack-dashboard -- webpack-dev-server --progress --profile --colors",
+    "travis": "babel-node --presets es2015 travis/fetch"
   },
   "repository": {
     "type": "git",
@@ -16,12 +17,18 @@
   "license": "MIT",
   "homepage": "https://github.com/wopian/kitsu-season-trends#readme",
   "dependencies": {
+    "lowdb": "~0.16.2",
     "node-sass": "~4.5.3",
     "react": "~15.5.4",
     "react-dom": "~15.5.4",
-    "sass-loader": "~6.0.2"
+    "react-trend": "~1.2.4",
+    "request": "~2.81.0",
+    "request-promise": "~4.2.1",
+    "sass-loader": "~6.0.2",
+    "weighted-mean": "~1.0.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-core": "~6.25.0",
     "babel-loader": "~7.0.0",
     "babel-plugin-transform-class-properties": "~6.24.1",
