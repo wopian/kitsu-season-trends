@@ -83,7 +83,7 @@ svg {
   height: 100%;
 }
 
-svg:hover ~ .overlay {
+.trend:hover > * ~ .overlay {
   opacity: 1;
   transition: opacity .1s ease-in-out;
 }
