@@ -59,19 +59,7 @@ module.exports = {
       logo: './src/favicon.png',
       prefix: 'icon-[hash]/',
       inject: true,
-      title: 'Season Trends',
-      icons: {
-        android: true,
-        appleIcon: true,
-        appleStartup: true,
-        coast: false,
-        favicons: true,
-        firefox: false,
-        opengraph: true,
-        twitter: true,
-        yandex: false,
-        windows: true
-      }
+      title: 'Season Trends'
     })
   ]
 };
