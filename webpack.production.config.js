@@ -4,6 +4,7 @@ var loaders = require('./webpack.loaders');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 loaders.push({
   test: /\.scss$/,
@@ -17,7 +18,7 @@ module.exports = {
     './styles/index.scss'
   ],
   output: {
-    publicPath: './',		
+    publicPath: './',
     path: path.join(__dirname, 'public'),
     filename: '[chunkhash].js'
   },
@@ -52,6 +53,24 @@ module.exports = {
       files: {
         css: ['style.css'],
         js: ['bundle.js'],
+      }
+    }),
+    new FaviconsWebpackPlugin({
+      logo: './src/favicon.png',
+      prefix: 'icon-[hash]/',
+      inject: true,
+      title: 'Season Trends',
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: false,
+        favicons: true,
+        firefox: true,
+        opengraph: true,
+        twitter: true,
+        yandex: false,
+        windows: true
       }
     })
   ]

@@ -5,6 +5,7 @@ var loaders = require('./webpack.loaders');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var DashboardPlugin = require('webpack-dashboard/plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const HOST = process.env.HOST || "127.0.0.1";
 const PORT = process.env.PORT || "8888";
@@ -60,5 +61,23 @@ module.exports = {
         js: [ "bundle.js"],
       }
     }),
+    new FaviconsWebpackPlugin({
+      logo: './src/favicon.png',
+      prefix: 'icon-[hash]/',
+      inject: true,
+      title: 'Season Trends',
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: false,
+        favicons: true,
+        firefox: true,
+        opengraph: true,
+        twitter: true,
+        yandex: false,
+        windows: true
+      }
+    })
   ]
 };
