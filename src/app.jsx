@@ -1,6 +1,7 @@
 import React from 'react'
 import Trend from 'react-trend'
 import classnames from 'classnames'
+import { MdGroup, MdFavorite, MdStar, MdThumbsUpDown } from 'react-icons/lib/md'
 import { season, year } from './season'
 import '../styles/index.scss'
 
@@ -79,16 +80,16 @@ function Overlay (props) {
   return (
     <div className='overlay'>
       <div>
+        Mean
+        <span>{props.mean}</span>
+      </div>
+      <div>
         Users
         <span>{props.users}</span>
       </div>
       <div>
         Rated
         <span>{(props.ratings / props.users * 100).toFixed(0)}%</span>
-      </div>
-      <div>
-        Mean
-        <span>{props.mean}</span>
       </div>
       <div>
         Favorites
@@ -98,14 +99,80 @@ function Overlay (props) {
   )
 }
 
+function percentRated (usersRated, users) {
+  return (usersRated.slice(-1)[0] - usersRated.slice(-2)[0]) / (users.slice(-1)[0] - users.slice(-2)[0]) * 100 || 0
+}
+
+function changePercentRated (usersRated, users) {
+  return Number.isFinite(percentRated(usersRated, users)) ? percentRated(usersRated, users).toFixed(0) : 0
+}
+
+function changeArray (input) {
+  return input.slice(-1)[0] - input.slice(-2)[0]
+}
+
+function posOrNeg (number) {
+  if (number > 0) return `+${number}`
+  else if (number < 0) return number
+  else return `±${number}`
+}
+
 function TrendContainer (props) {
+  let rating
   return (
     <div className='trend'>
       <a href={"//kitsu.io/anime/" + props.slug}>
         <img src={props.poster}/>
-        <span>{props.title}</span>
+        <div>
+          <div className='title'>{props.title}</div>
+          <div className='changes'>
+            <span>
+              <MdStar/>
+              <span className={classnames({
+                pos: changeArray(props.mean) > 0,
+                neg: changeArray(props.mean) < 0
+              })}>
+                {posOrNeg(changeArray(props.mean).toFixed(2))}
+              </span>
+            </span>
+            <span>
+              <MdGroup/>
+              <span className={classnames({
+                pos: changeArray(props.users) > 0,
+                neg: changeArray(props.users) < 0
+              })}>
+                {posOrNeg(changeArray(props.users))}
+              </span>
+            </span>
+            <span>
+              <MdThumbsUpDown/>
+              <span className={classnames({
+                pos: changePercentRated(props.usersRated, props.users) > 0,
+                neg: changePercentRated(props.usersRated, props.users) < 0
+              })}>
+                {posOrNeg(changePercentRated(props.usersRated, props.users))}%
+              </span>
+            </span>
+            <span>
+              <MdFavorite/>
+              <span className={classnames({
+                pos: changeArray(props.favorites) > 0,
+                neg: changeArray(props.favorites) < 0
+              })}>
+                {posOrNeg(changeArray(props.favorites))}
+              </span>
+            </span>
+
+            {/*
+            <span>+54</span>
+            <span>+1%</span>
+            <span>-2</span>
+            */}
+          </div>
+        </div>
       </a>
       <Trend
+        className='trend-graph'
         smooth
         autoDraw
         autoDrawDuration={1500}

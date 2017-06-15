@@ -39,18 +39,27 @@ button {
     &:hover {
       color: orange;
     }
-
-    span {
+    > div {
       display: inline-block;
       position: relative;
-      bottom: .25rem;
-      height: 1.5rem;
-      text-overflow: fade(10px);
-      text-overflow: ellipsis;
+      bottom: .125rem;
       left: .5rem;
+      width: calc(100% - 3.75rem);
+    }
+    .title {
+      height: 1.25rem;
+      text-overflow: ellipsis;
       overflow: hidden;
-      width: calc(100% - 3.75rem)
-    } 
+    }
+    .changes {
+      font-size: .75rem;;
+      display: flex;
+      justify-content: space-between;
+      svg {
+        padding-right: .25rem;
+        margin-top: -.125rem;
+      }
+    }
   }
 }
 
@@ -78,7 +87,7 @@ button {
   }
 }
 
-svg {
+.trend-graph {
   width: 100%;
   height: 100%;
 }
@@ -162,4 +171,12 @@ h2 {
     flex: 1;
     text-align: right;
   }
+}
+
+.pos {
+  color: green;
+}
+
+.neg {
+  color: red;
 }
