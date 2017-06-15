@@ -1,7 +1,15 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
+import GA from 'react-ga'
 import App from './app.jsx'
+
+// Don't run analytics in development
+if (window.location.hostname !== 'localhost') {
+  GA.initialize('UA-46184267-11')
+  GA.set({ page: window.location.pathname + window.location.search })
+  GA.pageview(window.location.pathname + window.location.search)
+}
 
 render(
   <AppContainer>
