@@ -1,5 +1,8 @@
+$primary: #332532;
+$white: #fefefe;
+
 body {
-  background: #fefefe;
+  background: $white;
   margin: 0;
 }
 
@@ -55,6 +58,7 @@ button {
       font-size: .75rem;;
       display: flex;
       justify-content: space-between;
+      color: black;
       svg {
         padding-right: .25rem;
         margin-top: -.125rem;
@@ -65,7 +69,7 @@ button {
 
 .overlay {
   position: absolute;
-  background: #fefefe;
+  background: $white;
   top: 0;
   margin-top: 1rem;
   right: 0;
@@ -112,8 +116,8 @@ img {
 header {
   text-transform: uppercase;
   text-align: center;
-  background: #332532;
-  color: #fefefe;
+  background: $primary;
+  color: $white;
   position: relative;
   user-select: none;
   cursor: default;
@@ -142,8 +146,8 @@ h2 {
 
 .bar {
   height: 3rem;
-  background: darken(#fefefe, 2);
-  border-bottom: 1px solid darken(#fefefe, 5);
+  background: darken($white, 2);
+  border-bottom: 1px solid darken($white, 5);
   margin-bottom: 3rem;
 
   .info {
@@ -186,20 +190,20 @@ h2 {
   }
 
   button {
-    border: 1px solid darken(#fefefe, 7);
+    border: 1px solid darken($white, 7);
     border-left: none;
-    background: darken(#fefefe, 2);
+    background: darken($white, 2);
     padding: .45rem 1rem;
     cursor: pointer;
     &:first-of-type {
       margin-left: .5rem;
-      border-left: 1px solid darken(#fefefe, 7)
+      border-left: 1px solid darken($white, 7)
     }
     &:last-of-type {
       margin-right: .5rem;
     }
     &:hover {
-      background: lighten(rgba(#332532, .8), 70);
+      background: lighten(rgba($primary, .8), 70);
     }
   }
 }
