@@ -1,7 +1,10 @@
 import React from 'react'
 import Trend from 'react-trend'
 import classnames from 'classnames'
-import { MdGroup, MdFavorite, MdStar, MdThumbsUpDown } from 'react-icons/lib/md'
+import MdGroup from 'react-icons/lib/md/group'
+import MdFavorite from 'react-icons/lib/md/favorite'
+import MdStar from 'react-icons/lib/md/star'
+import MdThumbsUpDown from 'react-icons/lib/md/thumbs-up-down'
 import { season, year } from './season'
 import '../styles/index.scss'
 
