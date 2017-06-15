@@ -53,11 +53,13 @@ function Bar (props) {
   return (
     <div className='bar'>
       <div>
-        Sort By
-        <button onClick={() => sortData('mean')}>Rating</button>
-        <button onClick={() => sortData('users')}>Popularity</button>
-        <button onClick={() => sortData('favorites')}>Favorites</button>
-        <button onClick={() => sortData('rated')}>Percent Rated</button>
+        <div className='bar-sorts'>
+          <span>Sort By</span>
+          <button onClick={() => sortData('mean')}>Rating</button>
+          <button onClick={() => sortData('users')}>Popularity</button>
+          <button onClick={() => sortData('favorites')}>Favorites</button>
+          <button onClick={() => sortData('rated')}>Percent Rated</button>
+        </div>
         <span className='info'>All airing shows this season, updated daily</span>
       </div>
     </div>
