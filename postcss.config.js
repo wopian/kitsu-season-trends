@@ -1,12 +1,11 @@
 const AUTOPREFIXER_BROWSERS = [
-  'Android 2.3',
-  'Android >= 4',
-  'Chrome >= 35',
-  'Firefox >= 31',
-  'Explorer >= 9',
-  'iOS >= 7',
-  'Opera >= 12',
-  'Safari >= 7.1',
+  'Android >= 57',
+  'Chrome >= 57',
+  'Firefox >= 53',
+  'Explorer >= 11',
+  'iOS >= 10',
+  'Opera >= 43',
+  'Safari >= 10',
 ];
 
 module.exports = {
