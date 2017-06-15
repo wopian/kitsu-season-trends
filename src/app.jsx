@@ -16,9 +16,9 @@ let thisApp
 function sort (by) {
   return Object.values(data).sort((A,B) => {
     let a, b
-    if (by === 'rated') {
-      a = A['usersRated'].slice(-1)[0] / A['users'].slice(-1)[0]
-      b = B['usersRated'].slice(-1)[0] / B['users'].slice(-1)[0]
+    if (by === 'usersRated') {
+      a = A[by].slice(-1)[0] / A['users'].slice(-1)[0]
+      b = B[by].slice(-1)[0] / B['users'].slice(-1)[0]
     } else {
       a = A[by] instanceof Array ? A[by].slice(-1)[0] : A[by]
       b = B[by] instanceof Array ? B[by].slice(-1)[0] : B[by]
@@ -59,9 +59,9 @@ function Bar (props) {
         <div className='bar-sorts'>
           <span>Sort By</span>
           <button onClick={() => sortData('mean')}>Rating</button>
-          <button onClick={() => sortData('users')}>Popularity</button>
+          <button onClick={() => sortData('users')}>Users</button>
+          <button onClick={() => sortData('usersRated')}>Percent Rated</button>
           <button onClick={() => sortData('favorites')}>Favorites</button>
-          <button onClick={() => sortData('rated')}>Percent Rated</button>
         </div>
         <span className='info'>All airing shows this season, updated daily</span>
       </div>
