@@ -66,7 +66,7 @@ module.exports = {
         appleStartup: true,
         coast: false,
         favicons: true,
-        firefox: true,
+        firefox: false,
         opengraph: true,
         twitter: true,
         yandex: false,
