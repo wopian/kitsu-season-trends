@@ -14,6 +14,9 @@ button {
 %container {
   max-width: 1200px;
   margin: auto auto;
+  @media screen and (max-width: 1200px) {
+    padding: 0 1rem;
+  }
 }
 
 .container {
@@ -165,9 +168,6 @@ h2 {
     align-content: center;
     align-items: center;
     font-size: .9rem;
-    @media screen and (max-width: 1200px) {
-      padding: 0 1rem;
-    }
   }
 
   @media screen and (max-width: 770px) {
