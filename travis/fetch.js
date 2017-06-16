@@ -1,5 +1,6 @@
 import rp from 'request-promise'
 import low from 'lowdb'
+import fileAsync from 'lowdb/lib/storages/file-async'
 import mean from 'weighted-mean'
 import { season, year } from '../src/season'
 
@@ -17,7 +18,13 @@ const q = {
 }
 
 // Load season database
-const db = low(`./data/${year()}-${season()}.json`)
+const db = low(`./data/${year()}-${season()}.json`, {
+  storage: fileAsync,
+  format: {
+    serialize: JSON.stringify,
+    deserialize: JSON.parse
+  }
+})
 
 // Set defaults if new season
 db.defaults({ data: {} }).write()
