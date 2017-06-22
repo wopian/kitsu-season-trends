@@ -1,7 +1,7 @@
 import rp from 'request-promise'
 import low from 'lowdb'
 import fileAsync from 'lowdb/lib/storages/file-async'
-import mean from 'weighted-mean'
+import wmean from 'weighted-mean'
 import { season, year } from '../src/season'
 
 const version = 'edge'
@@ -38,43 +38,49 @@ async function get (path, offset) {
   return JSON.parse(await rp(`${base}/${path}?page[offset]=${offset}&${q.limit}&${q.filter}&${q.sort}&${q.fields}`))
 }
 
-async function add (id, attr) {
-  const ratings = Object.keys(attr.ratingFrequencies).map(k => [k / 2, +attr.ratingFrequencies[k]])
-
-  let usersRated = 0
-
-  ratings.forEach(rating => {
-    usersRated += rating[1]
-  })
-
-  if (db.get('data').find({ id }).value() !== undefined) {
-    db.get(`data.${id}.mean`).push(
-      +mean(ratings).toFixed(2) || 0 // Changing 0 (no ratings) to null is ideal
-    ).write()
-
-    db.get(`data.${id}.users`).push(attr.userCount).write()
-    db.get(`data.${id}.favorites`).push(attr.favoritesCount).write()
-    db.get(`data.${id}.usersRated`).push(usersRated).write()
-}
-  else {
-    // Update media metadata
-    db.set(`data.${id}`, {
-      id,
-      slug: attr.slug,
-      title: attr.canonicalTitle,
-      users: [attr.userCount],
-      usersRated: [usersRated],
-      favorites: [attr.favoritesCount],
-      poster: attr.posterImage.medium,
-      mean: [+mean(ratings).toFixed(2) || 0] // Changing 0 (no ratings) to null is ideal
-    }).write()
+function calcRatings (frequency) {
+  const ratings = Object.keys(frequency).map(key => [ key / 2, +frequency[key] ])
+  return {
+    mean: +wmean(ratings).toFixed(2) || 0, // Changing 0 (no ratings) to null is ideal
+    usersRated: +ratings.reduce((sum, x) => x[1] + (sum[1] ? sum[1] : sum))
   }
+}
+
+async function set (id, attributes, { mean, usersRated }) {
+  db.set(`data.${id}`, {
+    id,
+    mean: [ mean ],
+    slug: attributes.slug,
+    usersRated: [ usersRated ],
+    users: [ attributes.userCount ],
+    title: attributes.canonicalTitle,
+    poster: attributes.posterImage.medium,
+    favorites: [ attributes.favoritesCount ]
+  }).write()
+}
+
+async function update (id, attributes, { mean, usersRated }) {
+  const latest = db.get(`data.${id}`).value()
+  latest.mean.push(mean)
+  latest.slug = attributes.slug
+  latest.usersRated.push(usersRated)
+  latest.users.push(attributes.userCount)
+  latest.title = attributes.canonicalTitle
+  latest.poster = attributes.posterImage.medium
+  latest.favorites.push(attributes.favoritesCount)
+  db.set(`data.${id}`, latest).write()
+}
+
+async function check ({ id, attributes }) {
+  const ratings = calcRatings(attributes.ratingFrequencies)
+  if (!db.get(`data.${id}`).value()) await set(id, attributes, ratings)
+  else await update(id, attributes, ratings)
 }
 
 (async function main (offset) {
   const { data, meta, links } = await get('anime', offset)
   for (let item of await data) {
-    await add(item.id, item.attributes)
+    await check(item)
   }
   display(meta.count, data.length, offset)
   if (links.next) await main(offset + 20)
