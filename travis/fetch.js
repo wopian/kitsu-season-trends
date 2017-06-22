@@ -89,21 +89,28 @@ async function check ({ id, attributes }) {
   else await update(id, attributes, ratings)
 }
 
-(async function main (offset) {
-  let { data, meta, links } = await get('anime', offset)
+async function getAiring (offset) {
+  const { data, meta, links } = await get('anime', offset)
   for (let item of await data) {
     aired.splice(aired.indexOf(item.id), 1)
     await check(item)
   }
   display(meta.count, data.length, offset)
-  if (links.next) await main(offset + 20)
-  else {
-    console.log(`\n${aired.length} shows have finished\n`)
-    let done = 0
-    aired.forEach(async (id, index) => {
-      let response = await get('anime', null, id)
-      await check(response.data)
-      display(aired.length, done++, 1, true)
-    })
-  }
+  return links
+}
+
+async function getAired () {
+  console.log(`\nUpdating aired anime\n`)
+  let done = 0
+  aired.forEach(async id => {
+    const { data } = await get('anime', null, id)
+    await check(data)
+    display(aired.length, done++, 1, true)
+  })
+}
+
+(async function main (offset) {
+  const { next } = await getAiring(offset)
+  if (next) await main(offset + 20)
+  else await getAired()
 })(0)
