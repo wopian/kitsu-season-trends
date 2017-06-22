@@ -2,7 +2,7 @@ import rp from 'request-promise'
 import low from 'lowdb'
 import fileAsync from 'lowdb/lib/storages/file-async'
 import wmean from 'weighted-mean'
-import { season, year } from '../src/season'
+import { season, year } from '../src/util'
 
 const version = 'edge'
 const base = `https://kitsu.io/api/${version}`

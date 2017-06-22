@@ -59,7 +59,8 @@ module.exports = {
       logo: './src/favicon.png',
       prefix: 'icon-[hash]/',
       inject: true,
-      title: 'Season Trends'
+      title: 'Season Trends',
+      background: 'transparent'
     })
   ]
 };
