@@ -1,6 +1,7 @@
 # Season Trends
 
 [![Web]][5]
+[![Uptime]][5]
 [![Travis]][3]
 
 [Kitsu][0] season trends for the currently airing anime
@@ -53,3 +54,4 @@ All code released under the [MIT license][4]
 
 [travis]:https://img.shields.io/travis/wopian/kitsu-season-trends/master.svg?style=flat-square&label=linux
 [web]:https://img.shields.io/website-up-down-green-red/https/season.wopian.me.svg?style=flat-square&label=web
+[uptime]:https://img.shields.io/uptimerobot/ratio/7/m779133972-4da0d8f104f1d6ffaf921257.svg?style=flat-square
