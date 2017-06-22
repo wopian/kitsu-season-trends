@@ -6,6 +6,9 @@ import { season, year } from '../src/season'
 
 const version = 'edge'
 const base = `https://kitsu.io/api/${version}`
+// Days since epoch
+// const now = ~~(Date.now() / 1000 / 60 / 60 / 24)
+const now = new Date().toISOString()
 
 const q = {
   // 20 results per request
@@ -49,6 +52,7 @@ function calcRatings (frequency) {
 async function set (id, attributes, { mean, usersRated }) {
   db.set(`data.${id}`, {
     id,
+    updated: now,
     mean: [ mean ],
     slug: attributes.slug,
     usersRated: [ usersRated ],
@@ -61,6 +65,7 @@ async function set (id, attributes, { mean, usersRated }) {
 
 async function update (id, attributes, { mean, usersRated }) {
   const latest = db.get(`data.${id}`).value()
+  latest.updated = now
   latest.mean.push(mean)
   latest.slug = attributes.slug
   latest.usersRated.push(usersRated)
@@ -79,9 +84,7 @@ async function check ({ id, attributes }) {
 
 (async function main (offset) {
   const { data, meta, links } = await get('anime', offset)
-  for (let item of await data) {
-    await check(item)
-  }
+  for (let item of await data) await check(item)
   display(meta.count, data.length, offset)
   if (links.next) await main(offset + 20)
 })(0)
