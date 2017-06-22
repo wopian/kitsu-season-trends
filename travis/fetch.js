@@ -32,13 +32,20 @@ const db = low(`./data/${year()}-${season()}.json`, {
 // Set defaults if new season
 db.defaults({ data: {} }).write()
 
-function display (count, processed, offset) {
-  if (offset + 20 > count) offset = count
-  console.log(`${processed + offset} - ${(offset / count * 100).toFixed(1)}% Complete`)
+// Array of all shows that have started airing. Airing shows will be
+// removed, leaving only shows that have finished - which will be
+// updated manually
+const aired = Object.keys(db.get('data').value())
+
+function display (count, processed, offset, isAired = false) {
+  if (!isAired && offset + 20 > count) offset = count
+  const progress = ((processed + offset) / count * 100)
+  console.log(`${processed + offset} - ${(progress > 100 ? 100 : progress).toFixed(1)}% Complete`)
 }
 
-async function get (path, offset) {
-  return JSON.parse(await rp(`${base}/${path}?page[offset]=${offset}&${q.limit}&${q.filter}&${q.sort}&${q.fields}`))
+async function get (path, offset, id = null) {
+  if (id) return JSON.parse(await rp(`${base}/${path}/${id}?${q.fields}`))
+  else return JSON.parse(await rp(`${base}/${path}?page[offset]=${offset}&${q.limit}&${q.filter}&${q.sort}&${q.fields}`))
 }
 
 function calcRatings (frequency) {
@@ -83,8 +90,20 @@ async function check ({ id, attributes }) {
 }
 
 (async function main (offset) {
-  const { data, meta, links } = await get('anime', offset)
-  for (let item of await data) await check(item)
+  let { data, meta, links } = await get('anime', offset)
+  for (let item of await data) {
+    aired.splice(aired.indexOf(item.id), 1)
+    await check(item)
+  }
   display(meta.count, data.length, offset)
   if (links.next) await main(offset + 20)
+  else {
+    console.log(`\n${aired.length} shows have finished\n`)
+    let done = 0
+    aired.forEach(async (id, index) => {
+      let response = await get('anime', null, id)
+      await check(response.data)
+      display(aired.length, done++, 1, true)
+    })
+  }
 })(0)
