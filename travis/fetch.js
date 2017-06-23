@@ -52,7 +52,7 @@ function calcRatings (frequency) {
   const ratings = Object.keys(frequency).map(key => [ key / 2, +frequency[key] ])
   return {
     mean: +wmean(ratings).toFixed(2) || 0, // Changing 0 (no ratings) to null is ideal
-    usersRated: +ratings.reduce((sum, x) => x[1] + (sum[1] ? sum[1] : sum))
+    usersRated: ratings.reduce((sum, x) => ~~x[1] + ~~(sum[1] ? sum[1] : sum))
   }
 }
 
