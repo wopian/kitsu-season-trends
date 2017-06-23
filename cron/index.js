@@ -23,10 +23,12 @@ const q = {
 // Load season database
 const db = low(`./data/${year()}-${season()}.json`, {
   storage: fileAsync,
+  /*
   format: {
     serialize: JSON.stringify,
     deserialize: JSON.parse
   }
+  */
 })
 
 // Set defaults if new season
