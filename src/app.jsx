@@ -11,7 +11,7 @@ let dataSorted = sort(data, 'mean')
 let thisApp
 
 function sortData (by) {
-  dataSorted = sort(by)
+  dataSorted = sort(data, by)
   thisApp.forceUpdate()
 }
 
