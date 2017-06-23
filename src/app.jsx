@@ -26,7 +26,7 @@ function Bar () {
           <button onClick={() => sortData('usersRated')}>Percent Rated</button>
           <button onClick={() => sortData('favorites')}>Favorites</button>
         </div>
-        <span className='info'>All airing shows this season, updated daily {/*({ago(dataSorted[0].updated)}*/}</span>
+        <span className='info'>All airing shows this season, updated daily ({ago(new Date(dataSorted[0].updated))})</span>
       </div>
     </div>
   )
