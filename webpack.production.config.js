@@ -57,10 +57,11 @@ module.exports = {
     }),
     new FaviconsWebpackPlugin({
       logo: './src/favicon.png',
-      prefix: 'icon-[hash]/',
+      prefix: 'icons/',
       inject: true,
       title: 'Season Trends',
-      background: 'transparent'
+      background: 'transparent',
+      persistentCache: false
     })
   ]
 };
