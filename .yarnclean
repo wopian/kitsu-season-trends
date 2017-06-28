@@ -76,7 +76,11 @@ AUTHORS*
 *.eslintignore
 *.dntrc
 *.cpp
+*.jpg
+*.gif
 *.psd
+*.bmp
+*.jpeg
 *.gitmodules
 *.h
 *.patch
