@@ -19,7 +19,7 @@
 - `yarn start` - live reload local server
 - `yarn run lint` - lint source code
 - `yarn run build` - build from source
-- `yarn run travis` - manually run cron task to fetch new data
+- `yarn run cron` - manually run cron task to fetch new data
 
 ### Guide
 
