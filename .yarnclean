@@ -9,7 +9,6 @@ benchmarks
 docs
 doc
 website
-images
 assets
 
 # examples
@@ -77,12 +76,7 @@ AUTHORS*
 *.eslintignore
 *.dntrc
 *.cpp
-*.jpg
-*.png
-*.gif
 *.psd
-*.bmp
-*.jpeg
 *.gitmodules
 *.h
 *.patch
