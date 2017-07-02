@@ -7,7 +7,9 @@
     "start": "webpack-dev-server --progress --profile --colors",
     "lint": "eslint --ext js --ext jsx src || exit 0",
     "dev": "webpack-dashboard -- webpack-dev-server --progress --profile --colors",
-    "cron": "babel-node --presets env cron"
+    "cron": "babel-node --presets env cron",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,8 @@
     "react-ga": "~2.2.0",
     "react-icons": "~2.2.5",
     "react-trend": "~1.2.4",
-    "s-ago": "~1.1.0"
+    "s-ago": "~1.1.0",
+    "snyk": "^1.36.2"
   },
   "devDependencies": {
     "babel-cli": "~6.24.1",
@@ -58,5 +61,6 @@
     "webpack-dashboard": "~0.4.0",
     "webpack-dev-server": "~2.5.0",
     "weighted-mean": "~1.0.2"
-  }
+  },
+  "snyk": true
 }
