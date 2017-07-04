@@ -9,11 +9,11 @@ import MdThumbsUpDown from 'react-icons/lib/md/thumbs-up-down'
 import { Overlay } from './Overlay'
 
 function percentRated (usersRated, users) {
-  return (usersRated.slice(-1)[0] - usersRated.slice(-2)[0]) / (users.slice(-1)[0] - users.slice(-2)[0]) * 100 || 0
+  return (usersRated.slice(-1)[0] - usersRated.slice(-2)[0]) / users.slice(-1)[0] * 100 || 0
 }
 
 function changePercentRated (usersRated, users) {
-  return Number.isFinite(percentRated(usersRated, users)) ? percentRated(usersRated, users).toFixed(0) : 0
+  return Number.isFinite(percentRated(usersRated, users)) ? percentRated(usersRated, users).toFixed(2) : 0
 }
 
 function changeArray (input) {
