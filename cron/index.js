@@ -37,11 +37,11 @@ db.defaults({ data: {} }).write()
 // updated manually
 const aired = Object.keys(db.get('data').value())
 
-function display (count, processed, offset, { hasAired = false, removed = false } = {}) {
+function display (count, processed, offset) {
   try {
-    if (!hasAired && offset + 20 > count) offset = count
+    if (offset + 20 > count) offset = count
     const progress = ((processed + offset) / count * 100)
-    console.log(`${processed + offset} - ${(progress > 100 ? 100 : progress).toFixed(1)}% Complete${removed ? ' (deleted erroneous entry)' : ''}`)
+    console.log(`${processed + offset} - ${(progress > 100 ? 100 : progress).toFixed(1)}% Complete`)
   } catch (err) {
     console.error(err)
   }
