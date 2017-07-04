@@ -3,2906 +3,1234 @@
     "12": {
       "id": "12",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        8.54,
-        8.54,
-        8.54
-      ],
+      "mean": [8.54, 8.54, 8.54],
       "slug": "one-piece",
-      "usersRated": [
-        14030,
-        14032,
-        14033
-      ],
-      "users": [
-        25518,
-        25906,
-        25911
-      ],
+      "usersRated": [14030, 14032, 14033],
+      "users": [25518, 25906, 25911],
       "title": "One Piece",
       "poster": "https://media.kitsu.io/anime/poster_images/12/medium.jpg?1490541434",
-      "favorites": [
-        2387,
-        2417,
-        2417
-      ]
+      "favorites": [2387, 2417, 2417]
     },
     "210": {
       "id": "210",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        8.26,
-        8.26,
-        8.26
-      ],
+      "mean": [8.26, 8.26, 8.26],
       "slug": "detective-conan",
-      "usersRated": [
-        3035,
-        3038,
-        3038
-      ],
-      "users": [
-        6669,
-        6776,
-        6776
-      ],
+      "usersRated": [3035, 3038, 3038],
+      "users": [6669, 6776, 6776],
       "title": "Detective Conan",
       "poster": "https://media.kitsu.io/anime/poster_images/210/medium.jpg?1412708908",
-      "favorites": [
-        342,
-        354,
-        354
-      ]
+      "favorites": [342, 354, 354]
     },
     "856": {
       "id": "856",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.54,
-        7.54,
-        7.54
-      ],
+      "mean": [7.54, 7.54, 7.54],
       "slug": "crayon-shin-chan",
-      "usersRated": [
-        628,
-        628,
-        628
-      ],
-      "users": [
-        1353,
-        1366,
-        1366
-      ],
+      "usersRated": [628, 628, 628],
+      "users": [1353, 1366, 1366],
       "title": "Crayon Shin-chan",
       "poster": "https://media.kitsu.io/anime/poster_images/856/medium.jpg?1486237150",
-      "favorites": [
-        25,
-        25,
-        25
-      ]
+      "favorites": [25, 25, 25]
     },
     "1078": {
       "id": "1078",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.74,
-        6.74,
-        6.74
-      ],
+      "mean": [6.74, 6.74, 6.74],
       "slug": "nintama-rantarou",
-      "usersRated": [
-        33,
-        33,
-        33
-      ],
-      "users": [
-        123,
-        125,
-        125
-      ],
+      "usersRated": [33, 33, 33],
+      "users": [123, 125, 125],
       "title": "Nintama Rantarou",
       "poster": "https://media.kitsu.io/anime/poster_images/1078/medium.jpg?1408443052",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "1766": {
       "id": "1766",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.17,
-        6.17,
-        6.17
-      ],
+      "mean": [6.17, 6.17, 6.17],
       "slug": "sore-ike-anpanman",
-      "usersRated": [
-        18,
-        18,
-        18
-      ],
-      "users": [
-        71,
-        73,
-        73
-      ],
+      "usersRated": [18, 18, 18],
+      "users": [71, 73, 73],
       "title": "Sore Ike! Anpanman",
       "poster": "https://media.kitsu.io/anime/poster_images/1766/medium.jpg?1408444880",
-      "favorites": [
-        1,
-        1,
-        1
-      ]
+      "favorites": [1, 1, 1]
     },
     "2182": {
       "id": "2182",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.1,
-        6.1,
-        6.1
-      ],
+      "mean": [6.1, 6.1, 6.1],
       "slug": "sazae-san",
-      "usersRated": [
-        30,
-        30,
-        30
-      ],
-      "users": [
-        161,
-        164,
-        164
-      ],
+      "usersRated": [30, 30, 30],
+      "users": [161, 164, 164],
       "title": "Sazae-san",
       "poster": "https://media.kitsu.io/anime/poster_images/2182/medium.jpg?1461864949",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "3618": {
       "id": "3618",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.38,
-        7.38,
-        7.38
-      ],
+      "mean": [7.38, 7.38, 7.38],
       "slug": "ojarumaru",
-      "usersRated": [
-        8,
-        8,
-        8
-      ],
-      "users": [
-        37,
-        37,
-        37
-      ],
+      "usersRated": [8, 8, 8],
+      "users": [37, 37, 37],
       "title": "Ojarumaru",
       "poster": "https://media.kitsu.io/anime/poster_images/3618/medium.jpg?1408450170",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "4445": {
       "id": "4445",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.54,
-        6.54,
-        6.54
-      ],
+      "mean": [6.54, 6.54, 6.54],
       "slug": "chibi-maruko-chan-1995",
-      "usersRated": [
-        13,
-        13,
-        13
-      ],
-      "users": [
-        58,
-        60,
-        60
-      ],
+      "usersRated": [13, 13, 13],
+      "users": [58, 60, 60],
       "title": "Chibi Maruko-chan (1995)",
       "poster": "https://media.kitsu.io/anime/poster_images/4445/medium.jpg?1408452572",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "4783": {
       "id": "4783",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        3.95,
-        3.95,
-        3.95
-      ],
+      "mean": [3.95, 3.95, 3.95],
       "slug": "mikan-seijin",
-      "usersRated": [
-        20,
-        20,
-        20
-      ],
-      "users": [
-        38,
-        37,
-        37
-      ],
+      "usersRated": [20, 20, 20],
+      "users": [38, 37, 37],
       "title": "Mikan-Seijin",
       "poster": "https://media.kitsu.io/anime/poster_images/4783/medium.jpg?1408453499",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "5064": {
       "id": "5064",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.47,
-        7.47,
-        7.47
-      ],
+      "mean": [7.47, 7.47, 7.47],
       "slug": "domo-kun",
-      "usersRated": [
-        15,
-        15,
-        15
-      ],
-      "users": [
-        83,
-        85,
-        85
-      ],
+      "usersRated": [15, 15, 15],
+      "users": [83, 85, 85],
       "title": "Domo-kun",
       "poster": "https://media.kitsu.io/anime/poster_images/5064/medium.jpg?1408454244",
-      "favorites": [
-        1,
-        1,
-        1
-      ]
+      "favorites": [1, 1, 1]
     },
     "5264": {
       "id": "5264",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        0,
-        0,
-        0
-      ],
+      "mean": [0, 0, 0],
       "slug": "keshikasu-kun",
-      "usersRated": [
-        0,
-        0,
-        0
-      ],
-      "users": [
-        15,
-        15,
-        15
-      ],
+      "usersRated": [0, 0, 0],
+      "users": [15, 15, 15],
       "title": "Keshikasu-kun",
       "poster": "https://media.kitsu.io/anime/poster_images/5264/medium.jpg?1408454824",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "5297": {
       "id": "5297",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5,
-        5,
-        5
-      ],
+      "mean": [5, 5, 5],
       "slug": "hanakappa",
-      "usersRated": [
-        1,
-        1,
-        1
-      ],
-      "users": [
-        21,
-        20,
-        20
-      ],
+      "usersRated": [1, 1, 1],
+      "users": [21, 20, 20],
       "title": "Hanakappa",
       "poster": "https://media.kitsu.io/anime/poster_images/5297/medium.jpg?1408454920",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "5443": {
       "id": "5443",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.84,
-        6.84,
-        6.84
-      ],
+      "mean": [6.84, 6.84, 6.84],
       "slug": "doraemon-2005",
-      "usersRated": [
-        66,
-        66,
-        66
-      ],
-      "users": [
-        187,
-        192,
-        192
-      ],
+      "usersRated": [66, 66, 66],
+      "users": [187, 192, 192],
       "title": "Doraemon (2005)",
       "poster": "https://media.kitsu.io/anime/poster_images/5443/medium.jpg?1408455490",
-      "favorites": [
-        3,
-        3,
-        3
-      ]
+      "favorites": [3, 3, 3]
     },
     "5501": {
       "id": "5501",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.78,
-        5.78,
-        5.78
-      ],
+      "mean": [5.78, 5.78, 5.78],
       "slug": "domo-tv",
-      "usersRated": [
-        41,
-        41,
-        41
-      ],
-      "users": [
-        92,
-        92,
-        92
-      ],
+      "usersRated": [41, 41, 41],
+      "users": [92, 92, 92],
       "title": "Domo TV",
       "poster": "https://media.kitsu.io/anime/poster_images/5501/medium.jpg?1408455638",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "5604": {
       "id": "5604",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.22,
-        6.22,
-        6.22
-      ],
+      "mean": [6.22, 6.22, 6.22],
       "slug": "nogsaegjeoncha-haemosu",
-      "usersRated": [
-        9,
-        9,
-        9
-      ],
-      "users": [
-        30,
-        30,
-        30
-      ],
+      "usersRated": [9, 9, 9],
+      "users": [30, 30, 30],
       "title": "Nogsaegjeoncha Haemosu",
       "poster": "https://media.kitsu.io/anime/poster_images/5604/medium.jpg?1408455926",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "5858": {
       "id": "5858",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        3.77,
-        3.77,
-        3.77
-      ],
+      "mean": [3.77, 3.77, 3.77],
       "slug": "hello-kitty-stump-village",
-      "usersRated": [
-        13,
-        13,
-        13
-      ],
-      "users": [
-        35,
-        36,
-        36
-      ],
+      "usersRated": [13, 13, 13],
+      "users": [35, 36, 36],
       "title": "Hello Kitty no Stump Village",
       "poster": "https://media.kitsu.io/anime/poster_images/5858/medium.jpg?1408456731",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "5889": {
       "id": "5889",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.63,
-        6.63,
-        6.63
-      ],
+      "mean": [6.63, 6.63, 6.63],
       "slug": "xiang-qi-master",
-      "usersRated": [
-        8,
-        8,
-        8
-      ],
-      "users": [
-        32,
-        34,
-        34
-      ],
+      "usersRated": [8, 8, 8],
+      "users": [32, 34, 34],
       "title": "Xiang Qi Master",
       "poster": "https://media.kitsu.io/anime/poster_images/5889/medium.jpg?1408456820",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "5930": {
       "id": "5930",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5,
-        5,
-        5
-      ],
+      "mean": [5, 5, 5],
       "slug": "hyper-ert",
-      "usersRated": [
-        1,
-        1,
-        1
-      ],
-      "users": [
-        12,
-        12,
-        12
-      ],
+      "usersRated": [1, 1, 1],
+      "users": [12, 12, 12],
       "title": "Hyper ERT",
       "poster": "https://media.kitsu.io/anime/poster_images/5930/medium.jpg?1408456943",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "5931": {
       "id": "5931",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.25,
-        5.25,
-        5.25
-      ],
+      "mean": [5.25, 5.25, 5.25],
       "slug": "chi-dor-dor-chi-dor-dor",
-      "usersRated": [
-        4,
-        4,
-        4
-      ],
-      "users": [
-        13,
-        13,
-        13
-      ],
+      "usersRated": [4, 4, 4],
+      "users": [13, 13, 13],
       "title": "Chi Dor Dor, Chi Dor Dor",
       "poster": "https://media.kitsu.io/anime/poster_images/5931/medium.jpg?1408456946",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "5956": {
       "id": "5956",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        3.5,
-        3.5,
-        3.5
-      ],
+      "mean": [3.5, 3.5, 3.5],
       "slug": "lan-mao",
-      "usersRated": [
-        2,
-        2,
-        2
-      ],
-      "users": [
-        16,
-        16,
-        16
-      ],
+      "usersRated": [2, 2, 2],
+      "users": [16, 16, 16],
       "title": "Lan Mao",
       "poster": "https://media.kitsu.io/anime/poster_images/5956/medium.jpg?1408457026",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "5961": {
       "id": "5961",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        4,
-        4,
-        4
-      ],
+      "mean": [4, 4, 4],
       "slug": "wei-qi-shao-nian",
-      "usersRated": [
-        2,
-        2,
-        2
-      ],
-      "users": [
-        20,
-        21,
-        21
-      ],
+      "usersRated": [2, 2, 2],
+      "users": [20, 21, 21],
       "title": "Wei Qi Shao Nian",
       "poster": "https://media.kitsu.io/anime/poster_images/5961/medium.jpg?1408457039",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "6070": {
       "id": "6070",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5,
-        5,
-        5
-      ],
+      "mean": [5, 5, 5],
       "slug": "badaui-jeonseol-jangbogo",
-      "usersRated": [
-        9,
-        9,
-        9
-      ],
-      "users": [
-        42,
-        42,
-        42
-      ],
+      "usersRated": [9, 9, 9],
+      "users": [42, 42, 42],
       "title": "Badaui Jeonseol Jangbogo",
       "poster": "https://media.kitsu.io/anime/poster_images/6070/medium.jpg?1408457361",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "6212": {
       "id": "6212",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        0,
-        0,
-        0
-      ],
+      "mean": [0, 0, 0],
       "slug": "shiawase-haitatsu-taneko",
-      "usersRated": [
-        0,
-        0,
-        0
-      ],
-      "users": [
-        14,
-        14,
-        14
-      ],
+      "usersRated": [0, 0, 0],
+      "users": [14, 14, 14],
       "title": "Shiawase Haitatsu Taneko",
       "poster": "https://media.kitsu.io/anime/poster_images/6212/medium.jpg?1408457756",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "6352": {
       "id": "6352",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        0,
-        0,
-        0
-      ],
+      "mean": [0, 0, 0],
       "slug": "kayoe-chuugaku",
-      "usersRated": [
-        0,
-        0,
-        0
-      ],
-      "users": [
-        17,
-        17,
-        17
-      ],
+      "usersRated": [0, 0, 0],
+      "users": [17, 17, 17],
       "title": "Kayoe! Chuugaku",
       "poster": "https://media.kitsu.io/anime/poster_images/6352/medium.jpg?1408458156",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "6632": {
       "id": "6632",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.86,
-        5.86,
-        5.86
-      ],
+      "mean": [5.86, 5.86, 5.86],
       "slug": "zoku-attacker-you-kin-medal-e-no-michi",
-      "usersRated": [
-        7,
-        7,
-        7
-      ],
-      "users": [
-        30,
-        30,
-        30
-      ],
+      "usersRated": [7, 7, 7],
+      "users": [30, 30, 30],
       "title": "Zoku Attacker You! Kin Medal e no Michi",
       "poster": "https://media.kitsu.io/anime/poster_images/6632/medium.jpg?1408458958",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "6677": {
       "id": "6677",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.05,
-        5.05,
-        5.05
-      ],
+      "mean": [5.05, 5.05, 5.05],
       "slug": "backkom",
-      "usersRated": [
-        21,
-        21,
-        21
-      ],
-      "users": [
-        42,
-        43,
-        44
-      ],
+      "usersRated": [21, 21, 21],
+      "users": [42, 43, 44],
       "title": "Backkom",
       "poster": "https://media.kitsu.io/anime/poster_images/6677/medium.jpg?1408459091",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "6970": {
       "id": "6970",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        0,
-        0,
-        0
-      ],
+      "mean": [0, 0, 0],
       "slug": "tomodachi-8-nin",
-      "usersRated": [
-        0,
-        0,
-        0
-      ],
-      "users": [
-        15,
-        15,
-        15
-      ],
+      "usersRated": [0, 0, 0],
+      "users": [15, 15, 15],
       "title": "Tomodachi 8-nin",
       "poster": "https://media.kitsu.io/anime/poster_images/6970/medium.jpg?1408459895",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "6972": {
       "id": "6972",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        2,
-        2,
-        2
-      ],
+      "mean": [2, 2, 2],
       "slug": "panda-no-taputapu",
-      "usersRated": [
-        1,
-        1,
-        1
-      ],
-      "users": [
-        17,
-        17,
-        17
-      ],
+      "usersRated": [1, 1, 1],
+      "users": [17, 17, 17],
       "title": "Panda no Taputapu",
       "poster": "https://media.kitsu.io/anime/poster_images/6972/medium.jpg?1408459900",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "7493": {
       "id": "7493",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        4,
-        4,
-        4
-      ],
+      "mean": [4, 4, 4],
       "slug": "two-thousand-and-twenty-nyeon-ujuui-wonder-kiddy",
-      "usersRated": [
-        6,
-        6,
-        6
-      ],
-      "users": [
-        24,
-        24,
-        24
-      ],
+      "usersRated": [6, 6, 6],
+      "users": [24, 24, 24],
       "title": "2020 Nyeon Ujuui Wonder Kiddy",
       "poster": "https://media.kitsu.io/anime/poster_images/7493/medium.jpg?1408461511",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "7577": {
       "id": "7577",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        3.57,
-        3.57,
-        3.57
-      ],
+      "mean": [3.57, 3.57, 3.57],
       "slug": "agigongryong-doolie-1988",
-      "usersRated": [
-        7,
-        7,
-        7
-      ],
-      "users": [
-        23,
-        23,
-        23
-      ],
+      "usersRated": [7, 7, 7],
+      "users": [23, 23, 23],
       "title": "Agigongryong Doolie (1988)",
       "poster": "https://media.kitsu.io/anime/poster_images/7577/medium.jpg?1408461796",
-      "favorites": [
-        1,
-        1,
-        1
-      ]
+      "favorites": [1, 1, 1]
     },
     "7578": {
       "id": "7578",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        3.14,
-        3.14
-      ],
+      "mean": [3.14, 3.14],
       "slug": "agigongryong-doolie",
-      "usersRated": [
-        7,
-        7
-      ],
-      "users": [
-        23,
-        23
-      ],
+      "usersRated": [7, 7],
+      "users": [23, 23],
       "title": "Agigongryong Doolie",
       "poster": "https://media.kitsu.io/anime/poster_images/7578/medium.jpg?1408461799",
-      "favorites": [
-        0,
-        0
-      ]
+      "favorites": [0, 0]
     },
     "7592": {
       "id": "7592",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        4.64,
-        4.64,
-        4.64
-      ],
+      "mean": [4.64, 4.64, 4.64],
       "slug": "kara-the-animation",
-      "usersRated": [
-        11,
-        11,
-        11
-      ],
-      "users": [
-        92,
-        92,
-        92
-      ],
+      "usersRated": [11, 11, 11],
+      "users": [92, 92, 92],
       "title": "Kara The Animation",
       "poster": "https://media.kitsu.io/anime/poster_images/7592/medium.jpg?1408461837",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "8010": {
       "id": "8010",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.13,
-        7.13,
-        7.13
-      ],
+      "mean": [7.13, 7.13, 7.13],
       "slug": "youkai-watch",
-      "usersRated": [
-        161,
-        161,
-        161
-      ],
-      "users": [
-        647,
-        654,
-        654
-      ],
+      "usersRated": [161, 161, 161],
+      "users": [647, 654, 654],
       "title": "Youkai Watch",
       "poster": "https://media.kitsu.io/anime/poster_images/8010/medium.jpg?1456517756",
-      "favorites": [
-        10,
-        10,
-        10
-      ]
+      "favorites": [10, 10, 10]
     },
     "8550": {
       "id": "8550",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        2,
-        2,
-        2
-      ],
+      "mean": [2, 2, 2],
       "slug": "nyanpuku-nyaruma",
-      "usersRated": [
-        1,
-        1,
-        1
-      ],
-      "users": [
-        23,
-        24,
-        24
-      ],
+      "usersRated": [1, 1, 1],
+      "users": [23, 24, 24],
       "title": "Nyanpuku Nyaruma",
       "poster": "https://media.kitsu.io/anime/poster_images/8550/medium.jpg?1408464768",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "8882": {
       "id": "8882",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        4,
-        4,
-        4
-      ],
+      "mean": [4, 4, 4],
       "slug": "bloody-bunny",
-      "usersRated": [
-        4,
-        4,
-        4
-      ],
-      "users": [
-        17,
-        17,
-        17
-      ],
+      "usersRated": [4, 4, 4],
+      "users": [17, 17, 17],
       "title": "Bloody Bunny",
       "poster": "https://media.kitsu.io/anime/poster_images/8882/medium.jpg?1409513556",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "8884": {
       "id": "8884",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.63,
-        6.63,
-        6.63
-      ],
+      "mean": [6.63, 6.63, 6.63],
       "slug": "gudetama",
-      "usersRated": [
-        24,
-        24,
-        24
-      ],
-      "users": [
-        94,
-        102,
-        102
-      ],
+      "usersRated": [24, 24, 24],
+      "users": [94, 102, 102],
       "title": "Gudetama",
       "poster": "https://media.kitsu.io/anime/poster_images/8884/medium.jpg?1409513570",
-      "favorites": [
-        3,
-        3,
-        3
-      ]
+      "favorites": [3, 3, 3]
     },
     "9039": {
       "id": "9039",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        0,
-        0,
-        0
-      ],
+      "mean": [0, 0, 0],
       "slug": "shimajirou-no-wow",
-      "usersRated": [
-        0,
-        0,
-        0
-      ],
-      "users": [
-        10,
-        10,
-        10
-      ],
+      "usersRated": [0, 0, 0],
+      "users": [10, 10, 10],
       "title": "Shimajirou no Wow!",
       "poster": "https://media.kitsu.io/anime/poster_images/9039/medium.jpg?1410010594",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "9205": {
       "id": "9205",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        4.33,
-        4.33,
-        4.33
-      ],
+      "mean": [4.33, 4.33, 4.33],
       "slug": "backkom-2",
-      "usersRated": [
-        9,
-        9,
-        9
-      ],
-      "users": [
-        17,
-        16,
-        16
-      ],
+      "usersRated": [9, 9, 9],
+      "users": [17, 16, 16],
       "title": "Backkom 2",
       "poster": "https://media.kitsu.io/anime/poster_images/9205/medium.jpg?1412322003",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "9209": {
       "id": "9209",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        4,
-        4,
-        4
-      ],
+      "mean": [4, 4, 4],
       "slug": "backkom-sports",
-      "usersRated": [
-        6,
-        6,
-        6
-      ],
-      "users": [
-        13,
-        12,
-        12
-      ],
+      "usersRated": [6, 6, 6],
+      "users": [13, 12, 12],
       "title": "Backkom Sports",
       "poster": "https://media.kitsu.io/anime/poster_images/9209/medium.jpg?1412322025",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "9703": {
       "id": "9703",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        4.5,
-        4.5,
-        4.5
-      ],
+      "mean": [4.5, 4.5, 4.5],
       "slug": "yoligongju-loopy",
-      "usersRated": [
-        4,
-        4,
-        4
-      ],
-      "users": [
-        12,
-        12,
-        12
-      ],
+      "usersRated": [4, 4, 4],
+      "users": [12, 12, 12],
       "title": "Yoligongju Loopy",
       "poster": "https://media.kitsu.io/anime/poster_images/9703/medium.jpg?1412325424",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "9832": {
       "id": "9832",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        1,
-        1,
-        1
-      ],
+      "mean": [1, 1, 1],
       "slug": "gohan-kaijuu-pap",
-      "usersRated": [
-        1,
-        1,
-        1
-      ],
-      "users": [
-        10,
-        10,
-        10
-      ],
+      "usersRated": [1, 1, 1],
+      "users": [10, 10, 10],
       "title": "Gohan Kaijuu Pap",
       "poster": "https://media.kitsu.io/anime/poster_images/9832/medium.jpg?1413322067",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "9913": {
       "id": "9913",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        3,
-        3,
-        3
-      ],
+      "mean": [3, 3, 3],
       "slug": "nyanfu",
-      "usersRated": [
-        2,
-        2,
-        2
-      ],
-      "users": [
-        12,
-        12,
-        12
-      ],
+      "usersRated": [2, 2, 2],
+      "users": [12, 12, 12],
       "title": "Nyanfuru",
       "poster": "https://media.kitsu.io/anime/poster_images/9913/medium.jpg?1483874501",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "9938": {
       "id": "9938",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7,
-        4.25,
-        4.25
-      ],
+      "mean": [7, 4.25, 4.25],
       "slug": "squirrel-and-hedgehog",
-      "usersRated": [
-        1,
-        2,
-        2
-      ],
-      "users": [
-        13,
-        17,
-        18
-      ],
+      "usersRated": [1, 2, 2],
+      "users": [13, 17, 18],
       "title": "Dalam-iwa Goseumdochi",
       "poster": "https://media.kitsu.io/anime/poster_images/9938/medium.jpg?1413322837",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "10104": {
       "id": "10104",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.42,
-        6.42,
-        6.42
-      ],
+      "mean": [6.42, 6.42, 6.42],
       "slug": "disney-tsum-tsum",
-      "usersRated": [
-        12,
-        12,
-        12
-      ],
-      "users": [
-        33,
-        33,
-        33
-      ],
+      "usersRated": [12, 12, 12],
+      "users": [33, 33, 33],
       "title": "Disney Tsum Tsum",
       "poster": "https://media.kitsu.io/anime/poster_images/10104/medium.jpg?1498882596",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "10298": {
       "id": "10298",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        0,
-        0,
-        0
-      ],
+      "mean": [0, 0, 0],
       "slug": "ou-sama-monogatari",
-      "usersRated": [
-        0,
-        0,
-        0
-      ],
-      "users": [
-        10,
-        9,
-        9
-      ],
+      "usersRated": [0, 0, 0],
+      "users": [10, 9, 9],
       "title": "Ousama Monogatari",
       "poster": "https://media.kitsu.io/anime/poster_images/10298/medium.jpg?1483874494",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "10336": {
       "id": "10336",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        0,
-        0,
-        0
-      ],
+      "mean": [0, 0, 0],
       "slug": "kareshi-wa-hammerhead-shark",
-      "usersRated": [
-        0,
-        0,
-        0
-      ],
-      "users": [
-        12,
-        12,
-        12
-      ],
+      "usersRated": [0, 0, 0],
+      "users": [12, 12, 12],
       "title": "Kareshi wa Hammerhead Shark",
       "poster": "https://media.kitsu.io/anime/poster_images/10336/medium.jpg?1421638126",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "10337": {
       "id": "10337",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.22,
-        5.22,
-        5.22
-      ],
+      "mean": [5.22, 5.22, 5.22],
       "slug": "six-hp-six-hearts-princess",
-      "usersRated": [
-        9,
-        9,
-        9
-      ],
-      "users": [
-        240,
-        248,
-        247
-      ],
+      "usersRated": [9, 9, 9],
+      "users": [240, 248, 247],
       "title": "6HP (Six Hearts Princess)",
       "poster": "https://media.kitsu.io/anime/poster_images/10337/medium.jpg?1432401421",
-      "favorites": [
-        1,
-        1,
-        1
-      ]
+      "favorites": [1, 1, 1]
     },
     "10682": {
       "id": "10682",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6,
-        6,
-        6
-      ],
+      "mean": [6, 6, 6],
       "slug": "kamiusagi-rope-warau-asa-ni-wa-fukuraitaru-tte-maji-ssuka",
-      "usersRated": [
-        1,
-        1,
-        1
-      ],
-      "users": [
-        10,
-        9,
-        9
-      ],
+      "usersRated": [1, 1, 1],
+      "users": [10, 9, 9],
       "title": "Kamiusagi Rope: Warau Asa ni wa Fukuraitaru tte Maji ssuka!?",
       "poster": "https://media.kitsu.io/anime/poster_images/10682/medium.jpg?1424858066",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "10701": {
       "id": "10701",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        3.33,
-        3.33,
-        3.33
-      ],
+      "mean": [3.33, 3.33, 3.33],
       "slug": "fruity-samurai",
-      "usersRated": [
-        3,
-        3,
-        3
-      ],
-      "users": [
-        12,
-        12,
-        12
-      ],
+      "usersRated": [3, 3, 3],
+      "users": [12, 12, 12],
       "title": "Fruity Samurai",
       "poster": "https://media.kitsu.io/anime/poster_images/10701/medium.jpg?1424858231",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "10781": {
       "id": "10781",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        0,
-        0,
-        0
-      ],
+      "mean": [0, 0, 0],
       "slug": "happy-george",
-      "usersRated": [
-        0,
-        0,
-        0
-      ],
-      "users": [
-        19,
-        19,
-        19
-      ],
+      "usersRated": [0, 0, 0],
+      "users": [19, 19, 19],
       "title": "Happy Jozy",
       "poster": "https://media.kitsu.io/anime/poster_images/10781/medium.jpg?1483874499",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "10879": {
       "id": "10879",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.31,
-        7.31,
-        7.32
-      ],
+      "mean": [7.31, 7.31, 7.32],
       "slug": "dragon-ball-super",
-      "usersRated": [
-        1798,
-        1798,
-        1799
-      ],
-      "users": [
-        5749,
-        5949,
-        5951
-      ],
+      "usersRated": [1798, 1798, 1799],
+      "users": [5749, 5949, 5951],
       "title": "Dragon Ball Super",
       "poster": "https://media.kitsu.io/anime/poster_images/10879/medium.jpg?1489942553",
-      "favorites": [
-        100,
-        110,
-        110
-      ]
+      "favorites": [100, 110, 110]
     },
     "10902": {
       "id": "10902",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.97,
-        7.97,
-        7.98
-      ],
+      "mean": [7.97, 7.97, 7.98],
       "slug": "shingeki-no-bahamut-virgin-soul",
-      "usersRated": [
-        196,
-        198,
-        201
-      ],
-      "users": [
-        2327,
-        2740,
-        2754
-      ],
+      "usersRated": [196, 198, 201],
+      "users": [2327, 2740, 2754],
       "title": "Shingeki no Bahamut: Virgin Soul",
       "poster": "https://media.kitsu.io/anime/poster_images/10902/medium.jpg?1489962206",
-      "favorites": [
-        6,
-        10,
-        10
-      ]
+      "favorites": [6, 10, 10]
     },
     "11078": {
       "id": "11078",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        0,
-        0,
-        0,
-        0
-      ],
+      "mean": [0, 0, 0, 0],
       "slug": "imabari-barysan",
-      "usersRated": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "users": [
-        23,
-        23,
-        23,
-        23
-      ],
+      "usersRated": [0, 0, 0, 0],
+      "users": [23, 23, 23, 23],
       "title": "Bary-san no Imabari-ben Kouza",
       "poster": "https://media.kitsu.io/anime/poster_images/11078/medium.jpg?1483874492",
-      "favorites": [
-        0,
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0, 0]
     },
     "11112": {
       "id": "11112",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.62,
-        5.62,
-        5.62
-      ],
+      "mean": [5.62, 5.62, 5.62],
       "slug": "kamisama-minarai-himitsu-no-cocotama",
-      "usersRated": [
-        13,
-        13,
-        13
-      ],
-      "users": [
-        118,
-        120,
-        120
-      ],
+      "usersRated": [13, 13, 13],
+      "users": [118, 120, 120],
       "title": "Kamisama Minarai: Himitsu no Cocotama",
       "poster": "https://media.kitsu.io/anime/poster_images/11112/medium.jpg?1486237120",
-      "favorites": [
-        1,
-        1,
-        1
-      ]
+      "favorites": [1, 1, 1]
     },
     "11189": {
       "id": "11189",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        0,
-        0,
-        0
-      ],
+      "mean": [0, 0, 0],
       "slug": "pikkapika-summer",
-      "usersRated": [
-        0,
-        0,
-        0
-      ],
-      "users": [
-        10,
-        10,
-        10
-      ],
+      "usersRated": [0, 0, 0],
+      "users": [10, 10, 10],
       "title": "PikkaPika Summer",
       "poster": "https://media.kitsu.io/anime/poster_images/11189/medium.jpg?1436416226",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "11576": {
       "id": "11576",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        0,
-        0,
-        0
-      ],
+      "mean": [0, 0, 0],
       "slug": "arpiel-6-destinies",
-      "usersRated": [
-        0,
-        0,
-        0
-      ],
-      "users": [
-        32,
-        32,
-        32
-      ],
+      "usersRated": [0, 0, 0],
+      "users": [32, 32, 32],
       "title": "Arpiel: 6 Destinies",
       "poster": "https://media.kitsu.io/anime/poster_images/11576/medium.jpg?1448978939",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "11584": {
       "id": "11584",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.18,
-        6.18,
-        6.18
-      ],
+      "mean": [6.18, 6.18, 6.18],
       "slug": "monster-hunter-stories",
-      "usersRated": [
-        71,
-        71,
-        71
-      ],
-      "users": [
-        438,
-        453,
-        454
-      ],
+      "usersRated": [71, 71, 71],
+      "users": [438, 453, 454],
       "title": "Monster Hunter Stories: Ride On",
       "poster": "https://media.kitsu.io/anime/poster_images/11584/medium.jpg?1486237169",
-      "favorites": [
-        2,
-        2,
-        2
-      ]
+      "favorites": [2, 2, 2]
     },
     "11809": {
       "id": "11809",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        4.6,
-        4.6,
-        4.6
-      ],
+      "mean": [4.6, 4.6, 4.6],
       "slug": "duel-masters-vsrf",
-      "usersRated": [
-        5,
-        5,
-        5
-      ],
-      "users": [
-        36,
-        37,
-        37
-      ],
+      "usersRated": [5, 5, 5],
+      "users": [36, 37, 37],
       "title": "Duel Masters VSRF",
       "poster": "https://media.kitsu.io/anime/poster_images/11809/medium.jpg?1459624325",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "11814": {
       "id": "11814",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.33,
-        5.33,
-        5.33
-      ],
+      "mean": [5.33, 5.33, 5.33],
       "slug": "neko-neko-nihonshi",
-      "usersRated": [
-        3,
-        3,
-        3
-      ],
-      "users": [
-        61,
-        63,
-        63
-      ],
+      "usersRated": [3, 3, 3],
+      "users": [61, 63, 63],
       "title": "Neko Neko Nihonshi",
       "poster": "https://media.kitsu.io/anime/poster_images/11814/medium.jpg?1454818800",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "11820": {
       "id": "11820",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.75,
-        6.75,
-        6.75
-      ],
+      "mean": [6.75, 6.75, 6.75],
       "slug": "battle-spirits-double-drive",
-      "usersRated": [
-        4,
-        4,
-        4
-      ],
-      "users": [
-        34,
-        35,
-        35
-      ],
+      "usersRated": [4, 4, 4],
+      "users": [34, 35, 35],
       "title": "Battle Spirits: Double Drive",
       "poster": "https://media.kitsu.io/anime/poster_images/11820/medium.jpg?1455029518",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "11840": {
       "id": "11840",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6,
-        6,
-        6
-      ],
+      "mean": [6, 6, 6],
       "slug": "jewelpet-attack-chance",
-      "usersRated": [
-        4,
-        4,
-        4
-      ],
-      "users": [
-        22,
-        23,
-        23
-      ],
+      "usersRated": [4, 4, 4],
+      "users": [22, 23, 23],
       "title": "Jewelpet: Attack Chance!?",
       "poster": "https://media.kitsu.io/anime/poster_images/11840/medium.jpg?1460601869",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "11846": {
       "id": "11846",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.92,
-        5.92,
-        5.92
-      ],
+      "mean": [5.92, 5.92, 5.92],
       "slug": "puzzle-dragons-x",
-      "usersRated": [
-        63,
-        63,
-        63
-      ],
-      "users": [
-        307,
-        315,
-        315
-      ],
+      "usersRated": [63, 63, 63],
+      "users": [307, 315, 315],
       "title": "Puzzle & Dragons Cross",
       "poster": "https://media.kitsu.io/anime/poster_images/11846/medium.jpg?1483874485",
-      "favorites": [
-        1,
-        1,
-        1
-      ]
+      "favorites": [1, 1, 1]
     },
     "11848": {
       "id": "11848",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        0,
-        0,
-        0
-      ],
+      "mean": [0, 0, 0],
       "slug": "gekidol",
-      "usersRated": [
-        0,
-        0,
-        0
-      ],
-      "users": [
-        27,
-        27,
-        27
-      ],
+      "usersRated": [0, 0, 0],
+      "users": [27, 27, 27],
       "title": "Gekidol",
       "poster": "https://media.kitsu.io/anime/poster_images/11848/medium.jpg?1464295035",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "11868": {
       "id": "11868",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.36,
-        7.36,
-        7.36
-      ],
+      "mean": [7.36, 7.36, 7.36],
       "slug": "aikatsu-stars",
-      "usersRated": [
-        53,
-        53,
-        53
-      ],
-      "users": [
-        286,
-        310,
-        310
-      ],
+      "usersRated": [53, 53, 53],
+      "users": [286, 310, 310],
       "title": "Aikatsu Stars!",
       "poster": "https://media.kitsu.io/anime/poster_images/11868/medium.jpg?1496200346",
-      "favorites": [
-        3,
-        3,
-        3
-      ]
+      "favorites": [3, 3, 3]
     },
     "11883": {
       "id": "11883",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.8
-      ],
+      "mean": [6.8],
       "slug": "senki-zesshou-symphogear-axz-by-shedding-many-tears-the-reality-you-face-is",
-      "usersRated": [
-        5
-      ],
-      "users": [
-        169
-      ],
+      "usersRated": [5],
+      "users": [169],
       "title": "Senki Zesshou Symphogear AXZ: By Shedding Many Tears, the Reality You Face Is...",
       "poster": "https://media.kitsu.io/anime/poster_images/11883/medium.jpg?1498669035",
-      "favorites": [
-        1
-      ]
+      "favorites": [1]
     },
     "11893": {
       "id": "11893",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6,
-        6,
-        6
-      ],
+      "mean": [6, 6, 6],
       "slug": "nameko-sekai-no-tomodachi",
-      "usersRated": [
-        2,
-        2,
-        2
-      ],
-      "users": [
-        21,
-        22,
-        22
-      ],
+      "usersRated": [2, 2, 2],
+      "users": [21, 22, 22],
       "title": "Nameko: Sekai no Tomodachi",
       "poster": "https://media.kitsu.io/anime/poster_images/11893/medium.jpg?1457005757",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "11902": {
       "id": "11902",
       "updated": "2017-07-01T07:06:11.459Z",
-      "mean": [
-        6.55
-      ],
+      "mean": [6.55],
       "slug": "dungeon-ni-deai-wo-motomeru-no-wa-machigatte-iru-darouka-gaiden-sword-oratoria",
-      "usersRated": [
-        230
-      ],
-      "users": [
-        1924
-      ],
+      "usersRated": [230],
+      "users": [1924],
       "title": "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Gaiden: Sword Oratoria",
       "poster": "https://media.kitsu.io/anime/poster_images/11902/medium.jpg?1489961258",
-      "favorites": [
-        4
-      ]
+      "favorites": [4]
     },
     "11929": {
       "id": "11929",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        0,
-        0,
-        0
-      ],
+      "mean": [0, 0, 0],
       "slug": "the-snack-world-tv",
-      "usersRated": [
-        0,
-        0,
-        0
-      ],
-      "users": [
-        13,
-        13,
-        13
-      ],
+      "usersRated": [0, 0, 0],
+      "users": [13, 13, 13],
       "title": "The Snack World (TV)",
       "poster": "https://media.kitsu.io/anime/poster_images/11929/medium.jpg?1498627735",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "11956": {
       "id": "11956",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.47,
-        7.47,
-        7.47
-      ],
+      "mean": [7.47, 7.47, 7.47],
       "slug": "aggressive-retsuko",
-      "usersRated": [
-        110,
-        110,
-        110
-      ],
-      "users": [
-        393,
-        422,
-        423
-      ],
+      "usersRated": [110, 110, 110],
+      "users": [393, 422, 423],
       "title": "Aggressive Retsuko",
       "poster": "https://media.kitsu.io/anime/poster_images/11956/medium.jpg?1463545347",
-      "favorites": [
-        5,
-        6,
-        6
-      ]
+      "favorites": [5, 6, 6]
     },
     "11966": {
       "id": "11966",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.88,
-        5.99,
-        6.05
-      ],
+      "mean": [5.88, 5.99, 6.05],
       "slug": "tiger-mask-w",
-      "usersRated": [
-        130,
-        137,
-        143
-      ],
-      "users": [
-        600,
-        630,
-        632
-      ],
+      "usersRated": [130, 137, 143],
+      "users": [600, 630, 632],
       "title": "Tiger Mask W",
       "poster": "https://media.kitsu.io/anime/poster_images/11966/medium.jpg?1475281974",
-      "favorites": [
-        1,
-        2,
-        2
-      ]
+      "favorites": [1, 2, 2]
     },
     "11994": {
       "id": "11994",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.36,
-        7.28
-      ],
+      "mean": [7.36, 7.28],
       "slug": "katsugeki-touken-ranbu",
-      "usersRated": [
-        22,
-        30
-      ],
-      "users": [
-        957,
-        1058
-      ],
+      "usersRated": [22, 30],
+      "users": [957, 1058],
       "title": "Katsugeki/Touken Ranbu",
       "poster": "https://media.kitsu.io/anime/poster_images/11994/medium.jpg?1489963221",
-      "favorites": [
-        1,
-        1
-      ]
+      "favorites": [1, 1]
     },
     "12050": {
       "id": "12050",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.24,
-        6.24,
-        6.24
-      ],
+      "mean": [6.24, 6.24, 6.24],
       "slug": "bonobono-2016",
-      "usersRated": [
-        17,
-        17,
-        17
-      ],
-      "users": [
-        56,
-        60,
-        61
-      ],
+      "usersRated": [17, 17, 17],
+      "users": [56, 60, 61],
       "title": "Bonobono (2016)",
       "poster": "https://media.kitsu.io/anime/poster_images/12050/medium.jpg?1494687756",
-      "favorites": [
-        2,
-        2,
-        2
-      ]
+      "favorites": [2, 2, 2]
     },
     "12114": {
       "id": "12114",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6,
-        6,
-        6
-      ],
+      "mean": [6, 6, 6],
       "slug": "coco-nico",
-      "usersRated": [
-        1,
-        1,
-        1
-      ],
-      "users": [
-        17,
-        17,
-        17
-      ],
+      "usersRated": [1, 1, 1],
+      "users": [17, 17, 17],
       "title": "CoCO & NiCO",
       "poster": "https://media.kitsu.io/anime/poster_images/12114/medium.jpg?1462148483",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "12154": {
       "id": "12154",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.12,
-        6.12,
-        6.12
-      ],
+      "mean": [6.12, 6.12, 6.12],
       "slug": "koneko-no-chi-ponponra-daibouken",
-      "usersRated": [
-        26,
-        26,
-        26
-      ],
-      "users": [
-        162,
-        170,
-        170
-      ],
+      "usersRated": [26, 26, 26],
+      "users": [162, 170, 170],
       "title": "Koneko no Chii: Ponponra Daibouken",
       "poster": "https://media.kitsu.io/anime/poster_images/12154/medium.jpg?1491962371",
-      "favorites": [
-        1,
-        1,
-        1
-      ]
+      "favorites": [1, 1, 1]
     },
     "12235": {
       "id": "12235",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.42,
-        6.42,
-        6.45
-      ],
+      "mean": [6.42, 6.42, 6.45],
       "slug": "atom-the-beginning",
-      "usersRated": [
-        61,
-        61,
-        62
-      ],
-      "users": [
-        482,
-        607,
-        611
-      ],
+      "usersRated": [61, 61, 62],
+      "users": [482, 607, 611],
       "title": "Atom: The Beginning",
       "poster": "https://media.kitsu.io/anime/poster_images/12235/medium.jpg?1489962507",
-      "favorites": [
-        2,
-        2,
-        2
-      ]
+      "favorites": [2, 2, 2]
     },
     "12268": {
       "id": "12268",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        8.67,
-        8.67,
-        8.68
-      ],
+      "mean": [8.67, 8.67, 8.68],
       "slug": "boku-no-hero-academia-2nd-season",
-      "usersRated": [
-        766,
-        781,
-        788
-      ],
-      "users": [
-        4409,
-        5704,
-        5722
-      ],
+      "usersRated": [766, 781, 788],
+      "users": [4409, 5704, 5722],
       "title": "Boku no Hero Academia 2nd Season",
       "poster": "https://media.kitsu.io/anime/poster_images/12268/medium.jpg?1491106234",
-      "favorites": [
-        38,
-        83,
-        84
-      ]
+      "favorites": [38, 83, 84]
     },
     "12314": {
       "id": "12314",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.43,
-        6.43,
-        6.43
-      ],
+      "mean": [6.43, 6.43, 6.43],
       "slug": "digimon-universe-appli-monsters",
-      "usersRated": [
-        44,
-        44,
-        44
-      ],
-      "users": [
-        218,
-        229,
-        229
-      ],
+      "usersRated": [44, 44, 44],
+      "users": [218, 229, 229],
       "title": "Digimon Universe: Appli Monsters",
       "poster": "https://media.kitsu.io/anime/poster_images/12314/medium.jpg?1475608229",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "12346": {
       "id": "12346",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.26,
-        5.26,
-        5.26
-      ],
+      "mean": [5.26, 5.26, 5.26],
       "slug": "heybot",
-      "usersRated": [
-        19,
-        19,
-        19
-      ],
-      "users": [
-        89,
-        91,
-        91
-      ],
+      "usersRated": [19, 19, 19],
+      "users": [89, 91, 91],
       "title": "Heybot!",
       "poster": "https://media.kitsu.io/anime/poster_images/12346/medium.jpg?1468856865",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "12475": {
       "id": "12475",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        0,
-        0,
-        0
-      ],
+      "mean": [0, 0, 0],
       "slug": "alps-no-shoujo-heidi-chara-onji",
-      "usersRated": [
-        0,
-        0,
-        0
-      ],
-      "users": [
-        11,
-        11,
-        11
-      ],
+      "usersRated": [0, 0, 0],
+      "users": [11, 11, 11],
       "title": "Alps no Shoujo Heidi? Chara Onji",
       "poster": "https://media.kitsu.io/anime/poster_images/12475/medium.jpg?1471260767",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "12533": {
       "id": "12533",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.51,
-        7.51,
-        7.51
-      ],
+      "mean": [7.51, 7.51, 7.51],
       "slug": "pokemon-sun-moon",
-      "usersRated": [
-        149,
-        149,
-        149
-      ],
-      "users": [
-        739,
-        790,
-        793
-      ],
+      "usersRated": [149, 149, 149],
+      "users": [739, 790, 793],
       "title": "Pokemon Sun & Moon",
       "poster": "https://media.kitsu.io/anime/poster_images/12533/medium.jpg?1489946892",
-      "favorites": [
-        8,
-        8,
-        8
-      ]
+      "favorites": [8, 8, 8]
     },
     "12540": {
       "id": "12540",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        4.77,
-        4.77,
-        4.75
-      ],
+      "mean": [4.77, 4.77, 4.75],
       "slug": "sin-nanatsu-no-taizai",
-      "usersRated": [
-        127,
-        130,
-        131
-      ],
-      "users": [
-        813,
-        1035,
-        1042
-      ],
+      "usersRated": [127, 130, 131],
+      "users": [813, 1035, 1042],
       "title": "Sin: Nanatsu no Taizai",
       "poster": "https://media.kitsu.io/anime/poster_images/12540/medium.jpg?1474152553",
-      "favorites": [
-        3,
-        3,
-        3
-      ]
+      "favorites": [3, 3, 3]
     },
     "12561": {
       "id": "12561",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.53,
-        6.53,
-        6.53
-      ],
+      "mean": [6.53, 6.53, 6.53],
       "slug": "kyoukai-no-rinne-tv-3rd-season",
-      "usersRated": [
-        15,
-        15,
-        15
-      ],
-      "users": [
-        210,
-        256,
-        256
-      ],
+      "usersRated": [15, 15, 15],
+      "users": [210, 256, 256],
       "title": "Kyoukai no Rinne (TV) 3rd Season",
       "poster": "https://media.kitsu.io/anime/poster_images/12561/medium.jpg?1489962561",
-      "favorites": [
-        1,
-        1,
-        1
-      ]
+      "favorites": [1, 1, 1]
     },
     "12564": {
       "id": "12564",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.45,
-        7.45,
-        7.42
-      ],
+      "mean": [7.45, 7.45, 7.42],
       "slug": "cardfight-vanguard-g-next",
-      "usersRated": [
-        11,
-        11,
-        12
-      ],
-      "users": [
-        78,
-        89,
-        90
-      ],
+      "usersRated": [11, 11, 12],
+      "users": [78, 89, 90],
       "title": "Cardfight!! Vanguard G: Next",
       "poster": "https://media.kitsu.io/anime/poster_images/12564/medium.jpg?1474851535",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "12599": {
       "id": "12599",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.71,
-        5.71,
-        5.71
-      ],
+      "mean": [5.71, 5.71, 5.71],
       "slug": "sakurada-reset",
-      "usersRated": [
-        148,
-        148,
-        148
-      ],
-      "users": [
-        1150,
-        1388,
-        1392
-      ],
+      "usersRated": [148, 148, 148],
+      "users": [1150, 1388, 1392],
       "title": "Sakurada Reset",
       "poster": "https://media.kitsu.io/anime/poster_images/12599/medium.jpg?1489953225",
-      "favorites": [
-        3,
-        4,
-        4
-      ]
+      "favorites": [3, 4, 4]
     },
     "12606": {
       "id": "12606",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        3.5,
-        3.5,
-        3.5
-      ],
+      "mean": [3.5, 3.5, 3.5],
       "slug": "pepepepengiin",
-      "usersRated": [
-        2,
-        2,
-        2
-      ],
-      "users": [
-        12,
-        14,
-        14
-      ],
+      "usersRated": [2, 2, 2],
+      "users": [12, 14, 14],
       "title": "PePePePengiin",
       "poster": "https://media.kitsu.io/anime/poster_images/12606/medium.jpg?1475253612",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "12732": {
       "id": "12732",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5
-      ],
+      "mean": [5],
       "slug": "vatican-kiseki-chosakan",
-      "usersRated": [
-        1
-      ],
-      "users": [
-        184
-      ],
+      "usersRated": [1],
+      "users": [184],
       "title": "Vatican Kiseki Chosakan",
       "poster": "https://media.kitsu.io/anime/poster_images/12732/medium.jpg?1495661133",
-      "favorites": [
-        0
-      ]
+      "favorites": [0]
     },
     "12754": {
       "id": "12754",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        3
-      ],
+      "mean": [3],
       "slug": "gamers",
-      "usersRated": [
-        2
-      ],
-      "users": [
-        379
-      ],
+      "usersRated": [2],
+      "users": [379],
       "title": "Gamers!",
       "poster": "https://media.kitsu.io/anime/poster_images/12754/medium.jpg?1495273785",
-      "favorites": [
-        0
-      ]
+      "favorites": [0]
     },
     "12757": {
       "id": "12757",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        8.88
-      ],
+      "mean": [8.88],
       "slug": "netsuzou-trap",
-      "usersRated": [
-        4
-      ],
-      "users": [
-        468
-      ],
+      "usersRated": [4],
+      "users": [468],
       "title": "Netsuzou TRap",
       "poster": "https://media.kitsu.io/anime/poster_images/12757/medium.jpg?1495811767",
-      "favorites": [
-        0
-      ]
+      "favorites": [0]
     },
     "12793": {
       "id": "12793",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.96,
-        6.96,
-        6.97
-      ],
+      "mean": [6.96, 6.96, 6.97],
       "slug": "sakura-quest",
-      "usersRated": [
-        212,
-        212,
-        213
-      ],
-      "users": [
-        1444,
-        1820,
-        1825
-      ],
+      "usersRated": [212, 212, 213],
+      "users": [1444, 1820, 1825],
       "title": "Sakura Quest",
       "poster": "https://media.kitsu.io/anime/poster_images/12793/medium.jpg?1493960935",
-      "favorites": [
-        3,
-        3,
-        3
-      ]
+      "favorites": [3, 3, 3]
     },
     "12927": {
       "id": "12927",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.65,
-        6.65,
-        6.65
-      ],
+      "mean": [6.65, 6.65, 6.65],
       "slug": "kirakira-precure-a-la-mode",
-      "usersRated": [
-        20,
-        20,
-        20
-      ],
-      "users": [
-        126,
-        146,
-        146
-      ],
+      "usersRated": [20, 20, 20],
+      "users": [126, 146, 146],
       "title": "Kirakira☆Precure A La Mode",
       "poster": "https://media.kitsu.io/anime/poster_images/12927/medium.jpg?1486236398",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "13051": {
       "id": "13051",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.34,
-        7.35,
-        7.34
-      ],
+      "mean": [7.34, 7.35, 7.34],
       "slug": "boruto-naruto-next-generations",
-      "usersRated": [
-        267,
-        270,
-        273
-      ],
-      "users": [
-        1428,
-        1916,
-        1926
-      ],
+      "usersRated": [267, 270, 273],
+      "users": [1428, 1916, 1926],
       "title": "Boruto: Naruto Next Generations",
       "poster": "https://media.kitsu.io/anime/poster_images/13051/medium.jpg?1489962377",
-      "favorites": [
-        12,
-        18,
-        18
-      ]
+      "favorites": [12, 18, 18]
     },
     "13055": {
       "id": "13055",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.18,
-        7.2,
-        7.21
-      ],
+      "mean": [7.18, 7.2, 7.21],
       "slug": "re-creators",
-      "usersRated": [
-        311,
-        317,
-        319
-      ],
-      "users": [
-        1850,
-        2679,
-        2698
-      ],
+      "usersRated": [311, 317, 319],
+      "users": [1850, 2679, 2698],
       "title": "Re:Creators",
       "poster": "https://media.kitsu.io/anime/poster_images/13055/medium.jpg?1489961932",
-      "favorites": [
-        3,
-        9,
-        9
-      ]
+      "favorites": [3, 9, 9]
     },
     "13066": {
       "id": "13066",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        8,
-        7.07
-      ],
+      "mean": [8, 7.07],
       "slug": "fate-apocrypha",
-      "usersRated": [
-        4,
-        14
-      ],
-      "users": [
-        605,
-        676
-      ],
+      "usersRated": [4, 14],
+      "users": [605, 676],
       "title": "Fate/Apocrypha",
       "poster": "https://media.kitsu.io/anime/poster_images/13066/medium.jpg?1497119121",
-      "favorites": [
-        2,
-        2
-      ]
+      "favorites": [2, 2]
     },
     "13068": {
       "id": "13068",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.5
-      ],
+      "mean": [7.5],
       "slug": "ballroom-e-youkoso",
-      "usersRated": [
-        2
-      ],
-      "users": [
-        527
-      ],
+      "usersRated": [2],
+      "users": [527],
       "title": "Ballroom e Youkoso",
       "poster": "https://media.kitsu.io/anime/poster_images/13068/medium.jpg?1491607643",
-      "favorites": [
-        0
-      ]
+      "favorites": [0]
     },
     "13115": {
       "id": "13115",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6
-      ],
+      "mean": [6],
       "slug": "battle-girl-high-school",
-      "usersRated": [
-        1
-      ],
-      "users": [
-        125
-      ],
+      "usersRated": [1],
+      "users": [125],
       "title": "Battle Girl High School",
       "poster": "https://media.kitsu.io/anime/poster_images/13115/medium.jpg?1495909858",
-      "favorites": [
-        0
-      ]
+      "favorites": [0]
     },
     "13189": {
       "id": "13189",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.17,
-        6.17,
-        6.17
-      ],
+      "mean": [6.17, 6.17, 6.17],
       "slug": "yu-gi-oh-vrains",
-      "usersRated": [
-        18,
-        18,
-        18
-      ],
-      "users": [
-        56,
-        174,
-        176
-      ],
+      "usersRated": [18, 18, 18],
+      "users": [56, 174, 176],
       "title": "Yu-Gi-Oh! VRAINS",
       "poster": "https://media.kitsu.io/anime/poster_images/13189/medium.jpg?1490491761",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "13231": {
       "id": "13231",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5
-      ],
+      "mean": [5],
       "slug": "clione-no-akari",
-      "usersRated": [
-        1
-      ],
-      "users": [
-        98
-      ],
+      "usersRated": [1],
+      "users": [98],
       "title": "Clione no Akari",
       "poster": "https://media.kitsu.io/anime/poster_images/13231/medium.jpg?1489988605",
-      "favorites": [
-        0
-      ]
+      "favorites": [0]
     },
     "13236": {
       "id": "13236",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.75
-      ],
+      "mean": [7.75],
       "slug": "new-game-2",
-      "usersRated": [
-        4
-      ],
-      "users": [
-        456
-      ],
+      "usersRated": [4],
+      "users": [456],
       "title": "New Game! 2",
       "poster": "https://media.kitsu.io/anime/poster_images/13236/medium.jpg?1493173261",
-      "favorites": [
-        1
-      ]
+      "favorites": [1]
     },
     "13252": {
       "id": "13252",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        7.28,
-        6.93
-      ],
+      "mean": [7.28, 6.93],
       "slug": "kakegurui",
-      "usersRated": [
-        9,
-        22
-      ],
-      "users": [
-        584,
-        804
-      ],
+      "usersRated": [9, 22],
+      "users": [584, 804],
       "title": "Kakegurui",
       "poster": "https://media.kitsu.io/anime/poster_images/13252/medium.jpg?1490419945",
-      "favorites": [
-        1,
-        1
-      ]
+      "favorites": [1, 1]
     },
     "13258": {
       "id": "13258",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.5
-      ],
+      "mean": [5.5],
       "slug": "tsurezure-children",
-      "usersRated": [
-        1
-      ],
-      "users": [
-        221
-      ],
+      "usersRated": [1],
+      "users": [221],
       "title": "Tsurezure Children",
       "poster": "https://media.kitsu.io/anime/poster_images/13258/medium.jpg?1490459572",
-      "favorites": [
-        0
-      ]
+      "favorites": [0]
     },
     "13273": {
       "id": "13273",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5
-      ],
+      "mean": [5],
       "slug": "made-in-abyss",
-      "usersRated": [
-        1
-      ],
-      "users": [
-        327
-      ],
+      "usersRated": [1],
+      "users": [327],
       "title": "Made in Abyss",
       "poster": "https://media.kitsu.io/anime/poster_images/13273/medium.jpg?1490500479",
-      "favorites": [
-        0
-      ]
+      "favorites": [0]
     },
     "13274": {
       "id": "13274",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.75
-      ],
+      "mean": [6.75],
       "slug": "knights-and-magic",
-      "usersRated": [
-        8
-      ],
-      "users": [
-        189
-      ],
+      "usersRated": [8],
+      "users": [189],
       "title": "Knight's & Magic",
       "poster": "https://media.kitsu.io/anime/poster_images/13274/medium.jpg?1495812367",
-      "favorites": [
-        0
-      ]
+      "favorites": [0]
     },
     "13280": {
       "id": "13280",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.63
-      ],
+      "mean": [6.63],
       "slug": "keppeki-danshi-aoyama-kun",
-      "usersRated": [
-        4
-      ],
-      "users": [
-        165
-      ],
+      "usersRated": [4],
+      "users": [165],
       "title": "Keppeki Danshi! Aoyama-kun",
       "poster": "https://media.kitsu.io/anime/poster_images/13280/medium.jpg?1490539259",
-      "favorites": [
-        0
-      ]
+      "favorites": [0]
     },
     "13293": {
       "id": "13293",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.2,
-        5.2,
-        5.2
-      ],
+      "mean": [5.2, 5.2, 5.2],
       "slug": "idol-time-pripara",
-      "usersRated": [
-        5,
-        5,
-        5
-      ],
-      "users": [
-        33,
-        39,
-        39
-      ],
+      "usersRated": [5, 5, 5],
+      "users": [33, 39, 39],
       "title": "Idol Time PriPara",
       "poster": "https://media.kitsu.io/anime/poster_images/13293/medium.jpg?1490921308",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "13302": {
       "id": "13302",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        3.71,
-        3.74,
-        3.79
-      ],
+      "mean": [3.71, 3.74, 3.79],
       "slug": "sekai-no-yami-zukan",
-      "usersRated": [
-        70,
-        72,
-        75
-      ],
-      "users": [
-        229,
-        294,
-        296
-      ],
+      "usersRated": [70, 72, 75],
+      "users": [229, 294, 296],
       "title": "Sekai no Yami Zukan",
       "poster": "https://media.kitsu.io/anime/poster_images/13302/medium.jpg?1490946104",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "13303": {
       "id": "13303",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6.83,
-        6.83,
-        6.83
-      ],
+      "mean": [6.83, 6.83, 6.83],
       "slug": "nobunaga-no-shinobi-ise-kanegasaki-hen",
-      "usersRated": [
-        29,
-        29,
-        29
-      ],
-      "users": [
-        116,
-        144,
-        144
-      ],
+      "usersRated": [29, 29, 29],
+      "users": [116, 144, 144],
       "title": "Nobunaga no Shinobi: Ise Kanegasaki-hen",
       "poster": "https://media.kitsu.io/anime/poster_images/13303/medium.jpg?1490946302",
-      "favorites": [
-        0,
-        1,
-        1
-      ]
+      "favorites": [0, 1, 1]
     },
     "13304": {
       "id": "13304",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.4,
-        5.4,
-        5.4
-      ],
+      "mean": [5.4, 5.4, 5.4],
       "slug": "shounen-ashibe-go-go-goma-chan-2",
-      "usersRated": [
-        5,
-        5,
-        5
-      ],
-      "users": [
-        10,
-        12,
-        12
-      ],
+      "usersRated": [5, 5, 5],
+      "users": [10, 12, 12],
       "title": "Shounen Ashibe: Go! Go! Goma-chan 2",
       "poster": "https://media.kitsu.io/anime/poster_images/13304/medium.jpg?1490970035",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "13314": {
       "id": "13314",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        6,
-        6,
-        6
-      ],
+      "mean": [6, 6, 6],
       "slug": "future-card-buddyfight-battsu",
-      "usersRated": [
-        3,
-        3,
-        3
-      ],
-      "users": [
-        13,
-        21,
-        21
-      ],
+      "usersRated": [3, 3, 3],
+      "users": [13, 21, 21],
       "title": "Future Card Buddyfight Battsu",
       "poster": "https://media.kitsu.io/anime/poster_images/13314/medium.jpg?1491082744",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "13423": {
       "id": "13423",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        9.59,
-        9.59,
-        9.59
-      ],
+      "mean": [9.59, 9.59, 9.59],
       "slug": "steven-universe-season-5",
-      "usersRated": [
-        11,
-        11,
-        11
-      ],
-      "users": [
-        27,
-        118,
-        118
-      ],
+      "usersRated": [11, 11, 11],
+      "users": [27, 118, 118],
       "title": "Steven Universe Season 5",
       "poster": "https://media.kitsu.io/anime/poster_images/13423/medium.jpg?1492891151",
-      "favorites": [
-        0,
-        1,
-        1
-      ]
+      "favorites": [0, 1, 1]
     },
     "13433": {
       "id": "13433",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.5,
-        5.5,
-        5.5
-      ],
+      "mean": [5.5, 5.5, 5.5],
       "slug": "100-pascal-sensei-tv",
-      "usersRated": [
-        6,
-        6,
-        6
-      ],
-      "users": [
-        13,
-        35,
-        35
-      ],
+      "usersRated": [6, 6, 6],
+      "users": [13, 35, 35],
       "title": "100% Pascal-sensei (TV)",
       "poster": "https://media.kitsu.io/anime/poster_images/13433/medium.jpg?1492907108",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "13434": {
       "id": "13434",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        5.33,
-        5.33,
-        5.33
-      ],
+      "mean": [5.33, 5.33, 5.33],
       "slug": "puripuri-chii-chan",
-      "usersRated": [
-        3,
-        3,
-        3
-      ],
-      "users": [
-        16,
-        28,
-        28
-      ],
+      "usersRated": [3, 3, 3],
+      "users": [16, 28, 28],
       "title": "Puripuri Chii-chan!!",
       "poster": "https://media.kitsu.io/anime/poster_images/13434/medium.jpg?1492908033",
-      "favorites": [
-        0,
-        0,
-        0
-      ]
+      "favorites": [0, 0, 0]
     },
     "13545": {
       "id": "13545",
       "updated": "2017-07-03T07:07:17.580Z",
-      "mean": [
-        4.88,
-        4.67
-      ],
+      "mean": [4.88, 4.67],
       "slug": "hina-logi-from-luck-logic",
-      "usersRated": [
-        8,
-        9
-      ],
-      "users": [
-        86,
-        96
-      ],
+      "usersRated": [8, 9],
+      "users": [86, 96],
       "title": "Hina Logi: From Luck & Logic",
       "poster": "https://media.kitsu.io/anime/poster_images/13545/medium.jpg?1497144366",
-      "favorites": [
-        0,
-        0
-      ]
+      "favorites": [0, 0]
     }
   }
 }
