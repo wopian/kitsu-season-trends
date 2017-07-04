@@ -12,7 +12,7 @@ readdir(dir, (err, files) => {
   files.forEach(file => {
     readFile(`${dir}/${file}`, 'utf8', (err2, data) => {
       if (err2) throw err2
-      writeFile(`${dir}/${file}`, stringify(JSON.parse(data), { maxLength: 225 }), err3 => {
+      writeFile(`${dir}/${file}`, stringify(JSON.parse(data), { maxLength: 250 }), err3 => {
         if (err3) throw err3
         console.log(`migrated ${file}`)
       })
