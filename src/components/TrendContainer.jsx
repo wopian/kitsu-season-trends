@@ -27,7 +27,6 @@ function posOrNeg (number) {
 }
 
 export function TrendContainer (props) {
-  let rating
   return (
     <div className='trend'>
       <a href={"//kitsu.io/anime/" + props.slug}>
@@ -74,6 +73,42 @@ export function TrendContainer (props) {
           </div>
         </div>
       </a>
+      <Trend
+        className='trend-graph'
+        smooth
+        autoDraw
+        autoDrawDuration={1500}
+        autoDrawEasing="ease-in-out"
+        data={props.favorites.length > 1 ? props.favorites : props.favorites.concat(props.favorites)}
+        gradient={['#ffb9b9']}
+        radius={2}
+        strokeWidth={4.7}
+        strokeLinecap={'round'}
+      />
+      <Trend
+        className='trend-graph'
+        smooth
+        autoDraw
+        autoDrawDuration={1500}
+        autoDrawEasing="ease-in-out"
+        data={props.usersRated.length > 1 ? props.usersRated : props.usersRated.concat(props.usersRated)}
+        gradient={['#b9ffb9']}
+        radius={2}
+        strokeWidth={3.8}
+        strokeLinecap={'round'}
+      />
+      <Trend
+        className='trend-graph'
+        smooth
+        autoDraw
+        autoDrawDuration={1500}
+        autoDrawEasing="ease-in-out"
+        data={props.users.length > 1 ? props.users : props.users.concat(props.users)}
+        gradient={['#b9b9ff']}
+        radius={2}
+        strokeWidth={2.9}
+        strokeLinecap={'round'}
+      />
       <Trend
         className='trend-graph'
         smooth
