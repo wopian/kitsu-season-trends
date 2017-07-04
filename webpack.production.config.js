@@ -45,7 +45,7 @@ module.exports = {
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new ExtractTextPlugin({
-      filename: 'style.css',
+      filename: '[chunkhash].css',
       allChunks: true
     }),
     new HtmlWebpackPlugin({
