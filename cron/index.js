@@ -25,7 +25,7 @@ const q = {
 const db = low(`./data/${year()}-${season()}.json`, {
   storage: fileAsync,
   format: {
-    serialize: stringify,
+    serialize: obj => stringify(obj, { maxLength: 225 }),
     deserialize: JSON.parse
   }
 })
