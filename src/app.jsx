@@ -32,6 +32,27 @@ function Bar () {
   )
 }
 
+function Container () {
+  const test = dataSorted.map((entry, index) => {
+      return <TrendContainer
+        key={index}
+        slug={entry.slug}
+        poster={entry.poster}
+        title={entry.title}
+        mean={entry.mean}
+        users={entry.users}
+        usersRated={entry.usersRated}
+        favorites={entry.favorites}
+      />
+  })
+
+  return (
+    <div className='container'>
+      {test}
+    </div>
+  )
+}
+
 export default class App extends React.Component {
   render() {
     thisApp = this
@@ -39,20 +60,7 @@ export default class App extends React.Component {
       <div>
         <Header/>
         <Bar/>
-        <div className='container'>
-          {dataSorted.map((entry, index) => {
-            return <TrendContainer
-              key={index}
-              slug={entry.slug}
-              poster={entry.poster}
-              title={entry.title}
-              mean={entry.mean}
-              users={entry.users}
-              usersRated={entry.usersRated}
-              favorites={entry.favorites}
-            />
-          })}
-        </div>
+        <Container/>
       </div>
     )
   }
