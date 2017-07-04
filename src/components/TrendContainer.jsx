@@ -76,9 +76,6 @@ export function TrendContainer (props) {
       <Trend
         className='trend-graph'
         smooth
-        autoDraw
-        autoDrawDuration={1500}
-        autoDrawEasing="ease-in-out"
         data={props.favorites.length > 1 ? props.favorites : props.favorites.concat(props.favorites)}
         gradient={['#ffb9b9']}
         radius={2}
@@ -88,9 +85,6 @@ export function TrendContainer (props) {
       <Trend
         className='trend-graph'
         smooth
-        autoDraw
-        autoDrawDuration={1500}
-        autoDrawEasing="ease-in-out"
         data={props.usersRated.length > 1 ? props.usersRated : props.usersRated.concat(props.usersRated)}
         gradient={['#b9ffb9']}
         radius={2}
@@ -100,9 +94,6 @@ export function TrendContainer (props) {
       <Trend
         className='trend-graph'
         smooth
-        autoDraw
-        autoDrawDuration={1500}
-        autoDrawEasing="ease-in-out"
         data={props.users.length > 1 ? props.users : props.users.concat(props.users)}
         gradient={['#b9b9ff']}
         radius={2}
@@ -112,9 +103,6 @@ export function TrendContainer (props) {
       <Trend
         className='trend-graph'
         smooth
-        autoDraw
-        autoDrawDuration={1500}
-        autoDrawEasing="ease-in-out"
         data={props.mean.length > 1 ? props.mean : props.mean.concat(props.mean)}
         gradient={['#332532']}
         radius={2}
