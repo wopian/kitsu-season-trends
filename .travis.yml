@@ -8,7 +8,7 @@ matrix:
   fast_finish: true
 
 install:
-- travis_retry yarn install
+- travis_retry yarn upgrade
 
 script:
 - if [ ${TRAVIS_EVENT_TYPE} = "cron" ];
