@@ -21,7 +21,7 @@ function Bar () {
       <div>
         <div className='bar-sorts'>
           <span>Sort By</span>
-          <button onClick={() => sortData('mean')}>Rating</button>
+          <button onClick={() => sortData('mean')}>Score</button>
           <button onClick={() => sortData('users')}>Users</button>
           <button onClick={() => sortData('usersRated')}>Percent Rated</button>
           <button onClick={() => sortData('favorites')}>Favorites</button>

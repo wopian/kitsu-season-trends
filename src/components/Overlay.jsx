@@ -5,7 +5,7 @@ export function Overlay (props) {
   return (
     <div className='overlay'>
       <div>
-        Mean
+        Score
         <span>{props.mean}</span>
       </div>
       <div>
