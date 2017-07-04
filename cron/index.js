@@ -38,14 +38,14 @@ db.defaults({ data: {} }).write()
 // updated manually
 const aired = Object.keys(db.get('data').value())
 
-function display (count, processed, offset, isAired = false) {
+function display (count, processed, offset, isAired = false, removed = false) {
   if (!isAired && offset + 20 > count) offset = count
   const progress = ((processed + offset) / count * 100)
-  console.log(`${processed + offset} - ${(progress > 100 ? 100 : progress).toFixed(1)}% Complete`)
+  console.log(`${processed + offset} - ${(progress > 100 ? 100 : progress).toFixed(1)}% Complete${removed ? ' (deleted erroneous entry)' : ''}`)
 }
 
 async function get (path, offset, id = null) {
-  if (id) return JSON.parse(await rp(`${base}/${path}/${id}?${q.fields}`))
+  if (id) return JSON.parse(await rp(`${base}/${path}/${id}?${q.fields},endDate`))
   else return JSON.parse(await rp(`${base}/${path}?page[offset]=${offset}&${q.limit}&${q.filter}&${q.sort}&${q.fields}`))
 }
 
@@ -90,6 +90,10 @@ async function check ({ id, attributes }) {
   else await update(id, attributes, ratings)
 }
 
+async function remove ({ id }) {
+  db.get(`data`).remove({ id }).write()
+}
+
 async function getAiring (offset) {
   const { data, meta, links } = await get('anime', offset)
   for (let item of await data) {
@@ -100,13 +104,23 @@ async function getAiring (offset) {
   return links
 }
 
+// Updates shows that have finished - but aired during the season
+// Additionally, also trims erroneous (old) shows from the data
 async function getAired () {
   console.log(`\nUpdating aired anime\n`)
   let done = 0
   aired.forEach(async id => {
     const { data } = await get('anime', null, id)
-    await check(data)
-    display(aired.length, done++, 1, true)
+
+    // Check if the show ended within this season
+    // If not, it was an erroneous entry and shouldn't be in the season's data
+    // at all - thus remove it entirely
+    const cutoff = new Date(now).getTime() - (3 * 30 * 24 * 60 * 60 * 1000)
+    const endDate = new Date(data.attributes.endDate).getTime()
+    if (endDate - cutoff > 0) await check(data)
+    else await remove(data)
+
+    display(aired.length, done++, 1, true, endDate - cutoff < 0)
   })
 }
 
