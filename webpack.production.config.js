@@ -6,6 +6,7 @@ var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 var StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 loaders.push({
   test: /\.scss$/,
@@ -64,6 +65,9 @@ module.exports = {
       title: 'Season Trends',
       background: 'transparent',
       persistentCache: false
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: 'data', to: 'data' }
+    ])
   ]
 };

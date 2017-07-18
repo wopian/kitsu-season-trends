@@ -5,14 +5,24 @@ import { Header } from './components/Header'
 import { TrendContainer } from './components/TrendContainer'
 import '../styles/index.scss'
 
-const { data, updated } = require(`../data/${year()}-${season()}.json`)
+// const { data, updated } = require(`../data/${year()}-${season()}.json`)
 
-let dataSorted = sort(data, 'mean')
-let thisApp
+let thisApp = {}
+let data = {}
+let updated = ''
 
-function sortData (by) {
-  dataSorted = sort(data, by)
+fetch(`/data/${year()}-${season()}.json`, {
+  method: 'get'
+})
+.then(res => res.json())
+.then(res => {
+  ({ data, updated } = res)
   thisApp.forceUpdate()
+})
+
+function sortData (by, update = true) {
+  data = sort(data, by)
+  if (update) thisApp.forceUpdate()
 }
 
 function Bar () {
@@ -26,14 +36,18 @@ function Bar () {
           <button onClick={() => sortData('usersRated')}>Percent Rated</button>
           <button onClick={() => sortData('favorites')}>Favorites</button>
         </div>
-        <span className='info'>All airing shows this season, updated daily ({ago(new Date(updated))})</span>
+        <span className='info'>All airing shows this season, updated daily{updated ? ` (${ago(new Date(updated))})` : ''}</span>
       </div>
     </div>
   )
 }
 
 function Container () {
-  const test = dataSorted.map((entry, index) => {
+  let test = {}
+  if (Object.keys(data).length > 0) {
+    sortData('mean', false)
+
+    test = data.map((entry, index) => {
       return <TrendContainer
         key={index}
         slug={entry.slug}
@@ -44,7 +58,8 @@ function Container () {
         usersRated={entry.usersRated}
         favorites={entry.favorites}
       />
-  })
+    })
+  } else test = <p>Getting data...</p>
 
   return (
     <div className='container'>
