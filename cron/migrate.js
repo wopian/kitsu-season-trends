@@ -10,9 +10,17 @@ const dir = './data'
 readdir(dir, (err, files) => {
   if (err) throw err
   files.forEach(file => {
-    readFile(`${dir}/${file}`, 'utf8', (err2, data) => {
+    readFile(`${dir}/${file}`, 'utf8', (err2, DATA) => {
       if (err2) throw err2
-      writeFile(`${dir}/${file}`, stringify(JSON.parse(data), { maxLength: 250 }), err3 => {
+
+      const { data } = JSON.parse(DATA)
+      const updated = data[Object.keys(data)[0]].updated
+
+      Object.keys(data).forEach(el => {
+        delete data[el].updated
+      })
+
+      writeFile(`${dir}/${file}`, stringify({ data, updated }, { maxLength: 250 }), err3 => {
         if (err3) throw err3
         console.log(`migrated ${file}`)
       })
