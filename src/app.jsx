@@ -5,7 +5,7 @@ import { Header } from './components/Header'
 import { TrendContainer } from './components/TrendContainer'
 import '../styles/index.scss'
 
-const { data } = require(`../data/${year()}-${season()}.json`)
+const { data, updated } = require(`../data/${year()}-${season()}.json`)
 
 let dataSorted = sort(data, 'mean')
 let thisApp
@@ -26,7 +26,7 @@ function Bar () {
           <button onClick={() => sortData('usersRated')}>Percent Rated</button>
           <button onClick={() => sortData('favorites')}>Favorites</button>
         </div>
-        <span className='info'>All airing shows this season, updated daily ({ago(new Date(dataSorted[0].updated))})</span>
+        <span className='info'>All airing shows this season, updated daily ({ago(new Date(updated))})</span>
       </div>
     </div>
   )
