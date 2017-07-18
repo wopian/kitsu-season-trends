@@ -12,8 +12,8 @@ install:
 
 script:
 - if [ ${TRAVIS_EVENT_TYPE} = "cron" ];
-  then yarn run cron;
-  else yarn run build;
+  then yarn cron;
+  else yarn build;
   fi
 
 after_success:
