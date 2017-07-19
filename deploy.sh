@@ -29,7 +29,8 @@ cp index.html 404.html
 FILES="$PWD/../data/"*
 for f in $FILES
 do
-  filename="${$(basename "$f")%.*}"
+  file=$(basename "$f")
+  filename="${file%.*}"
   IFS=- read year season <<< "$filename"
   mkdir -p $year/$season
   cp index.html $year/$season/index.html
