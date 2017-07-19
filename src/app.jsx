@@ -1,24 +1,34 @@
 import React from 'react'
 import ago from 's-ago'
-import { season, year, sort } from './util'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { season as s, year as y, sort } from './util'
 import { Header } from './components/Header'
 import { TrendContainer } from './components/TrendContainer'
 import '../styles/index.scss'
 
-// const { data, updated } = require(`../data/${year()}-${season()}.json`)
-
 let thisApp = {}
 let data = {}
 let updated = ''
+let error = false
 
-fetch(`/data/${year()}-${season()}.json`, {
-  method: 'get'
-})
-.then(res => res.json())
-.then(res => {
-  ({ data, updated } = res)
-  thisApp.forceUpdate()
-})
+function getData (year = y(), season = s()) {
+  fetch(`/data/${year}-${season}.json`, {
+    method: 'get'
+  })
+  .then(res => {
+    if(res.ok) return res.json()
+    else throw new Error(404)
+  })
+  .then(res => {
+    ({ data, updated } = res)
+    thisApp.forceUpdate()
+  })
+  .catch(e => {
+    error = e.message
+    data = {}
+    thisApp.forceUpdate()
+  })
+}
 
 function sortData (by, update = true) {
   data = sort(data, by)
@@ -36,15 +46,17 @@ function Bar () {
           <button onClick={() => sortData('usersRated')}>Percent Rated</button>
           <button onClick={() => sortData('favorites')}>Favorites</button>
         </div>
-        <span className='info'>All airing shows this season, updated daily{updated ? ` (${ago(new Date(updated))})` : ''}</span>
+        <span className='info'>All airing shows this season, updated {updated ? ago(new Date(updated)) : ''}</span>
       </div>
     </div>
   )
 }
 
-function Container () {
+function Container ({ match }) {
+  const { year, season } = match.params
+  console.log(year, season)
   let test = {}
-  if (Object.keys(data).length > 0) {
+  if (Object.keys(data).length > 0 && !error) {
     sortData('mean', false)
 
     test = data.map((entry, index) => {
@@ -59,13 +71,22 @@ function Container () {
         favorites={entry.favorites}
       />
     })
-  } else test = <p>Getting data...</p>
+  } else if (error) {
+    test = <p>Sorry, data for this season is not available</p>
+  } else {
+    data = getData(year, season)
+    test = <p>Getting data...</p>
+  }
 
   return (
     <div className='container'>
       {test}
     </div>
   )
+}
+
+function NoMatch () {
+  return <big className='container'>404</big>
 }
 
 export default class App extends React.Component {
@@ -75,7 +96,15 @@ export default class App extends React.Component {
       <div>
         <Header/>
         <Bar/>
-        <Container/>
+        <Router>
+          <Switch>
+            <Route exact path='/' render={() => (
+              <Redirect to={`/${y()}/${s()}`}/>
+            )}/>
+            <Route path='/:year/:season' component={Container}/>
+            <Route component={NoMatch}/>
+          </Switch>
+        </Router>
       </div>
     )
   }
