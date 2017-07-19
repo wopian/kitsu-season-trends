@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ago from 's-ago'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import DocumentMeta from 'react-document-meta'
 import { season as s, year as y, sort } from './util'
 import { Header } from './components/Header'
 import { TrendContainer } from './components/TrendContainer'
@@ -56,30 +55,6 @@ function Bar () {
 
 function Container ({ match }) {
   const { year, season } = match.params
-  const meta = {
-    title: `Kitsu ${season.slice(0, 1).toUpperCase()}${season.slice(1)} '${year.slice(2)} Trends`,
-    description: `${season.slice(0, 1).toUpperCase()}${season.slice(1)} ${year} airing anime daily rating trends by Kitsu.io users`,
-    meta: {
-      property: {
-        'og:title': `Kitsu ${season.slice(0, 1).toUpperCase()}${season.slice(1)} '${year.slice(2)} Trends`,
-        'og:type': 'website',
-        'og:url': `https://season.wopian.me/${year}/${season}`,
-        'og:description': `${season.slice(0, 1).toUpperCase()}${season.slice(1)} ${year} airing anime daily rating trends by Kitsu.io users`,
-        'og:image': 'https://season.wopian.me/icons/android-chrome-192x192.png',
-        'og:image:type': 'image/png',
-        'og:image:width': 256,
-        'og:image:height': 256
-      },
-      name: {
-        'twitter:card': 'summary',
-        'twitter:site': '@WOPlAN',
-        'twitter:title': `Kitsu ${season.slice(0, 1).toUpperCase()}${season.slice(1)} '${year.slice(2)} Trends`,
-        'twitter:description': `${season.slice(0, 1).toUpperCase()}${season.slice(1)} ${year} airing anime daily rating trends by Kitsu.io users`,
-        'twitter:image': 'https://season.wopian.me/icons/android-chrome-192x192.png',
-      }
-    }
-  }
-
   let test = {}
 
   if (Object.keys(data).length > 0 && !error) {
@@ -105,7 +80,6 @@ function Container ({ match }) {
 
   return (
     <div className='container'>
-      <DocumentMeta {...meta}/>
       {test}
     </div>
   )
