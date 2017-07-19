@@ -64,7 +64,7 @@ module.exports = {
       inject: true,
       title: 'Season Trends',
       background: 'transparent',
-      persistentCache: false
+      persistentCache: true
     }),
     new CopyWebpackPlugin([
       { from: 'data', to: 'data' }
