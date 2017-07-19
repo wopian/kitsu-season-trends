@@ -1,5 +1,7 @@
 # Season Trends
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/wopian/kitsu-season-trends.svg)](https://greenkeeper.io/)
+
 [![Web]][5]
 [![Uptime]][5]
 [![Travis]][3]
