@@ -22,6 +22,19 @@ git reset upstream/gh-pages
 
 echo "season.wopian.me" > CNAME
 
+# Dummy 404 for front-end routing
+cp index.html 404.html
+
+# Dummy routes for existing data (so the above doesn't kill all SEO)
+FILES="$PWD/../data/"*
+for f in $FILES
+do
+  filename="${$(basename "$f")%.*}"
+  IFS=- read year season <<< "$filename"
+  mkdir -p $year/$season
+  cp index.html $year/$season/index.html
+done
+
 touch .
 
 git add -A .
