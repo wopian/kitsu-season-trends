@@ -23,6 +23,7 @@
     "favicons-webpack-plugin": "~0.0.7",
     "prop-types": "~15.5.10",
     "react": "~15.6.1",
+    "react-document-meta": "^2.1.2",
     "react-dom": "~15.6.1",
     "react-ga": "~2.2.0",
     "react-icons": "~2.2.5",

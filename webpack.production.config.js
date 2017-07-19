@@ -57,7 +57,9 @@ module.exports = {
         js: ['bundle.js'],
       }
     }),
-    new StyleExtHtmlWebpackPlugin(),
+    new StyleExtHtmlWebpackPlugin({
+      minify: true
+    }),
     new FaviconsWebpackPlugin({
       logo: './src/favicon.png',
       prefix: 'icons/',
