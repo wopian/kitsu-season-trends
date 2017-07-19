@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import ago from 's-ago'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import { season as s, year as y, sort } from './util'
@@ -83,6 +84,10 @@ function Container ({ match }) {
       {test}
     </div>
   )
+}
+
+Container.propTypes = {
+  match: PropTypes.object
 }
 
 function NoMatch () {

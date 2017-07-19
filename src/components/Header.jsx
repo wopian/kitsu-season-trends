@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { season, year } from '../util'
 
@@ -12,6 +13,10 @@ function HeaderContent ({ match }) {
       </h2>
     </header>
   )
+}
+
+HeaderContent.propTypes = {
+  match: PropTypes.object
 }
 
 export function Header () {
