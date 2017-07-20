@@ -7,6 +7,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 var StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var { readFileSync } = require('fs');
 
 loaders.push({
   test: /\.scss$/,
@@ -69,7 +70,13 @@ module.exports = {
       persistentCache: true
     }),
     new CopyWebpackPlugin([
-      { from: 'data', to: 'data' }
+      {
+        from: 'data',
+        to: 'data',
+        transform: (content, file) => {
+          return JSON.stringify(JSON.parse(readFileSync(file, 'utf8')))
+        }
+      }
     ])
   ]
 };
