@@ -50,7 +50,7 @@ async function get (model, { offset = 0, id = null, upcoming = false } = {}) {
         anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,posterImage'
       },
       filter: {
-        subtype: 'tv',
+        subtype: 'tv,ona',
         season_year: year(),
         season: season()
       },
@@ -63,7 +63,7 @@ async function get (model, { offset = 0, id = null, upcoming = false } = {}) {
       },
       filter: {
         status: 'current',
-        subtype: 'tv'
+        subtype: 'tv,ona'
       },
       fields: {
         anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,posterImage'
