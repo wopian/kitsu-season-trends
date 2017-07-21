@@ -12,6 +12,11 @@ let data = {}
 let updated = ''
 let error = false
 
+function sortData (by, update = true) {
+  data = sort(data, by)
+  if (update) thisApp.forceUpdate()
+}
+
 function getData (year = y(), season = s()) {
   fetch(`/data/${year}-${season}.json`, {
     method: 'get'
@@ -22,6 +27,7 @@ function getData (year = y(), season = s()) {
   })
   .then(res => {
     ({ data, updated } = res)
+    sortData('mean', false)
     thisApp.forceUpdate()
   })
   .catch(e => {
@@ -29,11 +35,6 @@ function getData (year = y(), season = s()) {
     data = {}
     thisApp.forceUpdate()
   })
-}
-
-function sortData (by, update = true) {
-  data = sort(data, by)
-  if (update) thisApp.forceUpdate()
 }
 
 function Bar () {
@@ -58,7 +59,6 @@ function Container ({ match }) {
   let test = {}
 
   if (Object.keys(data).length > 0 && !error) {
-    sortData('mean', false)
     test = data.map((entry, index) => {
       return <TrendContainer
         key={index}
