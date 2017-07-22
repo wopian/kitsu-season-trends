@@ -27,6 +27,27 @@ button {
   width: 25%;
   display: inline-block;
 
+  .recharts-tooltip-wrapper {
+    position: absolute;
+    top: -2.45rem !important;
+    left: 2.5rem;
+    background: white;
+    width: calc(100% - 2.5rem);
+    transform: none !important;
+  }
+
+  .changes {
+    font-size: .75rem;;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    width: calc(100% - .25rem);
+    svg {
+      padding-right: .25rem;
+      margin-top: -.125rem;
+    }
+  }
+
   a {
     color: #555;
     width: 100%;
@@ -44,18 +65,24 @@ button {
       height: 10rem;
     }
     .title {
-      height: 1.25rem;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      height: 2rem;
+
+      span {
+        margin-bottom: -.62rem;
+        display: inline-block;
+        height: 1.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
+
     .changes {
-      font-size: .75rem;;
-      display: flex;
-      justify-content: space-between;
-      color: black;
+      width: calc(100% + .8rem);
+      margin-top: 0;
+
       svg {
-        padding-right: .25rem;
-        margin-top: -.125rem;
+        padding-right: 0;
+        margin-top: 0;
       }
     }
   }
