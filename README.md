@@ -6,6 +6,40 @@
 
 [Kitsu][0] season trends for the currently airing anime
 
+## Using the Data
+
+All the data is free to use and available in JSON format in `./data`, or online at `season.wopian.me/data/{year}-{season}.json`
+
+The JSON data is aggressively minified to avoid huge dumps for each
+season - saving >300kb/season
+
+Most numbers are converted into Base 65503 (B65503) - a decoder is
+available in `.src/util/base.js`
+
+```js
+{
+  data: {
+    '12': { // ID of the show
+      i: '+', // B65503 show ID
+      s: 'one-piece', // Slug
+      t: 'One Piece', // Canonical title
+      p: '夁', // B65503 cache value of poster image. Constructed with `https://media.kitsu.io/anime/poster_images/{i}/medium.jpg?{p}
+      d: [ // Data array containing each daily update
+        {
+          i: 0, // Index
+          d: 'ż쉉⃍', // B65503 epoch timestamp
+          m: 8.54,  // Mean score
+          r: '㜰', // B65503 usersRated count
+          u: '昨', // B65503 user count
+          f: 'ণ', // B65503 favourites count
+        }
+      ]
+    }
+  },
+  updated: '2017-07-22T15:12:09.391Z' // ISO date of the last cron update
+}
+```
+
 ## Development
 
 ### Requirements

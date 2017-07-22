@@ -1,12 +1,14 @@
 import Kitsu from 'kitsu'
 import low from 'lowdb'
+import { encode } from 'base-65503'
 import stringify from 'json-stringify-pretty-compact'
 import fileAsync from 'lowdb/lib/storages/file-async'
 import wmean from 'weighted-mean'
-import { season, year } from '../src/util'
+import {season, year } from '../src/util'
 
 const kitsu = new Kitsu()
 const now = new Date().toISOString()
+const timestamp = new Date(now).getTime()
 
 // Load season database
 const db = low(`./data/${year()}-${season()}.json`, {
@@ -87,33 +89,43 @@ function calcRatings (frequency) {
   }
 }
 
-async function set (id, data, { mean, usersRated }) {
+async function set (id, { slug, canonicalTitle, posterImage, userCount, favoritesCount }, { mean, usersRated }) {
   try {
     db.set(`data.${id}`, {
-      id,
-      mean: [ mean ],
-      slug: data.slug,
-      usersRated: [ usersRated ],
-      users: [ data.userCount ],
-      title: data.canonicalTitle,
-      poster: data.posterImage.medium,
-      favorites: [ data.favoritesCount ]
+      i: encode(~~id),
+      s: slug,
+      t: canonicalTitle,
+      p: encode(~~posterImage.medium.split`?`[1]),
+      d: [
+        {
+          i: 0,                 // index
+          d: encode(timestamp), // UTC date - Base 65504 encoded
+          m: mean,
+          r: encode(usersRated),
+          u: encode(userCount),
+          f: encode(favoritesCount)
+        }
+      ]
     }).write()
   } catch (err) {
     console.error(err)
   }
 }
 
-async function update (id, data, { mean, usersRated }) {
+async function update (id, { slug, canonicalTitle, posterImage, userCount, favoritesCount }, { mean, usersRated }) {
   try {
     const latest = db.get(`data.${id}`).value()
-    latest.mean.push(mean)
-    latest.slug = data.slug
-    latest.usersRated.push(usersRated)
-    latest.users.push(data.userCount)
-    latest.title = data.canonicalTitle
-    latest.poster = data.posterImage.medium
-    latest.favorites.push(data.favoritesCount)
+    latest.s = slug
+    latest.t = canonicalTitle
+    latest.p = encode(~~posterImage.medium.split`?`[1])
+    latest.d.push({
+      i: latest.d.slice(-1)[0].i + 1 || 0,    // index
+      d: encode(timestamp),                                         // UTC date - Base 65504 encoded
+      m: mean,
+      r: encode(usersRated),
+      u: encode(userCount),
+      f: encode(favoritesCount)
+    })
     db.set(`data.${id}`, latest).write()
   } catch (err) {
     console.error(err)
@@ -162,7 +174,7 @@ async function addUpcoming (offset = 0) {
     })
 
     data.forEach(async anime => {
-      const exists = db.get('data').find({ id: anime.id }).value()
+      const exists = db.get('data').find({ i: encode(~~anime.id) }).value()
       if (typeof exists === 'undefined') {
         await check(anime)
         console.log(`  Added ${anime.canonicalTitle}`)

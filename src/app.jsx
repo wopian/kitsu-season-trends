@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ago from 's-ago'
+import { decode } from 'base-65503'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import { season as s, year as y, sort } from './util'
 import { Header } from './components/Header'
@@ -10,6 +11,7 @@ import '../styles/index.scss'
 let thisApp = {}
 let data = {}
 let updated = ''
+let collectionStartDate = Number.MAX_SAFE_INTEGER
 let error = false
 
 function sortData (by, update = true) {
@@ -27,7 +29,23 @@ function getData (year = y(), season = s()) {
   })
   .then(res => {
     ({ data, updated } = res)
-    sortData('mean', false)
+
+    for (let show in data) {
+      for (let date in data[show].d) {
+        data[show].d[date].d = decode(data[show].d[date].d)
+        data[show].d[date].r = decode(data[show].d[date].r)
+        data[show].d[date].u = decode(data[show].d[date].u)
+        data[show].d[date].f = decode(data[show].d[date].f)
+
+        // Get the oldest date value from data collection
+        if (data[show].d[date].d < collectionStartDate) {
+          collectionStartDate = data[show].d[date].d
+        }
+      }
+    }
+  })
+  .then(() => {
+    sortData('m', false)
     thisApp.forceUpdate()
   })
   .catch(e => {
@@ -43,10 +61,10 @@ function Bar () {
       <div>
         <div className='bar-sorts'>
           <span>Sort By</span>
-          <button onClick={() => sortData('mean')}>Score</button>
-          <button onClick={() => sortData('users')}>Users</button>
-          <button onClick={() => sortData('usersRated')}>Percent Rated</button>
-          <button onClick={() => sortData('favorites')}>Favorites</button>
+          <button onClick={() => sortData('m')}>Score</button>
+          <button onClick={() => sortData('u')}>Users</button>
+          <button onClick={() => sortData('r')}>Percent Rated</button>
+          <button onClick={() => sortData('f')}>Favorites</button>
         </div>
         <span className='info'>All airing shows this season, updated {updated ? ago(new Date(updated)) : ''}</span>
       </div>
@@ -62,16 +80,16 @@ function Container ({ match }) {
     test = data.map((entry, index) => {
       return <TrendContainer
         key={index}
-        slug={entry.slug}
-        poster={entry.poster}
-        title={entry.title}
-        mean={entry.mean}
-        users={entry.users}
-        usersRated={entry.usersRated}
-        favorites={entry.favorites}
+        id={entry.i}
+        slug={entry.s}
+        poster={entry.p}
+        title={entry.t}
+        data={entry.d}
+        start={collectionStartDate}
       />
     })
   } else if (error) {
+    console.log(error)
     test = <p>Sorry, data for this season is not available</p>
   } else {
     data = getData(year, season)

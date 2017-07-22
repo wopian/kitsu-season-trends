@@ -21,26 +21,16 @@ button {
 
 .container {
   @extend %container;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: flex-start;
-  align-items: flex-start;
 }
 
 .trend {
-  order: 0;
-  flex: .8 1 auto;
-  align-self: auto;
-  display: flex;
-  height: 10rem;
-  position: relative;
+  width: 25%;
+  display: inline-block;
 
   a {
-    position: absolute;
     color: #555;
     width: 100%;
+    height: 1rem;
     z-index: 100;
     &:hover {
       color: orange;
@@ -51,6 +41,7 @@ button {
       bottom: .125rem;
       left: .5rem;
       width: calc(100% - 3.75rem);
+      height: 10rem;
     }
     .title {
       height: 1.25rem;
