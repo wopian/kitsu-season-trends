@@ -33,15 +33,15 @@ export class TrendTooltip extends React.Component {
               <span> {mean.value.toFixed(2)}</span>
             </span>
             <span>
-              <MdGroup style={{color: '#b9b9ff'}}/> {/* Users */}
+              <MdGroup style={{color: '#8686CC'}}/> {/* Users */}
               <span> {users.value}</span>
             </span>
             <span>
-              <MdThumbsUpDown style={{color: '#b9ffb9'}}/> {/* Users Rated */}
+              <MdThumbsUpDown style={{color: '#86CC86'}}/> {/* Users Rated */}
               <span> {usersRated.value}</span>
             </span>
             <span>
-              <MdFavorite style={{color: '#ffb9b9'}}/> {/* Favourites */}
+              <MdFavorite style={{color: '#CC8686'}}/> {/* Favourites */}
               <span> {favourites.value}</span>
             </span>
           </div>
@@ -56,5 +56,5 @@ export class TrendTooltip extends React.Component {
 TrendTooltip.propTypes = {
   active: PropTypes.bool,
   payload: PropTypes.array,
-  label: PropTypes.string
+  label: PropTypes.number
 }

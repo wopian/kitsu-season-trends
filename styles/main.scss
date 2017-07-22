@@ -26,117 +26,69 @@ button {
 .trend {
   width: 25%;
   display: inline-block;
+  position: relative;
+
+  .recharts-responsive-container {
+    margin-top: 2rem;
+  }
 
   .recharts-tooltip-wrapper {
     position: absolute;
-    top: -2.45rem !important;
-    left: 2.5rem;
-    background: white;
-    width: calc(100% - 2.5rem);
     transform: none !important;
+    top: -2.15rem !important;
+    left: 2.8rem;
+    background: white;
+    width: calc(100% - 3rem);
   }
 
   .changes {
-    font-size: .75rem;;
+    font-size: .75rem;
+    margin-top: -.25rem;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    color: black;
-    width: calc(100% - .25rem);
+    > span {
+      display: inline-block;
+    }
     svg {
-      padding-right: .25rem;
-      margin-top: -.125rem;
+      margin-top: -.05rem;
     }
   }
 
   a {
-    color: #555;
-    width: 100%;
-    height: 1rem;
-    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: $primary;
+    display: flex;
+    text-decoration: none;
     &:hover {
       color: orange;
-    }
-    > div {
-      display: inline-block;
-      position: relative;
-      bottom: .125rem;
-      left: .5rem;
-      width: calc(100% - 3.75rem);
-      height: 10rem;
+      .changes {
+        color: $primary
+      }
     }
     .title {
-      height: 2rem;
-
-      span {
-        margin-bottom: -.62rem;
-        display: inline-block;
-        height: 1.5rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
+      display: inline-block;
+      padding-left: .5rem;
+      padding-right: .25rem;
+      margin-top: -.15rem;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .changes {
-      width: calc(100% + .8rem);
-      margin-top: 0;
-
       svg {
-        padding-right: 0;
-        margin-top: 0;
       }
     }
   }
 }
 
-.overlay {
-  position: absolute;
-  background: $white;
-  top: 1rem;
-  right: 0;
-  bottom: 1rem;
-  left: 0;
-  pointer-events: none;
-  text-align: center;
-  opacity: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-content: center;
-  align-items: center;
-  transition: opacity .1s ease-in-out;
-
-  span {
-    display: block;
-  }
-
-  div {
-    &:nth-of-type(2) {
-      color: rgba(#0000ff, .7);
-    }
-    &:nth-of-type(3) {
-      color: rgba(#00aa00, .7);
-    }
-    &:nth-of-type(4) {
-      color: rgba(#ff0000, .7);
-    }
-  }
-}
-
-.trend-graph {
-  width: 100%;
-  height: 100%;
-  &:not(:first-of-type) {
-    position: absolute;
-  }
-}
-
-.trend:hover > * ~ .overlay {
-  opacity: 1;
-  transition: opacity .1s ease-in-out;
-}
-
 img {
+  padding-left: .25rem;
   height: 2rem;
   width: 2rem;
   border-radius: 999rem;
