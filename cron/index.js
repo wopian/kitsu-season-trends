@@ -19,7 +19,7 @@ const db = low(`./data/${year()}-${season()}.json`, {
 })
 
 // Set defaults if new season
-db.defaults({ data: {}, updated: '' }).write()
+db.defaults({ data: {}, meta: {}, updated: '' }).write()
 
 // Array of all shows that have started airing. Airing shows will be
 // removed, leaving only shows that have finished - which will be
@@ -168,10 +168,13 @@ async function getAiring (offset = 0) {
 // Updates shows that are airing this season, but have not yet aired
 async function addUpcoming (offset = 0) {
   try {
-    const { data, links } = await get('anime', {
+    const { data, meta, links } = await get('anime', {
       offset,
       upcoming: true
     })
+
+    // Update current season anime count
+    db.set('meta.current', meta.count).write()
 
     data.forEach(async anime => {
       const exists = db.get('data').find({ i: encode(~~anime.id) }).value()
@@ -193,7 +196,6 @@ function getAired () {
   try {
     aired.forEach(async id => {
       const { data } = await get('anime', { id })
-
       // Check if the show ended within this season
       // If not, it was an erroneous entry and shouldn't be in the season's data
       // at all - thus remove it entirely
@@ -217,7 +219,10 @@ function getAired () {
     else {
       console.log('\nUpdating existing & upcoming anime:\n')
       await getAired()
-      addUpcoming()
+      await addUpcoming()
+
+      // Update total anime
+      db.set('meta.total', db.get('data').size().value()).write()
     }
   } catch (err) {
     console.error(err)
