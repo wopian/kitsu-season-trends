@@ -1,6 +1,5 @@
 import React from 'react'
 import { ResponsiveContainer, LineChart, Line, Tooltip, XAxis, YAxis } from 'recharts'
-import { decode } from 'base-65503'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { TrendTooltip } from './TrendTooltip'
@@ -23,7 +22,7 @@ export function TrendContainer ({ start, id, slug, poster, title, data }) {
   return (
     <div className='trend'>
       <a href={"//kitsu.io/anime/" + slug}>
-        <img src={`https://media.kitsu.io/anime/poster_images/${decode(id)}/medium.jpg?${decode(poster)}`}/>
+        <img src={`https://media.kitsu.io/anime/poster_images/${id}/medium.jpg?${poster}`}/>
         <div className='title'>
           <span>{title}</span>
           <div className='changes'>
@@ -143,10 +142,10 @@ export function TrendContainer ({ start, id, slug, poster, title, data }) {
 }
 
 TrendContainer.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.number,
   title: PropTypes.string,
   slug: PropTypes.string,
-  poster: PropTypes.string,
+  poster: PropTypes.number,
   data: PropTypes.array,
   start: PropTypes.number
 }

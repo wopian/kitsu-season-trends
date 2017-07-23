@@ -40,6 +40,9 @@ function getData (year = y(), season = s()) {
     ({ data, meta, updated } = res)
 
     for (let show in data) {
+      data[show].a = typeof data[show].a === 'number' ? data[show].a : decode(data[show].a)
+      data[show].i = decode(data[show].i)
+      data[show].p = decode(data[show].p)
       for (let date in data[show].d) {
         data[show].d[date].d = decode(data[show].d[date].d)
         data[show].d[date].r = decode(data[show].d[date].r)
