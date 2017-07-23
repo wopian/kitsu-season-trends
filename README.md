@@ -10,11 +10,9 @@
 
 All the data is free to use and available in JSON format in `./data`, or online at `season.wopian.me/data/{year}-{season}.json`
 
-The JSON data is aggressively minified to avoid huge dumps for each
-season - saving >300kb/season
+The JSON data is aggressively minified to avoid huge dumps for each season - saving >300kb/season
 
-Most numbers are converted into Base 65503 (B65503) - a decoder is
-available in `.src/util/base.js`
+Most numbers are encoded in [Base 65503] (B65503)
 
 ```js
 {
@@ -89,3 +87,4 @@ All code released under the [MIT license][4]
 [travis]:https://img.shields.io/travis/wopian/kitsu-season-trends/master.svg?style=flat-square&label=linux
 [web]:https://img.shields.io/website-up-down-green-red/https/season.wopian.me.svg?style=flat-square&label=web
 [uptime]:https://img.shields.io/uptimerobot/ratio/7/m779133972-4da0d8f104f1d6ffaf921257.svg?style=flat-square
+[Base 65503]:https://yarn.fyi/base-65503
