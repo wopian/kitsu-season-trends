@@ -61,14 +61,16 @@ module.exports = {
     new StyleExtHtmlWebpackPlugin({
       minify: true
     }),
+    /* Does not support Webpack 3 yet
     new FaviconsWebpackPlugin({
       logo: './src/favicon.png',
       prefix: 'icons/',
       inject: true,
-      title: 'Season Trends',
+      title: 'Kitsu Season Trends',
       background: 'transparent',
       persistentCache: true
     }),
+    */
     new CopyWebpackPlugin([
       {
         from: 'data',
