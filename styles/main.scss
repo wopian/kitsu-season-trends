@@ -226,13 +226,14 @@ h2 {
   align-content: stretch;
   align-items: center;
 
-  *:first-child {
+  > div:first-child {
     flex: 0 0 auto;
   }
 
-  *:last-child {
+  > p:last-child {
     flex: 1 0 auto;
     text-align: center;
+    text-indent: -12rem;
   }
 }
 
