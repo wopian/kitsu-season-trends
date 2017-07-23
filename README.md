@@ -22,6 +22,8 @@ Most numbers are encoded in [Base 65503] (B65503)
       s: 'one-piece', // Slug
       t: 'One Piece', // Canonical title
       p: '夁', // B65503 cache value of poster image. Constructed with `https://media.kitsu.io/anime/poster_images/{i}/medium.jpg?{p}
+      u: 'tv', // Subtype
+      a: 'Ž븯ゑ', // B65503 start date (epoch timestamp)
       d: [ // Data array containing each daily update
         {
           i: 0, // Index
