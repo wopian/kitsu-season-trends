@@ -2,17 +2,26 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ago from 's-ago'
 import { decode } from 'base-65503'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import { season as s, year as y, sort } from './util'
+import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom'
+import { season as s, year as y, prevSeason, nextSeason, sort } from './util'
 import { Header } from './components/Header'
 import { TrendContainer } from './components/TrendContainer'
+import { Stats } from './components/Stats'
 import '../styles/index.scss'
 
 let thisApp = {}
 let data = {}
+let meta = {}
 let updated = ''
 let collectionStartDate = Number.MAX_SAFE_INTEGER
 let error = false
+
+function reset () {
+  data = {}
+  error = false
+  collectionStartDate = Number.MAX_SAFE_INTEGER
+  thisApp.forceUpdate()
+}
 
 function sortData (by, update = true) {
   data = sort(data, by)
@@ -28,7 +37,7 @@ function getData (year = y(), season = s()) {
     else throw new Error(404)
   })
   .then(res => {
-    ({ data, updated } = res)
+    ({ data, meta, updated } = res)
 
     for (let show in data) {
       for (let date in data[show].d) {
@@ -66,7 +75,7 @@ function Bar () {
           <button onClick={() => sortData('r')}>Percent Rated</button>
           <button onClick={() => sortData('f')}>Favorites</button>
         </div>
-        <span className='info'>All airing shows this season, updated {updated ? ago(new Date(updated)) : ''}</span>
+        <span className='info'>All airing shows this season, updated {updated ? ago(new Date(updated)) : 'daily'}</span>
       </div>
     </div>
   )
@@ -75,6 +84,16 @@ function Bar () {
 function Container ({ match }) {
   const { year, season } = match.params
   let test = {}
+
+  const next = nextSeason({
+    s: season || s(),
+    y: ~~(year || y())
+  })
+
+  const prev = prevSeason({
+    s: season || s(),
+    y: ~~(year || y())
+  })
 
   if (Object.keys(data).length > 0 && !error) {
     test = data.map((entry, index) => {
@@ -98,7 +117,12 @@ function Container ({ match }) {
 
   return (
     <div className='container'>
-      {test}
+      <Link className='link prev' to={`/${prev.y}/${prev.s}`} onClick={reset}>Last season</Link>
+      <Link className='link next' to={`/${next.y}/${next.s}`} onClick={reset}>Next season</Link>
+      <Stats data={data} meta={meta}/>
+      <div className='trend-container'>
+        {test}
+      </div>
     </div>
   )
 }
@@ -112,8 +136,9 @@ function NoMatch () {
 }
 
 export default class App extends React.Component {
-  render() {
+  render () {
     thisApp = this
+
     return (
       <div>
         <Header/>

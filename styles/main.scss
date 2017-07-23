@@ -1,5 +1,6 @@
 $primary: #332532;
 $white: #fefefe;
+$accent: #fd755c;
 
 body {
   background: $white;
@@ -24,9 +25,8 @@ button {
 }
 
 .trend {
-  width: 25%;
-  display: inline-block;
   position: relative;
+  width: 300px;
 
   .recharts-responsive-container {
     margin-top: 2rem;
@@ -64,7 +64,7 @@ button {
     display: flex;
     text-decoration: none;
     &:hover {
-      color: orange;
+      color: $accent;
       .changes {
         color: $primary
       }
@@ -78,11 +78,6 @@ button {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-
-    .changes {
-      svg {
-      }
     }
   }
 }
@@ -130,7 +125,6 @@ h2 {
   height: 3rem;
   background: darken($white, 2);
   border-bottom: 1px solid darken($white, 5);
-  margin-bottom: 2.75rem;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -196,4 +190,54 @@ h2 {
 
 .neg {
   color: red;
+}
+
+.link {
+  position: absolute;
+  top: 8vw;
+  text-align: center;
+  color: lighten($primary, 40);
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 80px;
+
+  @media screen and (max-width: 770px) {
+    top: 15vw;
+  }
+
+  &:hover {
+    color: $accent;
+  }
+
+  &.prev {
+    left: 1rem;
+    transform: rotate(-90deg);
+  }
+
+  &.next {
+    right: 1rem;
+    transform: rotate(90deg);
+  }
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: center;
+
+  *:first-child {
+    flex: 0 0 auto;
+  }
+
+  *:last-child {
+    flex: 1 0 auto;
+    text-align: center;
+  }
+}
+
+.trend-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }

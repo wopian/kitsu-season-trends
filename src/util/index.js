@@ -25,6 +25,32 @@ export function season () {
   }
 }
 
+export function prevSeason ({ s, y }) {
+  switch (s) {
+    case 'winter':
+      return { s: 'autumn', y: --y }
+    case 'spring':
+      return { s: 'winter', y }
+    case 'summer':
+      return { s: 'spring', y }
+    case 'autumn':
+      return { s: 'summer', y }
+  }
+}
+
+export function nextSeason ({ s, y }) {
+  switch (s) {
+    case 'winter':
+      return { s: 'spring', y }
+    case 'spring':
+      return { s: 'summer', y }
+    case 'summer':
+      return { s: 'autumn', y }
+    case 'autumn':
+      return { s: 'winter', y: ++y }
+  }
+}
+
 export function sort (data, by) {
   return Object.values(data).sort((A, B) => {
     let a, b
