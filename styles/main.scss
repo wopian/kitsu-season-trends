@@ -36,9 +36,9 @@ button {
     position: absolute;
     transform: none !important;
     top: -2.15rem !important;
-    left: 2.8rem;
+    left: 2.75rem;
     background: white;
-    width: calc(100% - 3.1rem);
+    width: calc(100% - 3rem);
   }
 
   .changes {
@@ -86,6 +86,7 @@ img {
   padding-left: .25rem;
   height: 2rem;
   width: 2rem;
+  min-width: 2rem;
   border-radius: 999rem;
   object-fit: cover;
 }
