@@ -12,11 +12,12 @@ function PieLabel ({ cx, cy, midAngle, innerRadius, outerRadius, value, percent,
   const x = cx + radius * Math.cos(-midAngle * RADIAN)
   const y = cy + radius * Math.sin(-midAngle * RADIAN)
 
-  return (
+  if (value > 0) return (
     <text x={x} y={y} fill='white' textAnchor={x > cx ? 'start' : 'end'} dominantBaseline='central'>
       {value}
     </text>
   )
+  else return null
 }
 
 function StatsStatus ({ current, total }) {
