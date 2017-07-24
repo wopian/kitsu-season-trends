@@ -26,28 +26,28 @@ export function TrendContainer ({ start, id, slug, poster, title, data }) {
         <div className='title'>
           <span>{title}</span>
           <div className='changes'>
-            <span>
+            <span title='Score'>
               <MdStar/> {/* Mean */}
               <span className={classnames({
                 pos: today.m - yesterday.m > 0,
                 neg: today.m - yesterday.m < 0
               })}>{posOrNeg((today.m - yesterday.m).toFixed(2))}</span>
             </span>
-            <span>
+            <span title='Users'>
               <MdGroup style={{color: '#8686CC'}}/> {/* Users */}
               <span className={classnames({
                 pos: today.u - yesterday.u > 0,
                 neg: today.u - yesterday.u < 0
               })}>{posOrNeg(today.u - yesterday.u)}</span>
             </span>
-            <span>
+            <span title='Users Rated'>
               <MdThumbsUpDown style={{color: '#86CC86'}}/> {/* Users Rated */}
               <span className={classnames({
                 pos: (Number.isFinite((today.r - yesterday.r) / today.u) ? (today.r - yesterday.r) / today.u : 0).toFixed(2) > 0,
                 neg: (Number.isFinite((today.r - yesterday.r) / today.u) ? (today.r - yesterday.r) / today.u : 0).toFixed(2) < 0
               })}>{posOrNeg((Number.isFinite((today.r - yesterday.r) / today.u) ? (today.r - yesterday.r) / today.u : 0).toFixed(2))}%</span>
             </span>
-            <span>
+            <span title='Favourites'>
               <MdFavorite style={{color: '#CC8686'}}/> {/* Favourites */}
               <span className={classnames({
                 pos: today.f - yesterday.f > 0,
