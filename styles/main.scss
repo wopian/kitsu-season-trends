@@ -225,7 +225,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-content: stretch;
-  align-items: center;
+  align-items: flex-start;
 
   > div:first-child {
     flex: 0 0 auto;

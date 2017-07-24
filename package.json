@@ -19,8 +19,10 @@
   "license": "MIT",
   "homepage": "https://github.com/wopian/kitsu-season-trends#readme",
   "dependencies": {
-    "base-65503": "^1.0.5",
+    "base-65503": "~1.0.5",
     "classnames": "~2.2.5",
+    "lodash": "~4.17.4",
+    "moment": "~2.18.1",
     "prop-types": "~15.5.10",
     "react": "~15.6.1",
     "react-dom": "~15.6.1",
@@ -28,8 +30,7 @@
     "react-icons": "~2.2.5",
     "react-router-dom": "~4.1.2",
     "recharts": "~1.0.0-alpha.2",
-    "s-ago": "~1.1.0",
-    "snyk": "^1.36.2"
+    "snyk": "~1.36.2"
   },
   "devDependencies": {
     "babel-cli": "~6.24.1",

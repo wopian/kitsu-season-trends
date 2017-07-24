@@ -40,7 +40,7 @@ async function get (model, { offset = 0, id = null, upcoming = false } = {}) {
   try {
     if (id) return kitsu.get(`${model}/${id}`, {
       fields: {
-        anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,posterImage,endDate,startDate,subtype'
+        anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,posterImage,endDate,subtype'
       }
     })
     else if (upcoming) return kitsu.get(model, {
@@ -49,7 +49,7 @@ async function get (model, { offset = 0, id = null, upcoming = false } = {}) {
         limit: 20
       },
       fields: {
-        anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,posterImage,startDate,subtype'
+        anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,posterImage,subtype'
       },
       filter: {
         subtype: 'tv,ona',
@@ -68,7 +68,7 @@ async function get (model, { offset = 0, id = null, upcoming = false } = {}) {
         subtype: 'tv,ona'
       },
       fields: {
-        anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,posterImage,startDate,subtype'
+        anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,posterImage,subtype'
       },
       sort: '-averageRating,-userCount'
     })
@@ -89,16 +89,14 @@ function calcRatings (frequency) {
   }
 }
 
-async function set (id, { slug, canonicalTitle, posterImage, userCount, favoritesCount, startDate, subtype }, { mean, usersRated }) {
+async function set (id, { slug, canonicalTitle, posterImage, userCount, favoritesCount, subtype }, { mean, usersRated }) {
   try {
-    const startTime = new Date(startDate).getTime()
     db.set(`data.${id}`, {
       i: encode(~~id),
       s: slug,
       t: canonicalTitle,
       p: encode(~~posterImage.medium.split`?`[1]),
       u: subtype,
-      a: startTime >= 0 ? encode(startTime) : startTime,
       d: [
         {
           i: 0,                 // index
@@ -115,15 +113,13 @@ async function set (id, { slug, canonicalTitle, posterImage, userCount, favorite
   }
 }
 
-async function update (id, { slug, canonicalTitle, posterImage, userCount, favoritesCount, startDate, subtype }, { mean, usersRated }) {
+async function update (id, { slug, canonicalTitle, posterImage, userCount, favoritesCount, subtype }, { mean, usersRated }) {
   try {
-    const startTime = new Date(startDate).getTime()
     const latest = db.get(`data.${id}`).value()
     latest.s = slug
     latest.t = canonicalTitle
     latest.p = encode(~~posterImage.medium.split`?`[1])
     latest.u = subtype
-    latest.a = startTime >= 0 ? encode(startTime) : startTime
     latest.d.push({
       i: latest.d.slice(-1)[0].i + 1 || 0, // index
       d: encode(timestamp),                // UTC date - Base 65504 encoded

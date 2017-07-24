@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ago from 's-ago'
+import moment from 'moment'
 import { decode } from 'base-65503'
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom'
 import { season as s, year as y, prevSeason, nextSeason, sort } from './util'
@@ -10,14 +10,15 @@ import { Stats } from './components/Stats'
 import '../styles/index.scss'
 
 let thisApp = {}
-let data = {}
+let data = []
 let meta = {}
 let updated = ''
 let collectionStartDate = Number.MAX_SAFE_INTEGER
 let error = false
 
 function reset () {
-  data = {}
+  data = []
+  meta = {}
   error = false
   collectionStartDate = Number.MAX_SAFE_INTEGER
   thisApp.forceUpdate()
@@ -40,7 +41,6 @@ function getData (year = y(), season = s()) {
     ({ data, meta, updated } = res)
 
     for (let show in data) {
-      data[show].a = typeof data[show].a === 'number' ? data[show].a : decode(data[show].a)
       data[show].i = decode(data[show].i)
       data[show].p = decode(data[show].p)
       for (let date in data[show].d) {
@@ -78,7 +78,7 @@ function Bar () {
           <button onClick={() => sortData('r')}>Percent Rated</button>
           <button onClick={() => sortData('f')}>Favorites</button>
         </div>
-        <span className='info'>All airing shows this season, updated {updated ? ago(new Date(updated)) : 'daily'}</span>
+        <span className='info'>All airing shows this season, updated {updated ? moment(updated).fromNow() : 'daily'}</span>
       </div>
     </div>
   )
