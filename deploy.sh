@@ -20,7 +20,7 @@ git remote add upstream "https://$GH_TOKEN@github.com/wopian/kitsu-season-trends
 git fetch upstream
 git reset upstream/gh-pages
 
-echo "season.wopian.me" > CNAME
+echo "season.moe" > CNAME
 
 # Dummy 404 for front-end routing
 cp index.html 404.html
