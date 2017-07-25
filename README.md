@@ -83,7 +83,7 @@ All code released under the [MIT license][4]
 [2]:https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request
 [3]:https://travis-ci.org/wopian/kitsu-season-trends
 [4]:https://github.com/wopian/kitsu-season-trends/blob/master/LICENSE.md
-[5]:https://season.wopian.me
+[5]:https://season.moe
 
 [travis]:https://img.shields.io/travis/wopian/kitsu-season-trends/master.svg?style=flat-square&label=linux
 [web]:https://img.shields.io/website-up-down-green-red/https/season.wopian.me.svg?style=flat-square&label=web
