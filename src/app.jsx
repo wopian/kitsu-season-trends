@@ -56,7 +56,7 @@ function getData (year = y(), season = s()) {
   })
   .catch(e => {
     error = e.message
-    data = {}
+    data = []
     thisApp.forceUpdate()
   })
 }
