@@ -24,10 +24,10 @@ The JSON data is aggressively minified, as each season becomes a fairly large da
         {
           i: 0, // Index
           d: 416359, // Hours since epoch (x3600000 to get datetime)
-          m: 8.54,  // Mean score
-          r: 14030, // Users Rated
-          u: 25518, // Users
-          f: 2387, // Users Favourited
+          m: 8.54,  // Mean score (omitted if 0)
+          r: 14030, // Users Rated (omitted if 0)
+          u: 25518, // Users (omitted if 0)
+          f: 2387, // Users Favourited (omitted if 0)
         }
       ]
     }

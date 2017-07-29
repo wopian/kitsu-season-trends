@@ -15,9 +15,11 @@ readdir(dir, (err, files) => {
       const { data, meta, updated } = JSON.parse(DATA)
 
       Object.keys(data).forEach(el => {
-        // data[el].u = data[el].u === 'TV' ? 0 : 1
-        delete data[el].p
         data[el].d.forEach(array => {
+          if (array.m === 0) delete array.m
+          if (array.r === 0) delete array.r
+          if (array.u === 0) delete array.u
+          if (array.f === 0) delete array.f
         })
       })
 

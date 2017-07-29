@@ -39,7 +39,7 @@ async function get (model, { offset = 0, id = null, upcoming = false } = {}) {
   try {
     if (id) return kitsu.get(`${model}/${id}`, {
       fields: {
-        anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,posterImage,endDate,subtype'
+        anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,endDate,subtype'
       }
     })
     else if (upcoming) return kitsu.get(model, {
@@ -48,7 +48,7 @@ async function get (model, { offset = 0, id = null, upcoming = false } = {}) {
         limit: 20
       },
       fields: {
-        anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,posterImage,subtype'
+        anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,subtype'
       },
       filter: {
         subtype: 'tv,ona',
@@ -67,7 +67,7 @@ async function get (model, { offset = 0, id = null, upcoming = false } = {}) {
         subtype: 'tv,ona'
       },
       fields: {
-        anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,posterImage,subtype'
+        anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,subtype'
       },
       sort: '-averageRating,-userCount'
     })
@@ -88,43 +88,45 @@ function calcRatings (frequency) {
   }
 }
 
-async function set (id, { slug, canonicalTitle, posterImage, userCount, favoritesCount, subtype }, { mean, usersRated }) {
+async function set (id, { slug, canonicalTitle, userCount, favoritesCount, subtype }, { mean, usersRated }) {
   try {
     db.set(`data.${id}`, {
       i: ~~id,
       s: slug,
       t: canonicalTitle,
       u: subtype === 'TV' ? 0 : 1,
-      d: [
+      d: [Object.assign(
         {
-          i: 0,                   // index
-          d: timestamp / 3600000, // Hours since epoch
-          m: mean,
-          r: ~~usersRated,
-          u: ~~userCount,
-          f: ~~favoritesCount
-        }
-      ]
+          i: 0, // index
+          d: (timestamp / 3600000).toFixed(0) // Hours since epoch
+        },
+        mean === 0 ? '' : { m: mean },
+        ~~usersRated === 0 ? '' : { r: ~~usersRated },
+        ~~userCount === 0 ? '' : { u: ~~userCount },
+        ~~favoritesCount === 0 ? '' : { f: ~~favoritesCount }
+      )]
     }).write()
   } catch (err) {
     console.error(err)
   }
 }
 
-async function update (id, { slug, canonicalTitle, posterImage, userCount, favoritesCount, subtype }, { mean, usersRated }) {
+async function update (id, { slug, canonicalTitle, userCount, favoritesCount, subtype }, { mean, usersRated }) {
   try {
     const latest = db.get(`data.${id}`).value()
     latest.s = slug
     latest.t = canonicalTitle
     latest.u = subtype === 'TV' ? 0 : 1
-    latest.d.push({
-      i: latest.d.slice(-1)[0].i + 1 || 0, // index
-      d: timestamp / 3600000,              // Hours since epoch
-      m: mean,
-      r: ~~usersRated,
-      u: ~~userCount,
-      f: ~~favoritesCount
-    })
+    latest.d.push(Object.assign(
+      {
+        i: latest.d.slice(-1)[0].i + 1 || 0, // index
+        d: (timestamp / 3600000).toFixed(0) // Hours since epoch
+      },
+      mean === 0 ? '' : { m: mean },
+      ~~usersRated === 0 ? '' : { r: ~~usersRated },
+      ~~userCount === 0 ? '' : { u: ~~userCount },
+      ~~favoritesCount === 0 ? '' : { f: ~~favoritesCount }
+    ))
     db.set(`data.${id}`, latest).write()
   } catch (err) {
     console.error(err)
