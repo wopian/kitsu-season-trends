@@ -6,7 +6,7 @@ import { AreaChart, Area, YAxis, XAxis, Tooltip, PieChart, Pie, Cell, Legend } f
 
 const COLOURS = [ '#FD755C', '#332532' ]
 
-function PieLabel ({ cx, cy, midAngle, innerRadius, outerRadius, value, percent, index }) {
+function PieLabel ({ cx, cy, midAngle, innerRadius, outerRadius, value }) {
   const RADIAN = Math.PI / 180
   const radius = innerRadius + (outerRadius - innerRadius) * .4
   const x = cx + radius * Math.cos(-midAngle * RADIAN)
@@ -18,6 +18,15 @@ function PieLabel ({ cx, cy, midAngle, innerRadius, outerRadius, value, percent,
     </text>
   )
   else return null
+}
+
+PieLabel.propTypes = {
+  cx: PropTypes.number,
+  cy: PropTypes.number,
+  midAngle: PropTypes.number,
+  innerRadius: PropTypes.number,
+  outerRadius: PropTypes.number,
+  value: PropTypes.any
 }
 
 function StatsStatus ({ current, total }) {

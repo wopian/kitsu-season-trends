@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
-import { decode } from 'base-65503'
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom'
 import { season as s, year as y, prevSeason, nextSeason, sort } from './util'
 import { Header } from './components/Header'
@@ -41,14 +40,9 @@ function getData (year = y(), season = s()) {
     ({ data, meta, updated } = res)
 
     for (let show in data) {
-      data[show].i = decode(data[show].i)
-      data[show].p = decode(data[show].p)
       for (let date in data[show].d) {
-        data[show].d[date].d = decode(data[show].d[date].d)
-        data[show].d[date].r = decode(data[show].d[date].r)
-        data[show].d[date].u = decode(data[show].d[date].u)
-        data[show].d[date].f = decode(data[show].d[date].f)
-
+        // Convert hours since epoch into milliseconds
+        data[show].d[date].d = data[show].d[date].d * 3600000
         // Get the oldest date value from data collection
         if (data[show].d[date].d < collectionStartDate) {
           collectionStartDate = data[show].d[date].d

@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
 import MdGroup from 'react-icons/lib/md/group'
 import MdFavorite from 'react-icons/lib/md/favorite'
 import MdStar from 'react-icons/lib/md/star'
