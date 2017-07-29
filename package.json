@@ -8,8 +8,7 @@
     "lint": "eslint --ext js --ext jsx src || exit 0",
     "dev": "webpack-dashboard -- webpack-dev-server --progress --profile --colors",
     "cron": "babel-node cron",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "snyk-protect": "snyk protect"
   },
   "repository": {
     "type": "git",
@@ -19,7 +18,6 @@
   "license": "MIT",
   "homepage": "https://github.com/wopian/kitsu-season-trends#readme",
   "dependencies": {
-    "base-65503": "~1.0.5",
     "classnames": "~2.2.5",
     "lodash": "~4.17.4",
     "moment": "~2.18.1",

@@ -1,6 +1,5 @@
 import Kitsu from 'kitsu'
 import low from 'lowdb'
-import { encode } from 'base-65503'
 import stringify from 'json-stringify-pretty-compact'
 import fileAsync from 'lowdb/lib/storages/file-async'
 import wmean from 'weighted-mean'
@@ -92,19 +91,19 @@ function calcRatings (frequency) {
 async function set (id, { slug, canonicalTitle, posterImage, userCount, favoritesCount, subtype }, { mean, usersRated }) {
   try {
     db.set(`data.${id}`, {
-      i: encode(~~id),
+      i: ~~id,
       s: slug,
       t: canonicalTitle,
-      p: encode(~~posterImage.medium.split`?`[1]),
+      p: ~~posterImage.medium.split`?`[1],
       u: subtype,
       d: [
         {
-          i: 0,                 // index
-          d: encode(timestamp), // UTC date - Base 65504 encoded
+          i: 0,                   // index
+          d: timestamp / 3600000, // Hours since epoch
           m: mean,
-          r: encode(usersRated),
-          u: encode(userCount),
-          f: encode(favoritesCount)
+          r: ~~usersRated,
+          u: ~~userCount,
+          f: ~~favoritesCount
         }
       ]
     }).write()
@@ -118,15 +117,15 @@ async function update (id, { slug, canonicalTitle, posterImage, userCount, favor
     const latest = db.get(`data.${id}`).value()
     latest.s = slug
     latest.t = canonicalTitle
-    latest.p = encode(~~posterImage.medium.split`?`[1])
+    latest.p = ~~posterImage.medium.split`?`[1]
     latest.u = subtype
     latest.d.push({
       i: latest.d.slice(-1)[0].i + 1 || 0, // index
-      d: encode(timestamp),                // UTC date - Base 65504 encoded
+      d: timestamp / 3600000,              // Hours since epoch
       m: mean,
-      r: encode(usersRated),
-      u: encode(userCount),
-      f: encode(favoritesCount)
+      r: ~~usersRated,
+      u: ~~userCount,
+      f: ~~favoritesCount
     })
     db.set(`data.${id}`, latest).write()
   } catch (err) {
@@ -179,7 +178,7 @@ async function addUpcoming (offset = 0) {
     db.set('meta.current', meta.count).write()
 
     data.forEach(async anime => {
-      const exists = db.get('data').find({ i: encode(~~anime.id) }).value()
+      const exists = db.get('data').find({ i: ~~anime.id }).value()
       if (typeof exists === 'undefined') {
         await check(anime)
         console.log(`  Added ${anime.canonicalTitle}`)
