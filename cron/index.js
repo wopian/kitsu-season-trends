@@ -98,7 +98,7 @@ async function set (id, { slug, canonicalTitle, userCount, favoritesCount, subty
       d: [Object.assign(
         {
           i: 0, // index
-          d: (timestamp / 3600000).toFixed(0) // Hours since epoch
+          d: ~~(timestamp / 3600000).toFixed(0) // Hours since epoch
         },
         mean === 0 ? '' : { m: mean },
         ~~usersRated === 0 ? '' : { r: ~~usersRated },
@@ -120,7 +120,7 @@ async function update (id, { slug, canonicalTitle, userCount, favoritesCount, su
     latest.d.push(Object.assign(
       {
         i: latest.d.slice(-1)[0].i + 1 || 0, // index
-        d: (timestamp / 3600000).toFixed(0) // Hours since epoch
+        d: ~~(timestamp / 3600000).toFixed(0) // Hours since epoch
       },
       mean === 0 ? '' : { m: mean },
       ~~usersRated === 0 ? '' : { r: ~~usersRated },

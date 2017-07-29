@@ -16,10 +16,7 @@ readdir(dir, (err, files) => {
 
       Object.keys(data).forEach(el => {
         data[el].d.forEach(array => {
-          if (array.m === 0) delete array.m
-          if (array.r === 0) delete array.r
-          if (array.u === 0) delete array.u
-          if (array.f === 0) delete array.f
+          array.d = ~~array.d
         })
       })
 
