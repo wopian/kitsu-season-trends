@@ -14,7 +14,7 @@ function posOrNeg (number) {
   else return `±${number}`
 }
 
-export function TrendContainer ({ start, id, slug, poster, title, data }) {
+export function TrendContainer ({ start, id, slug, title, data }) {
 
   const today = data.slice(-1)[0]
   const yesterday = data.slice(-2)[0]
@@ -22,7 +22,7 @@ export function TrendContainer ({ start, id, slug, poster, title, data }) {
   return (
     <div className='trend'>
       <a href={"//kitsu.io/anime/" + slug}>
-        <img src={`https://media.kitsu.io/anime/poster_images/${id}/medium.jpg?${poster}`}/>
+        <img src={`https://media.kitsu.io/anime/poster_images/${id}/medium.jpg`}/>
         <div className='title'>
           <span>{title}</span>
           <div className='changes'>

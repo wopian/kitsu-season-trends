@@ -94,8 +94,7 @@ async function set (id, { slug, canonicalTitle, posterImage, userCount, favorite
       i: ~~id,
       s: slug,
       t: canonicalTitle,
-      p: ~~posterImage.medium.split`?`[1],
-      u: subtype,
+      u: subtype === 'TV' ? 0 : 1,
       d: [
         {
           i: 0,                   // index
@@ -117,8 +116,7 @@ async function update (id, { slug, canonicalTitle, posterImage, userCount, favor
     const latest = db.get(`data.${id}`).value()
     latest.s = slug
     latest.t = canonicalTitle
-    latest.p = ~~posterImage.medium.split`?`[1]
-    latest.u = subtype
+    latest.u = subtype === 'TV' ? 0 : 1
     latest.d.push({
       i: latest.d.slice(-1)[0].i + 1 || 0, // index
       d: timestamp / 3600000,              // Hours since epoch

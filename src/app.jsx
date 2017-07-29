@@ -40,6 +40,8 @@ function getData (year = y(), season = s()) {
     ({ data, meta, updated } = res)
 
     for (let show in data) {
+      // 0: TV, 1: ONA, >1: ???
+      data[show].u = data[show].u === 0 ? 'TV' : 'ONA'
       for (let date in data[show].d) {
         // Convert hours since epoch into milliseconds
         data[show].d[date].d = data[show].d[date].d * 3600000
@@ -98,7 +100,6 @@ function Container ({ match }) {
         key={index}
         id={entry.i}
         slug={entry.s}
-        poster={entry.p}
         title={entry.t}
         data={entry.d}
         start={collectionStartDate}

@@ -19,8 +19,7 @@ The JSON data is aggressively minified, as each season becomes a fairly large da
       i: 12, // Kitsu anime ID
       s: 'one-piece', // Kitsu slug
       t: 'One Piece', // Canonical title
-      p: '1490541434', // Cache value of poster image. Constructed with `media.kitsu.io/anime/poster_images/{i}/medium.jpg?{p}
-      u: 'TV', // Subtype (TV or ONA)
+      u: 0, // Subtype (0: TV, 1: ONA)
       d: [ // Data array containing each daily update
         {
           i: 0, // Index
