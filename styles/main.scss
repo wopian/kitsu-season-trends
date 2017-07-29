@@ -226,6 +226,11 @@ h2 {
   justify-content: space-between;
   align-content: stretch;
   align-items: flex-start;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 931px) {
+    justify-content: center;
+  }
 
   > div:first-child {
     flex: 0 0 auto;

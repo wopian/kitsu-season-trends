@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { sortBy, groupBy } from 'lodash'
 import moment from 'moment'
-import { AreaChart, Area, YAxis, XAxis, Tooltip, PieChart, Pie, Cell, Legend } from 'recharts'
+import { ResponsiveContainer, AreaChart, Area, YAxis, XAxis, Tooltip, PieChart, Pie, Cell, Legend } from 'recharts'
 
 const COLOURS = [ '#FD755C', '#332532' ]
 
@@ -145,34 +145,36 @@ export function StatsAverage ({ data }) {
     }
 
     return (
-      <AreaChart width={600} height={200} data={sortBy(result, ['name'])}>
-        <Tooltip
-          formatter={value => value.toFixed(2)}
-          labelFormatter={label => new Date(label).toLocaleDateString(navigator.langauge, {
-            weekDay: 'long',
-            day: '2-digit',
-            year: 'numeric',
-            month: 'long'
-          })}
-        />
-        <YAxis
-          hide
-          ticks={['']}
-          tickLine={false}
-          axisLine={false}
-          domain={[1, 10]}
-        />
-        <XAxis
-          hide
-          ticks={['']}
-          tickLine={false}
-          axisLine={false}
-          dataKey='name'
-        />
-        <Area isAnimationActive={false} stackId='1' type='monotone' dataKey='TV'  stroke={COLOURS[0]} fill={COLOURS[0]} fillOpacity={1}/>
-        <Area isAnimationActive={false} stackId='2' type='monotone' dataKey='ONA' stroke={COLOURS[1]} fill={COLOURS[1]} fillOpacity={.5}/>
-        <Legend iconType='rect' height={36}/>
-      </AreaChart>
+      <ResponsiveContainer width='50%' height={200}>
+        <AreaChart data={sortBy(result, ['name'])}>
+          <Tooltip
+            formatter={value => value.toFixed(2)}
+            labelFormatter={label => new Date(label).toLocaleDateString(navigator.langauge, {
+              weekDay: 'long',
+              day: '2-digit',
+              year: 'numeric',
+              month: 'long'
+            })}
+          />
+          <YAxis
+            hide
+            ticks={['']}
+            tickLine={false}
+            axisLine={false}
+            domain={[1, 10]}
+          />
+          <XAxis
+            hide
+            ticks={['']}
+            tickLine={false}
+            axisLine={false}
+            dataKey='name'
+          />
+          <Area isAnimationActive={false} stackId='1' type='monotone' dataKey='TV'  stroke={COLOURS[0]} fill={COLOURS[0]} fillOpacity={1}/>
+          <Area isAnimationActive={false} stackId='2' type='monotone' dataKey='ONA' stroke={COLOURS[1]} fill={COLOURS[1]} fillOpacity={.5}/>
+          <Legend iconType='rect' height={36}/>
+        </AreaChart>
+      </ResponsiveContainer>
     )
   }
   else return null
