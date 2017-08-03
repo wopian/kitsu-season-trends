@@ -39,7 +39,7 @@ async function get (model, { offset = 0, id = null, upcoming = false } = {}) {
   try {
     if (id) return kitsu.get(`${model}/${id}`, {
       fields: {
-        anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,endDate,subtype'
+        anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,endDate,startDate,subtype'
       }
     })
     else if (upcoming) return kitsu.get(model, {
@@ -197,16 +197,48 @@ function getAired () {
   try {
     aired.forEach(async id => {
       const { data } = await get('anime', { id })
+      let removed = false
+
       // Check if the show ended within this season
       // If not, it was an erroneous entry and shouldn't be in the season's data
       // at all - thus remove it entirely
       const ended = data.endDate
       const cutoff = new Date(now).getTime() - (3 * 30 * 24 * 60 * 60 * 1000)
       const endDate = new Date(ended === null ? new Date(now).getTime() + (24 * 60 * 60 * 100) : ended).getTime()
-      if (endDate - cutoff > 0) await check(data)
-      else await remove(data)
 
-      console.log((endDate - cutoff > 0 ? 'Updated ' : 'Removed ') + data.canonicalTitle)
+      // Check if the show gets its start date changed to a future season
+      const startDate = data.startDate
+      const startSeason = season(startDate)
+
+      if (startDate === null || startDate.slice(0, 4) > year()
+        || (+startDate.slice(0, 4) === year()
+          && (
+            (season() === 'winter'
+              && (
+                startSeason === 'spring'
+                || startSeason === 'summer'
+                || startSeason === 'fall'
+              )
+            )
+            || (season() === 'spring'
+              && (
+                startSeason === 'summer'
+                || startSeason === 'fall'
+              )
+            )
+            || (season() === 'summer' && startSeason === 'fall')
+          )
+      )) {
+        await remove(data)
+        removed = true
+      }
+
+      if (removed === false && (endDate - cutoff <= 0 || startDate === null)) {
+        await remove(data)
+        removed = true
+      } else await check(data)
+
+      console.log((removed ? 'Removed ' : 'Updated ') + data.canonicalTitle)
     })
   } catch (err) {
     console.error(err)

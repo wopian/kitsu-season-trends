@@ -4,8 +4,9 @@ export function year () {
   // if (season() === 'winter' && new Date().getMonth() + 1 === 12) year++
 }
 
-export function season () {
-  switch (new Date().getMonth()) {
+export function season (date = new Date()) {
+  if (date === null) return null
+  switch (new Date(date).getMonth()) {
     case 0:
     case 1:
     case 2:
