@@ -233,10 +233,10 @@ function getAired () {
         removed = true
       }
 
-      if (removed === false && (endDate - cutoff <= 0 || startDate === null)) {
+      if (removed && endDate - cutoff <= 0) {
         await remove(data)
         removed = true
-      } else await check(data)
+      } else if (!removed) await check(data)
 
       console.log((removed ? 'Removed ' : 'Updated ') + data.canonicalTitle)
     })
