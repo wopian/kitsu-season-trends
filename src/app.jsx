@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import moment from 'moment'
+import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom'
 import { season as s, year as y, prevSeason, nextSeason, sort } from './util'
 import { Header } from './components/Header'
@@ -80,7 +80,7 @@ function Bar () {
           <button onClick={() => sortData('r')}>Percent Rated</button>
           <button onClick={() => sortData('f')}>Favorites</button>
         </div>
-        <span className='info'>All airing shows this season, updated {updated ? moment(updated).fromNow() : 'daily'}</span>
+        <span className='info'>All airing shows this season, updated {updated ? distanceInWordsToNow(updated, { addSuffix: true }) : 'daily'}</span>
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { sortBy, groupBy } from 'lodash'
-import moment from 'moment'
+import startOfDay from 'date-fns/start_of_day'
 import { ResponsiveContainer, AreaChart, Area, YAxis, XAxis, Tooltip, PieChart, Pie, Cell, Legend } from 'recharts'
 
 const COLOURS = [ '#FD755C', '#332532' ]
@@ -121,7 +121,7 @@ export function StatsAverage ({ data }) {
     })
 
     const grouped = groupBy(average, el => {
-      return moment(el.date).startOf('day')
+      return startOfDay(el.date)
     })
 
     const result = []
