@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { sortBy, groupBy } from 'lodash'
+import sortBy from 'lodash/sortBy'
+import groupBy from 'lodash/groupBy'
 import startOfDay from 'date-fns/start_of_day'
 import { ResponsiveContainer, AreaChart, Area, YAxis, XAxis, Tooltip, PieChart, Pie, Cell, Legend } from 'recharts'
 
