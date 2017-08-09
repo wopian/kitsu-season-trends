@@ -1,5 +1,4 @@
 import React from 'react'
-import Raven from 'raven'
 import PropTypes from 'prop-types'
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom'
@@ -8,8 +7,6 @@ import { Header } from './components/Header'
 import { TrendContainer } from './components/TrendContainer'
 import { Stats } from './components/Stats'
 import '../styles/index.scss'
-
-Raven.config('https://d069e8b4574b4658b0023bee81757105@sentry.io/201865').install()
 
 let thisApp = {}
 let data = []
