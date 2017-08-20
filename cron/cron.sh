@@ -17,5 +17,5 @@ git reset upstream/master
 touch .
 
 git add -A .
-git commit -a -m "chore: add ratings for $(date +%F)"
+git commit -a -m "chore: add data for $(date +%F)"
 git push -q upstream HEAD:master > /dev/null 2>&1
