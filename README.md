@@ -8,7 +8,7 @@
 
 ## Using the Data
 
-All the data is free to use and available in JSON format in `./data`, or online at `season.wopian.me/data/{year}-{season}.json`
+All the data is free to use and available in JSON format in `./data`, or online at `season.moe/data/{year}-{season}.json`
 
 The JSON data is aggressively minified, as each season becomes a fairly large data dump
 
