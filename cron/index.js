@@ -233,7 +233,7 @@ function getAired () {
         removed = true
       }
 
-      if (removed && endDate - cutoff <= 0) {
+      if (!removed && endDate - cutoff <= 0) {
         await remove(data)
         removed = true
       } else if (!removed) await check(data)
