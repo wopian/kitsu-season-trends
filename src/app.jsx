@@ -80,7 +80,7 @@ function Bar () {
           <button onClick={() => sortData('r')}>Percent Rated</button>
           <button onClick={() => sortData('f')}>Favorites</button>
         </div>
-        <span className='info'>All airing shows this season, updated {updated ? distanceInWordsToNow(updated, { addSuffix: true }) : 'daily'}</span>
+        <span className='info'>All airing anime this season, updated {updated ? distanceInWordsToNow(updated, { addSuffix: true }) : 'daily'}</span>
       </div>
     </div>
   )

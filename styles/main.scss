@@ -99,6 +99,15 @@ header {
   position: relative;
   user-select: none;
   cursor: default;
+
+  a {
+    text-decoration: none;
+    color: $white;
+
+    &:hover {
+      color: $accent;
+    }
+  }
 }
 
 h1 {

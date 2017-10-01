@@ -8,7 +8,9 @@ export function Header () {
 
   return (
     <header>
-      <h1>Kitsu</h1>
+      <h1>
+        <a href='https://kitsu.io#season.moe'>Kitsu</a>
+      </h1>
       <h2>
         {season || s()}
         <strong>{year || y()}</strong>
