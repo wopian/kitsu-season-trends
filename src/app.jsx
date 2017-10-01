@@ -88,7 +88,7 @@ function Bar () {
 
 function Container ({ match }) {
   const { year, season } = match.params
-  let test = {}
+  let output = {}
 
   const next = nextSeason({
     s: season || s(),
@@ -101,7 +101,7 @@ function Container ({ match }) {
   })
 
   if (Object.keys(data).length > 0 && !error) {
-    test = data.map((entry, index) => {
+    output = data.map((entry, index) => {
       return <TrendContainer
         key={index}
         id={entry.i}
@@ -113,10 +113,10 @@ function Container ({ match }) {
     })
   } else if (error) {
     console.log(error)
-    test = <p>Sorry, data for this season is not available</p>
+    output = <p>Sorry, data for this season is not available</p>
   } else {
     data = getData(year, season)
-    test = <p>Getting data...</p>
+    output = <p>Getting data...</p>
   }
 
   return (
@@ -125,7 +125,7 @@ function Container ({ match }) {
       <Link className='link next' to={`/${next.y}/${next.s}`} onClick={reset}>Next season</Link>
       <Stats data={data} meta={meta}/>
       <div className='trend-container'>
-        {test}
+        {output}
       </div>
     </div>
   )
@@ -149,7 +149,12 @@ export default class App extends React.Component {
         <Bar/>
         <Router>
           <Switch>
+            {/* Redirect homepage to current season */}
             <Route exact path='/' render={() => (
+              <Redirect to={`/${y()}/${s()}`}/>
+            )}/>
+            {/* Redirect Fall -> Autumn */}
+            <Route path='/:year/fall' render={() => (
               <Redirect to={`/${y()}/${s()}`}/>
             )}/>
             <Route path='/:year/:season' component={Container}/>

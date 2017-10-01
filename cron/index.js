@@ -217,16 +217,16 @@ function getAired () {
               && (
                 startSeason === 'spring'
                 || startSeason === 'summer'
-                || startSeason === 'fall'
+                || startSeason === 'autumn'
               )
             )
             || (season() === 'spring'
               && (
                 startSeason === 'summer'
-                || startSeason === 'fall'
+                || startSeason === 'autumn'
               )
             )
-            || (season() === 'summer' && startSeason === 'fall')
+            || (season() === 'summer' && startSeason === 'autumn')
           )
       )) {
         await remove(data)

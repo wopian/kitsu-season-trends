@@ -22,7 +22,7 @@ export function season (date = new Date()) {
     case 9:
     case 10:
     case 11:
-      return 'fall'
+      return 'autumn'
   }
 }
 
