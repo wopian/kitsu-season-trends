@@ -51,9 +51,9 @@ The JSON data is aggressively minified, as each season becomes a fairly large da
 ### Commands
 
 - `yarn start` - live reload local server
-- `yarn run lint` - lint source code
-- `yarn run build` - build from source
-- `yarn run cron` - manually run cron task to fetch new data
+- `yarn lint` - lint source code
+- `yarn build` - build from source
+- `yarn cron` - manually run cron task to fetch new data
 
 ### Guide
 
