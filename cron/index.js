@@ -8,6 +8,7 @@ import {season, year } from '../src/util'
 const kitsu = new Kitsu()
 const now = new Date().toISOString()
 const timestamp = new Date(now).getTime()
+const range = 20
 
 // Load season database
 const db = low(`./data/${year()}-${season()}.json`, {
@@ -27,10 +28,11 @@ const aired = Object.keys(db.get('data').value())
 
 function display (count, processed, offset) {
   try {
-    if (offset + 20 > count) offset = count
+    if (offset + range > count) offset = count
     const progress = ((processed + offset) / count * 100)
     console.log(`${processed + offset} - ${(progress > 100 ? 100 : progress).toFixed(1)}% Complete`)
   } catch (err) {
+    console.error(`Errored on offset ${offset} - ${offset + range}:`)
     console.error(err)
   }
 }
@@ -45,7 +47,7 @@ async function get (model, { offset = 0, id = null, upcoming = false } = {}) {
     else if (upcoming) return kitsu.get(model, {
       page: {
         offset,
-        limit: 20
+        limit: range
       },
       fields: {
         anime: 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,subtype'
@@ -53,14 +55,14 @@ async function get (model, { offset = 0, id = null, upcoming = false } = {}) {
       filter: {
         subtype: 'tv,ona',
         season_year: year(),
-        season: season()
+        season: season() === 'autumn' ? 'fall' : season()
       },
       sort: '-averageRating,-userCount'
     })
     else return kitsu.get(model, {
       page: {
         offset,
-        limit: 20
+        limit: range
       },
       filter: {
         status: 'current',
@@ -72,6 +74,9 @@ async function get (model, { offset = 0, id = null, upcoming = false } = {}) {
       sort: '-averageRating,-userCount'
     })
   } catch (err) {
+    if (id) console.error(`Errored getting info on ${model} #${id}:`)
+    else if (upcoming) console.error(`Errored getting upcoming ${model} offset ${offset} - ${offset + range}:`)
+    else console.error(`Errored getting airing ${model} offset ${offset} - ${offset + range}:`)
     console.error(err)
   }
 }
@@ -107,6 +112,7 @@ async function set (id, { slug, canonicalTitle, userCount, favoritesCount, subty
       )]
     }).write()
   } catch (err) {
+    console.error(`Errored adding ${canonicalTitle} (${id}) to the database:`)
     console.error(err)
   }
 }
@@ -129,6 +135,7 @@ async function update (id, { slug, canonicalTitle, userCount, favoritesCount, su
     ))
     db.set(`data.${id}`, latest).write()
   } catch (err) {
+    console.error(`Errored updating ${canonicalTitle} (${id}) in the database:`)
     console.error(err)
   }
 }
@@ -140,6 +147,7 @@ async function check (data) {
     else await update(data.id, data, ratings)
     db.set('updated', now).write()
   } catch (err) {
+    console.error(`Errored while checking if ${data.canonicalTitle} (${db.id}) was in database:`)
     console.error(err)
   }
 }
@@ -148,6 +156,7 @@ async function remove ({ id }) {
   try {
     await db.unset(`data.${id}`).write()
   } catch (err) {
+    console.error(`Errored while removing #${id} from the database:`)
     console.error(err)
   }
 }
@@ -162,6 +171,7 @@ async function getAiring (offset = 0) {
     await display(meta.count, data.length, offset)
     return links
   } catch (err) {
+    console.error(`Errored while getting airing anime offset ${offset} - ${offset + range}:`)
     console.error(err)
   }
 }
@@ -185,8 +195,9 @@ async function addUpcoming (offset = 0) {
       }
     })
 
-    if (links.next) await addUpcoming(offset + 20)
+    if (links.next) await addUpcoming(offset + range)
   } catch (err) {
+    console.error(`Errored while adding upcoming anime offset ${offset} - ${offset + range}:`)
     console.error(err)
   }
 }
@@ -241,6 +252,7 @@ function getAired () {
       console.log((removed ? 'Removed ' : 'Updated ') + data.canonicalTitle)
     })
   } catch (err) {
+    console.error(`Errored while getting aired anime:`)
     console.error(err)
   }
 }
@@ -248,7 +260,7 @@ function getAired () {
 (async function main (offset = 0) {
   try {
     const { next } = await getAiring(offset)
-    if (next) await main(offset + 20)
+    if (next) await main(offset + range)
     else {
       console.log('\nUpdating existing & upcoming anime:\n')
       await getAired()
