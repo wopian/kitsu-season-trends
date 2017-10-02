@@ -22,7 +22,7 @@ export function TrendContainer ({ start, id, slug, title, data }) {
   return (
     <div className='trend'>
       <a href={"//kitsu.io/anime/" + slug}>
-        <img src={`https://media.kitsu.io/anime/poster_images/${id}/medium.jpg`}/>
+        <img src={`https://media.kitsu.io/anime/poster_images/${id}/tiny.jpg`}/>
         <div className='title'>
           <span>{title}</span>
           <div className='changes'>
