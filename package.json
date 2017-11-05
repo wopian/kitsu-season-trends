@@ -27,8 +27,7 @@
     "react-ga": "~2.3.4",
     "react-icons": "~2.2.5",
     "react-router-dom": "~4.2.2",
-    "recharts": "~1.0.0-alpha.5",
-    "snyk": "~1.41.1"
+    "recharts": "~1.0.0-alpha.5"
   },
   "devDependencies": {
     "babel-cli": "~6.26.0",
@@ -66,5 +65,9 @@
     "webpack-dev-server": "~2.9.1",
     "weighted-mean": "~1.0.2"
   },
-  "snyk": true
+  "renovate": {
+    "extends": [
+      "config:base"
+    ]
+  }
 }
