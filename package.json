@@ -7,8 +7,7 @@
     "start": "webpack-dev-server --progress --profile --colors",
     "lint": "eslint --ext js --ext jsx src || exit 0",
     "dev": "webpack-dashboard -- webpack-dev-server --progress --profile --colors",
-    "cron": "babel-node cron",
-    "snyk-protect": "snyk protect"
+    "cron": "babel-node cron"
   },
   "repository": {
     "type": "git",
@@ -27,8 +26,7 @@
     "react-ga": "~2.3.4",
     "react-icons": "~2.2.5",
     "react-router-dom": "~4.2.2",
-    "recharts": "~1.0.0-alpha.5",
-    "snyk": "~1.41.1"
+    "recharts": "~1.0.0-alpha.5"
   },
   "devDependencies": {
     "babel-cli": "~6.26.0",
@@ -66,5 +64,45 @@
     "webpack-dev-server": "~2.9.1",
     "weighted-mean": "~1.0.2"
   },
-  "snyk": true
+  "renovate": {
+    "extends": [ "config:base" ],
+    "assignees": [ "wopian" ],
+    "pinVersions": false,
+    "automerge": false,
+    "commitMessage": "{{semanticPrefix}}update {{depName}} to {{newVersion}}",
+    "labels": [ "dependencies" ],
+    "lockFileMaintenance": {
+      "enabled": true,
+      "recreateClosed": true,
+      "branchName": "renovate/lock-files",
+      "commitMessage": "{{semanticPrefix}}update lock file",
+      "prTitle": "{{semanticPrefix}}lock file maintenance",
+      "prBody": "This PR regenerates lock files to keep them up-to-date.",
+      "schedule": [ "after 5am on monday", "before 9am on monday" ]
+    },
+    "semanticCommits": true,
+    "separateMajorReleases": false,
+    "unpublishSafe": true,
+    "schedule": [ "before 5am on monday" ],
+    "prCreation": "not-pending",
+    "prTitle": "{{semanticPrefix}}{{#if isPin}}pin{{else}}update{{/if}} {{depName}} to {{#if isRange}}{{newVersion}}{{else}}{{#if isMajor}}{{newVersionMajor}}.x{{else}}{{newVersion}}{{/if}}{{/if}}",
+    "packageRules": [
+      {
+        "packagePatterns": ["^eslint"],
+        "groupName": "eslint"
+      },
+      {
+        "packagePatterns": ["^webpack"],
+        "groupName": "webpack"
+      },
+      {
+        "packagePatterns": ["^babel"],
+        "groupName": "babel"
+      },
+      {
+        "packagePatterns": ["^react"],
+        "groupName": "react"
+      }
+    ]
+  }
 }
