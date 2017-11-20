@@ -50,7 +50,7 @@
     "json-stringify-pretty-compact": "~1.0.4",
     "kitsu": "~2.0.4",
     "loglevel": "~1.6.0",
-    "lowdb": "~0.16.2",
+    "lowdb": "~1.0.0",
     "node-sass": "~4.7.1",
     "postcss-loader": "~2.0.6",
     "react-hot-loader": "~3.1.0",
