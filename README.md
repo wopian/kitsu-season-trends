@@ -1,10 +1,11 @@
 # Season Trends
 
-[![Web]][5]
-[![Uptime]][5]
-[![Travis]][3]
+[![web badge]][web]
+[![uptime badge]][web]
+[![travis badge]][travis]
+[![donate badge]][donate]
 
-[Kitsu][0] season trends for the currently airing anime
+[Kitsu] season trends for the currently airing anime
 
 ## Using the Data
 
@@ -44,9 +45,9 @@ The JSON data is aggressively minified, as each season becomes a fairly large da
 
 ### Requirements
 
-- [git](https://git-scm.com) >2.0.0
-- [node.js](https://nodejs.org) >7.0.0
-- [yarn](https://yarnpkg.com) >0.21.0
+- [git] >2.0.0
+- [node.js] >7.0.0
+- [yarn] >0.21.0
 
 ### Commands
 
@@ -57,7 +58,7 @@ The JSON data is aggressively minified, as each season becomes a fairly large da
 
 ### Guide
 
-1. [Fork the repo][1]
+1. [Fork the repo]
 
 2. Clone the repo (`git clone https://github.com/{yourusername}/api-docs.git`)
 
@@ -73,20 +74,26 @@ The JSON data is aggressively minified, as each season becomes a fairly large da
 
 8. Push to your branch (`git push origin improve-docs`)
 
-9. [Create a Pull Request][2]
+9. [Create a Pull Request]
 
 ## License
 
-All code released under the [MIT license][4]
+All code released under the [MIT] license
 
-[0]:https://kitsu.io
-[1]:https://help.github.com/articles/fork-a-repo/#fork-an-example-repository
-[2]:https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request
-[3]:https://travis-ci.org/wopian/kitsu-season-trends
-[4]:https://github.com/wopian/kitsu-season-trends/blob/master/LICENSE.md
-[5]:https://season.moe
+[Kitsu]:https://kitsu.io
+[Fork the repo]:https://help.github.com/articles/fork-a-repo/#fork-an-example-repository
+[Create a Pull Request]:https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request
+[MIT]:https://github.com/wopian/kitsu-season-trends/blob/master/LICENSE.md
+[git]:https://git-scm.com
+[node.js]:https://nodejs.org
+[yarn]:https://yarnpkg.com
 
-[travis]:https://img.shields.io/travis/wopian/kitsu-season-trends/master.svg?style=flat-square&label=linux
-[web]:https://img.shields.io/website-up-down-green-red/https/season.wopian.me.svg?style=flat-square&label=web
-[uptime]:https://img.shields.io/uptimerobot/ratio/7/m779133972-4da0d8f104f1d6ffaf921257.svg?style=flat-square
-[Base 65503]:https://yarn.fyi/base-65503
+[web]:https://season.moe
+[web badge]:https://img.shields.io/website-up-down-green-red/https/season.wopian.me.svg?style=flat-square&label=web
+[uptime badge]:https://img.shields.io/uptimerobot/ratio/7/m779133972-4da0d8f104f1d6ffaf921257.svg?style=flat-square
+
+[travis]:https://travis-ci.org/wopian/kitsu-season-trends
+[travis badge]:https://img.shields.io/travis/wopian/kitsu-season-trends/master.svg?style=flat-square&label=linux
+
+[donate]:https://www.paypal.me/wopian
+[donate badge]:https://img.shields.io/badge/£-donate-ff69b4.svg?style=flat-square
