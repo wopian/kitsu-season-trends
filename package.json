@@ -65,35 +65,38 @@
     "weighted-mean": "~1.0.2"
   },
   "renovate": {
-    "extends": [ "config:base" ],
-    "assignees": [ "wopian" ],
-    "pinVersions": false,
-    "automerge": false,
-    "commitMessage": "chore(deps): update {{depName}} to {{newVersion}}",
-    "labels": [ "dependencies" ],
-    "lockFileMaintenance": { "enabled": false },
-    "semanticCommits": true,
-    "separateMajorReleases": false,
-    "unpublishSafe": true,
-    "schedule": [ "before 5am on monday" ],
-    "prCreation": "not-pending",
-    "prTitle": "chore(deps): {{#if isPin}}pin{{else}}update{{/if}} {{depName}} to {{#if isRange}}{{newVersion}}{{else}}{{#if isMajor}}{{newVersionMajor}}.x{{else}}{{newVersion}}{{/if}}{{/if}}",
+    "extends": [
+      ":npm",
+      ":preserveSemverRanges",
+      ":combinePatchMinorReleases",
+      ":renovatePrefix",
+      ":semanticCommits",
+      ":semanticPrefixChore,
+      ":rebaseStalePrs",
+      ":unpublishSafe",
+      ":prNotPending",
+      ":automergeDisabled",
+      ":maintainLockFilesMonthly",
+      ":ignoreUnstable",
+      ":updateNotScheduled",
+      ":label(dependencies)",
+      ":assignAndReview(wopian)",
+      ":timezone(Europe/London)",
+      "group:babelMonorepo",
+      "group:jestMonorepo",
+      "group:linters",
+      "group:reactMonorepo",
+      "group:storybookMonorepo",
+      "schedule:weekly"
+    ],
+    "prTitle": "update {{depName}} to {{newVersion}}",
+    "commitMessage": "update {{depName}} to {{newVersion}}",
     "packageRules": [
       {
-        "packagePatterns": ["^eslint"],
-        "groupName": "eslint"
-      },
-      {
-        "packagePatterns": ["^webpack"],
+        "packagePatterns": [
+          "^webpack"
+        ],
         "groupName": "webpack"
-      },
-      {
-        "packagePatterns": ["^babel"],
-        "groupName": "babel"
-      },
-      {
-        "packagePatterns": ["^react"],
-        "groupName": "react"
       }
     ]
   }
