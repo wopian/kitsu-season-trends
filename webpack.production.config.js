@@ -80,8 +80,8 @@ module.exports = {
         }
       },
       {
-        from: path.resolve(__dirname, './static'),
-        to: path.resolve(__dirname, './public'),
+        from: 'static',
+        to: '.',
         ignore: ['.*']
       }
     ])
