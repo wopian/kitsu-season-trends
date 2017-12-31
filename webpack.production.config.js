@@ -1,19 +1,20 @@
-var webpack = require('webpack');
-var path = require('path');
-var loaders = require('./webpack.loaders');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-var StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var { readFileSync } = require('fs');
+var webpack = require('webpack')
+var path = require('path')
+var loaders = require('./webpack.loaders')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var WebpackCleanupPlugin = require('webpack-cleanup-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+var StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
+var { encode } = require('msgpack-lite/lib/encode')
+var { readFileSync, writeFileSync } = require('fs')
 
 loaders.push({
   test: /\.scss$/,
   loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader?sourceMap&localIdentName=[local]___[hash:base64:5]!sass-loader?outputStyle=expanded'}),
   exclude: ['node_modules']
-});
+})
 
 module.exports = {
   entry: [
@@ -75,9 +76,12 @@ module.exports = {
       {
         from: 'data',
         to: 'data',
-        transform: (content, file) => {
-          return JSON.stringify(JSON.parse(readFileSync(file, 'utf8')))
-        }
+        transform: (content, file) => JSON.stringify(JSON.parse(readFileSync(file, 'utf8')))
+      },
+      {
+        from: 'data',
+        to: 'msgpack',
+        transform: (content, file) => encode(JSON.parse(readFileSync(file, 'utf8')))
       },
       {
         from: 'static',
@@ -86,4 +90,4 @@ module.exports = {
       }
     ])
   ]
-};
+}
