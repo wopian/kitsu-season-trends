@@ -14,9 +14,4 @@ script:
 after_success:
 - if [ ${TRAVIS_EVENT_TYPE} = "cron" ];
   then bash cron/cron.sh;
-  elif [ ${TRAVIS_PULL_REQUEST} = "false" ];
-  then bash deploy.sh;
-  else echo "Nothing to deploy";
   fi
-notifications:
-  email: false

@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "Kitsu seasonal anime trends",
   "scripts": {
-    "build": "webpack --config webpack.production.config.js --progress --profile --colors",
-    "start": "webpack-dev-server --progress --profile --colors",
+    "build": "webpack --config webpack.production.config.js --profile --colors",
+    "start": "webpack-dev-server --profile --colors",
     "lint": "eslint --ext js --ext jsx src || exit 0",
-    "dev": "webpack-dashboard -- webpack-dev-server --progress --profile --colors",
     "cron": "babel-node cron"
   },
   "repository": {
@@ -26,7 +25,8 @@
     "react-ga": "~2.3.4",
     "react-icons": "~2.2.5",
     "react-router-dom": "~4.2.2",
-    "recharts": "~1.0.0-beta.7"
+    "react-transition-group": "~2.2.1",
+    "recharts": "1.0.0-alpha.6"
   },
   "devDependencies": {
     "babel-cli": "~6.26.0",
@@ -50,7 +50,7 @@
     "json-stringify-pretty-compact": "~1.0.4",
     "kitsu": "~2.0.4",
     "loglevel": "~1.6.0",
-    "lowdb": "~0.17.0",
+    "lowdb": "~0.16.2",
     "node-sass": "~4.7.1",
     "postcss-loader": "~2.0.6",
     "react-hot-loader": "~3.1.0",
@@ -60,7 +60,7 @@
     "url-loader": "~0.6.0",
     "webpack": "~3.10.0",
     "webpack-cleanup-plugin": "~0.5.1",
-    "webpack-dashboard": "~1.0.0-5",
+    "webpack-dashboard": "~1.0.2",
     "webpack-dev-server": "~2.9.1",
     "weighted-mean": "~1.0.2"
   },
