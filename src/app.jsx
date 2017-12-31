@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom'
+import { decode } from 'msgpack-lite/lib/decode'
 import { season as s, year as y, prevSeason, nextSeason, sort } from './util'
 import { Header } from './components/Header'
 import { TrendContainer } from './components/TrendContainer'
@@ -29,15 +30,16 @@ function sortData (by, update = true) {
 }
 
 function getData (year = y(), season = s()) {
-  fetch(`/data/${year}-${season}.json`, {
+  fetch(`/msgpack/${year}-${season}.json`, {
     method: 'get'
   })
   .then(res => {
-    if(res.ok) return res.json()
+    if(res.ok) return res.arrayBuffer()
     else throw new Error(404)
   })
   .then(res => {
-    ({ data, meta, updated } = res)
+    const buffer = new Uint8Array(res);
+    ({ data, meta, updated } = decode(buffer))
 
     for (let show in data) {
       // 0: TV, 1: ONA, >1: ???
