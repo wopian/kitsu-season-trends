@@ -78,6 +78,11 @@ module.exports = {
         transform: (content, file) => {
           return JSON.stringify(JSON.parse(readFileSync(file, 'utf8')))
         }
+      },
+      {
+        from: path.resolve(__dirname, './static'),
+        to: path.resolve(__dirname, './public'),
+        ignore: ['.*']
       }
     ])
   ]
