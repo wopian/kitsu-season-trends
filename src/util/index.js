@@ -26,6 +26,11 @@ export function season (date = new Date()) {
   }
 }
 
+export function seasonUSFormat (date = new Date()) {
+  const output = season(date)
+  return output === 'autumn' ? 'fall' : output
+}
+
 export function prevSeason ({ s, y }) {
   switch (s) {
     case 'winter':
