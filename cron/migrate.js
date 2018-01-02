@@ -16,7 +16,8 @@ readdir(dir, (err, files) => {
 
       Object.keys(data.data).forEach(id => {
         const d = data.data[id].d
-        if (d[d.length - 1].r <= 1) delete data.data[id]
+        const last = d[d.length - 1]
+        if (!last.r) delete data.data[id]
       })
 
       /*
