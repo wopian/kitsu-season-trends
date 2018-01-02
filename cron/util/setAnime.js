@@ -2,7 +2,7 @@ import { db, TIMESTAMP } from './'
 
 export async function setAnime (id, { slug, canonicalTitle, userCount, favoritesCount, subtype }, { mean, usersRated }) {
   try {
-    db.set(`data.${id}`, {
+    if (usersRated > 1) db.set(`data.${id}`, {
       i: ~~id,
       s: slug,
       t: canonicalTitle,
