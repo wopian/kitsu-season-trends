@@ -1,8 +1,9 @@
 {
   "presets": [
     ["env", {
-      "modules": "commonjs",
-      "targets": { "node": "current" }
+      "targets": {
+        "node": "current"
+      }
     }],
     "stage-0"
   ],
