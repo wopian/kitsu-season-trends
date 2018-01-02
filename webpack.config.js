@@ -1,21 +1,19 @@
-"use strict";
-var webpack = require('webpack');
-var path = require('path');
-var loaders = require('./webpack.loaders');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var DashboardPlugin = require('webpack-dashboard/plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-var CopyPlugin = require('copy-webpack-plugin');
+var webpack = require('webpack')
+var path = require('path')
+var loaders = require('./webpack.loaders')
+var Html = require('html-webpack-plugin')
+var Dashboard = require('webpack-dashboard/plugin')
+var ExtractText = require('extract-text-webpack-plugin')
+var Favicons = require('favicons-webpack-plugin')
 
-const HOST = process.env.HOST || "127.0.0.1";
-const PORT = process.env.PORT || "8888";
+const HOST = process.env.HOST || "127.0.0.1"
+const PORT = process.env.PORT || "8888"
 
 loaders.push({
   test: /\.scss$/,
   loaders: ['style-loader', 'css-loader?importLoaders=1', 'sass-loader'],
   exclude: ['node_modules']
-});
+})
 
 module.exports = {
   entry: [
@@ -50,19 +48,19 @@ module.exports = {
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin({
+    new ExtractText({
       filename: 'style.css',
       allChunks: true
     }),
-    new DashboardPlugin(),
-    new HtmlWebpackPlugin({
+    new Dashboard(),
+    new Html({
       template: './src/template.html',
       files: {
         css: ['style.css'],
         js: [ "bundle.js"],
       }
     }),
-    new FaviconsWebpackPlugin({
+    new Favicons({
       logo: './src/favicon.png',
       prefix: 'icons/',
       inject: true,
@@ -71,4 +69,4 @@ module.exports = {
       persistentCache: false
     })
   ]
-};
+}

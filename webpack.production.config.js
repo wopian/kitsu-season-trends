@@ -2,22 +2,23 @@ var webpack = require('webpack')
 var path = require('path')
 var chalk = require('chalk')
 var loaders = require('./webpack.loaders')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-var CopyWebpackPlugin = require('copy-webpack-plugin')
-var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-var ProgressBarPlugin = require('progress-bar-webpack-plugin')
+var Html = require('html-webpack-plugin')
+var ExtractText = require('extract-text-webpack-plugin')
+var Favicons = require('favicons-webpack-plugin')
+var Copy = require('copy-webpack-plugin')
+var OptimizeCSS = require('optimize-css-assets-webpack-plugin')
+var UglifyJs = require('uglifyjs-webpack-plugin')
+var ProgressBar = require('progress-bar-webpack-plugin')
 var ProgressiveManifest = require('webpack-pwa-manifest')
-var BundleSizePlugin = require('webpack-bundle-size-analyzer').WebpackBundleSizeAnalyzerPlugin
+var Cleanup = require('webpack-cleanup-plugin')
+var BundleSize = require('webpack-bundle-size-analyzer').WebpackBundleSizeAnalyzerPlugin
 var { encode } = require('msgpack-lite/lib/encode')
 var { readFileSync } = require('fs')
 
 
 loaders.push({
   test: /\.scss$/,
-  loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader?sourceMap&localIdentName=[local]___[hash:base64:5]!sass-loader?outputStyle=expanded'}),
+  loader: ExtractText.extract({fallback: 'style-loader', use: 'css-loader?sourceMap&localIdentName=[local]___[hash:base64:5]!sass-loader?outputStyle=expanded'}),
   exclude: ['node_modules']
 })
 
@@ -39,7 +40,8 @@ module.exports = {
     loaders
   },
   plugins: [
-    new ProgressBarPlugin({
+    new Cleanup(),
+    new ProgressBar({
       format: '  ' + chalk.green.bold(':percent') + ' :elapseds :msg',
       renderThrottle: 10
     }),
@@ -48,15 +50,15 @@ module.exports = {
         NODE_ENV: '"production"'
       }
     }),
-    new UglifyJsPlugin({
+    new UglifyJs({
       parallel: true,
       cache: true
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    new ExtractTextPlugin({
+    new ExtractText({
       filename: '[name].[contenthash].css',
     }),
-    new OptimizeCSSPlugin({
+    new OptimizeCSS({
       cssProcessorOptions: {
         autoprefixer: true,
         rawCache: true,
@@ -95,7 +97,7 @@ module.exports = {
         zindex: true // May be unsafe
       }
     }),
-    new HtmlWebpackPlugin({
+    new Html({
       template: './src/template.html',
       inject: true,
       minify: {
@@ -134,7 +136,7 @@ module.exports = {
       chunks: ['vendor']
     }),
     /* Does not support Webpack 3 yet
-    new FaviconsWebpackPlugin({
+    new Favicons({
       logo: './src/favicon.png',
       prefix: 'icons/',
       inject: true,
@@ -143,7 +145,7 @@ module.exports = {
       persistentCache: true
     }),
     */
-    new CopyWebpackPlugin([
+    new Copy([
       {
         from: 'data',
         to: 'data',
@@ -178,6 +180,6 @@ module.exports = {
       fingerprints: true,
       ios: true
     }),
-    new BundleSizePlugin('../.bundlesize.yml')
+    new BundleSize('../.bundlesize.yml')
   ]
 }
