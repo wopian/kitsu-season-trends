@@ -4,8 +4,6 @@
 
 const stringify = require('json-stringify-pretty-compact')
 const { readdir, readFile, writeFile } = require('fs')
-const { encode } = require('msgpack-lite/lib/encode')
-const { decode } = require('msgpack-lite/lib/decode')
 const dir = './data'
 
 readdir(dir, (err, files) => {
@@ -14,9 +12,12 @@ readdir(dir, (err, files) => {
     readFile(`${dir}/${file}`, (err2, DATA) => {
       if (err2) throw err2
 
-      const data = decode(DATA)
+      const data = JSON.parse(DATA)
 
-      console.log(data.meta)
+      Object.keys(data.data).forEach(id => {
+        const d = data.data[id].d
+        if (d[d.length - 1].r <= 1) delete data.data[id]
+      })
 
       /*
       Object.keys(data).forEach(el => {
@@ -26,7 +27,7 @@ readdir(dir, (err, files) => {
       })
       */
 
-      writeFile(`${dir}/${file}`, encode(data), err3 => {
+      writeFile(`${dir}/${file}`, stringify(data, { maxLength: 250 }), err3 => {
         if (err3) throw err3
         console.log(`migrated ${file}`)
       })
