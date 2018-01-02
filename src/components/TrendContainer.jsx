@@ -55,7 +55,7 @@ export function TrendContainer ({ start, id, slug, title, data }) {
               })}>{posOrNeg(today.f - yesterday.f)}</span>
             </span>
           </div>
-          </div>
+        </div>
       </a>
       <ResponsiveContainer width='100%' height={100}>
         <LineChart data={data}>
