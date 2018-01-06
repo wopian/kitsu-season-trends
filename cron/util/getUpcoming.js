@@ -12,7 +12,7 @@ export async function getUpcoming (offset = 0) {
       const exists = db.get('data').find({ i: ~~anime.id }).value()
       if (typeof exists === 'undefined') {
         await checkExists(anime)
-        counters.added.push(data.canonicalTitle)
+        counters.added.push(anime.canonicalTitle)
       }
     })
 
