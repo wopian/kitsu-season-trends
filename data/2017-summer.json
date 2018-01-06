@@ -2,7 +2,6 @@
   "data": {
     "12": {
       "i": 12,
-      "s": "one-piece",
       "t": "One Piece",
       "d": [
         {"i": 0, "m": 8.54, "r": 14030, "u": 25518, "f": 2387, "d": 416359},
@@ -102,7 +101,6 @@
     },
     "210": {
       "i": 210,
-      "s": "detective-conan",
       "t": "Detective Conan",
       "d": [
         {"i": 0, "m": 8.26, "r": 3035, "u": 6669, "f": 342, "d": 416359},
@@ -202,7 +200,6 @@
     },
     "856": {
       "i": 856,
-      "s": "crayon-shin-chan",
       "t": "Crayon Shin-chan",
       "d": [
         {"i": 0, "m": 7.54, "r": 628, "u": 1353, "f": 25, "d": 416359},
@@ -302,7 +299,6 @@
     },
     "1078": {
       "i": 1078,
-      "s": "nintama-rantarou",
       "t": "Nintama Rantarou",
       "d": [
         {"i": 0, "m": 6.74, "r": 33, "u": 123, "d": 416359},
@@ -402,7 +398,6 @@
     },
     "1766": {
       "i": 1766,
-      "s": "sore-ike-anpanman",
       "t": "Sore Ike! Anpanman",
       "d": [
         {"i": 0, "m": 6.17, "r": 18, "u": 71, "f": 1, "d": 416359},
@@ -502,7 +497,6 @@
     },
     "2182": {
       "i": 2182,
-      "s": "sazae-san",
       "t": "Sazae-san",
       "d": [
         {"i": 0, "m": 6.1, "r": 30, "u": 161, "d": 416359},
@@ -602,7 +596,6 @@
     },
     "3618": {
       "i": 3618,
-      "s": "ojarumaru",
       "t": "Ojarumaru",
       "d": [
         {"i": 0, "m": 7.38, "r": 8, "u": 37, "d": 416359},
@@ -702,7 +695,6 @@
     },
     "4445": {
       "i": 4445,
-      "s": "chibi-maruko-chan-1995",
       "t": "Chibi Maruko-chan (1995)",
       "d": [
         {"i": 0, "m": 6.54, "r": 13, "u": 58, "d": 416359},
@@ -802,7 +794,6 @@
     },
     "5007": {
       "i": 5007,
-      "s": "knyacki",
       "t": "Knyacki!",
       "d": [
         {"i": 0, "m": 5.42, "r": 26, "u": 52, "f": 1, "d": 416839},
@@ -882,7 +873,6 @@
     },
     "5064": {
       "i": 5064,
-      "s": "domo-kun",
       "t": "Domo-kun",
       "d": [
         {"i": 0, "m": 7.47, "r": 15, "u": 83, "f": 1, "d": 416359},
@@ -982,7 +972,6 @@
     },
     "5443": {
       "i": 5443,
-      "s": "doraemon-2005",
       "t": "Doraemon (2005)",
       "d": [
         {"i": 0, "m": 6.84, "r": 66, "u": 187, "f": 3, "d": 416359},
@@ -1082,7 +1071,6 @@
     },
     "5956": {
       "i": 5956,
-      "s": "lan-mao",
       "t": "Lan Mao",
       "d": [
         {"i": 0, "m": 3.5, "r": 2, "u": 16, "d": 416359},
@@ -1182,7 +1170,6 @@
     },
     "8010": {
       "i": 8010,
-      "s": "youkai-watch",
       "t": "Youkai Watch",
       "d": [
         {"i": 0, "m": 7.13, "r": 161, "u": 647, "f": 10, "d": 416359},
@@ -1282,7 +1269,6 @@
     },
     "8884": {
       "i": 8884,
-      "s": "gudetama",
       "t": "Gudetama",
       "d": [
         {"i": 0, "m": 6.63, "r": 24, "u": 94, "f": 3, "d": 416359},
@@ -1382,7 +1368,6 @@
     },
     "8978": {
       "i": 8978,
-      "s": "from-osaka-with-cheer",
       "t": "From Osaka with Cheer!",
       "d": [
         {"i": 0, "m": 3.58, "r": 12, "u": 19, "d": 416839},
@@ -1462,7 +1447,6 @@
     },
     "9913": {
       "i": 9913,
-      "s": "nyanfu",
       "t": "Nyanfuru",
       "d": [
         {"i": 0, "m": 3, "r": 2, "u": 12, "d": 416359},
@@ -1562,7 +1546,6 @@
     },
     "9971": {
       "i": 9971,
-      "s": "fastening-days",
       "t": "Fastening Days",
       "u": 1,
       "d": [
@@ -1576,7 +1559,6 @@
     },
     "10104": {
       "i": 10104,
-      "s": "disney-tsum-tsum",
       "t": "Disney Tsum Tsum",
       "d": [
         {"i": 0, "m": 6.42, "r": 12, "u": 33, "d": 416359},
@@ -1676,7 +1658,6 @@
     },
     "10337": {
       "i": 10337,
-      "s": "six-hp-six-hearts-princess",
       "t": "6HP (Six Hearts Princess)",
       "d": [
         {"i": 0, "m": 5.22, "r": 9, "u": 240, "f": 1, "d": 416359},
@@ -1776,7 +1757,6 @@
     },
     "10556": {
       "i": 10556,
-      "s": "qin-shiming-yue-zhi-junlin-tianxia",
       "t": "Qin Shiming Yue Zhi: Junlin Tianxia",
       "d": [
         {"i": 0, "m": 8.25, "r": 2, "u": 18, "f": 2, "d": 416839},
@@ -1856,7 +1836,6 @@
     },
     "10659": {
       "i": 10659,
-      "s": "yowamushi-monsters",
       "t": "Yowamushi Monsters",
       "d": [
         {"i": 0, "m": 2, "r": 1, "u": 8, "d": 416407},
@@ -1954,7 +1933,6 @@
     },
     "10879": {
       "i": 10879,
-      "s": "dragon-ball-super",
       "t": "Dragon Ball Super",
       "d": [
         {"i": 0, "m": 7.31, "r": 1798, "u": 5749, "f": 100, "d": 416359},
@@ -2054,7 +2032,6 @@
     },
     "10902": {
       "i": 10902,
-      "s": "shingeki-no-bahamut-virgin-soul",
       "t": "Shingeki no Bahamut: Virgin Soul",
       "d": [
         {"i": 0, "m": 7.97, "r": 196, "u": 2327, "f": 6, "d": 416359},
@@ -2154,7 +2131,6 @@
     },
     "11112": {
       "i": 11112,
-      "s": "kamisama-minarai-himitsu-no-cocotama",
       "t": "Kamisama Minarai: Himitsu no Cocotama",
       "d": [
         {"i": 0, "m": 5.62, "r": 13, "u": 118, "f": 1, "d": 416359},
@@ -2254,7 +2230,6 @@
     },
     "11119": {
       "i": 11119,
-      "s": "wakfu-season-3",
       "t": "Wakfu Season 3",
       "u": 0,
       "d": [
@@ -2290,7 +2265,6 @@
     },
     "11271": {
       "i": 11271,
-      "s": "xi-yang-yang-yu-hui-tai-lang",
       "t": "Xi Yang Yang Yu Hui Tai Lang",
       "d": [
         {"i": 0, "m": 7, "r": 2, "u": 10, "d": 416431},
@@ -2387,7 +2361,6 @@
     },
     "11473": {
       "i": 11473,
-      "s": "the-reflection",
       "t": "The Reflection",
       "d": [
         {"i": 0, "m": 5, "r": 1, "u": 311, "d": 416455},
@@ -2483,7 +2456,6 @@
     },
     "11575": {
       "i": 11575,
-      "s": "elsword",
       "t": "Elsword: El Lady",
       "d": [
         {"i": 0, "m": 6.79, "r": 29, "u": 276, "f": 3, "d": 416839},
@@ -2563,7 +2535,6 @@
     },
     "11577": {
       "i": 11577,
-      "s": "closers-side-blacklambs",
       "t": "Closers: Side Blacklambs",
       "d": [
         {"i": 0, "m": 5.14, "r": 14, "u": 178, "d": 416839},
@@ -2643,7 +2614,6 @@
     },
     "11584": {
       "i": 11584,
-      "s": "monster-hunter-stories",
       "t": "Monster Hunter Stories: Ride On",
       "d": [
         {"i": 0, "m": 6.18, "r": 71, "u": 438, "f": 2, "d": 416359},
@@ -2743,7 +2713,6 @@
     },
     "11811": {
       "i": 11811,
-      "s": "nora-to-oujo-to-noraneko-heart",
       "t": "Nora to Oujo to Noraneko Heart",
       "d": [
         {"i": 0, "m": 9.33, "r": 3, "u": 176, "f": 1, "d": 416431},
@@ -2840,7 +2809,6 @@
     },
     "11832": {
       "i": 11832,
-      "s": "historical",
       "t": "Historical",
       "d": [
         {"i": 0, "m": 6, "r": 1, "u": 17, "d": 416839},
@@ -2920,7 +2888,6 @@
     },
     "11840": {
       "i": 11840,
-      "s": "jewelpet-attack-chance",
       "t": "Jewelpet: Attack Chance!?",
       "d": [
         {"i": 0, "m": 6, "r": 4, "u": 22, "d": 416359},
@@ -3020,7 +2987,6 @@
     },
     "11846": {
       "i": 11846,
-      "s": "puzzle-dragons-x",
       "t": "Puzzle & Dragons Cross",
       "d": [
         {"i": 0, "m": 5.92, "r": 63, "u": 307, "f": 1, "d": 416359},
@@ -3120,7 +3086,6 @@
     },
     "11868": {
       "i": 11868,
-      "s": "aikatsu-stars",
       "t": "Aikatsu Stars!",
       "d": [
         {"i": 0, "m": 7.36, "r": 53, "u": 286, "f": 3, "d": 416359},
@@ -3220,7 +3185,6 @@
     },
     "11883": {
       "i": 11883,
-      "s": "senki-zesshou-symphogear-axz-by-shedding-many-tears-the-reality-you-face-is",
       "t": "Senki Zesshou Symphogear AXZ: By Shedding Many Tears, the Reality You Face Is...",
       "d": [
         {"i": 0, "m": 6.8, "r": 5, "u": 169, "f": 1, "d": 416407},
@@ -3318,7 +3282,6 @@
     },
     "11947": {
       "i": 11947,
-      "s": "mirai-no-watashi",
       "t": "Mirai no Watashi",
       "d": [
         {"i": 0, "m": 6.43, "r": 182, "u": 314, "f": 2, "d": 416839},
@@ -3398,7 +3361,6 @@
     },
     "11956": {
       "i": 11956,
-      "s": "aggressive-retsuko",
       "t": "Aggressive Retsuko",
       "d": [
         {"i": 0, "m": 7.47, "r": 110, "u": 393, "f": 5, "d": 416359},
@@ -3498,7 +3460,6 @@
     },
     "11994": {
       "i": 11994,
-      "s": "katsugeki-touken-ranbu",
       "t": "Katsugeki/Touken Ranbu",
       "d": [
         {"i": 0, "m": 7.36, "r": 22, "u": 957, "f": 1, "d": 416383},
@@ -3597,7 +3558,6 @@
     },
     "12050": {
       "i": 12050,
-      "s": "bonobono-2016",
       "t": "Bonobono (2016)",
       "d": [
         {"i": 0, "m": 6.24, "r": 17, "u": 56, "f": 2, "d": 416359},
@@ -3697,7 +3657,6 @@
     },
     "12154": {
       "i": 12154,
-      "s": "koneko-no-chi-ponponra-daibouken",
       "t": "Koneko no Chii: Ponponra Daibouken",
       "d": [
         {"i": 0, "m": 6.12, "r": 26, "u": 162, "f": 1, "d": 416359},
@@ -3797,7 +3756,6 @@
     },
     "12168": {
       "i": 12168,
-      "s": "ahare-meisaku-kun",
       "t": "Ahare! Meisaku-kun",
       "d": [
         {"i": 0, "m": 2, "r": 2, "u": 8, "d": 416431},
@@ -3894,7 +3852,6 @@
     },
     "12235": {
       "i": 12235,
-      "s": "atom-the-beginning",
       "t": "Atom: The Beginning",
       "d": [
         {"i": 0, "m": 6.42, "r": 61, "u": 482, "f": 2, "d": 416383},
@@ -3993,7 +3950,6 @@
     },
     "12268": {
       "i": 12268,
-      "s": "boku-no-hero-academia-2nd-season",
       "t": "Boku no Hero Academia 2nd Season",
       "d": [
         {"i": 0, "m": 8.67, "r": 766, "u": 4409, "f": 38, "d": 416359},
@@ -4093,7 +4049,6 @@
     },
     "12314": {
       "i": 12314,
-      "s": "digimon-universe-appli-monsters",
       "t": "Digimon Universe: Appli Monsters",
       "d": [
         {"i": 0, "m": 6.43, "r": 44, "u": 218, "d": 416359},
@@ -4193,7 +4148,6 @@
     },
     "12318": {
       "i": 12318,
-      "s": "hitorijime-my-hero",
       "t": "Hitorijime My Hero",
       "d": [
         {"i": 0, "m": 7, "r": 12, "u": 209, "f": 1, "d": 416719},
@@ -4278,7 +4232,6 @@
     },
     "12346": {
       "i": 12346,
-      "s": "heybot",
       "t": "Heybot!",
       "d": [
         {"i": 0, "m": 5.26, "r": 19, "u": 89, "d": 416359},
@@ -4378,7 +4331,6 @@
     },
     "12398": {
       "i": 12398,
-      "s": "pichiko-dakyuubu",
       "t": "Pichiko Dakyuubu",
       "d": [
         {"i": 0, "m": 3, "r": 2, "u": 3, "d": 416431},
@@ -4475,7 +4427,6 @@
     },
     "12464": {
       "i": 12464,
-      "s": "saiyuuki-reload-blast",
       "t": "Saiyuuki Reload Blast",
       "d": [
         {"i": 0, "u": 205, "d": 416431},
@@ -4572,7 +4523,6 @@
     },
     "12518": {
       "i": 12518,
-      "s": "wu-geng-gi",
       "t": "Wu Geng Ji",
       "d": [
         {"i": 0, "u": 12, "d": 416839},
@@ -4652,7 +4602,6 @@
     },
     "12533": {
       "i": 12533,
-      "s": "pokemon-sun-moon",
       "t": "Pokemon Sun & Moon",
       "d": [
         {"i": 0, "m": 7.51, "r": 149, "u": 739, "f": 8, "d": 416359},
@@ -4752,7 +4701,6 @@
     },
     "12535": {
       "i": 12535,
-      "s": "isekai-shokudou",
       "t": "Isekai Shokudou",
       "d": [
         {"i": 0, "m": 6.68, "r": 11, "u": 308, "d": 416431},
@@ -4849,7 +4797,6 @@
     },
     "12540": {
       "i": 12540,
-      "s": "sin-nanatsu-no-taizai",
       "t": "Sin: Nanatsu no Taizai",
       "d": [
         {"i": 0, "m": 4.77, "r": 127, "u": 813, "f": 3, "d": 416383},
@@ -4948,7 +4895,6 @@
     },
     "12561": {
       "i": 12561,
-      "s": "kyoukai-no-rinne-tv-3rd-season",
       "t": "Kyoukai no Rinne (TV) 3rd Season",
       "d": [
         {"i": 0, "m": 6.53, "r": 15, "u": 210, "f": 1, "d": 416359},
@@ -5048,7 +4994,6 @@
     },
     "12564": {
       "i": 12564,
-      "s": "cardfight-vanguard-g-next",
       "t": "Cardfight!! Vanguard G: Next",
       "d": [
         {"i": 0, "m": 7.45, "r": 11, "u": 78, "d": 416359},
@@ -5148,7 +5093,6 @@
     },
     "12599": {
       "i": 12599,
-      "s": "sakurada-reset",
       "t": "Sakurada Reset",
       "d": [
         {"i": 0, "m": 5.71, "r": 148, "u": 1150, "f": 3, "d": 416359},
@@ -5248,7 +5192,6 @@
     },
     "12624": {
       "i": 12624,
-      "s": "tenshi-no-3p",
       "t": "Tenshi no 3P!",
       "d": [
         {"i": 0, "u": 100, "d": 416431},
@@ -5345,7 +5288,6 @@
     },
     "12713": {
       "i": 12713,
-      "s": "children-of-ether",
       "t": "Children of Ether",
       "d": [
         {"i": 0, "u": 44, "d": 416839},
@@ -5425,7 +5367,6 @@
     },
     "12718": {
       "i": 12718,
-      "s": "inazuma-eleven-outer-code",
       "t": "Inazuma Eleven: Outer Code",
       "d": [
         {"i": 0, "m": 4.7, "r": 5, "u": 24, "d": 416839},
@@ -5505,7 +5446,6 @@
     },
     "12732": {
       "i": 12732,
-      "s": "vatican-kiseki-chosakan",
       "t": "Vatican Kiseki Chosakan",
       "d": [
         {"i": 0, "m": 5, "r": 1, "u": 184, "d": 416407},
@@ -5603,7 +5543,6 @@
     },
     "12750": {
       "i": 12750,
-      "s": "usamaru",
       "t": "Usamaru",
       "d": [
         {"i": 0, "m": 3, "r": 2, "u": 4, "d": 416839},
@@ -5683,7 +5622,6 @@
     },
     "12754": {
       "i": 12754,
-      "s": "gamers",
       "t": "Gamers!",
       "d": [
         {"i": 0, "m": 3, "r": 2, "u": 379, "d": 416431},
@@ -5780,7 +5718,6 @@
     },
     "12757": {
       "i": 12757,
-      "s": "netsuzou-trap",
       "t": "Netsuzou TRap",
       "d": [
         {"i": 0, "m": 8.88, "r": 4, "u": 468, "d": 416407},
@@ -5878,7 +5815,6 @@
     },
     "12761": {
       "i": 12761,
-      "s": "hajimete-no-gal",
       "t": "Hajimete no Gal",
       "d": [
         {"i": 0, "m": 5.33, "r": 3, "u": 492, "d": 416431},
@@ -5975,7 +5911,6 @@
     },
     "12793": {
       "i": 12793,
-      "s": "sakura-quest",
       "t": "Sakura Quest",
       "d": [
         {"i": 0, "m": 6.96, "r": 212, "u": 1444, "f": 3, "d": 416359},
@@ -6075,7 +6010,6 @@
     },
     "12927": {
       "i": 12927,
-      "s": "kirakira-precure-a-la-mode",
       "t": "Kirakira☆Precure A La Mode",
       "d": [
         {"i": 0, "m": 6.65, "r": 20, "u": 126, "d": 416359},
@@ -6175,7 +6109,6 @@
     },
     "12948": {
       "i": 12948,
-      "s": "dream-festival-2",
       "t": "Dream Festival! R",
       "d": [
         {"i": 0, "m": 6.5, "r": 1, "u": 10, "d": 416839},
@@ -6254,7 +6187,6 @@
     },
     "12971": {
       "i": 12971,
-      "s": "jikan-no-shihaisha",
       "t": "Jikan no Shihaisha",
       "d": [
         {"i": 0, "u": 257, "f": 1, "d": 416431},
@@ -6351,7 +6283,6 @@
     },
     "13007": {
       "i": 13007,
-      "s": "dive",
       "t": "DIVE!!",
       "d": [
         {"i": 0, "u": 255, "d": 416431},
@@ -6448,7 +6379,6 @@
     },
     "13051": {
       "i": 13051,
-      "s": "boruto-naruto-next-generations",
       "t": "Boruto: Naruto Next Generations",
       "d": [
         {"i": 0, "m": 7.34, "r": 267, "u": 1428, "f": 12, "d": 416359},
@@ -6548,7 +6478,6 @@
     },
     "13055": {
       "i": 13055,
-      "s": "re-creators",
       "t": "Re:Creators",
       "d": [
         {"i": 0, "m": 7.18, "r": 311, "u": 1850, "f": 3, "d": 416359},
@@ -6648,7 +6577,6 @@
     },
     "13057": {
       "i": 13057,
-      "s": "shoukoku-no-altair",
       "t": "Shoukoku no Altair",
       "d": [
         {"i": 0, "u": 225, "d": 416431},
@@ -6745,7 +6673,6 @@
     },
     "13066": {
       "i": 13066,
-      "s": "fate-apocrypha",
       "t": "Fate/Apocrypha",
       "d": [
         {"i": 0, "m": 8, "r": 4, "u": 605, "f": 2, "d": 416383},
@@ -6844,7 +6771,6 @@
     },
     "13068": {
       "i": 13068,
-      "s": "ballroom-e-youkoso",
       "t": "Ballroom e Youkoso",
       "d": [
         {"i": 0, "m": 7.5, "r": 2, "u": 527, "d": 416407},
@@ -6942,7 +6868,6 @@
     },
     "13115": {
       "i": 13115,
-      "s": "battle-girl-high-school",
       "t": "Battle Girl High School",
       "d": [
         {"i": 0, "m": 6, "r": 1, "u": 125, "d": 416407},
@@ -7040,7 +6965,6 @@
     },
     "13133": {
       "i": 13133,
-      "s": "robber-s-company",
       "t": "Robber's Company",
       "d": [
         {"i": 0, "u": 1, "d": 416839},
@@ -7120,7 +7044,6 @@
     },
     "13189": {
       "i": 13189,
-      "s": "yu-gi-oh-vrains",
       "t": "Yu☆Gi☆Oh! VRAINS",
       "d": [
         {"i": 0, "m": 6.17, "r": 18, "u": 56, "d": 416359},
@@ -7220,7 +7143,6 @@
     },
     "13231": {
       "i": 13231,
-      "s": "clione-no-akari",
       "t": "Clione no Akari",
       "d": [
         {"i": 0, "m": 5, "r": 1, "u": 98, "d": 416407},
@@ -7318,7 +7240,6 @@
     },
     "13236": {
       "i": 13236,
-      "s": "new-game-2",
       "t": "New Game!!",
       "d": [
         {"i": 0, "m": 7.75, "r": 4, "u": 456, "f": 1, "d": 416407},
@@ -7416,7 +7337,6 @@
     },
     "13248": {
       "i": 13248,
-      "s": "rwby-chibi-2",
       "t": "RWBY Chibi 2",
       "d": [
         {"i": 0, "m": 7.38, "r": 13, "u": 103, "d": 416839},
@@ -7496,7 +7416,6 @@
     },
     "13249": {
       "i": 13249,
-      "s": "jigoku-shoujo-yogi-no-togi",
       "t": "Jigoku Shoujo: Yoi no Togi",
       "d": [
         {"i": 0, "u": 167, "d": 416431},
@@ -7593,7 +7512,6 @@
     },
     "13252": {
       "i": 13252,
-      "s": "kakegurui",
       "t": "Kakegurui",
       "d": [
         {"i": 0, "m": 7.28, "r": 9, "u": 584, "f": 1, "d": 416383},
@@ -7692,7 +7610,6 @@
     },
     "13257": {
       "i": 13257,
-      "s": "koi-to-uso",
       "t": "Koi to Uso",
       "d": [
         {"i": 0, "m": 6.14, "r": 7, "u": 409, "d": 416431},
@@ -7789,7 +7706,6 @@
     },
     "13258": {
       "i": 13258,
-      "s": "tsurezure-children",
       "t": "Tsurezure Children",
       "d": [
         {"i": 0, "m": 5.5, "r": 1, "u": 221, "d": 416407},
@@ -7887,7 +7803,6 @@
     },
     "13259": {
       "i": 13259,
-      "s": "aho-girl",
       "t": "Aho Girl",
       "d": [
         {"i": 0, "m": 10, "r": 1, "u": 179, "d": 416431},
@@ -7984,7 +7899,6 @@
     },
     "13260": {
       "i": 13260,
-      "s": "youkai-apartment-no-yuuga-na-nichijou",
       "t": "Youkai Apartment no Yuuga na Nichijou",
       "d": [
         {"i": 0, "m": 7.31, "r": 8, "u": 100, "d": 416431},
@@ -8081,7 +7995,6 @@
     },
     "13261": {
       "i": 13261,
-      "s": "princess-principal",
       "t": "Princess Principal",
       "d": [
         {"i": 0, "u": 253, "d": 416431},
@@ -8178,7 +8091,6 @@
     },
     "13263": {
       "i": 13263,
-      "s": "nana-maru-san-batsu",
       "t": "Nana Maru San Batsu",
       "d": [
         {"i": 0, "u": 145, "d": 416431},
@@ -8275,7 +8187,6 @@
     },
     "13267": {
       "i": 13267,
-      "s": "mobile-suit-gundam-twilight-axis",
       "t": "Mobile Suit Gundam: Twilight Axis",
       "d": [
         {"i": 0, "m": 4, "r": 6, "u": 155, "d": 416839},
@@ -8355,7 +8266,6 @@
     },
     "13268": {
       "i": 13268,
-      "s": "owarimonogatari-2nd-season",
       "t": "Owarimonogatari 2nd Season",
       "d": [
         {"i": 0, "m": 8.1, "r": 5, "u": 477, "d": 416455},
@@ -8451,7 +8361,6 @@
     },
     "13270": {
       "i": 13270,
-      "s": "centaur-no-nayami",
       "t": "Centaur no Nayami",
       "d": [
         {"i": 0, "u": 212, "d": 416431},
@@ -8548,7 +8457,6 @@
     },
     "13273": {
       "i": 13273,
-      "s": "made-in-abyss",
       "t": "Made in Abyss",
       "d": [
         {"i": 0, "m": 5, "r": 1, "u": 327, "d": 416407},
@@ -8646,7 +8554,6 @@
     },
     "13274": {
       "i": 13274,
-      "s": "knights-and-magic",
       "t": "Knight's & Magic",
       "d": [
         {"i": 0, "m": 6.75, "r": 8, "u": 189, "d": 416407},
@@ -8744,7 +8651,6 @@
     },
     "13280": {
       "i": 13280,
-      "s": "keppeki-danshi-aoyama-kun",
       "t": "Keppeki Danshi! Aoyama-kun",
       "d": [
         {"i": 0, "m": 6.63, "r": 4, "u": 165, "d": 416407},
@@ -8842,7 +8748,6 @@
     },
     "13281": {
       "i": 13281,
-      "s": "18-if",
       "t": "18if",
       "d": [
         {"i": 0, "m": 1, "r": 1, "u": 100, "d": 416431},
@@ -8939,7 +8844,6 @@
     },
     "13293": {
       "i": 13293,
-      "s": "idol-time-pripara",
       "t": "Idol Time PriPara",
       "d": [
         {"i": 0, "m": 5.2, "r": 5, "u": 33, "d": 416359},
@@ -9039,7 +8943,6 @@
     },
     "13302": {
       "i": 13302,
-      "s": "sekai-no-yami-zukan",
       "t": "Sekai no Yami Zukan",
       "d": [
         {"i": 0, "m": 3.71, "r": 70, "u": 229, "d": 416407},
@@ -9137,7 +9040,6 @@
     },
     "13303": {
       "i": 13303,
-      "s": "nobunaga-no-shinobi-ise-kanegasaki-hen",
       "t": "Nobunaga no Shinobi: Ise Kanegasaki-hen",
       "d": [
         {"i": 0, "m": 6.83, "r": 29, "u": 116, "d": 416359},
@@ -9237,7 +9139,6 @@
     },
     "13304": {
       "i": 13304,
-      "s": "shounen-ashibe-go-go-goma-chan-2",
       "t": "Shounen Ashibe: Go! Go! Goma-chan 2",
       "d": [
         {"i": 0, "m": 5.4, "r": 5, "u": 10, "d": 416359},
@@ -9337,7 +9238,6 @@
     },
     "13311": {
       "i": 13311,
-      "s": "henkei-shojo",
       "t": "Henkei Shoujo",
       "d": [
         {"i": 0, "m": 4.22, "r": 20, "u": 129, "d": 416839},
@@ -9417,7 +9317,6 @@
     },
     "13314": {
       "i": 13314,
-      "s": "future-card-buddyfight-battsu",
       "t": "Future Card Buddyfight Battsu",
       "d": [
         {"i": 0, "m": 6, "r": 3, "u": 13, "d": 416359},
@@ -9517,7 +9416,6 @@
     },
     "13315": {
       "i": 13315,
-      "s": "sakura-internet",
       "t": "Sakura Internet",
       "d": [
         {"i": 0, "m": 5.64, "r": 7, "u": 72, "d": 416839},
@@ -9597,7 +9495,6 @@
     },
     "13316": {
       "i": 13316,
-      "s": "monster-strike-2",
       "t": "Monster Strike 2",
       "d": [
         {"i": 0, "m": 4.67, "r": 12, "u": 58, "d": 416839},
@@ -9677,7 +9574,6 @@
     },
     "13342": {
       "i": 13342,
-      "s": "teekyuu-9",
       "t": "Teekyuu 9",
       "d": [
         {"i": 0, "u": 62, "d": 416431},
@@ -9774,7 +9670,6 @@
     },
     "13402": {
       "i": 13402,
-      "s": "mahoujin-guru-guru-2017",
       "t": "Mahoujin Guruguru (2017)",
       "d": [
         {"i": 0, "u": 26, "d": 416431},
@@ -9871,7 +9766,6 @@
     },
     "13423": {
       "i": 13423,
-      "s": "steven-universe-season-5",
       "t": "Steven Universe Season 5",
       "d": [
         {"i": 0, "m": 9.59, "r": 11, "u": 27, "d": 416359},
@@ -9971,7 +9865,6 @@
     },
     "13427": {
       "i": 13427,
-      "s": "voltron-legendary-defender-season-3",
       "t": "Voltron: Legendary Defender Season 3",
       "d": [
         {"i": 0, "u": 49, "d": 416839},
@@ -10051,7 +9944,6 @@
     },
     "13432": {
       "i": 13432,
-      "s": "yo-daitouryou-trap-kun",
       "t": "Yo! Daitouryou Trap-kun",
       "d": [
         {"i": 0, "m": 3.2, "r": 23, "u": 87, "d": 416839},
@@ -10131,7 +10023,6 @@
     },
     "13433": {
       "i": 13433,
-      "s": "100-pascal-sensei-tv",
       "t": "100% Pascal-sensei (TV)",
       "d": [
         {"i": 0, "m": 5.5, "r": 6, "u": 13, "d": 416359},
@@ -10231,7 +10122,6 @@
     },
     "13434": {
       "i": 13434,
-      "s": "puripuri-chii-chan",
       "t": "Puripuri Chii-chan!!",
       "d": [
         {"i": 0, "m": 5.33, "r": 3, "u": 16, "d": 416359},
@@ -10331,7 +10221,6 @@
     },
     "13435": {
       "i": 13435,
-      "s": "sin-nanatsu-no-taizai-zangeroku",
       "t": "Sin: Nanatsu no Taizai Zangeroku",
       "d": [
         {"i": 0, "m": 4.67, "r": 3, "u": 34, "d": 416839},
@@ -10411,7 +10300,6 @@
     },
     "13457": {
       "i": 13457,
-      "s": "isekai-wa-smartphone-to-tomo-ni",
       "t": "Isekai wa Smartphone to Tomo ni.",
       "d": [
         {"i": 0, "m": 5, "r": 1, "u": 263, "d": 416431},
@@ -10508,7 +10396,6 @@
     },
     "13503": {
       "i": 13503,
-      "s": "youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e-tv",
       "t": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e (TV)",
       "d": [
         {"i": 0, "m": 5, "r": 1, "u": 211, "d": 416431},
@@ -10605,7 +10492,6 @@
     },
     "13510": {
       "i": 13510,
-      "s": "beyblade-burst-god",
       "t": "Beyblade Burst God",
       "d": [
         {"i": 0, "m": 6.63, "r": 4, "u": 18, "d": 416431},
@@ -10702,7 +10588,6 @@
     },
     "13529": {
       "i": 13529,
-      "s": "castlevania",
       "t": "Castlevania",
       "d": [
         {"i": 0, "m": 7.77, "r": 220, "u": 584, "f": 6, "d": 416839},
@@ -10782,7 +10667,6 @@
     },
     "13537": {
       "i": 13537,
-      "s": "konbini-kareshi",
       "t": "Konbini Kareshi",
       "d": [
         {"i": 0, "u": 84, "d": 416431},
@@ -10879,7 +10763,6 @@
     },
     "13539": {
       "i": 13539,
-      "s": "action-heroine-cheer-fruits",
       "t": "Action Heroine Cheer Fruits",
       "d": [
         {"i": 0, "u": 38, "d": 416455},
@@ -10973,10 +10856,9 @@
       ],
       "u": 0
     },
-    "13543": {"i": 13543, "s": "tokyo-dolls-episode-0", "t": "Tokyo Dolls Episode 0", "u": 1, "d": [{"i": 0, "d": 418544, "m": 5.5, "r": 3, "u": 13}]},
+    "13543": {"i": 13543, "t": "Tokyo Dolls Episode 0", "u": 1, "d": [{"i": 0, "d": 418544, "m": 5.5, "r": 3, "u": 13}]},
     "13545": {
       "i": 13545,
-      "s": "hina-logi-from-luck-logic",
       "t": "Hina Logi: From Luck & Logic",
       "d": [
         {"i": 0, "m": 4.88, "r": 8, "u": 86, "d": 416383},
@@ -11075,7 +10957,6 @@
     },
     "13561": {
       "i": 13561,
-      "s": "musekinin-galaxy-tylor",
       "t": "Musekinin Galaxy☆Tylor",
       "d": [
         {"i": 0, "u": 22, "d": 416503},
@@ -11169,7 +11050,6 @@
     },
     "13572": {
       "i": 13572,
-      "s": "piko-tarou-no-lullaby-lullaby",
       "t": "Piko Tarou no Lullaby Lullaby",
       "d": [
         {"i": 0, "u": 7, "d": 416551},
@@ -11261,7 +11141,6 @@
     },
     "13576": {
       "i": 13576,
-      "s": "yami-shibai-5th-season",
       "t": "Yami Shibai 5th Season",
       "d": [
         {"i": 0, "m": 1, "r": 1, "u": 18, "d": 416431},
@@ -11358,7 +11237,6 @@
     },
     "13589": {
       "i": 13589,
-      "s": "skirt-no-naka-wa-kedamondo-deshita",
       "t": "Skirt no Naka wa Kedamono Deshita.",
       "d": [
         {"i": 0, "m": 10, "r": 1, "u": 40, "d": 416431},
@@ -11455,7 +11333,6 @@
     },
     "13616": {
       "i": 13616,
-      "s": "enmusubi-no-youko-chan",
       "t": "Enmusubi no Youko-chan",
       "d": [
         {"i": 0, "m": 3.5, "r": 2, "d": 416479},
@@ -11550,7 +11427,6 @@
     },
     "13624": {
       "i": 13624,
-      "s": "marvel-future-avengers",
       "t": "Marvel Future Avengers",
       "d": [
         {"i": 0, "d": 416671},
@@ -11636,7 +11512,6 @@
     },
     "13633": {
       "i": 13633,
-      "s": "voltron-legendary-defender-motion-comic",
       "t": "Voltron Legendary Defender: Motion Comic",
       "d": [
         {"i": 0, "m": 6, "r": 1, "u": 2, "d": 416839},
@@ -11713,7 +11588,6 @@
     },
     "13642": {
       "i": 13642,
-      "s": "ikemen-sengoku-toki-wo-kakeru-ga-koi-wa-hajimaranai",
       "t": "Ikemen Sengoku: Toki wo Kakeru ga Koi wa Hajimaranai",
       "d": [
         {"i": 0, "m": 1, "r": 1, "d": 416671},
@@ -11800,7 +11674,6 @@
     },
     "13644": {
       "i": 13644,
-      "s": "huyao-xiao-hongniang-qian-yan",
       "t": "Huyao Xiao Hongniang: Qian Yan",
       "d": [
         {"i": 0, "u": 3, "d": 416839},
@@ -11880,7 +11753,6 @@
     },
     "13649": {
       "i": 13649,
-      "s": "rwby-v-character-shorts",
       "t": "RWBY V: Character Shorts",
       "d": [
         {"i": 0, "u": 8, "d": 416839},
@@ -11960,7 +11832,6 @@
     },
     "13688": {
       "i": 13688,
-      "s": "yaoshenji",
       "t": "Yaoshenji",
       "u": 1,
       "d": [
@@ -12029,7 +11900,6 @@
     },
     "13711": {
       "i": 13711,
-      "s": "gundam-build-fighters-battlogue",
       "t": "Gundam Build Fighters: Battlogue",
       "u": 0,
       "d": [
@@ -12090,7 +11960,6 @@
     },
     "13724": {
       "i": 13724,
-      "s": "yume-ga-sameru-made",
       "t": "Yume ga Sameru made",
       "u": 1,
       "d": [
@@ -12148,7 +12017,6 @@
     },
     "13725": {
       "i": 13725,
-      "s": "new-my-tear-cl-series",
       "t": "New My Tear CL Series",
       "u": 1,
       "d": [
@@ -12206,7 +12074,6 @@
     },
     "13734": {
       "i": 13734,
-      "s": "indigo-ignited-official-pilot",
       "t": "Indigo Ignited: Official Pilot",
       "u": 1,
       "d": [
@@ -12260,7 +12127,6 @@
     },
     "13735": {
       "i": 13735,
-      "s": "overwatch-doomfist-origin-story",
       "t": "Overwatch: Doomfist Origin Story",
       "u": 1,
       "d": [
@@ -12309,7 +12175,6 @@
     },
     "13742": {
       "i": 13742,
-      "s": "uma-no-friends",
       "t": "Uma no Friends",
       "u": 1,
       "d": [
@@ -12358,7 +12223,6 @@
     },
     "13756": {
       "i": 13756,
-      "s": "gundam-build-fighters-gm-no-gyakushuu",
       "t": "Gundam Build Fighters: GM no Gyakushuu",
       "u": 1,
       "d": [
@@ -12402,7 +12266,6 @@
     },
     "13769": {
       "i": 13769,
-      "s": "adventure-time-9",
       "t": "Adventure Time Season 9",
       "u": 0,
       "d": [
@@ -12444,7 +12307,6 @@
     },
     "13776": {
       "i": 13776,
-      "s": "anisama",
       "t": "Anisama",
       "u": 1,
       "d": [
@@ -12483,7 +12345,6 @@
     },
     "13792": {
       "i": 13792,
-      "s": "shirotan-ga-ippai",
       "t": "Shirotan: Shirotan ga Ippai!",
       "u": 1,
       "d": [
@@ -12511,7 +12372,6 @@
     },
     "13841": {
       "i": 13841,
-      "s": "quanzhi-fashi-2nd-season",
       "t": "Quanzhi Fashi 2nd Season",
       "u": 1,
       "d": [
@@ -12523,7 +12383,7 @@
         {"i": 5, "d": 418544, "m": 8.5, "r": 2, "u": 19}
       ]
     },
-    "13876": {"i": 13876, "s": "sono-me-ga-mitsumeru-mono", "t": "Sono Me ga Mitsumeru Mono", "u": 1, "d": [{"i": 0, "d": 418544, "m": 3, "r": 2, "u": 1}]}
+    "13876": {"i": 13876, "t": "Sono Me ga Mitsumeru Mono", "u": 1, "d": [{"i": 0, "d": 418544, "m": 3, "r": 2, "u": 1}]}
   },
   "meta": {"current": 79, "total": 142},
   "updated": "2017-09-30T07:47:12.179Z"

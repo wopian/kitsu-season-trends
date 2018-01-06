@@ -107,7 +107,6 @@ function Container ({ match }) {
       return <TrendContainer
         key={index}
         id={entry.i}
-        slug={entry.s}
         title={entry.t}
         data={entry.d}
         start={collectionStartDate}

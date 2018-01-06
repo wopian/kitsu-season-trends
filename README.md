@@ -18,7 +18,6 @@ The JSON data is aggressively minified, as each season becomes a fairly large da
   data: {
     '12': { // Kitsu anime ID
       i: 12, // Kitsu anime ID
-      s: 'one-piece', // Kitsu slug
       t: 'One Piece', // Canonical title
       u: 0, // Subtype (0: TV, 1: ONA)
       d: [ // Data array containing each daily update
