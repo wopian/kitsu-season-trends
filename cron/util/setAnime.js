@@ -1,10 +1,9 @@
 import { db, TIMESTAMP } from './'
 
-export async function setAnime (id, { slug, canonicalTitle, userCount, favoritesCount, subtype }, { mean, usersRated }) {
+export async function setAnime (id, { canonicalTitle, userCount, favoritesCount, subtype }, { mean, usersRated }) {
   try {
     db.set(`data.${id}`, {
       i: ~~id,
-      s: slug,
       t: canonicalTitle,
       u: subtype === 'TV' ? 0 : 1, // 0: TV, 1: ONA
       d: [Object.assign(

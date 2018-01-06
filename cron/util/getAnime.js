@@ -1,7 +1,7 @@
 import { api, RANGE } from './'
 import { seasonUSFormat, year } from '../../src/util'
 
-const anime = 'slug,canonicalTitle,ratingFrequencies,userCount,favoritesCount,subtype,startDate,endDate'
+const anime = 'canonicalTitle,ratingFrequencies,userCount,favoritesCount,subtype,startDate,endDate'
 const sort = '-averageRating,-userCount'
 
 export async function getAnime ({ model = 'anime', offset = 0, id = null, upcoming = false } = {}) {

@@ -15,9 +15,7 @@ readdir(dir, (err, files) => {
       const data = JSON.parse(DATA)
 
       Object.keys(data.data).forEach(id => {
-        const d = data.data[id].d
-        const last = d[d.length - 1]
-        if (!last.r) delete data.data[id]
+        delete data.data[id].s
       })
 
       /*

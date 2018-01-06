@@ -1,9 +1,8 @@
 import { db, TIMESTAMP } from './'
 
-export async function updateAnime (id, { slug, canonicalTitle, userCount, favoritesCount, subtype }, { mean, usersRated }) {
+export async function updateAnime (id, { canonicalTitle, userCount, favoritesCount, subtype }, { mean, usersRated }) {
   try {
     const update = db.get(`data.${id}`).value()
-    update.s = slug
     update.t = canonicalTitle
     update.u = subtype === 'TV' ? 0 : 1 // 0: TV, 1: ONA
     update.d.push(Object.assign(
