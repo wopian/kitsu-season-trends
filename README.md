@@ -4,6 +4,7 @@
 [![uptime badge]][web]
 [![travis badge]][travis]
 [![donate badge]][donate]
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwopian%2Fkitsu-season-trends.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwopian%2Fkitsu-season-trends?ref=badge_shield)
 
 [Kitsu] season trends for the currently airing anime
 
@@ -96,3 +97,6 @@ All code released under the [MIT] license
 
 [donate]:https://www.patreon.com/wopian
 [donate badge]:https://img.shields.io/badge/patreon-donate-ff69b4.svg?style=flat-square
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwopian%2Fkitsu-season-trends.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwopian%2Fkitsu-season-trends?ref=badge_large)
