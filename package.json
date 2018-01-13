@@ -49,7 +49,7 @@
     "favicons-webpack-plugin": "~0.0.7",
     "file-loader": "~1.1.4",
     "html-webpack-plugin": "~2.30.1",
-    "json-stringify-pretty-compact": "~1.0.4",
+    "json-stringify-pretty-compact": "~1.1.0",
     "kitsu": "~3.1.4",
     "loglevel": "~1.6.0",
     "lowdb": "~0.16.2",
