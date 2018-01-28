@@ -29,7 +29,7 @@ module.exports = {
   ],
   output: {
     publicPath: '/',
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, 'dist'),
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].js'
   },
