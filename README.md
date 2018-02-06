@@ -9,9 +9,12 @@
 
 ## Using the Data
 
-All the data is free to use and available in JSON format in `./data`, or online at `season.moe/data/{year}-{season}.json`
+All the data is free to use and available in:
 
-The JSON data is aggressively minified, as each season becomes a fairly large data dump
+- JSON format in `./data` or online at `season.moe/data/{year}-{season}.json`
+- [MessagePack] format online at `season.moe/msgpack/{year}-{season}.json`
+
+## Data Format
 
 ```js
 {
@@ -80,6 +83,7 @@ The JSON data is aggressively minified, as each season becomes a fairly large da
 All code released under the [MIT] license
 
 [Kitsu]:https://kitsu.io
+[MessagePack]:https://msgpack.org
 [Fork the repo]:https://help.github.com/articles/fork-a-repo/#fork-an-example-repository
 [Create a Pull Request]:https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request
 [MIT]:https://github.com/wopian/kitsu-season-trends/blob/master/LICENSE.md
