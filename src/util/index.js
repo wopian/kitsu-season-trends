@@ -59,7 +59,7 @@ export function nextSeason ({ s, y }) {
 
 export function sort (data, by) {
   return Object.values(data).sort((A, B) => {
-    let a, b
+    let a = null, b = null
 
     if (by === 'r') {
       a = A.d.slice(-1)[0][by] / A.d.slice(-1)[0].u
