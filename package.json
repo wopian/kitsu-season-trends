@@ -62,7 +62,7 @@
     "style-loader": "~0.20.0",
     "uglifyjs-webpack-plugin": "~1.1.5",
     "url-loader": "~0.6.0",
-    "webpack": "~3.10.0",
+    "webpack": "~3.11.0",
     "webpack-bundle-size-analyzer": "~2.7.0",
     "webpack-cleanup-plugin": "^0.5.1",
     "webpack-dashboard": "~1.1.0",
