@@ -1871,8 +1871,8 @@ copy-descriptor@^0.1.0:
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
 
 copy-webpack-plugin@~4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-4.4.0.tgz#93c9ded7f821a747a5b617087dd6191abfefb9be"
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/copy-webpack-plugin/-/copy-webpack-plugin-4.4.1.tgz#1e8c366211db6dc2ddee40e5a3e4fc661dd149e8"
   dependencies:
     cacache "^10.0.1"
     find-cache-dir "^1.0.0"
@@ -1881,7 +1881,6 @@ copy-webpack-plugin@~4.4.0:
     loader-utils "^0.2.15"
     minimatch "^3.0.4"
     p-limit "^1.0.0"
-    pify "^3.0.0"
     serialize-javascript "^1.4.0"
 
 core-js@2.4.1:
@@ -2211,7 +2210,7 @@ debug@^3.0.1, debug@^3.1.0:
   dependencies:
     ms "2.0.0"
 
-decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2, decamelize@^1.2.0:
+decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
@@ -2668,16 +2667,16 @@ eslint-config-standard@~11.0.0-beta.0:
   resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-11.0.0-beta.0.tgz#f8afe69803d95c685a4b8392b8793188eb03cbb3"
 
 eslint-config-wopian-react@~1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-wopian-react/-/eslint-config-wopian-react-1.2.0.tgz#41cb2b4ee0de8bd78a04e38ff6d49547d06ed811"
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/eslint-config-wopian-react/-/eslint-config-wopian-react-1.2.2.tgz#d7c4ebca3b398057a99c3d15d58f9ca1620896d7"
   dependencies:
     eslint-config-standard-jsx "~4.0.2"
-    eslint-config-wopian "^1.2.0"
+    eslint-config-wopian "^1.2.2"
     eslint-plugin-react "~7.6.1"
 
-eslint-config-wopian@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-wopian/-/eslint-config-wopian-1.2.0.tgz#911c19a92a5f0d2946817d642d70aa4797b0d02b"
+eslint-config-wopian@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/eslint-config-wopian/-/eslint-config-wopian-1.2.2.tgz#4f45e18eb4e4e90e16e06d1cbb24c63f2f6d0649"
   dependencies:
     babel-eslint "~8.2.0"
     eslint-config-standard "~11.0.0-beta.0"
@@ -4430,14 +4429,12 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-kitsu@~3.1.4:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-3.1.4.tgz#d42205747eb85137dbb9aaa6e14a70c67e72514b"
+kitsu@~4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-4.6.0.tgz#c0cf71a883728778b9cb4b29929659be333a1056"
   dependencies:
     axios "^0.17.0"
     babel-runtime "^6.26.0"
-    camelcase "^4.1.0"
-    decamelize "^1.2.0"
     pluralize "^7.0.0"
 
 klaw@^1.0.0:
