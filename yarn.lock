@@ -4430,19 +4430,19 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-kitsu-core@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-5.0.0.tgz#a02a828368ea00fbbb27987208404a2509cee748"
+kitsu-core@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-5.0.3.tgz#d3d39de92b6ee5cdc0a7521a005889ae6de75c6d"
   dependencies:
     babel-runtime "^6.26.0"
 
 kitsu@~5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-5.0.0.tgz#999e6f3af8ef4c30ed1e735ef839171baeab2d26"
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-5.0.3.tgz#ef98054b770597c621c6e1490dfb1b5ccb2b9e33"
   dependencies:
     axios "^0.17.0"
     babel-runtime "^6.26.0"
-    kitsu-core "^5.0.0"
+    kitsu-core "^5.0.3"
     pluralize "^7.0.0"
 
 klaw@^1.0.0:
@@ -7515,9 +7515,9 @@ uglifyjs-webpack-plugin@^0.4.6:
     uglify-js "^2.8.29"
     webpack-sources "^1.0.1"
 
-uglifyjs-webpack-plugin@~1.1.5:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.1.8.tgz#1302fb9471a7daf3d0a5174da6d65f0f415e75ad"
+uglifyjs-webpack-plugin@~1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.0.tgz#f706fa4c655000a086b4a97c7d835ed0f6e9b0ef"
   dependencies:
     cacache "^10.0.1"
     find-cache-dir "^1.0.0"
