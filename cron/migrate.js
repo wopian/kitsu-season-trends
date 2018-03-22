@@ -13,10 +13,7 @@ readdir(dir, (err, files) => {
       if (err2) throw err2
 
       const data = JSON.parse(DATA)
-
-      Object.keys(data.data).forEach(id => {
-        delete data.data[id].s
-      })
+      data.data = Object.values(data.data)
 
       /*
       Object.keys(data).forEach(el => {
