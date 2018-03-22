@@ -178,6 +178,7 @@ module.exports = {
       ],
       inject: true,
       fingerprints: true,
+      filename: 'manifest.json',
       ios: true
     }),
     new BundleSize('../.bundlesize.yml')
