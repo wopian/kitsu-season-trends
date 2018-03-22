@@ -13,7 +13,8 @@ readdir(dir, (err, files) => {
       if (err2) throw err2
 
       const data = JSON.parse(DATA)
-      data.data = Object.values(data.data)
+
+      data.data = data.data.filter(anime => anime.d[anime.d.length - 1].r >= 5)
 
       /*
       Object.keys(data).forEach(el => {
