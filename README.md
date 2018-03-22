@@ -18,8 +18,8 @@ All the data is free to use and available in:
 
 ```js
 {
-  data: {
-    '12': { // Kitsu anime ID
+  data: [
+    {
       i: 12, // Kitsu anime ID
       t: 'One Piece', // Canonical title
       u: 0, // Subtype (0: TV, 1: ONA)
@@ -34,7 +34,7 @@ All the data is free to use and available in:
         }
       ]
     }
-  },
+  ],
   meta: {
     current: 65, // Total started airing this season
     total: 277 // Total shows being tracked
