@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import { store, initStore } from './util'
 import { updateAiring, updateExisting, updateUpcoming, prune } from './modules'
-import { FILE, TIMESTAMP } from './constants'
+import { FILE, NOW } from './constants'
 
 readFile(FILE, 'utf8', async (err, res) => {
   if (err) throw err
@@ -20,15 +20,12 @@ readFile(FILE, 'utf8', async (err, res) => {
     })
   })
 
+  store.data.meta.current = store.currentlyAiring.length
   store.data.meta.total = store.data.data.length
-  store.data.updated = TIMESTAMP
+  store.data.updated = NOW
 
-  console.log(store.data.meta, store.data.updated)
-
-  /*
   writeFile(FILE, stringify(store.data, { maxLength: 250 }), err2 => {
     if (err2) throw err2
-    console.log(`Written ${FILE}`)
+    console.log(`Updated ${FILE}`)
   })
-  */
 })
