@@ -12,6 +12,7 @@ export let store = {
     removed: [],
     added: []
   },
+  currentlyAiring: [],
   willBePruned: []
 }
 

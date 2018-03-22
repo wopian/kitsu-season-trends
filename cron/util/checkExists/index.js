@@ -1,10 +1,12 @@
-import { TIMESTAMP } from '../../constants'
-import { store, mean, doNotPrune } from '../'
+import { TIMESTAMP, SEASON } from '../../constants'
+import { store, mean, doNotPrune, season } from '../'
 
-export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, userCount, favoritesCount }) {
+export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, userCount, favoritesCount, startDate, status }) {
   const ratings = mean(ratingFrequencies)
 
   if (ratings.usersRated < 5) return
+
+  if (status === 'current' && season(startDate) === SEASON) store.currentlyAiring.push(canonicalTitle)
 
   const entry = store.data.data.find(anime => ~~anime.i === ~~id)
   if (entry) {
