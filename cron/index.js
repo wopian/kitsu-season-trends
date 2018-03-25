@@ -1,12 +1,15 @@
-import { readFile, writeFile } from 'fs'
+import { access, readFile, writeFile } from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import { store, initStore } from './util'
 import { updateAiring, updateExisting, updateUpcoming, prune } from './modules'
 import { FILE, NOW } from './constants'
 
-readFile(FILE, 'utf8', async (err, res) => {
-  if (err) throw err
-  initStore(res)
+access(FILE, async err => {
+  if (!err) readFile(FILE, 'utf8', async (readError, res) => {
+    if (readError) throw readError
+    initStore(res)
+  })
+
   await updateAiring()
   await updateExisting()
   await updateUpcoming()
@@ -24,8 +27,8 @@ readFile(FILE, 'utf8', async (err, res) => {
   store.data.meta.total = store.data.data.length
   store.data.updated = NOW
 
-  writeFile(FILE, stringify(store.data, { maxLength: 250 }), err2 => {
-    if (err2) throw err2
+  writeFile(FILE, stringify(store.data, { maxLength: 250 }), writeError => {
+    if (writeError) throw writeError
     console.log(`Updated ${FILE}`)
   })
 })

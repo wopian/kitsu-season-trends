@@ -19,3 +19,9 @@ export function season (date = new Date()) {
       return 'autumn'
   }
 }
+
+export function startSeason (date = new Date()) {
+  date = new Date(date)
+  date.setMonth(date.getMonth() + 1)
+  return season(date)
+}
