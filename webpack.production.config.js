@@ -109,32 +109,6 @@ module.exports = {
     }),
     // keep module.id stable when vender modules does not change
     new webpack.HashedModuleIdsPlugin(),
-    /*
-    new webpack.optimize.CommonsChunkPlugin({
-      children: true,
-      async: 'common',
-      minChunks: 1
-    }),
-    */
-    // split vendor js into its own file
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: module => {
-        return (
-          module.resource &&
-          /\.js$/.test(module.resource) &&
-          module.resource.indexOf(
-            path.join(__dirname, 'node_modules')
-          ) === 0
-        )
-      }
-    }),
-    // extract webpack runtime and module manifest to its own file in order to
-    // prevent vendor hash from being updated whenever app bundle is updated
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'manifest',
-      chunks: ['vendor']
-    }),
     /* Does not support Webpack 3 yet
     new Favicons({
       logo: './src/favicon.png',
