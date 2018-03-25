@@ -9,9 +9,9 @@ export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, u
   // Started airing in the current season - excluding leftovers
   if (startSeason(startDate) === SEASON && year(startDate) === YEAR) store.currentlyAiring.push(canonicalTitle)
 
-  const entry = store.data.data.find(anime => ~~anime.i === ~~id)
+  const entry = store.data.data.find(anime => anime.i === ~~id)
   if (entry) {
-    doNotPrune(id)
+    doNotPrune(~~id)
     store.count.updated.push(canonicalTitle)
     entry.i = ~~id,
     entry.t = canonicalTitle
