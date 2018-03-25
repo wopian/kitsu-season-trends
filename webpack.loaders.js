@@ -1,3 +1,5 @@
+const ExtractText = require("mini-css-extract-plugin");
+
 module.exports = [
   {
     test: /\.jsx?$/,
@@ -6,7 +8,7 @@ module.exports = [
   },
   {
     test: /\.css$/,
-    loaders: ['style-loader', 'css-loader?importLoaders=1'],
+    loaders: [ExtractText.loader, 'style-loader', 'css-loader?importLoaders=1'],
     exclude: ['node_modules']
   },
   {
