@@ -1,13 +1,17 @@
 import { access, readFile, writeFile } from 'fs'
 import stringify from 'json-stringify-pretty-compact'
+import chalk from 'chalk'
 import { store, initStore } from './util'
 import { updateAiring, updateExisting, updateUpcoming, prune, stats } from './modules'
-import { FILE, NOW } from './constants'
+import { FILE, NOW, SEASON, YEAR } from './constants'
+
+const log = console.log
 
 access(FILE, async err => {
   if (!err) await readFile(FILE, 'utf8', async (readError, res) => {
     if (readError) throw readError
     await initStore(res)
+    log(chalk`{bold.green LOADED} ${SEASON} ${YEAR} season data from {gray ${FILE}}`)
   })
 
   await updateAiring()
@@ -22,6 +26,6 @@ access(FILE, async err => {
 
   await writeFile(FILE, stringify(store.data, { maxLength: 250 }), writeError => {
     if (writeError) throw writeError
-    console.log(`Updated ${FILE}`)
+    log(chalk`{bold.green SAVED} ${SEASON} ${YEAR} season data to {gray ${FILE}}`)
   })
 })
