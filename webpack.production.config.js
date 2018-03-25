@@ -1,7 +1,7 @@
 var webpack = require('webpack')
 var path = require('path')
 var chalk = require('chalk')
-var loaders = require('./webpack.loaders')
+var rules = require('./webpack.loaders')
 var Html = require('html-webpack-plugin')
 var ExtractText = require('extract-text-webpack-plugin')
 var Favicons = require('favicons-webpack-plugin')
@@ -15,7 +15,7 @@ var { encode } = require('msgpack-lite/lib/encode')
 var { readFileSync } = require('fs')
 
 
-loaders.push({
+rules.push({
   test: /\.scss$/,
   loader: ExtractText.extract({fallback: 'style-loader', use: 'css-loader?sourceMap&localIdentName=[local]___[hash:base64:5]!sass-loader?outputStyle=expanded'}),
   exclude: ['node_modules']
@@ -37,7 +37,7 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   module: {
-    loaders
+    rules
   },
   plugins: [
     new Cleanup(),
