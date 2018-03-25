@@ -9,7 +9,7 @@ function getExisting (id) {
 }
 
 export async function updateExisting () {
-  await store.willBePruned.forEach(async id => {
+  await Promise.all(store.willBePruned.map(async id => {
     let { data } = await getExisting(id)
     data = data[0]
 
@@ -17,6 +17,7 @@ export async function updateExisting () {
     const cutoff = new Date(KEEP_IF_ENDED_AFTER)
     const distance = ended - cutoff
 
-    if (data.status === 'current' || distance >= 0 || data.endDate === null) checkExists(data)
-  })
+    if (data.status === 'current' || distance >= 0 || data.endDate === null) await checkExists(data)
+    console.log('Updating existing')
+  }))
 }

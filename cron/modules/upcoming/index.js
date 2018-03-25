@@ -12,9 +12,10 @@ function getUpcoming (offset) {
 
 export async function updateUpcoming (offset = 0) {
   const { data, links } = await getUpcoming(offset)
-  data.forEach(anime => {
+  await Promise.all(data.map(async anime => {
     // Kitsu API status filter is broken as of March 2018
-    if (anime.status === 'upcoming') checkExists(anime)
-  })
+    if (anime.status === 'upcoming') await checkExists(anime)
+    console.log('Updating upcoming')
+  }))
   if (links && links.next) await updateUpcoming(offset + RANGE)
 }
