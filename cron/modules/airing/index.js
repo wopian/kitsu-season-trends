@@ -24,7 +24,6 @@ export async function updateAiring (offset = 0) {
     // Ignore Autumn 2018 shows starting in Summer 2018
     if (startSeason(anime.startDate) === 'autumn' && SEASON === 'summer' && YEAR === year(anime.startDate)) return
     await checkExists(anime)
-    console.log('Updating airing')
   }))
   if (links && links.next) await updateAiring(offset + RANGE)
 }

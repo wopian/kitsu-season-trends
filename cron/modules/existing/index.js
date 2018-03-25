@@ -18,6 +18,5 @@ export async function updateExisting () {
     const distance = ended - cutoff
 
     if (data.status === 'current' || distance >= 0 || data.endDate === null) await checkExists(data)
-    console.log('Updating existing')
   }))
 }
