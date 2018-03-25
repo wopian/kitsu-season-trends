@@ -7,7 +7,6 @@ var ExtractText = require('extract-text-webpack-plugin')
 var Favicons = require('favicons-webpack-plugin')
 var Copy = require('copy-webpack-plugin')
 var OptimizeCSS = require('optimize-css-assets-webpack-plugin')
-var UglifyJs = require('uglifyjs-webpack-plugin')
 var ProgressBar = require('progress-bar-webpack-plugin')
 var ProgressiveManifest = require('webpack-pwa-manifest')
 var Cleanup = require('webpack-cleanup-plugin')
@@ -33,6 +32,7 @@ module.exports = {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].js'
   },
+  mode: 'production',
   resolve: {
     extensions: ['.js', '.jsx']
   },
@@ -45,16 +45,6 @@ module.exports = {
       format: '  ' + chalk.green.bold(':percent') + ' :elapseds :msg',
       renderThrottle: 10
     }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new UglifyJs({
-      parallel: true,
-      cache: true
-    }),
-    new webpack.NoEmitOnErrorsPlugin(),
     new ExtractText({
       filename: '[name].[contenthash].css',
     }),
