@@ -60,12 +60,12 @@
     "style-loader": "~0.20.0",
     "uglifyjs-webpack-plugin": "~1.2.0",
     "url-loader": "~1.0.0",
-    "webpack": "~3.11.0",
+    "webpack": "~4.2.0",
     "webpack-bundle-size-analyzer": "~2.7.0",
     "webpack-cleanup-plugin": "^0.5.1",
     "webpack-dashboard": "~1.1.0",
-    "webpack-dev-server": "~2.11.0",
-    "webpack-pwa-manifest": "~3.5.0",
+    "webpack-dev-server": "~3.1.0",
+    "webpack-pwa-manifest": "~3.6.0",
     "weighted-mean": "~1.0.2"
   },
   "renovate": {
