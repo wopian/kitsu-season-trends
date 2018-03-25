@@ -13,6 +13,8 @@ function getAiring (offset) {
 export async function updateAiring (offset = 0) {
   const { data, links } = await getAiring(offset)
   data.forEach(anime => {
+    // Kitsu API status filter is broken as of March 2018
+    if (anime.status !== 'current') return
     // Ignore Winter 2018 shows starting in Autumn 2017
     if (startSeason(anime.startDate) === 'winter' && SEASON === 'autumn' && YEAR === year(anime.startDate) - 1) return
     // Ignore Spring 2018 shows starting in Winter 2018
