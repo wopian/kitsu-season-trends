@@ -17,7 +17,7 @@ var { readFileSync } = require('fs')
 
 rules.push({
   test: /\.scss$/,
-  loader: ExtractText.extract({fallback: 'style-loader', use: 'css-loader?sourceMap&localIdentName=[local]___[hash:base64:5]!sass-loader?outputStyle=expanded'}),
+  loader: [ExtractText.loader, 'style-loader', 'css-loader?sourceMap&localIdentName=[local]___[hash:base64:5]!sass-loader?outputStyle=expanded'], 
   exclude: ['node_modules']
 })
 
