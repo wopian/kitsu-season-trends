@@ -17,9 +17,11 @@ export let store = {
 }
 
 export function initStore (response) {
-  const { data, meta, updated } = JSON.parse(response)
-  store.data.data = data
-  store.data.meta = meta
-  store.data.updated = updated
-  store.willBePruned = store.data.data.map(obj => obj.i)
+  if (response) {
+    const { data, meta, updated } = JSON.parse(response)
+    store.data.data = data
+    store.data.meta = meta
+    store.data.updated = updated
+    store.willBePruned = store.data.data.map(obj => obj.i)
+  }
 }

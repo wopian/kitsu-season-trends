@@ -1,18 +1,19 @@
-import { TIMESTAMP, SEASON } from '../../constants'
-import { store, mean, doNotPrune, season } from '../'
+import { TIMESTAMP, SEASON, YEAR } from '../../constants'
+import { store, mean, doNotPrune, year, startSeason } from '../'
 
-export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, userCount, favoritesCount, startDate, status }) {
+export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, userCount, favoritesCount, startDate }) {
   const ratings = mean(ratingFrequencies)
 
   if (ratings.usersRated < 5) return
 
   // Started airing in the current season - excluding leftovers
-  if (season(startDate) === SEASON) store.currentlyAiring.push(canonicalTitle)
+  if (startSeason(startDate) === SEASON && year(startDate) === YEAR) store.currentlyAiring.push(canonicalTitle)
 
   const entry = store.data.data.find(anime => ~~anime.i === ~~id)
   if (entry) {
     doNotPrune(id)
     store.count.updated.push(canonicalTitle)
+    entry.i = ~~id,
     entry.t = canonicalTitle
     entry.u = subtype === 'TV' ? 0 : 1 // 0: TV, 1: ONA
     entry.d.push(Object.assign(
@@ -28,11 +29,12 @@ export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, u
   } else {
     store.count.added.push(canonicalTitle)
     store.data.data.push({
+      i: ~~id,
       t: canonicalTitle,
       u: subtype === 'TV' ? 0 : 1, // 0: TV, 1: ONA
       d: [Object.assign(
         {
-          id: 0, // Index
+          i: 0, // Index
           d: ~~(TIMESTAMP / 3600000).toFixed(0) // Hours since epoch
         },
         ~~ratings.usersRated === 0 ? '' : { m: ratings.mean },
