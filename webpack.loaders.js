@@ -8,7 +8,7 @@ module.exports = [
   },
   {
     test: /\.css$/,
-    loaders: [ExtractText.loader, 'style-loader', 'css-loader?importLoaders=1'],
+    loaders: [ExtractText.loader, 'style-loader', 'css-loader'],
     exclude: ['node_modules']
   },
   {
