@@ -98,7 +98,8 @@
         "packagePatterns": [
           "^webpack"
         ],
-        "groupName": "webpack"
+        "groupName": "webpack",
+        "enabled": false
       }
     ]
   }
