@@ -11,9 +11,13 @@ export async function stats () {
 
     if (process.env.TRAVIS) log(`travis_fold:start:${counter}`)
     if (count > 0) log(chalk`{bold.${counterColour} ${counterLabel}} ${count} anime`)
-    await store.count[counter].sort().map(anime => {
-      log(chalk`  {gray ${anime}}`)
-    })
+    
+    await store.count[counter]
+      .sort((a, b) => a.localeCompare(b, 'en', {'sensitivity': 'base'}))
+      .map(anime => {
+        log(chalk`  {gray ${anime}}`)
+      })
+    
     if (process.env.TRAVIS) log(`travis_fold:end:${counter}`)
   }))
 }
