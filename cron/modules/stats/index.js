@@ -18,6 +18,6 @@ export async function stats () {
         log(chalk`  {gray ${anime}}`)
       })
     
-    if (process.env.TRAVIS) log(`travis_fold:end:${counter}`)
+    if (process.env.TRAVIS) log(`travis_fold:end:${counter}\n`)
   }))
 }
