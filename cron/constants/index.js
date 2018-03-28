@@ -14,9 +14,9 @@ export const USSEASON = SEASON === 'autumn' ? 'fall' : SEASON
 export const YEAR = year()
 
 export const KEEP_IF_ENDED_AFTER =
-  SEASON === 'winter' ? `${YEAR}-01-01` :
-  SEASON === 'spring' ? `${YEAR}-04-01` :
-  SEASON === 'summer' ? `${YEAR}-07-01` :
-  `${YEAR}-10-01`
+  SEASON === 'winter' ? `${YEAR}-01-15` :
+  SEASON === 'spring' ? `${YEAR}-04-15` :
+  SEASON === 'summer' ? `${YEAR}-07-15` :
+  `${YEAR}-10-15`
 
 export const FILE = `./data/${YEAR}-${SEASON}.json`
