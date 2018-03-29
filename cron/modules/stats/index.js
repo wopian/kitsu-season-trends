@@ -10,7 +10,7 @@ export async function stats () {
     const counterColour = counter === 'added' ? 'greenBright' : counter === 'updated' ? 'blueBright' : 'redBright'
     const counterLabel = counter.toUpperCase()
 
-    if (!travis) log(`travis_fold:start:${counter}`)
+    if (travis) log(`travis_fold:start:${counter}`)
     if (count > 0) log(chalk`{bold.${counterColour} ${counterLabel}} ${count} anime`)
 
     store.count[counter]
@@ -19,6 +19,6 @@ export async function stats () {
         log(chalk`  {gray ${anime}}`)
       })
 
-    if (!travis) log(`travis_fold:end:${counter}`)
+    if (travis) log(`travis_fold:end:${counter}`)
   }))
 }
