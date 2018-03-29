@@ -4,7 +4,10 @@ import { store, mean, doNotPrune, year, startSeason } from '../'
 export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, userCount, favoritesCount, startDate }) {
   const ratings = mean(ratingFrequencies)
 
-  if (ratings.usersRated < 5) return
+  if (ratings.usersRated < 5) {
+    store.count.skipped.push(canonicalTitle)
+    return
+  }
 
   // Started airing in the current season - excluding leftovers
   if (startSeason(startDate) === SEASON && year(startDate) === YEAR) store.currentlyAiring.push(canonicalTitle)
