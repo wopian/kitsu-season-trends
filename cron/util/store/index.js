@@ -9,8 +9,9 @@ export let store = {
   },
   count: {
     updated: [],
-    removed: [],
-    added: []
+    skipped: [],
+    added: [],
+    removed: []
   },
   currentlyAiring: [],
   willBePruned: []
