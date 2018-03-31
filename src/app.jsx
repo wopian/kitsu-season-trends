@@ -110,7 +110,7 @@ function Container ({ match }) {
         title={entry.t}
         data={entry.d}
         start={collectionStartDate}
-        leftover={entry.n ? !entry.n : true}
+        newAnime={typeof entry.n === 'number' ? entry.n : 1}
       />
     })
   } else if (error) {

@@ -7,6 +7,7 @@ import MdGroup from 'react-icons/lib/md/group'
 import MdFavorite from 'react-icons/lib/md/favorite'
 import MdStar from 'react-icons/lib/md/star'
 import MdThumbsUpDown from 'react-icons/lib/md/thumbs-up-down'
+import MdCircle from 'react-icons/lib/md/local-library'
 
 function posOrNeg (number) {
   if (number > 0) return `+${number}`
@@ -14,7 +15,7 @@ function posOrNeg (number) {
   else return `±${number}`
 }
 
-export function TrendContainer ({ start, id, title, data, leftover }) {
+export function TrendContainer ({ start, id, title, data, newAnime }) {
 
   const today = data.slice(-1)[0]
   const yesterday = data.slice(-2)[0]
@@ -22,16 +23,15 @@ export function TrendContainer ({ start, id, title, data, leftover }) {
   return (
     <div className='trend'>
       <a href={"//kitsu.io/anime/" + id}>
-        <img
-          className={classnames({
-            new: leftover === false,
-            leftover: leftover === true
-          })}
-          src={`https://media.kitsu.io/anime/poster_images/${id}/tiny.jpg`}
-          title={leftover ? 'Started airing before this season' : 'Started airing this season'}
-        />
+        <img src={`https://media.kitsu.io/anime/poster_images/${id}/tiny.jpg`}/>
         <div className='title'>
-          <span>{title}</span>
+          <div>
+            <MdCircle className={classnames({
+              new: newAnime === 1,
+              leftover: newAnime === 0
+            })}/>
+            <div>{title}</div>
+          </div>
           <div className='changes'>
             <span title='Score'>
               <MdStar/> {/* Mean */}
@@ -152,5 +152,5 @@ TrendContainer.propTypes = {
   poster: PropTypes.number,
   data: PropTypes.array,
   start: PropTypes.number,
-  leftover: PropTypes.bool
+  newAnime: PropTypes.number
 }
