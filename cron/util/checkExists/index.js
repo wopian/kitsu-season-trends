@@ -3,6 +3,7 @@ import { store, mean, doNotPrune, year, startSeason } from '../'
 
 export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, userCount, favoritesCount, startDate }) {
   const ratings = mean(ratingFrequencies)
+  let currentlyAiring = false
 
   if (ratings.usersRated < 5) {
     store.count.skipped.push(canonicalTitle)
@@ -10,7 +11,10 @@ export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, u
   }
 
   // Started airing in the current season - excluding leftovers
-  if (startSeason(startDate) === SEASON && year(startDate) === YEAR) store.currentlyAiring.push(canonicalTitle)
+  if (startSeason(startDate) === SEASON && year(startDate) === YEAR) {
+    currentlyAiring = true
+    store.currentlyAiring.push(canonicalTitle)
+  }
 
   const entry = store.data.data.find(anime => anime.i === ~~id)
   if (entry) {
@@ -19,6 +23,7 @@ export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, u
     entry.i = ~~id,
     entry.t = canonicalTitle
     entry.u = subtype === 'TV' ? 0 : 1 // 0: TV, 1: ONA
+    entry.n = currentlyAiring ? 1 : 0 // 1: New, 0: Leftover
     entry.d.push(Object.assign(
       {
         i: entry.d[entry.d.length - 1].i + 1 || 0, // Increment index
@@ -35,6 +40,7 @@ export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, u
       i: ~~id,
       t: canonicalTitle,
       u: subtype === 'TV' ? 0 : 1, // 0: TV, 1: ONA
+      n: currentlyAiring ? 1 : 0, // 1: New, 0: Leftover
       d: [Object.assign(
         {
           i: 0, // Index
