@@ -28,7 +28,7 @@ export class TrendTooltip extends React.Component {
           {label}
           <div className='changes'>
             <span>
-              <MdStar/> {/* Mean */}
+              <MdStar style={{color: '#332532'}}/> {/* Mean */}
               <span> {mean.value.toFixed(2)}</span>
             </span>
             <span>
