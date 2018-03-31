@@ -110,6 +110,7 @@ function Container ({ match }) {
         title={entry.t}
         data={entry.d}
         start={collectionStartDate}
+        leftover={entry.n ? !entry.n : true}
       />
     })
   } else if (error) {

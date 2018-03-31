@@ -83,12 +83,19 @@ button {
 }
 
 img {
-  padding-left: .25rem;
+  margin-left: .25rem;
   height: 2rem;
   width: 2rem;
   min-width: 2rem;
   border-radius: 999rem;
   object-fit: cover;
+
+  &.new {
+    box-shadow: 0 0 0 .1rem $accent;
+  }
+  &.leftover {
+    box-shadow: 0 0 0 .1rem $primary;
+  }
 }
 
 header {
