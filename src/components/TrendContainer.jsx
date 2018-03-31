@@ -63,7 +63,7 @@ export function TrendContainer ({ start, id, title, data }) {
             isAnimationActive={false}
             content={<TrendTooltip/>}
           />
-
+          {/* Favourites Line
           <Line
             yAxisId='0..max'
             activeDot={{ stroke: '#ffb9b9', strokeWidth: 2, r: 2 }}
@@ -74,7 +74,7 @@ export function TrendContainer ({ start, id, title, data }) {
             stroke='#ffb9b9'
             strokeWidth={1.5}
           />
-
+          */}
           <Line
             yAxisId='0..max'
             activeDot={{ stroke: '#b9ffb9', strokeWidth: 2, r: 2 }}
