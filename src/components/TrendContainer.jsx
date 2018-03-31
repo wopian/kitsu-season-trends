@@ -14,7 +14,7 @@ function posOrNeg (number) {
   else return `±${number}`
 }
 
-export function TrendContainer ({ start, id, title, data }) {
+export function TrendContainer ({ start, id, title, data, leftover }) {
 
   const today = data.slice(-1)[0]
   const yesterday = data.slice(-2)[0]
@@ -22,7 +22,14 @@ export function TrendContainer ({ start, id, title, data }) {
   return (
     <div className='trend'>
       <a href={"//kitsu.io/anime/" + id}>
-        <img src={`https://media.kitsu.io/anime/poster_images/${id}/tiny.jpg`}/>
+        <img
+          className={classnames({
+            new: leftover === false,
+            leftover: leftover === true
+          })}
+          src={`https://media.kitsu.io/anime/poster_images/${id}/tiny.jpg`}
+          title={leftover ? 'Started airing before this season' : 'Started airing this season'}
+        />
         <div className='title'>
           <span>{title}</span>
           <div className='changes'>
@@ -144,5 +151,6 @@ TrendContainer.propTypes = {
   title: PropTypes.string,
   poster: PropTypes.number,
   data: PropTypes.array,
-  start: PropTypes.number
+  start: PropTypes.number,
+  leftover: PropTypes.bool
 }

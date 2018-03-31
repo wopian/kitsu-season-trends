@@ -177,7 +177,7 @@ module.exports = {
         }
       ],
       inject: true,
-      fingerprints: true,
+      fingerprints: false,
       filename: 'manifest.json',
       ios: true
     }),
