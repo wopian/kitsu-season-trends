@@ -78,6 +78,37 @@ button {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      > div:first-of-type {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+        align-items: flex-start;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        div {
+          flex: 1 1 auto;
+          display: inline-block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        svg {
+          flex: 0 1 auto;
+          font-size: .75rem;
+          min-width: .75rem;
+          align-self: center;
+          margin-right: .2rem;
+          &.new {
+           fill: $accent;
+          }
+          *.leftover {
+            fill: $primary
+          }
+        }
+      }
     }
   }
 }
@@ -89,13 +120,6 @@ img {
   min-width: 2rem;
   border-radius: 999rem;
   object-fit: cover;
-
-  &.new {
-    box-shadow: 0 0 0 .1rem $accent;
-  }
-  &.leftover {
-    box-shadow: 0 0 0 .1rem $primary;
-  }
 }
 
 header {
