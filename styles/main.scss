@@ -71,13 +71,11 @@ button {
     }
     .title {
       display: inline-block;
-      padding-left: .5rem;
+      padding-left: .2rem;
       padding-right: .25rem;
       margin-top: -.15rem;
       width: 100%;
-      white-space: nowrap;
       overflow: hidden;
-      text-overflow: ellipsis;
       > div:first-of-type {
         display: flex;
         flex-direction: row;
@@ -85,9 +83,6 @@ button {
         justify-content: flex-start;
         align-content: flex-start;
         align-items: flex-start;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
         div {
           flex: 1 1 auto;
           display: inline-block;
