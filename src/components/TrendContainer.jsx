@@ -82,7 +82,7 @@ export function TrendContainer ({ start, id, title, data }) {
             type='monotone'
             isAnimationActive={false}
             dataKey='r'
-            stroke='#b9ffb9'
+            stroke='#86cc86'
             strokeWidth={1.5}
           />
 
