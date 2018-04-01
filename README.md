@@ -47,9 +47,9 @@ All the data is free to use and available in:
 
 ### Requirements
 
-- [git] >2.0.0
-- [node.js] >7.0.0
-- [yarn] >0.21.0
+- [git] `>= 2.0.0`
+- [node.js] `>= 8.0.0`
+- [yarn] `>= 1.0.0`
 
 ### Commands
 
