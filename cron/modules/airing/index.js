@@ -1,5 +1,5 @@
 import { RANGE, API_ANIME_FIELD, API_SORT, SEASON, YEAR } from '../../constants'
-import { api, checkExists, startSeason, year } from '../../util'
+import { api, checkExists, startSeason, year, error } from '../../util'
 
 function getAiring (offset) {
   return api.get('anime', {
@@ -12,6 +12,8 @@ function getAiring (offset) {
 
 export async function updateAiring (offset = 0) {
   const { data, links } = await getAiring(offset)
+    .catch(({ message, config }) => error(message, config))
+
   await Promise.all(data.map(async anime => {
     // Kitsu API status filter is broken as of March 2018
     if (anime.status !== 'current') return
