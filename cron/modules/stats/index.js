@@ -1,7 +1,6 @@
-import { store } from '../../util'
+import { store, log } from '../../util'
 import chalk from 'chalk'
 
-const log = console.log
 const travis = process.env.TRAVIS
 
 export async function stats () {
