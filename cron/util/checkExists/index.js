@@ -5,7 +5,7 @@ export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, u
   const ratings = mean(ratingFrequencies)
   let currentlyAiring = false
 
-  if (ratings.usersRated < 5) {
+  if (ratings.usersRated < 2) {
     store.count.skipped.push(canonicalTitle)
     return
   }
