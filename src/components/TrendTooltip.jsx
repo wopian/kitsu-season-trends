@@ -12,8 +12,6 @@ export class TrendTooltip extends React.Component {
     if (active) {
       let { payload, label } = this.props
       const date = new Date(label)
-      label = `${date.getUTCDay()}, ${date.getUTCDate()} ${date.getUTCFullYear()}`
-      label = date.toUTCString()
       label = date.toLocaleDateString(navigator.langauge, {
         weekDay: 'long',
         day: '2-digit',
