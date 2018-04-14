@@ -79,7 +79,7 @@ function Bar () {
           <span>Sort By</span>
           <button onClick={() => sortData('m')}>Score</button>
           <button onClick={() => sortData('u')}>Users</button>
-          <button onClick={() => sortData('r')}>Percent Rated</button>
+          <button onClick={() => sortData('r')}>Users Rated</button>
           <button onClick={() => sortData('f')}>Favorites</button>
         </div>
         <span className='info'>Airing anime this season, updated {updated ? distanceInWordsToNow(updated, { addSuffix: true }) : 'daily'}</span>
