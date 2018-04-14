@@ -50,9 +50,9 @@ export function TrendContainer ({ start, id, title, data, newAnime }) {
             <span title='Users Rated'>
               <MdThumbsUpDown style={{color: '#86CC86'}}/> {/* Users Rated */}
               <span className={classnames({
-                pos: (Number.isFinite((today.r - yesterday.r) / today.u) ? (today.r - yesterday.r) / today.u : 0).toFixed(2) > 0,
-                neg: (Number.isFinite((today.r - yesterday.r) / today.u) ? (today.r - yesterday.r) / today.u : 0).toFixed(2) < 0
-              })}>{posOrNeg((Number.isFinite((today.r - yesterday.r) / today.u) ? (today.r - yesterday.r) / today.u : 0).toFixed(2))}%</span>
+                pos: today.r - yesterday.r > 0,
+                neg: today.r - yesterday.r < 0
+              })}>{posOrNeg(today.r - yesterday.r)}</span>
             </span>
             <span title='Favourites'>
               <MdFavorite style={{color: '#CC8686'}}/> {/* Favourites */}
