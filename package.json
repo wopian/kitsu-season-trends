@@ -22,7 +22,7 @@
     "prop-types": "~15.6.0",
     "react": "~16.3.0",
     "react-dom": "~16.3.0",
-    "react-ga": "~2.4.0",
+    "react-ga": "~2.5.0",
     "react-icons": "~2.2.7",
     "react-router-dom": "~4.2.2",
     "react-transition-group": "~2.3.0",
