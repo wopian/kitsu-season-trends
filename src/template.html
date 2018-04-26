@@ -8,7 +8,7 @@
   <meta property='og:title' content='Kitsu Season Trends'>
   <meta property='og:type' content='website'>
   <meta property='og:description' content='Daily rating trends of airing anime by Kitsu.io users'>
-  <meta property='og:image' content='https://season.wopian.me/icons/android-chrome-192x192.png'>
+  <meta property='og:image' content='https://season.moe/icon_192x192.png'>
   <meta property='og:image:type' content='image/png'>
   <meta property='og:image:width' content='256'>
   <meta property='og:image:height' content='256'>
@@ -16,28 +16,27 @@
   <meta name='twitter:site' content='@WOPlAN'>
   <meta name='twitter:title' content='Kitsu Season Trends'>
   <meta name='twitter:description' content='Daily rating trends of airing anime by Kitsu.io users'>
-  <meta name='twitter:image' content='https://season.wopian.me/icons/android-chrome-192x192.png'>
+  <meta name='twitter:image' content='https://season.moe/icon_192x192.png'>
   <meta name='description' content='Daily rating trends of airing anime by Kitsu.io users'>
   <!--
   <meta http-equiv='Content-Security-Policy' content="script-src 'self' 'unsafe-eval' https://kitsu.io www.google-analytics.com">
   -->
-  <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700'>
 
   <!-- Remove when webpack favicon plugin supports Webpack 3 -->
+  <link rel='icon' type='image/png' href='/icon_32x32.png'>
   <meta name='mobile-web-app-capable' content='yes'>
   <meta name='theme-color' content='#332532'>
   <meta name='application-name' content='Kitsu Season Trends'>
   <meta name='apple-mobile-web-app-capable' content='yes'>
   <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'>
   <meta name='apple-mobile-web-app-title' content='Kitsu Season Trends'>
-  <script src='https://cdn.ravenjs.com/3.17.0/raven.min.js' crossorigin='anonymous'></script>
-  <script>Raven.config('https://d069e8b4574b4658b0023bee81757105@sentry.io/201865').install()</script>
 </head>
 <body>
   <main id='app'>
     <header>
       <h1>Kitsu</h1>
-      <h2>TRENDS<strong><script>document.write(new Date().getFullYear())</script></strong></h2>
+      <h2>TRENDS<strong id='init-year'></strong></h2>
     </header>
     <div class='bar'>
       <div>
@@ -49,4 +48,7 @@
     </div>
   </main>
 </body>
+<script>document.getElementById('init-year').innerHTML = new Date().getFullYear()</script>
+<script src='https://cdn.ravenjs.com/3.17.0/raven.min.js' crossorigin='anonymous'></script>
+<script>Raven.config('https://d069e8b4574b4658b0023bee81757105@sentry.io/201865').install()</script>
 </html>
