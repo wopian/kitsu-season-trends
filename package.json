@@ -92,15 +92,6 @@
       "group:storybookMonorepo"
     ],
     "prTitle": "update {{depName}} to {{newVersion}}",
-    "commitMessage": "update {{depName}} to {{newVersion}}",
-    "packageRules": [
-      {
-        "packagePatterns": [
-          "^webpack"
-        ],
-        "groupName": "webpack",
-        "enabled": false
-      }
-    ]
+    "commitMessage": "update {{depName}} to {{newVersion}}"
   }
 }
