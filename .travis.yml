@@ -1,6 +1,6 @@
 os: linux
 language: node_js
-node_js: 9 # return to 'node' when https://github.com/anodynos/upath/pull/15 merged
+node_js: node
 cache:
   yarn: true
 sudo: false
