@@ -7723,9 +7723,9 @@ webpack-dev-server@~2.11.0:
     webpack-dev-middleware "1.12.2"
     yargs "6.6.0"
 
-webpack-pwa-manifest@~3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/webpack-pwa-manifest/-/webpack-pwa-manifest-3.5.0.tgz#a7055b10abd32b9c91b412c1a294d68d7ffd950f"
+webpack-pwa-manifest@~3.6.0:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/webpack-pwa-manifest/-/webpack-pwa-manifest-3.6.2.tgz#361a2dff083a87cdc373bd27defdcfe317ecff1f"
   dependencies:
     css-color-names "0.0.4"
     jimp "^0.2.28"
