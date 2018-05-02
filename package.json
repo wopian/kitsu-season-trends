@@ -70,7 +70,7 @@
   },
   "renovate": {
     "extends": [
-      ":@wopian"
+      "@wopian"
     ]
   }
 }
