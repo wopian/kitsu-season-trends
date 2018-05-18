@@ -1,3 +1,5 @@
+const JSON5 = require('json5')
+
 export let store = {
   data: {
     data: [],
@@ -19,7 +21,7 @@ export let store = {
 
 export function initStore (response) {
   if (response) {
-    const { data, meta, updated } = JSON.parse(response)
+    const { data, meta, updated } = JSON5.parse(response)
     store.data.data = data
     store.data.meta = meta
     store.data.updated = updated
