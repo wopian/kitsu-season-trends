@@ -12,7 +12,7 @@
 All the data is free to use and available in:
 
 - JSON format in `./data` or online at `season.moe/data/{year}-{season}.json`
-- [MessagePack] format online at `season.moe/msgpack/{year}-{season}.json`
+- [MessagePack] format online at `season.moe/msgpack/{year}-{season}.msgpack`
 
 ## Data Format
 
