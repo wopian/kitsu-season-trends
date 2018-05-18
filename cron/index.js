@@ -1,5 +1,6 @@
+const JSON5 = require('json5')
 import { access, readFile, writeFile } from 'fs'
-import stringify from 'json-stringify-pretty-compact'
+// import stringify from 'json-stringify-pretty-compact'
 import chalk from 'chalk'
 import { store, initStore } from './util'
 import { updateAiring, updateExisting, updateUpcoming, prune, stats } from './modules'
@@ -24,7 +25,7 @@ access(FILE, async err => {
   store.data.meta.total = await store.data.data.length
   store.data.updated = NOW
 
-  await writeFile(FILE, stringify(store.data, { maxLength: 250 }), writeError => {
+  await writeFile(FILE, JSON5.stringify(store.data, { space: 1 }), writeError => {
     if (writeError) throw writeError
     log(chalk`{bold.green SAVED} ${SEASON} ${YEAR} season data to {gray ${FILE}}`)
   })

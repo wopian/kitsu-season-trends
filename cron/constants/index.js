@@ -19,4 +19,4 @@ export const KEEP_IF_ENDED_AFTER =
   SEASON === 'summer' ? `${YEAR}-07-15` :
   `${YEAR}-10-15`
 
-export const FILE = `./data/${YEAR}-${SEASON}.json`
+export const FILE = `./data/${YEAR}-${SEASON}.json5`

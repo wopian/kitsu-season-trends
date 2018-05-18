@@ -1,3 +1,4 @@
+var JSON5 = require('json5')
 var webpack = require('webpack')
 var path = require('path')
 var chalk = require('chalk')
@@ -149,12 +150,12 @@ module.exports = {
       {
         from: 'data',
         to: 'data',
-        transform: (content, file) => JSON.stringify(JSON.parse(readFileSync(file, 'utf8')))
+        transform: (content, file) => JSON.stringify(JSON5.parse(readFileSync(file, 'utf8')))
       },
       {
         from: 'data',
         to: 'msgpack',
-        transform: (content, file) => encode(JSON.parse(readFileSync(file, 'utf8')))
+        transform: (content, file) => encode(JSON5.parse(readFileSync(file, 'utf8')))
       },
       {
         from: 'static',
