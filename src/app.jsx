@@ -30,7 +30,7 @@ function sortData (by, update = true) {
 }
 
 function getData (year = y(), season = s()) {
-  fetch(`/msgpack/${year}-${season}.json`, {
+  fetch(`/msgpack/${year}-${season}.msgpack`, {
     method: 'get'
   })
   .then(res => {

@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Kitsu seasonal anime trends",
   "scripts": {
-    "build": "webpack --config webpack.production.config.js --colors",
+    "build:webpack": "webpack --config webpack.production.config.js --colors",
+    "build:rename": "node webpack.rename",
+    "build": "yarn build:webpack && yarn build:rename",
     "start": "webpack-dev-server --colors",
     "lint": "eslint --ext js --ext jsx src",
     "cron": "babel-node cron"
