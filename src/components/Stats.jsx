@@ -117,7 +117,7 @@ export function StatsAverage ({ data }) {
 
     data.forEach(anime => {
       anime.d.forEach(day => {
-        average.push({ date: day.d, title: anime.t, [anime.u]: day.m })
+        average.push({ date: day.d, title: anime.t, [anime.n]: day.m })
       })
     })
 
@@ -128,22 +128,24 @@ export function StatsAverage ({ data }) {
     const result = []
 
     for (let item in grouped) {
-      let TV = []
-      let ONA = []
+      let NEW = []
+      let LEFTOVER = []
 
       grouped[item].forEach(el => {
-        if (el.TV) TV.push(el.TV)
-        if (el.ONA) ONA.push(el.ONA)
+        if (el['1']) NEW.push(el['1'])
+        if (el['0']) LEFTOVER.push(el['0'])
       })
 
       const averages = {
-        TV: TV.length === 0 ? null : TV.reduce((a, b) => a + b) / TV.length,
-        ONA: ONA.length === 0 ? null : ONA.reduce((a, b) => a + b) / ONA.length
+        NEW: NEW.length === 0 ? null : NEW.reduce((a, b) => a + b) / NEW.length,
+        LEFTOVER: LEFTOVER.length === 0 ? null : LEFTOVER.reduce((a, b) => a + b) / LEFTOVER.length
       }
 
-      if (averages.TV > 0 || averages.ONA > 0)
-        result.push({ TV: averages.TV, ONA: averages.ONA, name: new Date(item).getTime()})
+      if (averages.NEW > 0 || averages.LEFTOVER > 0)
+        result.push({ New: averages.NEW, Leftovers: averages.LEFTOVER, date: new Date(item).getTime()})
     }
+
+    console.log(sortBy(result, ['name']))
 
     return (
       <ResponsiveContainer width='50%' height={200}>
@@ -169,10 +171,10 @@ export function StatsAverage ({ data }) {
             ticks={['']}
             tickLine={false}
             axisLine={false}
-            dataKey='name'
+            dataKey='date'
           />
-          <Area isAnimationActive={false} stackId='1' type='monotone' dataKey='TV'  stroke={COLOURS[0]} fill={COLOURS[0]} fillOpacity={1}/>
-          <Area isAnimationActive={false} stackId='2' type='monotone' dataKey='ONA' stroke={COLOURS[1]} fill={COLOURS[1]} fillOpacity={.5}/>
+          <Area isAnimationActive={false} stackId='1' type='monotone' dataKey='New'  stroke={COLOURS[0]} fill={COLOURS[0]} fillOpacity={1}/>
+          <Area isAnimationActive={false} stackId='2' type='monotone' dataKey='Leftovers' stroke={COLOURS[1]} fill={COLOURS[1]} fillOpacity={.4}/>
           <Legend iconType='rect' height={36}/>
         </AreaChart>
       </ResponsiveContainer>
@@ -189,8 +191,8 @@ export function Stats ({ meta, data }) {
   if (meta && data) {
     return (
       <div className='stats'>
-        <StatsStatus current={meta.current} total={meta.total}/>
         <StatsType data={data}/>
+        <StatsStatus current={meta.current} total={meta.total}/>
         <StatsAverage data={data}/>
       </div>
     )
