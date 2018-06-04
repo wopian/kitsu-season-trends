@@ -147,7 +147,7 @@ export function StatsAverage ({ data }) {
 
     return (
       <ResponsiveContainer width='50%' height={200}>
-        <AreaChart data={sortBy(result, ['name'])}>
+        <AreaChart data={sortBy(result, ['date'])}>
           <Tooltip
             formatter={value => value.toFixed(2)}
             labelFormatter={label => new Date(label).toLocaleDateString(navigator.langauge, {
@@ -159,14 +159,15 @@ export function StatsAverage ({ data }) {
           />
           <YAxis
             hide
-            ticks={['']}
             tickLine={false}
             axisLine={false}
             domain={[1, 10]}
           />
           <XAxis
+            type='number'
             hide
-            ticks={['']}
+            domain={['dataMin', 'dataMax']}
+            tick={false}
             tickLine={false}
             axisLine={false}
             dataKey='date'
