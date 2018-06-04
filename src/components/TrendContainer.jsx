@@ -99,13 +99,14 @@ function TrendBody ({ data, start }) {
         <XAxis
           type='number'
           hide
-          domain={[start, 'max']}
+          domain={[start, 'dataMax']}
           namekey='d'
           dataKey='d'
-          ticks={[0]}
+          tick={false}
           tickLine={false}
           axisLine={false}
         />
+        {/* Mean Score */}
         <YAxis
           yAxisId='1..20'
           hide
@@ -114,6 +115,7 @@ function TrendBody ({ data, start }) {
           tickLine={false}
           axisLine={false}
         />
+        {/* Users, Rated & Favourites */}
         <YAxis
           yAxisId='0..max'
           hide
