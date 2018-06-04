@@ -15,133 +15,182 @@ function posOrNeg (number) {
   else return `±${number}`
 }
 
-export function TrendContainer ({ start, id, title, data, newAnime }) {
-
-  const today = data.slice(-1)[0]
-  const yesterday = data.slice(-2)[0]
+function TrendChanges ({ title, icon, today, yesterday }) {
+  const diff = today - yesterday
 
   return (
-    <div className='trend'>
-      <a href={"//kitsu.io/anime/" + id}>
-        <img src={`https://media.kitsu.io/anime/poster_images/${id}/tiny.jpg`}/>
-        <div className='title'>
-          <div>
-            <MdCircle className={classnames({
-              new: newAnime === 1,
-              leftover: newAnime === 0
-            })}/>
-            <div>{title}</div>
-          </div>
-          <div className='changes'>
-            <span title='Score'>
-              <MdStar/> {/* Mean */}
-              <span className={classnames({
-                pos: today.m - yesterday.m > 0,
-                neg: today.m - yesterday.m < 0
-              })}>{posOrNeg((today.m - yesterday.m).toFixed(2))}</span>
-            </span>
-            <span title='Users'>
-              <MdGroup style={{color: '#8686CC'}}/> {/* Users */}
-              <span className={classnames({
-                pos: today.u - yesterday.u > 0,
-                neg: today.u - yesterday.u < 0
-              })}>{posOrNeg(today.u - yesterday.u)}</span>
-            </span>
-            <span title='Users Rated'>
-              <MdThumbsUpDown style={{color: '#86CC86'}}/> {/* Users Rated */}
-              <span className={classnames({
-                pos: today.r - yesterday.r > 0,
-                neg: today.r - yesterday.r < 0
-              })}>{posOrNeg(today.r - yesterday.r)}</span>
-            </span>
-            <span title='Favourites'>
-              <MdFavorite style={{color: '#CC8686'}}/> {/* Favourites */}
-              <span className={classnames({
-                pos: today.f - yesterday.f > 0,
-                neg: today.f - yesterday.f < 0
-              })}>{posOrNeg(today.f - yesterday.f)}</span>
-            </span>
-          </div>
+    <span title={title}>
+      {icon}
+      <span className={classnames({
+        pos: diff > 0,
+        neg: diff < 0
+      })}>
+        {posOrNeg(diff.toFixed(2))}
+      </span>
+    </span>
+  )
+}
+
+TrendChanges.propTypes = {
+  title: PropTypes.string,
+  icon: PropTypes.node,
+  today: PropTypes.number,
+  yesterday: PropTypes.number
+}
+
+function TrendHeader ({ id, newAnime, title, today, yesterday }) {
+  const animeURI = `//kitsu.io/anime/${id}`
+  const animePoster = `//media.kitsu.io/anime/poster_images/${id}/tiny.jpg`
+
+  return (
+    <a href={animeURI}>
+      <img src={animePoster}/>
+      <div className='title'>
+        <div title={newAnime === 1 ? 'New' : 'Leftover' }>
+          <MdCircle className={classnames({
+            new: newAnime === 1,
+            leftover: newAnime === 0
+          })}/>
+          <div>{title}</div>
         </div>
-      </a>
-      <ResponsiveContainer width='100%' height={100}>
-        <LineChart data={data}>
-          <Tooltip
-            isAnimationActive={false}
-            content={<TrendTooltip/>}
+        <div className='changes'>
+          <TrendChanges
+            title='Score'
+            icon={<MdStar/>}
+            today={today.m}
+            yesterday={yesterday.m}
           />
-          <Line
-            yAxisId='0..max'
-            activeDot={{ stroke: '#ffb9b9', strokeWidth: 0, r: 0 }}
-            dot={false}
-            type='monotone'
-            isAnimationActive={false}
-            dataKey='f'
-            stroke='#ffb9b9'
-            strokeWidth={0}
+          <TrendChanges
+            title='Users'
+            icon={<MdGroup style={{color: '#8686CC'}}/>}
+            today={today.u}
+            yesterday={yesterday.u}
           />
-          <Line
-            yAxisId='0..max'
-            activeDot={{ stroke: '#b9ffb9', strokeWidth: 2, r: 2 }}
-            dot={false}
-            type='monotone'
-            isAnimationActive={false}
-            dataKey='r'
-            stroke='#86cc86'
-            strokeWidth={1.5}
+          <TrendChanges
+            title='Users Rated'
+            icon={<MdThumbsUpDown style={{color: '#86CC86'}}/>}
+            today={today.r}
+            yesterday={yesterday.r}
           />
+          <TrendChanges
+            title='Favourites'
+            icon={<MdFavorite style={{color: '#CC8686'}}/>}
+            today={today.f}
+            yesterday={yesterday.f}
+          />
+        </div>
+      </div>
+    </a>
+  )
+}
 
-          <Line
-            yAxisId='0..max'
-            activeDot={{ stroke: '#b9b9ff', strokeWidth: 2, r: 2 }}
-            dot={false}
-            type='monotone'
-            isAnimationActive={false}
-            dataKey='u'
-            stroke='#b9b9ff'
-            strokeWidth={1.5}
-          />
+TrendHeader.propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string,
+  newAnime: PropTypes.number,
+  today: PropTypes.object,
+  yesterday: PropTypes.object
+}
 
-          <Line
-            yAxisId='1..20'
-            activeDot={{ stroke: '#332532', strokeWidth: 2, r: 2 }}
-            dot={false}
-            type='monotone'
-            isAnimationActive={false}
-            dataKey='m'
-            stroke='#332532'
-            strokeWidth={1.5}
-          />
+function TrendBody ({ data, start }) {
+  return (
+    <ResponsiveContainer width='100%' height={100}>
+      <LineChart width={300} data={data}>
+        <XAxis
+          type='number'
+          hide
+          domain={[start, 'max']}
+          namekey='d'
+          dataKey='d'
+          ticks={[0]}
+          tickLine={false}
+          axisLine={false}
+        />
+        <YAxis
+          yAxisId='1..20'
+          hide
+          domain={[1, 10]}
+          ticks={[0]}
+          tickLine={false}
+          axisLine={false}
+        />
+        <YAxis
+          yAxisId='0..max'
+          hide
+          domain={[0, 'max']}
+          ticks={[0]}
+          tickLine={false}
+          axisLine={false}
+        />
+        <Tooltip
+          isAnimationActive={false}
+          content={<TrendTooltip/>}
+        />
+        <Line
+          yAxisId='0..max'
+          activeDot={{ stroke: '#ffb9b9', strokeWidth: 0, r: 0 }}
+          dot={false}
+          type='monotone'
+          isAnimationActive={false}
+          dataKey='f'
+          stroke='#ffb9b9'
+          strokeWidth={0}
+        />
+        <Line
+          yAxisId='0..max'
+          activeDot={{ stroke: '#b9ffb9', strokeWidth: 2, r: 2 }}
+          dot={false}
+          type='monotone'
+          isAnimationActive={false}
+          dataKey='r'
+          stroke='#86cc86'
+          strokeWidth={1.5}
+        />
+        <Line
+          yAxisId='0..max'
+          activeDot={{ stroke: '#b9b9ff', strokeWidth: 2, r: 2 }}
+          dot={false}
+          type='monotone'
+          isAnimationActive={false}
+          dataKey='u'
+          stroke='#b9b9ff'
+          strokeWidth={1.5}
+        />
+        <Line
+          yAxisId='1..20'
+          activeDot={{ stroke: '#332532', strokeWidth: 2, r: 2 }}
+          dot={false}
+          type='monotone'
+          isAnimationActive={false}
+          dataKey='m'
+          stroke='#332532'
+          strokeWidth={1.5}
+        />
+      </LineChart>
+    </ResponsiveContainer>
+  )
+}
 
-          <YAxis
-            yAxisId='1..20'
-            hide
-            domain={[1, 10]}
-            ticks={[0]}
-            tickLine={false}
-            axisLine={false}
-          />
-          <YAxis
-            yAxisId='0..max'
-            hide
-            domain={[0, 'max']}
-            ticks={[0]}
-            tickLine={false}
-            axisLine={false}
-          />
+TrendBody.propTypes = {
+  data: PropTypes.array,
+  start: PropTypes.number
+}
 
-          <XAxis
-            type='number'
-            hide
-            domain={[start, 'max']}
-            namekey='d'
-            dataKey='d'
-            ticks={[0]}
-            tickLine={false}
-            axisLine={false}
-          />
-        </LineChart>
-      </ResponsiveContainer>
+
+export function TrendContainer ({ start, id, title, data, newAnime }) {
+  return (
+    <div className='trend'>
+      <TrendHeader
+        id={id}
+        newAnime={newAnime}
+        title={title}
+        today={data.slice(-1)[0]}
+        yesterday={data.slice(-2)[0]}
+      />
+      <TrendBody
+        data={data}
+        start={start}
+      />
     </div>
   )
 }
