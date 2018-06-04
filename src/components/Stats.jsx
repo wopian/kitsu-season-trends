@@ -145,8 +145,6 @@ export function StatsAverage ({ data }) {
         result.push({ New: averages.NEW, Leftovers: averages.LEFTOVER, date: new Date(item).getTime()})
     }
 
-    console.log(sortBy(result, ['name']))
-
     return (
       <ResponsiveContainer width='50%' height={200}>
         <AreaChart data={sortBy(result, ['name'])}>
