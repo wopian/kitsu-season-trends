@@ -23,6 +23,7 @@ All the data is free to use and available in:
       i: 12, // Kitsu anime ID
       t: 'One Piece', // Canonical title
       u: 0, // Subtype (0: TV, 1: ONA)
+      n: 1, // 0: Leftover, 1: New
       d: [ // Data array containing each daily update
         {
           i: 0, // Index
