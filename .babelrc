@@ -2,12 +2,16 @@
   "presets": [
     ["env", {
       "targets": {
-        "browsers": [
-          "> 0.1%"
-        ]
+        "browsers": ["last 2 years", "not < 0.1%"]
       }
     }],
     "react"
   ],
-  "plugins": ["transform-runtime", "transform-decorators-legacy", "transform-class-properties", "react-hot-loader/babel"]
+  "plugins": [
+    "lodash",
+    "transform-runtime",
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "react-hot-loader/babel"
+  ]
 }

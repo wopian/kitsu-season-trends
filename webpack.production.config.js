@@ -5,7 +5,6 @@ var chalk = require('chalk')
 var loaders = require('./webpack.loaders')
 var Html = require('html-webpack-plugin')
 var ExtractText = require('extract-text-webpack-plugin')
-var Favicons = require('favicons-webpack-plugin')
 var Copy = require('copy-webpack-plugin')
 var OptimizeCSS = require('optimize-css-assets-webpack-plugin')
 var UglifyJs = require('uglifyjs-webpack-plugin')
@@ -13,6 +12,7 @@ var ProgressBar = require('progress-bar-webpack-plugin')
 var ProgressiveManifest = require('webpack-pwa-manifest')
 var Cleanup = require('webpack-cleanup-plugin')
 var BundleSize = require('webpack-bundle-size-analyzer').WebpackBundleSizeAnalyzerPlugin
+var LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 var { encode } = require('msgpack-lite/lib/encode')
 var { readFileSync } = require('fs')
 
@@ -24,6 +24,9 @@ loaders.push({
 })
 
 module.exports = {
+  node: {
+    Buffer: false
+  },
   entry: [
     './src/index.jsx',
     './styles/index.scss'
@@ -51,6 +54,7 @@ module.exports = {
         NODE_ENV: '"production"'
       }
     }),
+    new LodashModuleReplacementPlugin,
     new UglifyJs({
       parallel: true,
       cache: true
@@ -108,15 +112,9 @@ module.exports = {
       },
       chunksSortMode: 'dependency'
     }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     // keep module.id stable when vender modules does not change
     new webpack.HashedModuleIdsPlugin(),
-    /*
-    new webpack.optimize.CommonsChunkPlugin({
-      children: true,
-      async: 'common',
-      minChunks: 1
-    }),
-    */
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -136,16 +134,6 @@ module.exports = {
       name: 'manifest',
       chunks: ['vendor']
     }),
-    /* Does not support Webpack 3 yet
-    new Favicons({
-      logo: './src/favicon.png',
-      prefix: 'icons/',
-      inject: true,
-      title: 'Kitsu Season Trends',
-      background: 'transparent',
-      persistentCache: true
-    }),
-    */
     new Copy([
       {
         from: 'data',
