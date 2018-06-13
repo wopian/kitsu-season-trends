@@ -4,7 +4,6 @@ var loaders = require('./webpack.loaders')
 var Html = require('html-webpack-plugin')
 var Dashboard = require('webpack-dashboard/plugin')
 var ExtractText = require('extract-text-webpack-plugin')
-var Favicons = require('favicons-webpack-plugin')
 
 const HOST = process.env.HOST || "127.0.0.1"
 const PORT = process.env.PORT || "8888"
@@ -59,14 +58,6 @@ module.exports = {
         css: ['style.css'],
         js: [ "bundle.js"],
       }
-    }),
-    new Favicons({
-      logo: './src/favicon.png',
-      prefix: 'icons/',
-      inject: true,
-      title: 'Season Trends',
-      background: 'transparent',
-      persistentCache: false
     })
   ]
 }
