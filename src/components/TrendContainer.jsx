@@ -15,7 +15,7 @@ function posOrNeg (number) {
   else return `±${number}`
 }
 
-function TrendChanges ({ title, icon, today, yesterday }) {
+function TrendChanges ({ title, icon, today, yesterday, decimalPlaces = 0 }) {
   const diff = today - yesterday
 
   return (
@@ -25,7 +25,7 @@ function TrendChanges ({ title, icon, today, yesterday }) {
         pos: diff > 0,
         neg: diff < 0
       })}>
-        {posOrNeg(diff.toFixed(2))}
+        &nbsp;{posOrNeg(diff.toFixed(decimalPlaces))}
       </span>
     </span>
   )
@@ -35,7 +35,8 @@ TrendChanges.propTypes = {
   title: PropTypes.string,
   icon: PropTypes.node,
   today: PropTypes.number,
-  yesterday: PropTypes.number
+  yesterday: PropTypes.number,
+  decimalPlaces: PropTypes.number
 }
 
 function TrendHeader ({ id, newAnime, title, today, yesterday }) {
@@ -59,6 +60,7 @@ function TrendHeader ({ id, newAnime, title, today, yesterday }) {
             icon={<MdStar/>}
             today={today.m}
             yesterday={yesterday.m}
+            decimalPlaces={2}
           />
           <TrendChanges
             title='Users'
