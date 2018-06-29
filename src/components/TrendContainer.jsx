@@ -11,7 +11,7 @@ import MdCircle from 'react-icons/lib/md/local-library'
 
 function posOrNeg (number) {
   if (number > 0) return `+${number}`
-  else if (number < 0) return number
+  else if (number < 0) return `−${Math.abs(number)}`
   else return `±${number}`
 }
 
