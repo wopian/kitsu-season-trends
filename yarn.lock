@@ -4248,19 +4248,19 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-kitsu-core@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-5.1.1.tgz#8a1445a03408a000c34aa51838f8d52ff50cb995"
+kitsu-core@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-5.2.0.tgz#04326e3f23791a9f9602be20fe5e7195dcb498f1"
   dependencies:
     babel-runtime "^6.26.0"
 
-kitsu@~5.1.0:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-5.1.1.tgz#57617de47dafc128eed8748ba33f3ea261600b8a"
+kitsu@~5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-5.2.0.tgz#7ae980acf61129acd48135bd0836de43b2670799"
   dependencies:
     axios "^0.18.0"
     babel-runtime "^6.26.0"
-    kitsu-core "^5.1.1"
+    kitsu-core "^5.2.0"
     pluralize "^7.0.0"
 
 last-call-webpack-plugin@^2.1.2:
