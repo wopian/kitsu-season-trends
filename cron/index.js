@@ -16,8 +16,8 @@ access(FILE, async err => {
   })
 
   await updateAiring()
-  await updateExisting()
   await updateUpcoming()
+  await updateExisting()
   await prune()
   await stats()
 
