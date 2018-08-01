@@ -49,11 +49,7 @@ module.exports = {
 }
 
 module.exports.serve = {
-  add: (app, middleware/*, options*/) => {
-    // since we're manipulating the order of middleware added, we need to handle
-    // adding these two internal middleware functions.
-    middleware.webpack();
-    middleware.content();
-    app.use(convert(history({})));
+  add: app => {
+    app.use(convert(history({})))
   }
 }
