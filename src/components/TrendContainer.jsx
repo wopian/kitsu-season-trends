@@ -1,5 +1,4 @@
 import React from 'react'
-import { ResponsiveContainer, LineChart, Line, Tooltip, XAxis, YAxis } from 'recharts'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { TrendTooltip } from './TrendTooltip'
@@ -7,7 +6,13 @@ import MdGroup from 'react-icons/lib/md/group'
 import MdFavorite from 'react-icons/lib/md/favorite'
 import MdStar from 'react-icons/lib/md/star'
 import MdThumbsUpDown from 'react-icons/lib/md/thumbs-up-down'
-import MdCircle from 'react-icons/lib/md/local-library'
+import MdLocalLibrary from 'react-icons/lib/md/local-library'
+import ResponsiveContainer from 'recharts/es6/component/ResponsiveContainer'
+import Tooltip from 'recharts/es6/component/Tooltip'
+import LineChart from 'recharts/es6/chart/LineChart'
+import Line from 'recharts/es6/cartesian/Line'
+import YAxis from 'recharts/es6/cartesian/YAxis'
+import XAxis from 'recharts/es6/cartesian/XAxis'
 
 function posOrNeg (number) {
   if (number > 0) return `+${number}`
@@ -48,7 +53,7 @@ function TrendHeader ({ rank, id, newAnime, title, today, yesterday }) {
       <img src={animePoster}/>
       <div className='title'>
         <div title={newAnime === 1 ? 'New' : 'Leftover' }>
-          <MdCircle className={classnames({
+          <MdLocalLibrary className={classnames({
             new: newAnime === 1,
             leftover: newAnime === 0
           })}/>

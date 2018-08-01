@@ -1,9 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import sortBy from 'lodash/sortBy'
-import groupBy from 'lodash/groupBy'
+import sortBy from 'lodash-es/sortBy'
+import groupBy from 'lodash-es/groupBy'
 import startOfDay from 'date-fns/start_of_day'
-import { ResponsiveContainer, AreaChart, Area, YAxis, XAxis, Tooltip, PieChart, Pie, Cell, Legend } from 'recharts'
+import ResponsiveContainer from 'recharts/es6/component/ResponsiveContainer'
+import Cell from 'recharts/es6/component/Cell'
+import Legend from 'recharts/es6/component/Legend'
+import Tooltip from 'recharts/es6/component/Tooltip'
+import AreaChart from 'recharts/es6/chart/AreaChart'
+import PieChart from 'recharts/es6/chart/PieChart'
+import Area from 'recharts/es6/cartesian/Area'
+import YAxis from 'recharts/es6/cartesian/YAxis'
+import XAxis from 'recharts/es6/cartesian/XAxis'
+import Pie from 'recharts/es6/polar/Pie'
 
 const COLOURS = [ '#FD755C', '#332532' ]
 

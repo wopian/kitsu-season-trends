@@ -1,20 +1,20 @@
 var webpack = require('webpack')
 var path = require('path')
-var loaders = require('./webpack.loaders')
+var rules = require('./webpack.rules')
 var Html = require('html-webpack-plugin')
 var Dashboard = require('webpack-dashboard/plugin')
-var ExtractText = require('extract-text-webpack-plugin')
+var MiniCssExtract = require('mini-css-extract-plugin')
+var history = require('connect-history-api-fallback')
+var convert = require('koa-connect')
 
-const HOST = process.env.HOST || "127.0.0.1"
-const PORT = process.env.PORT || "8888"
-
-loaders.push({
+rules.push({
   test: /\.scss$/,
   loaders: ['style-loader', 'css-loader?importLoaders=1', 'sass-loader'],
   exclude: ['node_modules']
 })
 
 module.exports = {
+  mode: 'development',
   entry: [
     'react-hot-loader/patch',
     './src/index.jsx', // your app's entry point
@@ -29,25 +29,11 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   module: {
-    loaders
-  },
-  devServer: {
-    contentBase: "./dist",
-    // do not print bundle build stats
-    noInfo: true,
-    // enable HMR
-    hot: true,
-    // embed the webpack-dev-server runtime into the bundle
-    inline: true,
-    // serve index.html in place of 404 responses to allow HTML5 history
-    historyApiFallback: true,
-    port: PORT,
-    host: HOST
+    rules
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new ExtractText({
+    new MiniCssExtract({
       filename: 'style.css',
       allChunks: true
     }),
@@ -60,4 +46,14 @@ module.exports = {
       }
     })
   ]
+}
+
+module.exports.serve = {
+  add: (app, middleware/*, options*/) => {
+    // since we're manipulating the order of middleware added, we need to handle
+    // adding these two internal middleware functions.
+    middleware.webpack();
+    middleware.content();
+    app.use(convert(history({})));
+  }
 }
