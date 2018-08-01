@@ -1,12 +1,7 @@
 const AUTOPREFIXER_BROWSERS = [
-  'Android >= 57',
-  'Chrome >= 57',
-  'Firefox >= 53',
-  'Explorer >= 11',
-  'iOS >= 10',
-  'Opera >= 43',
-  'Safari >= 10',
-];
+  'last 2 years',
+  'not < 0.05%'
+]
 
 module.exports = {
   plugins: [

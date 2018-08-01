@@ -2,9 +2,9 @@ var JSON5 = require('json5')
 var webpack = require('webpack')
 var path = require('path')
 var chalk = require('chalk')
-var loaders = require('./webpack.loaders')
+var rules = require('./webpack.rules')
 var Html = require('html-webpack-plugin')
-var ExtractText = require('extract-text-webpack-plugin')
+var MiniCssExtract = require('mini-css-extract-plugin')
 var Copy = require('copy-webpack-plugin')
 var OptimizeCSS = require('optimize-css-assets-webpack-plugin')
 var UglifyJs = require('uglifyjs-webpack-plugin')
@@ -14,15 +14,22 @@ var Cleanup = require('webpack-cleanup-plugin')
 var BundleSize = require('webpack-bundle-size-analyzer').WebpackBundleSizeAnalyzerPlugin
 var { encode } = require('msgpack-lite/lib/encode')
 var { readFileSync } = require('fs')
+var LodashModuleReplacement = require('lodash-webpack-plugin')
 
 
-loaders.push({
+rules.push({
   test: /\.scss$/,
-  loader: ExtractText.extract({fallback: 'style-loader', use: 'css-loader?sourceMap&localIdentName=[local]___[hash:base64:5]!sass-loader?outputStyle=expanded'}),
+  use: [
+    MiniCssExtract.loader,
+    'css-loader',
+    'postcss-loader',
+    'sass-loader',
+  ],
   exclude: ['node_modules']
 })
 
 module.exports = {
+  mode: 'production',
   entry: [
     './src/index.jsx',
     './styles/index.scss'
@@ -37,7 +44,7 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   module: {
-    loaders
+    rules
   },
   plugins: [
     new Cleanup(),
@@ -50,12 +57,13 @@ module.exports = {
         NODE_ENV: '"production"'
       }
     }),
+    new LodashModuleReplacement,
     new UglifyJs({
       parallel: true,
       cache: true
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    new ExtractText({
+    new MiniCssExtract({
       filename: '[name].[contenthash].css',
     }),
     new OptimizeCSS({
@@ -108,26 +116,7 @@ module.exports = {
       chunksSortMode: 'dependency'
     }),
     // keep module.id stable when vender modules does not change
-    new webpack.HashedModuleIdsPlugin(),
-    // split vendor js into its own file
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: module => {
-        return (
-          module.resource &&
-          /\.js$/.test(module.resource) &&
-          module.resource.indexOf(
-            path.join(__dirname, 'node_modules')
-          ) === 0
-        )
-      }
-    }),
-    // extract webpack runtime and module manifest to its own file in order to
-    // prevent vendor hash from being updated whenever app bundle is updated
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'manifest',
-      chunks: ['vendor']
-    }),
+    //new webpack.HashedModuleIdsPlugin(),
     new Copy([
       {
         from: 'data',
