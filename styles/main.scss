@@ -69,6 +69,9 @@ h2 {
     color: $primary;
     display: flex;
     text-decoration: none;
+    &::after {
+      opacity: 0;
+    }
     &:hover {
       color: $accent;
       .changes {
@@ -111,6 +114,23 @@ h2 {
         }
       }
     }
+  }
+  a::after,
+  &:hover a::after {
+    content: attr(data-rank);
+    position: absolute;
+    margin-left: .25rem;
+    height: 2rem;
+    width: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+    font-size: .9rem;
+    text-align: center;
+    text-shadow: 2px 2px 0 $primary, -1px -1px 0 $primary, 1px -1px 0 $primary, -1px 1px 0 $primary, 1px 1px 0 $primary;
+    color: $white;
+  }
+  &:hover a::after {
+    opacity: 1;
   }
 }
 
@@ -288,6 +308,8 @@ h2 {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+
 
 .github-corner {
   svg {
