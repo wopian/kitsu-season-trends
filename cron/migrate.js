@@ -3,7 +3,6 @@
  */
 
 const JSON5 = require('json5')
-// const stringify = require('json-stringify-pretty-compact')
 const { readdir, readFile, writeFile } = require('fs')
 const dir = './data'
 

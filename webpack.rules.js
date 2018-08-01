@@ -10,11 +10,6 @@ module.exports = [
     exclude: ['node_modules']
   },
   {
-    test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-    exclude: /node_modules/,
-    loader: 'file-loader'
-  },
-  {
     test: /\.(woff|woff2)$/,
     exclude: /node_modules/,
     loader: 'url-loader?prefix=font/&limit=5000'
