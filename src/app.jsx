@@ -106,6 +106,7 @@ function Container ({ match }) {
     output = data.map((entry, index) => {
       return <TrendContainer
         key={index}
+        rank={++index}
         id={entry.i}
         title={entry.t}
         data={entry.d}

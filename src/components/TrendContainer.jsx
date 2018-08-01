@@ -39,12 +39,12 @@ TrendChanges.propTypes = {
   decimalPlaces: PropTypes.number
 }
 
-function TrendHeader ({ id, newAnime, title, today, yesterday }) {
+function TrendHeader ({ rank, id, newAnime, title, today, yesterday }) {
   const animeURI = `//kitsu.io/anime/${id}`
   const animePoster = `//media.kitsu.io/anime/poster_images/${id}/tiny.jpg`
 
   return (
-    <a href={animeURI}>
+    <a href={animeURI} data-rank={rank}>
       <img src={animePoster}/>
       <div className='title'>
         <div title={newAnime === 1 ? 'New' : 'Leftover' }>
@@ -87,6 +87,7 @@ function TrendHeader ({ id, newAnime, title, today, yesterday }) {
 }
 
 TrendHeader.propTypes = {
+  rank: PropTypes.number,
   id: PropTypes.number,
   title: PropTypes.string,
   newAnime: PropTypes.number,
@@ -181,10 +182,11 @@ TrendBody.propTypes = {
 }
 
 
-export function TrendContainer ({ start, id, title, data, newAnime }) {
+export function TrendContainer ({ rank, start, id, title, data, newAnime }) {
   return (
     <div className='trend'>
       <TrendHeader
+        rank={rank}
         id={id}
         newAnime={newAnime}
         title={title}
@@ -200,6 +202,7 @@ export function TrendContainer ({ start, id, title, data, newAnime }) {
 }
 
 TrendContainer.propTypes = {
+  rank: PropTypes.number,
   id: PropTypes.number,
   title: PropTypes.string,
   poster: PropTypes.number,
