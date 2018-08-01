@@ -1,6 +1,5 @@
 const JSON5 = require('json5')
 import { access, readFile, writeFile } from 'fs'
-// import stringify from 'json-stringify-pretty-compact'
 import chalk from 'chalk'
 import { store, initStore } from './util'
 import { updateAiring, updateExisting, updateUpcoming, prune, stats } from './modules'

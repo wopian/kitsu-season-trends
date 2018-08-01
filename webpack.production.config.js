@@ -14,7 +14,6 @@ var Cleanup = require('webpack-cleanup-plugin')
 var BundleSize = require('webpack-bundle-size-analyzer').WebpackBundleSizeAnalyzerPlugin
 var { encode } = require('msgpack-lite/lib/encode')
 var { readFileSync } = require('fs')
-var LodashModuleReplacement = require('lodash-webpack-plugin')
 
 
 rules.push({
@@ -57,7 +56,6 @@ module.exports = {
         NODE_ENV: '"production"'
       }
     }),
-    new LodashModuleReplacement,
     new UglifyJs({
       parallel: true,
       cache: true
@@ -115,8 +113,6 @@ module.exports = {
       },
       chunksSortMode: 'dependency'
     }),
-    // keep module.id stable when vender modules does not change
-    //new webpack.HashedModuleIdsPlugin(),
     new Copy([
       {
         from: 'data',
