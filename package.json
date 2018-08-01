@@ -8,6 +8,7 @@
     "build": "yarn build:webpack && yarn build:rename",
     "start": "webpack-serve --config webpack.config.js --port 8888 --content dist",
     "lint": "eslint --ext js --ext jsx src",
+    "limit": "size-limit",
     "cron": "babel-node cron"
   },
   "repository": {
@@ -60,6 +61,7 @@
     "progress-bar-webpack-plugin": "~1.11.0",
     "react-hot-loader": "~4.3.0",
     "sass-loader": "~7.1.0",
+    "size-limit": "~0.19.0",
     "style-loader": "~0.21.0",
     "uglifyjs-webpack-plugin": "~1.2.0",
     "url-loader": "~1.0.0",
@@ -76,5 +78,11 @@
     "extends": [
       "@wopian"
     ]
-  }
+  },
+  "size-limit": [
+    {
+      "path": "dist/main*.js",
+      "limit": "170 KB"
+    }
+  ]
 }
