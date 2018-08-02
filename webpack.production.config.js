@@ -40,7 +40,7 @@ module.exports = {
     chunkFilename: '[name].[chunkhash].js'
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.mjs', '.js', '.jsx']
   },
   module: {
     rules
