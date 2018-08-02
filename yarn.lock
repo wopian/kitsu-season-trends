@@ -2154,7 +2154,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-cross-env@^5.2.0:
+cross-env@~5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.2.0.tgz#6ecd4c015d5773e614039ee529076669b9d126f2"
   dependencies:
@@ -6449,9 +6449,9 @@ react-hot-loader@~4.3.0:
     react-lifecycles-compat "^3.0.4"
     shallowequal "^1.0.2"
 
-react-icons@~3.0.0:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.0.2.tgz#bd87ea96fcb25633ec065cbcccb08d24303a22fb"
+react-icons@~3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.0.4.tgz#e1f09a51f837dd0218a4a7d30060e1be79a59a8f"
 
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"

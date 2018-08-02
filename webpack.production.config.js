@@ -58,7 +58,8 @@ module.exports = {
     }),
     new UglifyJs({
       parallel: true,
-      cache: true
+      cache: true,
+      extractComments: () => {}
     }),
     new webpack.NoEmitOnErrorsPlugin(),
     new MiniCssExtract({
@@ -71,7 +72,7 @@ module.exports = {
         calc: true,
         colormin: true,
         convertValues: true,
-        discardComments: true,
+        discardComments: { removeAll: true },
         discardDuplicates: true,
         discardEmpty: true,
         discardOverridden: true,
