@@ -3,7 +3,7 @@ import React from 'react'
 export function GitHub () {
   return (
     <a
-      href='//github.com/wopian/kitsu-season-trends'
+      href='https://github.com/wopian/kitsu-season-trends'
       className='github-corner'
       aria-label='View source on Github'
       target='_blank'
