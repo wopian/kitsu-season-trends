@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import LazyLoad from 'react-lazy-load'
 import { TrendTooltip } from './TrendTooltip'
 import { MdGroup, MdFavorite, MdStar, MdThumbsUpDown, MdLocalLibrary } from 'react-icons/md'
 import ResponsiveContainer from 'recharts/es6/component/ResponsiveContainer'
@@ -41,12 +42,14 @@ TrendChanges.propTypes = {
 }
 
 function TrendHeader ({ rank, id, newAnime, title, today, yesterday }) {
-  const animeURI = `//kitsu.io/anime/${id}`
-  const animePoster = `//media.kitsu.io/anime/poster_images/${id}/tiny.jpg`
+  const animeURI = `https://kitsu.io/anime/${id}`
+  const animePoster = `https://media.kitsu.io/anime/poster_images/${id}/tiny.jpg`
 
   return (
     <a href={animeURI} data-rank={rank}>
-      <img src={animePoster}/>
+      <LazyLoad className='poster' offsetVertical={400} debounce={false}>
+        <img src={animePoster}/>
+      </LazyLoad>
       <div className='title'>
         <div title={newAnime === 1 ? 'New' : 'Leftover' }>
           <MdLocalLibrary className={classnames({
@@ -98,82 +101,84 @@ TrendHeader.propTypes = {
 
 function TrendBody ({ data, start }) {
   return (
-    <ResponsiveContainer width='100%' height={100}>
-      <LineChart width={300} data={data}>
-        <XAxis
-          type='number'
-          hide
-          domain={[start, 'dataMax']}
-          namekey='d'
-          dataKey='d'
-          tick={false}
-          tickLine={false}
-          axisLine={false}
-        />
-        {/* Mean Score */}
-        <YAxis
-          yAxisId='1..20'
-          hide
-          domain={[1, 10]}
-          ticks={[0]}
-          tickLine={false}
-          axisLine={false}
-        />
-        {/* Users, Rated & Favourites */}
-        <YAxis
-          yAxisId='0..max'
-          hide
-          domain={[0, 'max']}
-          ticks={[0]}
-          tickLine={false}
-          axisLine={false}
-        />
-        <Tooltip
-          isAnimationActive={false}
-          content={<TrendTooltip/>}
-        />
-        <Line
-          yAxisId='0..max'
-          activeDot={{ stroke: '#ffb9b9', strokeWidth: 0, r: 0 }}
-          dot={false}
-          type='monotone'
-          isAnimationActive={false}
-          dataKey='f'
-          stroke='#ffb9b9'
-          strokeWidth={0}
-        />
-        <Line
-          yAxisId='0..max'
-          activeDot={{ stroke: '#b9ffb9', strokeWidth: 2, r: 2 }}
-          dot={false}
-          type='monotone'
-          isAnimationActive={false}
-          dataKey='r'
-          stroke='#86cc86'
-          strokeWidth={1.5}
-        />
-        <Line
-          yAxisId='0..max'
-          activeDot={{ stroke: '#b9b9ff', strokeWidth: 2, r: 2 }}
-          dot={false}
-          type='monotone'
-          isAnimationActive={false}
-          dataKey='u'
-          stroke='#b9b9ff'
-          strokeWidth={1.5}
-        />
-        <Line
-          yAxisId='1..20'
-          activeDot={{ stroke: '#332532', strokeWidth: 2, r: 2 }}
-          dot={false}
-          type='monotone'
-          isAnimationActive={false}
-          dataKey='m'
-          stroke='#332532'
-          strokeWidth={1.5}
-        />
-      </LineChart>
-    </ResponsiveContainer>
+    <LazyLoad className='body' width={300} height={100} offsetVertical={400} debounce={false}>
+      <ResponsiveContainer width='100%' height={100}>
+        <LineChart width={300} data={data}>
+          <XAxis
+            type='number'
+            hide
+            domain={[start, 'dataMax']}
+            namekey='d'
+            dataKey='d'
+            tick={false}
+            tickLine={false}
+            axisLine={false}
+          />
+          {/* Mean Score */}
+          <YAxis
+            yAxisId='1..20'
+            hide
+            domain={[1, 10]}
+            ticks={[0]}
+            tickLine={false}
+            axisLine={false}
+          />
+          {/* Users, Rated & Favourites */}
+          <YAxis
+            yAxisId='0..max'
+            hide
+            domain={[0, 'max']}
+            ticks={[0]}
+            tickLine={false}
+            axisLine={false}
+          />
+          <Tooltip
+            isAnimationActive={false}
+            content={<TrendTooltip/>}
+          />
+          <Line
+            yAxisId='0..max'
+            activeDot={{ stroke: '#ffb9b9', strokeWidth: 0, r: 0 }}
+            dot={false}
+            type='monotone'
+            isAnimationActive={false}
+            dataKey='f'
+            stroke='#ffb9b9'
+            strokeWidth={0}
+          />
+          <Line
+            yAxisId='0..max'
+            activeDot={{ stroke: '#b9ffb9', strokeWidth: 2, r: 2 }}
+            dot={false}
+            type='monotone'
+            isAnimationActive={false}
+            dataKey='r'
+            stroke='#86cc86'
+            strokeWidth={1.5}
+          />
+          <Line
+            yAxisId='0..max'
+            activeDot={{ stroke: '#b9b9ff', strokeWidth: 2, r: 2 }}
+            dot={false}
+            type='monotone'
+            isAnimationActive={false}
+            dataKey='u'
+            stroke='#b9b9ff'
+            strokeWidth={1.5}
+          />
+          <Line
+            yAxisId='1..20'
+            activeDot={{ stroke: '#332532', strokeWidth: 2, r: 2 }}
+            dot={false}
+            type='monotone'
+            isAnimationActive={false}
+            dataKey='m'
+            stroke='#332532'
+            strokeWidth={1.5}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </LazyLoad>
   )
 }
 
@@ -181,7 +186,6 @@ TrendBody.propTypes = {
   data: PropTypes.array,
   start: PropTypes.number
 }
-
 
 export function TrendContainer ({ rank, start, id, title, data, newAnime }) {
   return (

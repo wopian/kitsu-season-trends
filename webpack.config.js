@@ -26,11 +26,16 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.mjs', '.js', '.jsx']
+    extensions: ['.mjs', '.js', '.jsx'],
+    alias: {
+      'lodash.throttle': 'lodash/throttle',
+      'lodash.debounce': 'lodash/debounce'
+    }
   },
   module: {
     rules
   },
+  node: { Buffer: false },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
     new MiniCssExtract({

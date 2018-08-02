@@ -34,7 +34,7 @@ h2 {
   position: relative;
   width: 300px;
 
-  .recharts-responsive-container {
+  .body {
     margin-top: 2rem;
   }
 
@@ -132,15 +132,23 @@ h2 {
   &:hover a::after {
     opacity: 1;
   }
-}
 
-img {
-  margin-left: .25rem;
-  height: 2rem;
-  width: 2rem;
-  min-width: 2rem;
-  border-radius: 999rem;
-  object-fit: cover;
+  .poster {
+    margin-left: .25rem;
+    height: 2rem;
+    width: 2rem;
+    min-width: 2rem;
+    overflow: hidden;
+    border-radius: 999rem;
+    background: rgba($primary, .3);
+
+    img {
+      height: 2rem;
+      width: 2rem;
+      border-radius: 999rem;
+      object-fit: cover;
+    }
+  }
 }
 
 header {

@@ -40,11 +40,16 @@ module.exports = {
     chunkFilename: '[name].[chunkhash].js'
   },
   resolve: {
-    extensions: ['.mjs', '.js', '.jsx']
+    extensions: ['.mjs', '.js', '.jsx'],
+    alias: {
+      'lodash.throttle': 'lodash/throttle',
+      'lodash.debounce': 'lodash/debounce'
+    }
   },
   module: {
     rules
   },
+  node: { Buffer: false },
   plugins: [
     new Cleanup(),
     new ProgressBar({
