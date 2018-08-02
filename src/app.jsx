@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
+import { IconContext } from 'react-icons'
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom'
 import { decode } from 'msgpack-lite/lib/decode'
 import { season as s, year as y, prevSeason, nextSeason, sort } from './util'
@@ -147,7 +148,7 @@ export default class App extends React.Component {
     thisApp = this
 
     return (
-      <div>
+      <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
         <Header/>
         <Bar/>
         <Router>
@@ -164,7 +165,7 @@ export default class App extends React.Component {
             <Route component={NoMatch}/>
           </Switch>
         </Router>
-      </div>
+      </IconContext.Provider>
     )
   }
 }
