@@ -8,7 +8,6 @@ var MiniCssExtract = require('mini-css-extract-plugin')
 var Copy = require('copy-webpack-plugin')
 var OptimizeCSS = require('optimize-css-assets-webpack-plugin')
 var UglifyJs = require('uglifyjs-webpack-plugin')
-var ProgressBar = require('progress-bar-webpack-plugin')
 var ProgressiveManifest = require('webpack-pwa-manifest')
 var Cleanup = require('webpack-cleanup-plugin')
 var BundleSize = require('webpack-bundle-size-analyzer').WebpackBundleSizeAnalyzerPlugin
@@ -52,10 +51,6 @@ module.exports = {
   node: { Buffer: false },
   plugins: [
     new Cleanup(),
-    new ProgressBar({
-      format: '  ' + chalk.green.bold(':percent') + ' :elapseds :msg',
-      renderThrottle: 10
-    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
