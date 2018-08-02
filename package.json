@@ -83,7 +83,7 @@
   "size-limit": [
     {
       "path": "dist/main*.js",
-      "limit": "170 KB"
+      "limit": "159 KB"
     }
   ]
 }
