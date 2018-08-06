@@ -84,6 +84,10 @@
     {
       "path": "dist/main*.js",
       "limit": "163.63 KB"
+    },
+    {
+      "path": "dist/main*.css",
+      "limit": "4.26 KB"
     }
   ]
 }
