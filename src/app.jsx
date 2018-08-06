@@ -53,7 +53,7 @@ function getData (year = y(), season = s()) {
         if (!data[show].d[date].f) data[show].d[date].f = 0
 
         // Convert hours since epoch into milliseconds
-        data[show].d[date].d = data[show].d[date].d * 3600000
+        data[show].d[date].d = data[show].d[date].d * 36e5
         // Get the oldest date value from data collection
         if (data[show].d[date].d < collectionStartDate) {
           collectionStartDate = data[show].d[date].d
