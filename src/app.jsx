@@ -119,14 +119,14 @@ function Bar () {
     <div className='bar'>
       <div>
         <div className='bar-sorts'>
-          <span>Sort By</span>
+          <span>Sort</span>
           <SortButton by='m' label='Score'/>
           <SortButton by='u' label='Users'/>
           <SortButton by='r' label='Users Rated'/>
           <SortButton by='f' label='Favourites'/>
         </div>
         <div className='bar-filters'>
-          <span>Filter By</span>
+          <span>Filter</span>
           <FilterButton filter='tv' label='TV'/>
           <FilterButton filter='ona' label='ONA'/>
           <FilterButton filter='new' label='New'/>
