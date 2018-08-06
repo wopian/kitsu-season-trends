@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
 import { IconContext } from 'react-icons'
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom'
@@ -12,21 +13,33 @@ import '../styles/index.scss'
 
 let thisApp = {}
 let data = []
+let sortedData = []
 let meta = {}
 let updated = ''
 let collectionStartDate = Number.MAX_SAFE_INTEGER
 let error = false
+let sortOrder = 'm'
+let filters = {
+  tv: true,
+  ona: true,
+  new: true,
+  old: true
+}
 
 function reset () {
   data = []
+  sortedData = []
   meta = {}
   error = false
   collectionStartDate = Number.MAX_SAFE_INTEGER
   thisApp.forceUpdate()
 }
 
-function sortData (by, update = true) {
-  data = sort(data, by)
+function sortData ({ by = sortOrder, update = true, filter = null }) {
+  if (filter) filters[filter] = !filters[filter]
+  const exclude = Object.keys(filters).filter(hi => filters[hi] === false)
+  sortOrder = by
+  sortedData = sort(data, by, new Set(exclude))
   if (update) thisApp.forceUpdate()
 }
 
@@ -62,14 +75,43 @@ function getData (year = y(), season = s()) {
     }
   })
   .then(() => {
-    sortData('m', false)
+    sortData({ by: 'm', update: false })
     thisApp.forceUpdate()
   })
   .catch(e => {
     error = e.message
     data = []
+    sortedData = []
     thisApp.forceUpdate()
   })
+}
+
+function SortButton ({ by, label }) {
+  const active = classnames({ active: sortOrder === by })
+  return (
+    <button onClick={() => sortData({ by })} className={active}>
+      {label}
+    </button>
+  )
+}
+
+SortButton.propTypes = {
+  by: PropTypes.oneOf([ 'm', 'u', 'r', 'f' ]),
+  label: PropTypes.string
+}
+
+function FilterButton ({ filter, label }) {
+  const active = classnames({ active: filters[filter] === true })
+  return (
+    <button onClick={() => sortData({ filter })} className={active}>
+      {label}
+    </button>
+  )
+}
+
+FilterButton.propTypes = {
+  filter: PropTypes.oneOf([ 'tv', 'ona', 'new', 'old' ]),
+  label: PropTypes.string
 }
 
 function Bar () {
@@ -78,10 +120,17 @@ function Bar () {
       <div>
         <div className='bar-sorts'>
           <span>Sort By</span>
-          <button onClick={() => sortData('m')}>Score</button>
-          <button onClick={() => sortData('u')}>Users</button>
-          <button onClick={() => sortData('r')}>Users Rated</button>
-          <button onClick={() => sortData('f')}>Favourites</button>
+          <SortButton by='m' label='Score'/>
+          <SortButton by='u' label='Users'/>
+          <SortButton by='r' label='Users Rated'/>
+          <SortButton by='f' label='Favourites'/>
+        </div>
+        <div className='bar-filters'>
+          <span>Filter By</span>
+          <FilterButton filter='tv' label='TV'/>
+          <FilterButton filter='ona' label='ONA'/>
+          <FilterButton filter='new' label='New'/>
+          <FilterButton filter='old' label='Leftovers'/>
         </div>
         <span className='info'>Airing anime this season, updated {updated ? distanceInWordsToNow(updated, { addSuffix: true }) : 'daily'}</span>
       </div>
@@ -103,8 +152,8 @@ function Container ({ match }) {
     y: ~~(year || y())
   })
 
-  if (Object.keys(data).length > 0 && !error) {
-    output = data.map((entry, index) => {
+  if (Object.keys(sortedData).length > 0 && !error) {
+    output = sortedData.map((entry, index) => {
       return <TrendContainer
         key={index}
         rank={++index}
@@ -119,8 +168,9 @@ function Container ({ match }) {
     console.log(error)
     output = <p>Sorry, data for this season is not available</p>
   } else {
-    data = getData(year, season)
-    output = <p>Getting data...</p>
+    sortedData = getData(year, season)
+    if (data.length > 0) output = <p>No anime match these filters</p>
+    else output = <p>Getting data...</p>
   }
 
   return (

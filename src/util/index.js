@@ -57,7 +57,7 @@ export function nextSeason ({ s, y }) {
   }
 }
 
-export function sort (data, by) {
+export function sort (data, by, exclude = new Set()) {
   return Object.values(data).sort((A, B) => {
     let a = null, b = null
 
@@ -69,15 +69,23 @@ export function sort (data, by) {
       b = B.d.slice(-1)[0][by]
     }
 
-    /*
-    if (by === 'r') {
-      a = A[by].slice(-1)[0] / A['u'].slice(-1)[0]
-      b = B[by].slice(-1)[0] / B['u'].slice(-1)[0]
-    } else {
-      a = A[by] instanceof Array ? A[by].slice(-1)[0] : A[by]
-      b = B[by] instanceof Array ? B[by].slice(-1)[0] : B[by]
-    }
-    */
     return a > b ? -1 : a < b ? 1 : 0
+  }).filter(({ u, n }) => {
+    const toFilter = []
+    if (u === 'TV') toFilter.push('tv')
+    if (u === 'ONA') toFilter.push('ona')
+    if (n === 1) toFilter.push('new')
+    if (n === 0) toFilter.push('old')
+
+    // u: TV/ONA
+    // n: 0/1 old/new
+    const filterable = new Set([
+      u === 'TV' ? 'tv' : 'ona',
+      n === 1 ? 'new' : 'old'
+    ])
+
+    const diff = [...exclude].filter(x => filterable.has(x))
+    if (diff.length > 0) return false
+    else return true
   })
 }
