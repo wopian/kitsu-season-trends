@@ -27,7 +27,7 @@ export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, u
     entry.d.push(Object.assign(
       {
         i: entry.d[entry.d.length - 1].i + 1 || 0, // Increment index
-        d: ~~(TIMESTAMP / 3600000).toFixed(0) // Hours since epoch
+        d: ~~(TIMESTAMP / 36e5).toFixed(0) // Hours since epoch
       },
       ~~ratings.usersRated === 0 ? '' : { m: ratings.mean },
       ~~ratings.usersRated === 0 ? '' : { r: ~~ratings.usersRated },
@@ -44,7 +44,7 @@ export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, u
       d: [Object.assign(
         {
           i: 0, // Index
-          d: ~~(TIMESTAMP / 3600000).toFixed(0) // Hours since epoch
+          d: ~~(TIMESTAMP / 36e5).toFixed(0) // Hours since epoch
         },
         ~~ratings.usersRated === 0 ? '' : { m: ratings.mean },
         ~~ratings.usersRated === 0 ? '' : { r: ~~ratings.usersRated },
