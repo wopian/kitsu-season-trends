@@ -200,6 +200,7 @@ h2 {
 
   &-sorts > .active,
   &-filters > .active {
+    color: $white;
     background: $accent;
     border: 1px solid darken($accent, 11);
     border-left: none;
@@ -211,6 +212,7 @@ h2 {
 
   &-sorts button:not(.active):hover,
   &-filters button:hover {
+    color: unset;
     background: lighten(rgba($primary, .8), 70);
   }
 
