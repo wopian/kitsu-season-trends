@@ -63,7 +63,7 @@
     "react-hot-loader": "~4.3.0",
     "sass-loader": "~7.1.0",
     "size-limit": "~0.19.0",
-    "style-loader": "~0.21.0",
+    "style-loader": "~0.22.0",
     "uglifyjs-webpack-plugin": "~1.2.0",
     "url-loader": "~1.0.0",
     "webpack": "~4.16.0",
