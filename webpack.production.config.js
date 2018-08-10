@@ -1,9 +1,9 @@
 var JSON5 = require('json5')
 var webpack = require('webpack')
 var path = require('path')
-var chalk = require('chalk')
 var rules = require('./webpack.rules')
 var Html = require('html-webpack-plugin')
+var ResourceHints = require('resource-hints-webpack-plugin')
 var MiniCssExtract = require('mini-css-extract-plugin')
 var Copy = require('copy-webpack-plugin')
 var OptimizeCSS = require('optimize-css-assets-webpack-plugin')
@@ -114,6 +114,7 @@ module.exports = {
       },
       chunksSortMode: 'dependency'
     }),
+    new ResourceHints(),
     new Copy([
       {
         from: 'data',
