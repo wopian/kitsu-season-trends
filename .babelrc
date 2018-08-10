@@ -1,6 +1,6 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/env", {
       "targets": {
         "browsers": [
           "last 2 years",
@@ -9,9 +9,13 @@
       },
       "modules": false
     }],
-    "react"
+    "@babel/react"
   ],
-  "plugins": ["transform-runtime", "transform-decorators-legacy", "transform-class-properties"],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    ["@babel/plugin-syntax-decorators", { "legacy": true }],
+    "@babel/plugin-proposal-class-properties"
+  ],
   "env": {
     "development": {
       "plugins": [
