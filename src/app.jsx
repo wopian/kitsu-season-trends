@@ -170,7 +170,7 @@ function Container ({ match }) {
   } else {
     sortedData = getData(year, season)
     if (data.length > 0) output = <p>No anime match these filters</p>
-    else output = <p>Getting data...</p>
+    else output = <p>Getting data</p>
   }
 
   return (
