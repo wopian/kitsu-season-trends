@@ -58,7 +58,7 @@
     "msgpack-lite": "~0.1.26",
     "node-sass": "~4.9.0",
     "optimize-css-assets-webpack-plugin": "~5.0.0",
-    "postcss-loader": "~2.1.0",
+    "postcss-loader": "~3.0.0",
     "react-hot-loader": "~4.3.0",
     "resource-hints-webpack-plugin": "~0.0.2",
     "sass-loader": "~7.1.0",
