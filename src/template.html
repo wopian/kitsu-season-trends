@@ -1,10 +1,17 @@
 <!doctype html>
 <html lang='en'>
 <head>
-  <meta charset='utf-8'>
   <title>Kitsu Season Trends</title>
+  <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <meta name='referrer' content='origin-when-crossorigin'>
+  <meta name='description' content='Daily rating trends of airing anime by Kitsu.io users'>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="preconnect" href="https://cdn.ravenjs.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Noto+Sans|Overpass+Mono:600'>
+
   <meta property='og:title' content='Kitsu Season Trends'>
   <meta property='og:type' content='website'>
   <meta property='og:description' content='Daily rating trends of airing anime by Kitsu.io users'>
@@ -12,18 +19,13 @@
   <meta property='og:image:type' content='image/png'>
   <meta property='og:image:width' content='256'>
   <meta property='og:image:height' content='256'>
+
   <meta name='twitter:card' content='summary'>
   <meta name='twitter:site' content='@WOPlAN'>
   <meta name='twitter:title' content='Kitsu Season Trends'>
   <meta name='twitter:description' content='Daily rating trends of airing anime by Kitsu.io users'>
   <meta name='twitter:image' content='https://season.moe/icon_192x192.png'>
-  <meta name='description' content='Daily rating trends of airing anime by Kitsu.io users'>
-  <!--
-  <meta http-equiv='Content-Security-Policy' content="script-src 'self' 'unsafe-eval' https://kitsu.io www.google-analytics.com">
-  -->
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Noto+Sans|Overpass+Mono:600'>
 
-  <!-- Remove when webpack favicon plugin supports Webpack 3 -->
   <link rel='icon' type='image/png' href='/icon_32x32.png'>
   <meta name='mobile-web-app-capable' content='yes'>
   <meta name='theme-color' content='#332532'>
@@ -40,10 +42,13 @@
     </header>
     <div class='bar'>
       <div>
-        <div class='bar-sorts'>
-          <span>Loading</span>
-        </div>
+        <div class='bar-sorts'></div>
         <span class='info'>All airing shows this season, updated daily</span>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='trend-container'>
+        <p>Loading</p>
       </div>
     </div>
   </main>
