@@ -93,12 +93,11 @@ All code released under the [MIT] license
 [yarn]:https://yarnpkg.com
 
 [web]:https://season.moe
-[web badge]:https://img.shields.io/website-up-down-green-red/https/season.wopian.me.svg?style=flat-square&label=web
-[uptime badge]:https://img.shields.io/uptimerobot/ratio/7/m779133972-4da0d8f104f1d6ffaf921257.svg?style=flat-square
+[web badge]:https://flat.badgen.net/uptime-robot/status/m779133972-4da0d8f104f1d6ffaf921257
+[uptime badge]:https://flat.badgen.net/uptime-robot/month/m779133972-4da0d8f104f1d6ffaf921257
 
 [travis]:https://travis-ci.org/wopian/kitsu-season-trends
-[travis badge]:https://img.shields.io/travis/wopian/kitsu-season-trends/master.svg?style=flat-square&label=linux
-
+[travis badge]:https://flat.badgen.net/travis/wopian/kitsu-season-trends
 
 [donate]:https://paypal.me/wopian
-[donate badge]:https://img.shields.io/badge/support%20me%20on-paypal.me-ff69b4.svg?style=flat-square
+[donate badge]:https://flat.badgen.net/badge/support%20me%20on/paypal.me/pink
