@@ -648,7 +648,7 @@
     pirates "^4.0.0"
     source-map-support "^0.4.2"
 
-"@babel/runtime@~7.0.0-rc.1":
+"@babel/runtime@^7.0.0-rc.1", "@babel/runtime@~7.0.0-rc.1":
   version "7.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0-rc.1.tgz#42f36fc5817911c89ea75da2b874054922967616"
   dependencies:
@@ -1241,13 +1241,6 @@ babel-loader@~8.0.0-beta.4:
     loader-utils "^1.0.2"
     mkdirp "^0.5.1"
     util.promisify "^1.0.0"
-
-babel-runtime@^6.26.0:
-  version "6.26.0"
-  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
-  dependencies:
-    core-js "^2.4.0"
-    regenerator-runtime "^0.11.0"
 
 babylon@7.0.0-beta.44:
   version "7.0.0-beta.44"
@@ -2002,7 +1995,7 @@ core-js@^1.0.0:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
 
-core-js@^2.4.0, core-js@^2.5.7:
+core-js@^2.5.7:
   version "2.5.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
 
@@ -4416,19 +4409,19 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-kitsu-core@^5.2.2:
-  version "5.2.2"
-  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-5.2.2.tgz#bfa4b53b0fa5402f67adb67267b62bf3b4ecd23f"
+kitsu-core@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-6.1.0.tgz#a73194d3174d8883bd87a7cb4a61a9e802601098"
   dependencies:
-    babel-runtime "^6.26.0"
+    "@babel/runtime" "^7.0.0-rc.1"
 
-kitsu@~5.2.0:
-  version "5.2.2"
-  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-5.2.2.tgz#dfaea415a23a87e37f6b2db55ec152848d9b64c3"
+kitsu@~6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-6.1.0.tgz#5b5322dea7336f480df5976b17933346b7143934"
   dependencies:
+    "@babel/runtime" "^7.0.0-rc.1"
     axios "^0.18.0"
-    babel-runtime "^6.26.0"
-    kitsu-core "^5.2.2"
+    kitsu-core "^6.1.0"
     pluralize "^7.0.0"
 
 koa-compose@^3.0.0:
@@ -6449,7 +6442,7 @@ regenerate@^1.2.1, regenerate@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
 
-regenerator-runtime@^0.11.0, regenerator-runtime@^0.11.1:
+regenerator-runtime@^0.11.1:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
 
