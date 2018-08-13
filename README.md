@@ -2,7 +2,10 @@
 
 [![web badge]][web]
 [![uptime badge]][web]
+[![contributors badge]][contributors]
 [![travis badge]][travis]
+[![david badge]][david]
+[![david dev badge]][david dev]
 [![donate badge]][donate]
 
 [Kitsu] season trends for the currently airing anime
@@ -96,8 +99,17 @@ All code released under the [MIT] license
 [web badge]:https://flat.badgen.net/uptime-robot/status/m779133972-4da0d8f104f1d6ffaf921257
 [uptime badge]:https://flat.badgen.net/uptime-robot/month/m779133972-4da0d8f104f1d6ffaf921257
 
+[david]:https://david-dm.org/wopian/kitsu-season-trends
+[david badge]:https://flat.badgen.net/david/dep/wopian/kitsu-season-trends
+
+[david dev]:https://david-dm.org/wopian/kitsu-season-trends?type=dev
+[david dev badge]:https://flat.badgen.net/david/dev/wopian/kitsu-season-trends
+
 [travis]:https://travis-ci.org/wopian/kitsu-season-trends
 [travis badge]:https://flat.badgen.net/travis/wopian/kitsu-season-trends
+
+[contributors]:https://github.com/wopian/kitsu-season-trends/graphs/contributors
+[contributors badge]:https://flat.badgen.net/github/contributors/wopian/kitsu-season-trends
 
 [donate]:https://paypal.me/wopian
 [donate badge]:https://flat.badgen.net/badge/support%20me%20on/paypal.me/pink
