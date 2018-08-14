@@ -7913,9 +7913,9 @@ webpack-log@^1.0.1, webpack-log@^1.1.1, webpack-log@^1.1.2, webpack-log@^1.2.0:
     loglevelnext "^1.0.1"
     uuid "^3.1.0"
 
-webpack-pwa-manifest@~3.7.0:
-  version "3.7.1"
-  resolved "https://registry.yarnpkg.com/webpack-pwa-manifest/-/webpack-pwa-manifest-3.7.1.tgz#ef3ca4571b1f799a470225be537c0ca6a1ac9505"
+webpack-pwa-manifest@~3.6.0:
+  version "3.6.3"
+  resolved "https://registry.yarnpkg.com/webpack-pwa-manifest/-/webpack-pwa-manifest-3.6.3.tgz#519da004b0060f874ec7acdc838caed3f90061d5"
   dependencies:
     css-color-names "0.0.4"
     jimp "^0.2.28"
