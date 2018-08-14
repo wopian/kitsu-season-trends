@@ -72,7 +72,7 @@
     "webpack-cleanup-plugin": "~0.5.1",
     "webpack-cli": "~3.1.0",
     "webpack-dashboard": "~2.0.0",
-    "webpack-pwa-manifest": "~3.7.0",
+    "webpack-pwa-manifest": "~3.6.0",
     "webpack-serve": "~2.0.0",
     "weighted-mean": "~1.0.2"
   },
