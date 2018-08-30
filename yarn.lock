@@ -648,7 +648,13 @@
     pirates "^4.0.0"
     source-map-support "^0.4.2"
 
-"@babel/runtime@^7.0.0-rc.1", "@babel/runtime@~7.0.0-rc.1":
+"@babel/runtime@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0.tgz#adeb78fedfc855aa05bc041640f3f6f98e85424c"
+  dependencies:
+    regenerator-runtime "^0.12.0"
+
+"@babel/runtime@~7.0.0-rc.1":
   version "7.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0-rc.1.tgz#42f36fc5817911c89ea75da2b874054922967616"
   dependencies:
@@ -4417,19 +4423,19 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-kitsu-core@^6.2.3:
-  version "6.2.3"
-  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-6.2.3.tgz#1441e99a35e8d51976e91cab5594b8a8d401a732"
+kitsu-core@^6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-6.3.0.tgz#fb1cb1468cea1719a38da367c5aa422e2c75238a"
   dependencies:
-    "@babel/runtime" "^7.0.0-rc.1"
+    "@babel/runtime" "^7.0.0"
 
-kitsu@~6.2.0:
-  version "6.2.3"
-  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-6.2.3.tgz#9b48ee2450ed7b34e9b5d0e8196df5f21bf4be77"
+kitsu@~6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-6.3.0.tgz#12e641c2a1bca28337cf8a9951e8c691739185d2"
   dependencies:
-    "@babel/runtime" "^7.0.0-rc.1"
+    "@babel/runtime" "^7.0.0"
     axios "^0.18.0"
-    kitsu-core "^6.2.3"
+    kitsu-core "^6.3.0"
     pluralize "^7.0.0"
 
 koa-compose@^3.0.0:
