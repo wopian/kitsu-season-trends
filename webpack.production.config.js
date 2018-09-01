@@ -9,11 +9,10 @@ var Copy = require('copy-webpack-plugin')
 var OptimizeCSS = require('optimize-css-assets-webpack-plugin')
 var UglifyJs = require('uglifyjs-webpack-plugin')
 var ProgressiveManifest = require('webpack-pwa-manifest')
-var Cleanup = require('webpack-cleanup-plugin')
+var Cleanup = require('clean-webpack-plugin')
 var BundleSize = require('webpack-bundle-size-analyzer').WebpackBundleSizeAnalyzerPlugin
 var { encode } = require('msgpack-lite/lib/encode')
 var { readFileSync } = require('fs')
-
 
 rules.push({
   test: /\.scss$/,
@@ -50,7 +49,7 @@ module.exports = {
   },
   node: { Buffer: false },
   plugins: [
-    new Cleanup(),
+    new Cleanup([ 'dist' ]),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
