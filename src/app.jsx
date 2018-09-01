@@ -9,7 +9,7 @@ import { season as s, year as y, prevSeason, nextSeason, sort } from './util'
 import { Header } from './components/Header'
 import { TrendContainer } from './components/TrendContainer'
 import { Stats } from './components/Stats'
-import '../styles/index.scss'
+import '../styles/index.styl'
 
 let thisApp = {}
 let data = []

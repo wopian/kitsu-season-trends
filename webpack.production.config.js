@@ -15,12 +15,11 @@ var { encode } = require('msgpack-lite/lib/encode')
 var { readFileSync } = require('fs')
 
 rules.push({
-  test: /\.scss$/,
+  test: /\.styl$/,
   use: [
     MiniCssExtract.loader,
     'css-loader',
-    'postcss-loader',
-    'sass-loader',
+    'stylus-loader'
   ],
   exclude: ['node_modules']
 })
@@ -29,7 +28,7 @@ module.exports = {
   mode: 'production',
   entry: [
     './src/index.jsx',
-    './styles/index.scss'
+    './styles/index.styl'
   ],
   output: {
     publicPath: '/',
