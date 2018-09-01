@@ -8,8 +8,8 @@ var history = require('connect-history-api-fallback')
 var convert = require('koa-connect')
 
 rules.push({
-  test: /\.scss$/,
-  loaders: ['style-loader', 'css-loader?importLoaders=1', 'sass-loader'],
+  test: /\.styl$/,
+  loaders: ['style-loader', 'css-loader?importLoaders=1', 'stylus-loader'],
   exclude: ['node_modules']
 })
 
