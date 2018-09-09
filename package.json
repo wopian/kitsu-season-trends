@@ -54,7 +54,7 @@
     "eslint-config-wopian-react": "~1.4.0",
     "html-webpack-plugin": "~3.2.0",
     "json5": "~2.0.0",
-    "kitsu": "~6.3.0",
+    "kitsu": "~6.4.0",
     "koa-connect": "~2.0.1",
     "mini-css-extract-plugin": "~0.4.1",
     "msgpack-lite": "~0.1.26",
