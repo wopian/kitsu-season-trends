@@ -4105,19 +4105,19 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-kitsu-core@^6.3.1:
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-6.3.1.tgz#3ae95ced85dc7ed202e6fe168aefae12b342bc72"
+kitsu-core@^6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-6.4.0.tgz#4fa913dc6f9744c2e1581b215c95e0a48c28f1f1"
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-kitsu@~6.3.0:
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-6.3.1.tgz#904d17fc49b1270963574df049f40cd21958e2b3"
+kitsu@~6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-6.4.0.tgz#f54b6a9556bee0bb81c7c29a46a7a90f0fc80ab7"
   dependencies:
     "@babel/runtime" "^7.0.0"
     axios "^0.18.0"
-    kitsu-core "^6.3.1"
+    kitsu-core "^6.4.0"
     pluralize "^7.0.0"
 
 koa-compose@^3.0.0:
