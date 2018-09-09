@@ -23,14 +23,14 @@
     "date-fns": "~1.29.0",
     "lodash-es": "~4.17.10",
     "prop-types": "~15.6.0",
-    "react": "~16.5.0",
-    "react-dom": "~16.5.0",
+    "react": "~16.4.0",
+    "react-dom": "~16.4.0",
     "react-ga": "~2.5.0",
     "react-icons": "~3.0.4",
     "react-lazy-load": "~3.0.13",
     "react-router-dom": "~4.3.0",
     "react-transition-group": "~2.4.0",
-    "recharts": "1.2.0"
+    "recharts": "1.1.0"
   },
   "devDependencies": {
     "@babel/cli": "~7.0.0",
@@ -83,11 +83,11 @@
   "size-limit": [
     {
       "path": "dist/main*.js",
-      "limit": "160 KB"
+      "limit": "155.80 KB"
     },
     {
       "path": "dist/main*.css",
-      "limit": "4 KB"
+      "limit": "4.11 KB"
     }
   ]
 }
