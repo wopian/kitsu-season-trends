@@ -7,7 +7,7 @@ var ResourceHints = require('resource-hints-webpack-plugin')
 var MiniCssExtract = require('mini-css-extract-plugin')
 var Copy = require('copy-webpack-plugin')
 var OptimizeCSS = require('optimize-css-assets-webpack-plugin')
-var UglifyJs = require('uglifyjs-webpack-plugin')
+var Terser = require('terser-webpack-plugin')
 var ProgressiveManifest = require('webpack-pwa-manifest')
 var Cleanup = require('clean-webpack-plugin')
 var BundleSize = require('webpack-bundle-size-analyzer').WebpackBundleSizeAnalyzerPlugin
@@ -53,11 +53,6 @@ module.exports = {
       'process.env': {
         NODE_ENV: '"production"'
       }
-    }),
-    new UglifyJs({
-      parallel: true,
-      cache: true,
-      extractComments: () => {}
     }),
     new webpack.NoEmitOnErrorsPlugin(),
     new MiniCssExtract({
@@ -150,5 +145,14 @@ module.exports = {
       ios: true
     }),
     new BundleSize('../.bundlesize.yml')
-  ]
+  ],
+  optimization: {
+    minimizer: [
+      new Terser({
+        parallel: true,
+        cache: true,
+        extractComments: () => {}
+      })
+    ]
+  }
 }
