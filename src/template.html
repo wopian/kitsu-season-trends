@@ -8,8 +8,8 @@
   <meta name='description' content='Daily rating trends of airing anime by Kitsu.io users'>
 
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
   <link rel="preconnect" href="https://cdn.ravenjs.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Noto+Sans|Overpass+Mono:600'>
 
   <meta property='og:title' content='Kitsu Season Trends'>
@@ -55,5 +55,6 @@
   <script>document.getElementById('init-year').innerHTML = new Date().getFullYear()</script>
   <script src='https://cdn.ravenjs.com/3.24.1/raven.min.js' crossorigin='anonymous'></script>
   <script>Raven.config('https://d069e8b4574b4658b0023bee81757105@sentry.io/201865').install()</script>
+  <script>(()=>{'serviceWorker'in navigator&&navigator.serviceWorker.register('/service-worker.js')})()</script>
 </body>
 </html>
