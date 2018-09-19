@@ -48,7 +48,7 @@ function TrendHeader ({ rank, id, newAnime, title, today, yesterday }) {
   return (
     <a href={animeURI} data-rank={rank}>
       <LazyLoad className='poster' offsetVertical={400} debounce={false}>
-        <img src={animePoster}/>
+        <img src={animePoster} alt=''/>
       </LazyLoad>
       <div className='title'>
         <div title={newAnime === 1 ? 'New' : 'Leftover' }>
