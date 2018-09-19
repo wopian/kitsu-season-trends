@@ -9,6 +9,7 @@ var Copy = require('copy-webpack-plugin')
 var OptimizeCSS = require('optimize-css-assets-webpack-plugin')
 var Terser = require('terser-webpack-plugin')
 var ProgressiveManifest = require('webpack-pwa-manifest')
+var SWPrecache = require('sw-precache-webpack-plugin')
 var Cleanup = require('clean-webpack-plugin')
 var BundleSize = require('webpack-bundle-size-analyzer').WebpackBundleSizeAnalyzerPlugin
 var { encode } = require('msgpack-lite/lib/encode')
@@ -128,12 +129,13 @@ module.exports = {
     ]),
     new ProgressiveManifest({
       name: 'Kitsu Season Trends',
-      short_name: 'Season Trends',
+      short_name: 'Season Trend',
       description: 'Daily rating trends of seasonal anime',
       start_url: '.',
       display: 'standalone',
       theme_color: '#332532',
       background_color: '#332532',
+      crossorigin: 'anonymous',
       icons: [
         {
           src: path.resolve('src/favicon.png'),
@@ -142,8 +144,22 @@ module.exports = {
       ],
       inject: true,
       fingerprints: false,
-      filename: 'manifest.json',
       ios: true
+    }),
+    new SWPrecache({
+      cacheId: 'kitsu-season-trends',
+      dontCacheBustUrlsMatching: /\.\w{8}\./,
+      filename: 'service-worker.js',
+      minify: true,
+      navigateFallback: '/',
+      staticFileGlobsIgnorePatterns: [
+        /\.map$/,
+        /asset-manifest\.json$/,
+        /\.json5$/,
+        /\.msgpack$/,
+        /_headers$/,
+        /_redirects$/
+      ]
     }),
     new BundleSize('../.bundlesize.yml')
   ],
