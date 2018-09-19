@@ -10,15 +10,14 @@ function getExisting (id) {
 
 export async function updateExisting () {
   await Promise.all(store.willBePruned.map(async id => {
-    let { data } = await getExisting(id)
+    const { data } = await getExisting(id)
       .catch(({ message, config }) => error(message, config))
 
-    data = data[0]
-
-    const ended = new Date(data.endDate)
+    const anime = data[0]
+    const ended = new Date(anime.endDate)
     const cutoff = new Date(KEEP_IF_ENDED_AFTER)
     const distance = ended - cutoff
 
-    if (data.status === 'current' || distance >= 0 || data.endDate === null) await checkExists(data)
+    if (anime.status === 'current' || distance >= 0 || anime.endDate === null) await checkExists(anime)
   }))
 }
