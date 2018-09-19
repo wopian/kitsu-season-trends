@@ -33,8 +33,8 @@ module.exports = {
   output: {
     publicPath: '/',
     path: path.join(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].js'
+    filename: '[name].[contenthash:8].js'
+    // chunkFilename: '[name].[chunkhash].js'
   },
   resolve: {
     extensions: ['.mjs', '.js', '.jsx'],
@@ -49,6 +49,7 @@ module.exports = {
   node: { Buffer: false },
   plugins: [
     new Cleanup([ 'dist' ]),
+    new webpack.HashedModuleIdsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
@@ -147,6 +148,18 @@ module.exports = {
     new BundleSize('../.bundlesize.yml')
   ],
   optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+      maxInitialRequests: Infinity,
+      minSize: 0,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: module => `vendor.${module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]}`
+        }
+      }
+    },
     minimizer: [
       new Terser({
         parallel: true,
