@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
+
+import fromNow from 'fromnow'
 import { IconContext } from 'react-icons'
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom'
 import { decode } from 'msgpack-lite/lib/decode'
@@ -132,7 +133,7 @@ function Bar () {
           <FilterButton filter='new' label='New'/>
           <FilterButton filter='old' label='Leftovers'/>
         </div>
-        <span className='info'>Airing anime this season, updated {updated ? distanceInWordsToNow(updated, { addSuffix: true }) : 'daily'}</span>
+        <span className='info'>Airing anime this season, updated {updated ? fromNow(updated, { max: 1 }) : 'daily'}</span>
       </div>
     </div>
   )
