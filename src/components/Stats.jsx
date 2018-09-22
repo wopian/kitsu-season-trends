@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import sortBy from 'lodash-es/sortBy'
 import groupBy from 'lodash-es/groupBy'
-import startOfDay from 'date-fns/start_of_day'
 import ResponsiveContainer from 'recharts/es6/component/ResponsiveContainer'
 import Cell from 'recharts/es6/component/Cell'
 import Legend from 'recharts/es6/component/Legend'
@@ -131,7 +130,9 @@ export function StatsAverage ({ data }) {
     })
 
     const grouped = groupBy(average, el => {
-      return startOfDay(el.date)
+      const date = new Date(el.date)
+      date.setHours(0, 0, 0, 0)
+      return date
     })
 
     const result = []
