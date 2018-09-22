@@ -133,7 +133,7 @@ function Bar () {
           <FilterButton filter='new' label='New'/>
           <FilterButton filter='old' label='Leftovers'/>
         </div>
-        <span className='info'>Airing anime this season, updated {updated ? fromNow(updated, { max: 1 }) : 'daily'}</span>
+        <span className='info'>Airing anime this season, updated {updated ? fromNow(updated, { max: 1, suffix: true }) : 'daily'}</span>
       </div>
     </div>
   )
