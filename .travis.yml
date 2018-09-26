@@ -8,8 +8,8 @@ matrix:
   fast_finish: true
 script:
 - if [ ${TRAVIS_EVENT_TYPE} = "cron" ];
-  then yarn cron;
-  else yarn build && yarn limit;
+  then KITSU_USERNAME=$KITSU_USERNAME KITSU_PASSWORD=$KITSU_PASSWORD stdbuf -i0 -o0 -e0 yarn cron;
+  else unbuffer yarn build && yarn limit;
   fi
 after_success:
 - if [ ${TRAVIS_EVENT_TYPE} = "cron" ];
