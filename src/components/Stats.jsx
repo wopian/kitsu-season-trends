@@ -160,7 +160,7 @@ export function StatsAverage ({ data }) {
         <AreaChart data={sortBy(result, ['date'])}>
           <Tooltip
             formatter={value => value.toFixed(2)}
-            labelFormatter={label => new Date(label).toLocaleDateString(navigator.langauge, {
+            labelFormatter={label => new Date(label).toLocaleDateString(navigator.language, {
               weekDay: 'long',
               day: '2-digit',
               year: 'numeric',
