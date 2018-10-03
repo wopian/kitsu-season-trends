@@ -65,23 +65,6 @@ class TrendChanges extends React.Component {
     }
   }
 }
-/*
-function TrendChanges ({ title, icon, today, yesterday, decimalPlaces = 0 }) {
-  const diff = today - yesterday
-
-  return (
-    <span title={title}>
-      {icon}
-      <span className={classnames({
-        pos: diff > 0,
-        neg: diff < 0
-      })}>
-        &nbsp;{posOrNeg(diff.toFixed(decimalPlaces))}
-      </span>
-    </span>
-  )
-}
-*/
 
 TrendChanges.propTypes = {
   title: PropTypes.string,
