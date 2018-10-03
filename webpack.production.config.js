@@ -22,7 +22,7 @@ rules.push({
     'css-loader',
     'stylus-loader'
   ],
-  exclude: ['node_modules']
+  exclude: [/node_modules/]
 })
 
 module.exports = {
