@@ -139,19 +139,34 @@ function Bar () {
   )
 }
 
+function SeasonLink ({ season, year, direction }) {
+  const options = {
+    s: season || s(),
+    y: ~~(year || y())
+  }
+  const { s: toSeason, y: toYear } = direction === 'next' ? nextSeason(options) : prevSeason(options)
+  const linkText = direction === 'next' ? 'Next season' : 'Last season'
+
+  return (
+    <Link
+      className={`link ${direction}`}
+      to={`/${toYear}/${toSeason}`}
+      onClick={reset}
+    >
+      {linkText}
+    </Link>
+  )
+}
+
+SeasonLink.propTypes = {
+  season: PropTypes.string,
+  year: PropTypes.string,
+  direction: PropTypes.string
+}
+
 function Container ({ match }) {
   const { year, season } = match.params
   let output = {}
-
-  const next = nextSeason({
-    s: season || s(),
-    y: ~~(year || y())
-  })
-
-  const prev = prevSeason({
-    s: season || s(),
-    y: ~~(year || y())
-  })
 
   if (Object.keys(sortedData).length > 0 && !error) {
     output = sortedData.map((entry, index) => {
@@ -176,8 +191,8 @@ function Container ({ match }) {
 
   return (
     <div className='container'>
-      <Link className='link prev' to={`/${prev.y}/${prev.s}`} onClick={reset}>Last season</Link>
-      <Link className='link next' to={`/${next.y}/${next.s}`} onClick={reset}>Next season</Link>
+      <SeasonLink season={season} year={year} direction='prev'/>
+      <SeasonLink season={season} year={year} direction='next'/>
       <Stats data={data} meta={meta}/>
       <div className='trend-container'>
         {output}
