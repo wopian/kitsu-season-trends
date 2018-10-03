@@ -193,8 +193,6 @@ function Container ({ match }) {
     <div className='container'>
       <SeasonLink season={season} year={year} direction='prev'/>
       <SeasonLink season={season} year={year} direction='next'/>
-      <Link className='link prev' to={`/${prev.y}/${prev.s}`} onClick={reset}>Last season</Link>
-      <Link className='link next' to={`/${next.y}/${next.s}`} onClick={reset}>Next season</Link>
       <Stats data={data} meta={meta}/>
       <div className='trend-container'>
         {output}
