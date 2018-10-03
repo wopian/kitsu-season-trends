@@ -17,6 +17,55 @@ function posOrNeg (number) {
   else return `±${number}`
 }
 
+class TrendChanges extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      toggleChangesTotal: true
+    }
+  }
+
+  tick() {
+    this.setState(prevState => ({
+      toggleChangesTotal: !prevState.toggleChangesTotal
+    }))
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => this.tick(), 15e3)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval)
+  }
+
+  render() {
+    if (this.state.toggleChangesTotal) {
+      return (
+        <span title={this.props.title}>
+          {this.props.icon}
+          <span>
+            &nbsp;{this.props.today}
+          </span>
+        </span>
+      )
+    } else {
+      const diff = this.props.today - this.props.yesterday
+      return (
+        <span title={this.props.title}>
+          {this.props.icon}
+          <span className={classnames({
+            pos: diff > 0,
+            neg: diff < 0
+          })}>
+            &nbsp;{posOrNeg(diff.toFixed(this.props.decimalPlaces))}
+          </span>
+        </span>
+      )
+    }
+  }
+}
+/*
 function TrendChanges ({ title, icon, today, yesterday, decimalPlaces = 0 }) {
   const diff = today - yesterday
 
@@ -32,6 +81,7 @@ function TrendChanges ({ title, icon, today, yesterday, decimalPlaces = 0 }) {
     </span>
   )
 }
+*/
 
 TrendChanges.propTypes = {
   title: PropTypes.string,
