@@ -10,7 +10,7 @@ var convert = require('koa-connect')
 rules.push({
   test: /\.styl$/,
   loaders: ['style-loader', 'css-loader?importLoaders=1', 'stylus-loader'],
-  exclude: ['node_modules']
+  exclude: [/node_modules/]
 })
 
 module.exports = {
