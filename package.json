@@ -41,7 +41,7 @@
     "@babel/preset-env": "~7.1.0",
     "@babel/preset-react": "~7.0.0",
     "@babel/runtime": "~7.1.0",
-    "autoprefixer": "~9.1.0",
+    "autoprefixer": "~9.2.0",
     "babel-loader": "~8.0.0",
     "chalk": "~2.4.0",
     "clean-webpack-plugin": "~0.1.19",
