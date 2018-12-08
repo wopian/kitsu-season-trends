@@ -8790,10 +8790,10 @@ webpack-log@^2.0.0:
     ansi-colors "^3.0.0"
     uuid "^3.3.2"
 
-webpack-pwa-manifest@~3.8.0:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/webpack-pwa-manifest/-/webpack-pwa-manifest-3.8.0.tgz#7f1d409f2fe872e78ace6b729ba03c8cb5d923ef"
-  integrity sha512-W+svkP+u2WJsMw+R+bLSD4O/LkPumGCnFlD0BBMPubqD9v7nnmnVeO8cZYGPIiuRQ9x+WFWdmEfiA6XecvkkWA==
+webpack-pwa-manifest@~4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/webpack-pwa-manifest/-/webpack-pwa-manifest-4.0.0.tgz#a7c12debe497f61f5948ddb079bb8a955152abd9"
+  integrity sha512-655TpvoOLGHI2hgx7AmmdgHLc+xDtAi6J5fz7bTnuhxWtEVH/NI2qGlDY40HErlblOV74VtVz5S/C0u7ZpPlvQ==
   dependencies:
     css-color-names "0.0.4"
     jimp "^0.2.28"
