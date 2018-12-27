@@ -13,11 +13,15 @@ export async function updateExisting () {
     const { data } = await getExisting(id)
       .catch(({ message, config }) => error(message, config))
 
-    const anime = data[0]
-    const ended = new Date(anime.endDate)
-    const cutoff = new Date(KEEP_IF_ENDED_AFTER)
-    const distance = ended - cutoff
+    // Anime was deleted from database
+    if (data.length === 0) return
+    else {
+      const anime = data[0]
+      const ended = new Date(anime.endDate)
+      const cutoff = new Date(KEEP_IF_ENDED_AFTER)
+      const distance = ended - cutoff
 
-    if (anime.status === 'current' || distance >= 0 || anime.endDate === null) await checkExists(anime)
+      if (anime.status === 'current' || distance >= 0 || anime.endDate === null) await checkExists(anime)
+    }
   }))
 }
