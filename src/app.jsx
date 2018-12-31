@@ -166,6 +166,7 @@ SeasonLink.propTypes = {
 
 function Container ({ match }) {
   const { year, season } = match.params
+  const isCurrentSeason = year === y().toString() && season === s()
   let output = {}
 
   if (Object.keys(sortedData).length > 0 && !error) {
@@ -178,6 +179,7 @@ function Container ({ match }) {
         data={entry.d}
         start={collectionStartDate}
         newAnime={typeof entry.n === 'number' ? entry.n : 1}
+        isCurrentSeason={isCurrentSeason}
       />
     })
   } else if (error) {

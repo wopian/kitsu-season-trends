@@ -32,7 +32,8 @@ class TrendChanges extends React.Component {
   }
 
   componentDidMount() {
-    this.interval = setInterval(() => this.tick(), 15e3)
+    if (this.props.isCurrentSeason) this.interval = setInterval(() => this.tick(), 10e3)
+    else clearInterval(this.interval)
   }
 
   componentWillUnmount() {
@@ -40,16 +41,7 @@ class TrendChanges extends React.Component {
   }
 
   render() {
-    if (this.state.toggleChangesTotal) {
-      return (
-        <span title={this.props.title}>
-          {this.props.icon}
-          <span>
-            &nbsp;{this.props.today}
-          </span>
-        </span>
-      )
-    } else {
+    if (this.state.toggleChangesTotal && this.props.isCurrentSeason) {
       const diff = this.props.today - this.props.yesterday
       return (
         <span title={this.props.title}>
@@ -62,6 +54,15 @@ class TrendChanges extends React.Component {
           </span>
         </span>
       )
+    } else {
+      return (
+        <span title={this.props.title}>
+          {this.props.icon}
+          <span>
+            &nbsp;{this.props.today}
+          </span>
+        </span>
+      )
     }
   }
 }
@@ -71,10 +72,11 @@ TrendChanges.propTypes = {
   icon: PropTypes.node,
   today: PropTypes.number,
   yesterday: PropTypes.number,
-  decimalPlaces: PropTypes.number
+  decimalPlaces: PropTypes.number,
+  isCurrentSeason: PropTypes.bool
 }
 
-function TrendHeader ({ rank, id, newAnime, title, today, yesterday }) {
+function TrendHeader ({ rank, id, newAnime, title, today, yesterday, isCurrentSeason }) {
   const animeURI = `https://kitsu.io/anime/${id}`
   const animePoster = `https://media.kitsu.io/anime/poster_images/${id}/tiny.jpg`
 
@@ -98,24 +100,28 @@ function TrendHeader ({ rank, id, newAnime, title, today, yesterday }) {
             today={today.m}
             yesterday={yesterday.m}
             decimalPlaces={2}
+            isCurrentSeason={isCurrentSeason}
           />
           <TrendChanges
             title='Users'
             icon={<MdGroup style={{color: '#8686CC'}}/>}
             today={today.u}
             yesterday={yesterday.u}
+            isCurrentSeason={isCurrentSeason}
           />
           <TrendChanges
             title='Users Rated'
             icon={<MdThumbsUpDown style={{color: '#86CC86'}}/>}
             today={today.r}
             yesterday={yesterday.r}
+            isCurrentSeason={isCurrentSeason}
           />
           <TrendChanges
             title='Favourites'
             icon={<MdFavorite style={{color: '#CC8686'}}/>}
             today={today.f}
             yesterday={yesterday.f}
+            isCurrentSeason={isCurrentSeason}
           />
         </div>
       </div>
@@ -129,7 +135,8 @@ TrendHeader.propTypes = {
   title: PropTypes.string,
   newAnime: PropTypes.number,
   today: PropTypes.object,
-  yesterday: PropTypes.object
+  yesterday: PropTypes.object,
+  isCurrentSeason: PropTypes.bool
 }
 
 function TrendBody ({ data, start }) {
@@ -220,7 +227,7 @@ TrendBody.propTypes = {
   start: PropTypes.number
 }
 
-export function TrendContainer ({ rank, start, id, title, data, newAnime }) {
+export function TrendContainer ({ rank, start, id, title, data, newAnime, isCurrentSeason }) {
   return (
     <div className='trend'>
       <TrendHeader
@@ -230,6 +237,7 @@ export function TrendContainer ({ rank, start, id, title, data, newAnime }) {
         title={title}
         today={data.slice(-1)[0]}
         yesterday={data.slice(-2)[0]}
+        isCurrentSeason={isCurrentSeason}
       />
       <TrendBody
         data={data}
@@ -246,5 +254,6 @@ TrendContainer.propTypes = {
   poster: PropTypes.number,
   data: PropTypes.array,
   start: PropTypes.number,
-  newAnime: PropTypes.number
+  newAnime: PropTypes.number,
+  isCurrentSeason: PropTypes.bool
 }
