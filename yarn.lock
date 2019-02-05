@@ -4369,15 +4369,16 @@ inquirer@^6.1.0:
     strip-ansi "^5.0.0"
     through "^2.3.6"
 
-inspectpack@^3.0.1:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/inspectpack/-/inspectpack-3.0.2.tgz#a2b17a1c09c236cc8d453388b814972d2ae8e349"
-  integrity sha512-DvS+X+zpHJAuU2+FoLm2xNpRSu8lRl+sXZZGPnvQt1mBlMtmvWYKOkUIDbThIlZLG7QQ90J0hnQt4ZUNiR/vBg==
+inspectpack@^4.0.0:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/inspectpack/-/inspectpack-4.1.2.tgz#b07dd10f1131c290d2076270470787d61b47097e"
+  integrity sha512-bd0iIr5P2xRMtjQQkPnUYJSNa3mUFYER/2eQOPAoXrWBnZXMeFVAgRt/Dny8XVdSkkFoNKhumPjjV9QgTDcVxQ==
   dependencies:
     chalk "^2.4.0"
     io-ts "^1.0.5"
     io-ts-reporters "^0.0.20"
     pify "^3.0.0"
+    semver-compare "^1.0.0"
     yargs "^11.0.0"
 
 int64-buffer@^0.1.9:
@@ -7614,6 +7615,11 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
+semver-compare@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/semver-compare/-/semver-compare-1.0.0.tgz#0dee216a1c941ab37e9efb1788f6afc5ff5537fc"
+  integrity sha1-De4hahyUGrN+nvsXiPavxf9VN/w=
+
 semver-diff@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/semver-diff/-/semver-diff-2.1.0.tgz#4bbb8437c8d37e4b0cf1a68fd726ec6d645d6d36"
@@ -8852,17 +8858,17 @@ webpack-cli@~3.2.0:
     v8-compile-cache "^2.0.2"
     yargs "^12.0.4"
 
-webpack-dashboard@~2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/webpack-dashboard/-/webpack-dashboard-2.0.0.tgz#70db22e7bb5b12b4a7fde82de87ce01eed8d921c"
-  integrity sha512-JxbGYU13+Np6NUT6nXIc3x1fMWAQIwT0evjV6MatXdol8TEsrNIFiSLmT1D0ofoObZssglqq5OGQ8yxQ6LAdgw==
+webpack-dashboard@~2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/webpack-dashboard/-/webpack-dashboard-2.1.0.tgz#b5f0ffec686a5a7efa36f4757eee79acb273fd9f"
+  integrity sha512-psG8JInvWSGEreLX9wbaWZq2hsf2cxUYYwUyOTtzcommLOqJ/z0B9JD/cJNN/bNZNbS3XidgEqwKsqFd3BQpnQ==
   dependencies:
     blessed "^0.1.81"
     commander "^2.15.1"
     cross-spawn "^6.0.5"
     filesize "^3.6.1"
     handlebars "^4.0.11"
-    inspectpack "^3.0.1"
+    inspectpack "^4.0.0"
     most "^1.7.3"
     socket.io "^2.1.1"
     socket.io-client "^2.1.1"
