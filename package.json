@@ -61,7 +61,7 @@
     "optimize-css-assets-webpack-plugin": "~5.0.0",
     "react-hot-loader": "~4.8.0",
     "resource-hints-webpack-plugin": "~0.0.2",
-    "size-limit": "~1.0.0",
+    "size-limit": "~1.1.0",
     "style-loader": "~0.23.0",
     "stylus": "~0.54.5",
     "stylus-loader": "~3.0.2",
