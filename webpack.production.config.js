@@ -49,7 +49,7 @@ module.exports = {
   },
   node: { Buffer: false },
   plugins: [
-    new CleanWebpackPlugin([ 'dist' ]),
+    new CleanWebpackPlugin(),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
