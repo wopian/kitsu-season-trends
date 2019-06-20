@@ -1,5 +1,5 @@
-import { RANGE, API_ANIME_FIELD, API_SORT, USSEASON, YEAR } from '../../constants'
-import { api, checkExists, error } from '../../util'
+import { RANGE, API_ANIME_FIELD, API_SORT, USSEASON, YEAR } from '../../constants/index.mjs'
+import { api, checkExists, error } from '../../util/index.mjs'
 
 function getUpcoming (offset) {
   return api.get('anime', {
