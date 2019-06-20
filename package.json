@@ -4,8 +4,10 @@
   "description": "Kitsu seasonal anime trends",
   "scripts": {
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.production.config.js --colors --progress",
+    "build:webpack-ci": "cross-env NODE_ENV=production webpack --config webpack.production.config.js",
     "build:rename": "node webpack.rename",
     "build": "yarn build:webpack && yarn build:rename",
+    "build:ci": "yarn build:webpack-ci && yarn build:rename",
     "start": "webpack-serve --config webpack.config.js --port 8888 --content dist",
     "lint": "eslint --ext js --ext jsx src",
     "limit": "size-limit",
