@@ -11,7 +11,6 @@ var Terser = require('terser-webpack-plugin')
 var ProgressiveManifest = require('webpack-pwa-manifest')
 var SWPrecache = require('sw-precache-webpack-plugin')
 var { CleanWebpackPlugin } = require('clean-webpack-plugin')
-var BundleSize = require('webpack-bundle-size-analyzer').WebpackBundleSizeAnalyzerPlugin
 var { encode } = require('msgpack-lite/lib/encode')
 var { readFileSync } = require('fs')
 
@@ -161,7 +160,6 @@ module.exports = {
         /_redirects$/
       ]
     }),
-    new BundleSize('../.bundlesize.yml')
   ],
   optimization: {
     runtimeChunk: 'single',
