@@ -1,4 +1,4 @@
-import { store, log } from '../../util'
+import { store, log } from '../../util/index.mjs'
 import chalk from 'chalk'
 
 const travis = process.env.TRAVIS

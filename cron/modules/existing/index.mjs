@@ -1,5 +1,5 @@
-import { KEEP_IF_ENDED_AFTER, API_ANIME_FIELD } from '../../constants'
-import { api, store, checkExists, error } from '../../util'
+import { KEEP_IF_ENDED_AFTER, API_ANIME_FIELD } from '../../constants/index.mjs'
+import { api, store, checkExists, error } from '../../util/index.mjs'
 
 function getExisting (id) {
   return api.get('anime', {

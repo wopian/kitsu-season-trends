@@ -1,4 +1,4 @@
-import { store } from '../../util'
+import { store } from '../../util/index.mjs'
 
 export async function prune () {
   const ids = store.willBePruned

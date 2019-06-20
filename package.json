@@ -9,7 +9,7 @@
     "start": "webpack-serve --config webpack.config.js --port 8888 --content dist",
     "lint": "eslint --ext js --ext jsx src",
     "limit": "size-limit",
-    "cron": "node --experimental-modules cron"
+    "cron": "node --experimental-modules cron/index.mjs"
   },
   "repository": {
     "type": "git",

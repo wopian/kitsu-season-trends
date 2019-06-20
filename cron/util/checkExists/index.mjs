@@ -1,5 +1,5 @@
-import { TIMESTAMP, SEASON, YEAR } from '../../constants'
-import { store, mean, doNotPrune, year, startSeason } from '../'
+import { TIMESTAMP, SEASON, YEAR } from '../../constants/index.mjs'
+import { store, mean, doNotPrune, year, startSeason } from '../index.mjs'
 
 export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, userCount, favoritesCount, startDate }) {
   const ratings = mean(ratingFrequencies)

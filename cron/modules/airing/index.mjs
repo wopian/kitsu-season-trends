@@ -1,5 +1,5 @@
-import { RANGE, API_ANIME_FIELD, API_SORT, SEASON, YEAR } from '../../constants'
-import { api, checkExists, startSeason, year, error } from '../../util'
+import { RANGE, API_ANIME_FIELD, API_SORT, SEASON, YEAR } from '../../constants/index.mjs'
+import { api, checkExists, startSeason, year, error } from '../../util/index.mjs'
 
 function getAiring (offset) {
   return api.get('anime', {

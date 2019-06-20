@@ -1,5 +1,5 @@
-import { season } from '../util/season'
-import { year } from '../util/year'
+import { season, year } from '../util/index.mjs'
+//import { year } from '../util/year'
 
 
 export const NOW = new Date().toISOString()

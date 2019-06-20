@@ -1,9 +1,9 @@
 import JSON5 from 'json5'
 import { access, readFile, writeFile } from 'fs'
 import chalk from 'chalk'
-import { store, initStore, log } from './util'
-import { updateAiring, updateExisting, updateUpcoming, prune, stats } from './modules'
-import { FILE, NOW, SEASON, YEAR } from './constants'
+import { store, initStore, log } from './util/index.mjs'
+import { updateAiring, updateExisting, updateUpcoming, prune, stats } from './modules/index.mjs'
+import { FILE, NOW, SEASON, YEAR } from './constants/index.mjs'
 
 access(FILE, async err => {
   if (!err) await readFile(FILE, 'utf8', async (readError, res) => {

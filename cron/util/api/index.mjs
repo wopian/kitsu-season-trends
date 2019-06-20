@@ -1,6 +1,6 @@
 import Kitsu from 'kitsu'
 import OAuth2 from 'client-oauth2'
-import { log } from '../log'
+import { log } from '../index.mjs'
 
 export const api = new Kitsu();
 
