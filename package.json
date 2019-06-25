@@ -27,7 +27,7 @@
     "prop-types": "~15.7.0",
     "react": "~16.8.0",
     "react-dom": "~16.8.0",
-    "react-ga": "~2.5.0",
+    "react-ga": "~2.6.0",
     "react-icons": "~3.7.0",
     "react-lazy-load": "~3.0.13",
     "react-router-dom": "~5.0.0",
