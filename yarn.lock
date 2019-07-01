@@ -7218,10 +7218,10 @@ react-ga@~2.6.0:
   resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.6.0.tgz#c3fe830ead2ad25117e1d33280d9698de9b28496"
   integrity sha512-GWHBWZDFjDGMkIk1LzroIn0mNTygKw3adXuqvGvheFZvlbpqMPbHsQsTdQBIxRRdXGQM/Zq+dQLRPKbwIHMTaw==
 
-react-hot-loader@~4.11.0:
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.11.0.tgz#6a453ae4a2c96a2bd780dd9a763e07e4df535fb7"
-  integrity sha512-EXwYmn+7bU9GgidYjx36IfX1t9/mZlKN8TuGXW6C4J2fEL6cKh4QUtpY/toZe9QBoKMot7UfksFKzl7Wq2qJ+w==
+react-hot-loader@~4.12.0:
+  version "4.12.0"
+  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.12.0.tgz#cb93d78db8b97fd7c1f5ab688a7eeaa4ad47df3f"
+  integrity sha512-N+8ct1euiQnwqqDyX+SrxsgZ13ax4e8JiHbSAPf7xAshPxF3iTqVJQUxOLH90RXOFaT8LLynq0VPz3rCK7AW1A==
   dependencies:
     fast-levenshtein "^2.0.6"
     global "^4.3.0"
