@@ -58,7 +58,7 @@
     "json5": "~2.1.0",
     "kitsu": "~7.0.0",
     "koa-connect": "~2.0.1",
-    "mini-css-extract-plugin": "~0.7.0",
+    "mini-css-extract-plugin": "~0.8.0",
     "msgpack-lite": "~0.1.26",
     "optimize-css-assets-webpack-plugin": "~5.0.0",
     "react-hot-loader": "~4.12.0",
