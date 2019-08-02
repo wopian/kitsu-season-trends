@@ -24,7 +24,7 @@ let filters = {
   tv: true,
   ona: true,
   new: true,
-  old: true
+  old: false
 }
 
 function reset () {
