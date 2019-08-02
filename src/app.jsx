@@ -123,7 +123,7 @@ function Bar () {
           <span>Sort</span>
           <SortButton by='m' label='Score'/>
           <SortButton by='u' label='Users'/>
-          <SortButton by='r' label='Users Rated'/>
+          <SortButton by='r' label='Percent Rated'/>
           <SortButton by='f' label='Favourites'/>
         </div>
         <div className='bar-filters'>
