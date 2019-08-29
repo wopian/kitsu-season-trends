@@ -9304,10 +9304,10 @@ webpack-cli@~3.3.0:
     v8-compile-cache "2.0.3"
     yargs "13.2.4"
 
-webpack-dashboard@~3.0.0:
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/webpack-dashboard/-/webpack-dashboard-3.0.7.tgz#bee819049d8c2f9017ebf7ea59b043b10db1a9ca"
-  integrity sha512-73qT3mtiUqRdWdQPjKSHbfzidEOO7XmnG5j8cZSzASsyoNTz7LbIvGTbodHpeCkZRV71r0YVQW+mqhQMCABJJw==
+webpack-dashboard@~3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/webpack-dashboard/-/webpack-dashboard-3.1.0.tgz#fe644f2ce3f6b3fbb84201b2e29b39890aeab010"
+  integrity sha512-cVnqqJRWyqApe69DHmrP2qtFkWSr1oDnyUH+1CaaNw0chjnzA8/XeklnvcXWVdFyfpdYr1c9/2P+MpcjUC0QLA==
   dependencies:
     commander "^2.15.1"
     cross-spawn "^6.0.5"
