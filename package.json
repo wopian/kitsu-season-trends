@@ -50,7 +50,7 @@
     "client-oauth2": "~4.2.1",
     "connect-history-api-fallback": "~1.6.0",
     "copy-webpack-plugin": "~5.0.0",
-    "cross-env": "~5.2.0",
+    "cross-env": "~6.0.0",
     "css-loader": "~3.2.0",
     "eslint": "~6.4.0",
     "eslint-config-wopian-react": "~1.4.0",
