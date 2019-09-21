@@ -74,7 +74,7 @@
     "webpack-cli": "~3.3.0",
     "webpack-dashboard": "~3.2.0",
     "webpack-pwa-manifest": "~4.0.0",
-    "webpack-serve": "~3.1.0",
+    "webpack-serve": "~3.2.0",
     "weighted-mean": "~1.0.2"
   },
   "renovate": {
