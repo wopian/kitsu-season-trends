@@ -30,7 +30,7 @@
     "react-ga": "~2.6.0",
     "react-icons": "~3.7.0",
     "react-lazy-load": "~3.0.13",
-    "react-router-dom": "~5.0.0",
+    "react-router-dom": "~5.1.0",
     "recharts": "~1.7.0"
   },
   "devDependencies": {
