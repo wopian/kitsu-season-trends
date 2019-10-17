@@ -5233,10 +5233,10 @@ kitsu-core@^7.0.4:
   resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-7.0.4.tgz#446710b45f2ea2b3fb3857e709bc2647d42890bc"
   integrity sha512-aOaZnA36i/j8ba1oitI2UHeucYEM0Y3VWif0VENBpoNLmJnvLKOJfcXd0p6yJoOr4TMb26Ad3VDNKdtRcThq+w==
 
-kitsu@~7.0.0:
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-7.0.4.tgz#e08602687dc3e3d8d22753e239bda655b38adeb1"
-  integrity sha512-vkPMC3RwSokyqFyGrX1nUpWq4Pz0Q7gi8fTHuYxxspVqUWguaZgc8Iq60pvGQkthuB2GLv24ZHZng0ZnpsP++w==
+kitsu@~7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-7.1.0.tgz#e211dc118e70f41e15400f2f929c620e54fa2dae"
+  integrity sha512-ybasjnu2AxJ6tcVvJYcRilhczGIU30u0DYGZri+CUW5S62awZWNinYiP8WEWApxMDQEnLRdw1BvGqSUNCTLQKQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     axios "^0.19.0"
