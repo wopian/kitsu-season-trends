@@ -1,5 +1,6 @@
 import chalk from 'chalk'
-import { log, query } from '../index.mjs'
+import { query } from 'kitsu-core/index.mjs'
+import { log } from '../index.mjs'
 
 export function error (message, { url, params }) {
   const uri = decodeURI(url + query(params, true))
