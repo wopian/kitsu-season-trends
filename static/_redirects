@@ -1,1 +1,3 @@
 /*                      /index.html                   200
+# Redirect default Netlify subdomain to primary domain
+https://trends.netlify.com/* https://season.moe/:splat 301!
