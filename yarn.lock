@@ -5517,18 +5517,18 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
-kitsu-core@^8.0.4:
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-8.0.4.tgz#08e3dcc64f36d8cd7389be1398792e2528a9ef38"
-  integrity sha512-BlPa/c7OIB+mzlVmSDCxm7oncQmslgpj4Y4hOYkBIPGHCtlcNOgsyYOYcqSFa0nYRn8MucAzGfD6e8MWtPS3yQ==
+kitsu-core@^8.1.1:
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-8.1.1.tgz#13b0cd64aa687afb27f90e8a4e63479246fea6f2"
+  integrity sha512-8q/Ye4mp03MLBSGs9LVDofZ4w7m42QFanpEyFlPc4Z/BX6q4+fDAvamZy3VAm2uT5+9qjcpO9trpTmNVk7ZGFg==
 
-kitsu@~8.0.0:
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-8.0.4.tgz#41a220de4c88a061b502b23aa8efa41a97beeac2"
-  integrity sha512-W2MCqmki6PM35juOITxy/b8rIOX6e/a4tfODbwggPQLNbbbCILcdH2QVN8YrK1ReYoJnREH6eVuA2vQAdsNmXg==
+kitsu@~8.1.0:
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-8.1.1.tgz#766f184260587bf4428ddda3603737ed434e640d"
+  integrity sha512-ZVF72O8bFSbtBTpaZELI4WfufR3HAPspX2+Opjt/Q6ARUSSO3NtSt9iasnuwbrV33/knb0iqWtcatU7pX69lww==
   dependencies:
     axios "^0.19.0"
-    kitsu-core "^8.0.4"
+    kitsu-core "^8.1.1"
     pluralize "^8.0.0"
 
 koa-connect@~2.0.1:
