@@ -178,32 +178,32 @@ function TrendBody ({ data, start }) {
           />
           <Line
             yAxisId='0..max'
-            activeDot={{ stroke: '#ffb9b9', strokeWidth: 0, r: 0 }}
+            activeDot={{ stroke: '#BB5F5F', strokeWidth: 0, r: 0 }}
             dot={false}
             type='monotone'
             isAnimationActive={false}
             dataKey='f'
-            stroke='#ffb9b9'
+            stroke='#BB5F5F'
             strokeWidth={0}
           />
           <Line
             yAxisId='0..max'
-            activeDot={{ stroke: '#b9ffb9', strokeWidth: 2, r: 2 }}
+            activeDot={{ stroke: '#5FBB5F', strokeWidth: 2, r: 2 }}
             dot={false}
             type='monotone'
             isAnimationActive={false}
             dataKey='r'
-            stroke='#86cc86'
+            stroke='#5FBB5F'
             strokeWidth={1.5}
           />
           <Line
             yAxisId='0..max'
-            activeDot={{ stroke: '#b9b9ff', strokeWidth: 2, r: 2 }}
+            activeDot={{ stroke: '#5F5FBB', strokeWidth: 2, r: 2 }}
             dot={false}
             type='monotone'
             isAnimationActive={false}
             dataKey='u'
-            stroke='#b9b9ff'
+            stroke='#5F5FBB'
             strokeWidth={1.5}
           />
           <Line
