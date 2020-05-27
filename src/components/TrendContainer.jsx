@@ -177,6 +177,7 @@ function TrendBody ({ data, start }) {
             content={<TrendTooltip/>}
           />
           <Line
+            className='fade-line'
             yAxisId='0..max'
             activeDot={{ stroke: '#BB5F5F', strokeWidth: 0, r: 0 }}
             dot={false}
@@ -187,6 +188,7 @@ function TrendBody ({ data, start }) {
             strokeWidth={0}
           />
           <Line
+            className='fade-line'
             yAxisId='0..max'
             activeDot={{ stroke: '#5FBB5F', strokeWidth: 2, r: 2 }}
             dot={false}
@@ -197,6 +199,7 @@ function TrendBody ({ data, start }) {
             strokeWidth={1.5}
           />
           <Line
+            className='fade-line'
             yAxisId='0..max'
             activeDot={{ stroke: '#5F5FBB', strokeWidth: 2, r: 2 }}
             dot={false}

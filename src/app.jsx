@@ -186,14 +186,24 @@ function Container ({ match }) {
       />
     })
   } else if (error) {
+    console.warn(error)
     output = <>
       <p>Sorry, data for this season is not available</p>
-      <pre>{error}</pre>
+      <pre>
+        (シ. .)シ
+      </pre>
     </>
   } else {
-    if (data.length > 0) output = <p>No anime match these filters</p>
+    if (data.length > 0) output =
+      <>
+        <p>No anime match these filters</p>
+        <pre>(・_・;)</pre>
+      </>
     else {
-      output = <p>Getting data</p>
+      output = <>
+        <p>Fetching Data</p>
+        <pre>(≧◡≦)</pre>
+      </>
       sortedData = getData(year, season)
     }
   }

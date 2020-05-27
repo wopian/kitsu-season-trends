@@ -122,7 +122,7 @@ StatsType.propTypes = {
 export function StatsAverage ({ data }) {
 
   if (data && data.length > 0) {
-    const round = number => +number.toFixed(2)
+    const round = number => typeof number === 'number' ? +number.toFixed(2) : number
     const average = []
 
     data.forEach(anime => {
