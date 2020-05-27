@@ -57,11 +57,14 @@ function getData (year = y(), season = s()) {
     ({ data, meta, updated } = decode(buffer))
 
     for (let show in data) {
+      // Fallback for 2017 data
+      if (!data[show].n) data[show].n = 1
       // 0: TV, 1: ONA, >1: ???
-      data[show].u = data[show].u === 0 ? 'TV' : 'ONA'
+      if (!data[show].u) data[show].u = 'TV'
+      else data[show].u = data[show].u === 0 ? 'TV' : 'ONA'
+
       for (let date in data[show].d) {
         // Add 0 values
-        if (!data[show].d[date].m) data[show].d[date].m = null
         if (!data[show].d[date].r) data[show].d[date].r = 0
         if (!data[show].d[date].u) data[show].d[date].u = 0
         if (!data[show].d[date].f) data[show].d[date].f = 0
