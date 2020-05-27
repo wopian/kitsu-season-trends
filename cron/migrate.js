@@ -14,21 +14,23 @@ readdir(dir, (err, files) => {
 
       const data = JSON5.parse(DATA)
 
+      data.data.forEach(entry => {
+        // Add n to 2017 data (set all as NEW)
+        if (typeof entry.n === 'undefined') entry.n = 1
+
+        // Add u to 2017 data (set all as TV)
+        if (typeof entry.u === 'undefined') entry.u = 0
+      })
+
+      // Removed entries with less than 5 user ratings
       // data.data = data.data.filter(anime => anime.d[anime.d.length - 1].r >= 5)
 
       /*
-      Object.keys(data).forEach(el => {
-        data[el].d.forEach(array => {
-          array.d = ~~array.d
-        })
-      })
-      */
-
-      // writeFile(`${dir}/${file}`, stringify(data, { maxLength: 250 }), err3 => {
       writeFile(`${dir}/${file}`, JSON5.stringify(data, { space: 1 }), err3 => {
         if (err3) throw err3
         console.log(`migrated ${file}`)
       })
+      */
     })
   })
 })
