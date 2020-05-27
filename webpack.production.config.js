@@ -105,8 +105,7 @@ module.exports = {
         removeComments: true,
         collapseWhitespace: true,
         removeAttributeQuotes: true
-      },
-      chunksSortMode: 'dependency'
+      }
     }),
     new ResourceHints(),
     new Copy([
@@ -166,8 +165,6 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
       maxInitialRequests: Infinity,
-      minSize: 8000,
-      maxSize: 32000,
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
