@@ -6,14 +6,14 @@ import ResponsiveContainer from 'recharts/es6/component/ResponsiveContainer'
 import Cell from 'recharts/es6/component/Cell'
 import Legend from 'recharts/es6/component/Legend'
 import Tooltip from 'recharts/es6/component/Tooltip'
-import AreaChart from 'recharts/es6/chart/AreaChart'
+import LineChart  from 'recharts/es6/chart/LineChart'
 import PieChart from 'recharts/es6/chart/PieChart'
-import Area from 'recharts/es6/cartesian/Area'
+import Line from 'recharts/es6/cartesian/Line'
 import YAxis from 'recharts/es6/cartesian/YAxis'
 import XAxis from 'recharts/es6/cartesian/XAxis'
 import Pie from 'recharts/es6/polar/Pie'
 
-const COLOURS = [ '#FC4625', '#332532' ]
+const COLOURS = [ '#E32402', '#332532' ]
 
 function PieLabel ({ cx, cy, midAngle, innerRadius, outerRadius, value }) {
   const RADIAN = Math.PI / 180
@@ -120,7 +120,9 @@ StatsType.propTypes = {
 }
 
 export function StatsAverage ({ data }) {
+
   if (data && data.length > 0) {
+    const round = number => +number.toFixed(2)
     const average = []
 
     data.forEach(anime => {
@@ -152,12 +154,20 @@ export function StatsAverage ({ data }) {
       }
 
       if (averages.NEW > 0 || averages.LEFTOVER > 0)
-        result.push({ New: averages.NEW, Leftovers: averages.LEFTOVER, date: new Date(item).getTime()})
+        result.push({ New: round(averages.NEW), Leftovers: round(averages.LEFTOVER), date: new Date(item).getTime()})
     }
 
+    console.log(sortBy(result, ['date']))
+
     return (
-      <ResponsiveContainer width='50%' height={200}>
-        <AreaChart data={sortBy(result, ['date'])}>
+      <ResponsiveContainer width='100%' height={200}>
+        <LineChart data={sortBy(result, ['date'])}>
+          <pattern id="pattern-stripe"
+          width="8" height="16"
+          patternUnits="userSpaceOnUse"
+          patternTransform="rotate(22.5)">
+            <rect width="5" height="16" transform="translate(0,0)" fill={COLOURS[0]}></rect>
+          </pattern>
           <Tooltip
             formatter={value => value.toFixed(2)}
             labelFormatter={label => new Date(label).toLocaleDateString(navigator.language, {
@@ -168,10 +178,12 @@ export function StatsAverage ({ data }) {
             })}
           />
           <YAxis
-            hide
+            type='number'
             tickLine={false}
             axisLine={false}
-            domain={[1, 10]}
+            domain={[6, 10]}
+            ticks={[6, 7, 8, 9, 10]}
+            allowDataOverflow={true}
           />
           <XAxis
             type='number'
@@ -182,10 +194,10 @@ export function StatsAverage ({ data }) {
             axisLine={false}
             dataKey='date'
           />
-          <Area isAnimationActive={false} stackId='1' type='monotone' dataKey='New'  stroke={COLOURS[0]} fill={COLOURS[0]} fillOpacity={1}/>
-          <Area isAnimationActive={false} stackId='2' type='monotone' dataKey='Leftovers' stroke={COLOURS[1]} fill={COLOURS[1]} fillOpacity={.4}/>
+          <Line isAnimationActive={false} stackId='1' type='monotone' dataKey='Leftovers' strokeWidth={2} stroke={COLOURS[1]} dot={false}/>
+          <Line isAnimationActive={false} stackId='2' type='monotone' dataKey='New' strokeWidth={2} stroke={COLOURS[0]} dot={false}/>
           <Legend iconType='rect' height={36}/>
-        </AreaChart>
+        </LineChart>
       </ResponsiveContainer>
     )
   }

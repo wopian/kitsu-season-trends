@@ -12,15 +12,9 @@
     "@babel/react"
   ],
   "plugins": [
+    "react-hot-loader/babel",
     "@babel/plugin-transform-runtime",
     ["@babel/plugin-syntax-decorators", { "legacy": true }],
     "@babel/plugin-proposal-class-properties"
-  ],
-  "env": {
-    "development": {
-      "plugins": [
-        "react-hot-loader/babel"
-      ]
-    }
-  }
+  ]
 }

@@ -82,7 +82,7 @@ function TrendHeader ({ rank, id, newAnime, title, today, yesterday, isCurrentSe
 
   return (
     <a href={animeURI} data-rank={rank}>
-      <LazyLoad className='poster' offsetVertical={400} debounce={false}>
+      <LazyLoad className='poster' offsetVertical={132} once>
         <img src={animePoster} alt=''/>
       </LazyLoad>
       <div className='title'>
@@ -229,21 +229,23 @@ TrendBody.propTypes = {
 
 export function TrendContainer ({ rank, start, id, title, data, newAnime, isCurrentSeason }) {
   return (
-    <div className='trend'>
-      <TrendHeader
-        rank={rank}
-        id={id}
-        newAnime={newAnime}
-        title={title}
-        today={data.slice(-1)[0]}
-        yesterday={data.slice(-2)[0]}
-        isCurrentSeason={isCurrentSeason}
-      />
-      <TrendBody
-        data={data}
-        start={start}
-      />
-    </div>
+    <LazyLoad className='trend' once>
+      <React.Fragment>
+        <TrendHeader
+          rank={rank}
+          id={id}
+          newAnime={newAnime}
+          title={title}
+          today={data.slice(-1)[0]}
+          yesterday={data.slice(-2)[0]}
+          isCurrentSeason={isCurrentSeason}
+        />
+        <TrendBody
+          data={data}
+          start={start}
+        />
+      </React.Fragment>
+    </LazyLoad>
   )
 }
 

@@ -23,6 +23,7 @@ button
   width: 300px
   .body
     margin-top: 2rem
+    width: 100% !important
   .recharts-tooltip-wrapper
     position: absolute
     transform: none !important
@@ -125,7 +126,7 @@ button
     color: $white
     background: $accent
     border: 1px solid $accent
-    border-left: none
+    border-radius: 0
   &-sorts button.active:hover
     cursor: default
   &-sorts button:not(.active):hover,
@@ -188,9 +189,6 @@ button
     border: 0
     &:first-of-type
       margin-left: .5rem
-      border-left: 1px solid darken($white, 11)
-      &.active
-        border-left: 1px solid $accent
     &:last-of-type
       margin-right: .5rem
 
@@ -225,6 +223,16 @@ button
   align-content: stretch
   align-items: flex-start
   flex-wrap: wrap
+  .recharts-responsive-container
+    width: calc(100% - 400px) !important
+    @media screen and (max-width: 790px)
+      width: 100% !important
+  > .recharts-wrapper
+    @media screen and (max-width: 790px)
+      display: flex;
+      width: 50% !important
+      svg
+        flex: 1 1
   @media screen and (max-width: 931px)
     justify-content: center
   > div:first-child
@@ -238,3 +246,6 @@ button
   display: flex
   justify-content: center
   flex-wrap: wrap
+  > div
+    flex: 1 1
+    min-width: 300px

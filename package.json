@@ -8,7 +8,7 @@
     "build:rename": "node webpack.rename",
     "build": "yarn build:webpack && yarn build:rename",
     "build:ci": "yarn build:webpack-ci && yarn build:rename",
-    "start": "webpack-dev-server --content-base dist --history-api-fallback",
+    "start": "webpack-dev-server --content-base dist --history-api-fallback --hot",
     "lint": "eslint --ext js --ext jsx src",
     "limit": "size-limit",
     "cron": "node --experimental-modules cron/index.mjs"
