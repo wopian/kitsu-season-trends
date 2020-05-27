@@ -136,6 +136,11 @@ module.exports = {
         {
           src: path.resolve('src/favicon.png'),
           sizes: [ 16, 32, 96, 128, 192, 256, 512 ]
+        },
+        {
+          src: path.resolve('src/favicon.png'),
+          sizes: [ 192 ],
+          ios: true
         }
       ],
       inject: true,
