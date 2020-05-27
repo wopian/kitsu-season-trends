@@ -10,7 +10,6 @@ var OptimizeCSS = require('optimize-css-assets-webpack-plugin')
 var Terser = require('terser-webpack-plugin')
 var ProgressiveManifest = require('webpack-pwa-manifest')
 var SWPrecache = require('sw-precache-webpack-plugin')
-var Lodash = require('lodash-webpack-plugin')
 var { CleanWebpackPlugin } = require('clean-webpack-plugin')
 var { encode } = require('msgpack-lite/lib/encode')
 var { readFileSync } = require('fs')
@@ -53,12 +52,6 @@ module.exports = {
       }
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    new Lodash({
-      collections: true,
-      paths: true,
-      flattening: true,
-      shorthands: true
-    }),
     new MiniCssExtract({
       filename: '[name].[contenthash].css',
     }),
