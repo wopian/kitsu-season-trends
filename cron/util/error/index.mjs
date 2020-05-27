@@ -1,5 +1,5 @@
 import chalk from 'chalk'
-import { query } from 'kitsu-core/lib/index.mjs'
+import { query } from 'kitsu-core'
 import { log } from '../index.mjs'
 
 export function error (message, { url, params }) {
