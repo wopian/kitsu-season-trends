@@ -39,24 +39,7 @@
 </head>
 <body>
   <main id='app'>
-    <header>
-      <h1>Kitsu</h1>
-      <h2>TRENDS<strong id='init-year'></strong></h2>
-    </header>
-    <div class='bar'>
-      <div>
-        <div class='bar-sorts'></div>
-        <span class='info'>All airing shows this season, updated daily</span>
-      </div>
-    </div>
-    <div class='container'>
-      <div class='trend-container'>
-        <p></p>
-        <pre>(≧◡≦)</pre>
-      </div>
-    </div>
   </main>
-  <script>document.getElementById('init-year').innerHTML = new Date().getFullYear()</script>
   <script src='https://cdn.ravenjs.com/3.24.1/raven.min.js' crossorigin='anonymous'></script>
   <script>Raven.config('https://d069e8b4574b4658b0023bee81757105@sentry.io/201865').install()</script>
   <script>(()=>{'serviceWorker'in navigator&&navigator.serviceWorker.register('/service-worker.js')})()</script>
