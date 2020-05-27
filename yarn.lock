@@ -1825,7 +1825,7 @@ babel-plugin-dynamic-import-node@^2.3.0:
   dependencies:
     object.assign "^4.1.0"
 
-babel-plugin-lodash@^3.3.4:
+babel-plugin-lodash@~3.3.4:
   version "3.3.4"
   resolved "https://registry.yarnpkg.com/babel-plugin-lodash/-/babel-plugin-lodash-3.3.4.tgz#4f6844358a1340baed182adbeffa8df9967bc196"
   integrity sha512-yDZLjK7TCkWl1gpBeBGmuaDIFhZKmkoL+Cu2MUUjv5VxUZx/z7tBGBCBcQs5RI1Bkz5LLmNdjx7paOyQtMovyg==
@@ -5606,18 +5606,18 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
-kitsu-core@^9.0.6:
-  version "9.0.6"
-  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-9.0.6.tgz#1dfde68c07774cf8b2562d4e82c52cc33be7ccd0"
-  integrity sha512-6iu1EErE1OtLO/uEZq2qSL4tU3XUpWIKVwgyIPz6f6T1mbKI58zt+M6zTMXE9uruRQC+ytVJDyCLd8HuMbTAig==
+kitsu-core@^9.1.6:
+  version "9.1.6"
+  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-9.1.6.tgz#cd59d22579fcb6776b5aa8e61169560a4c6a12f0"
+  integrity sha512-2i82Eo1Kn/J/G41Hd7scfzKABbR/82hnTXp0JXa3cYFsL3Qs6bl5qQbNaxRklsLpttBiT+xTHgq+tukBjaYAfA==
 
-kitsu@~9.0.0:
-  version "9.0.6"
-  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-9.0.6.tgz#952ffd070f7991b2561aea8120de1870bf0087be"
-  integrity sha512-Wwy2L9ZArGBup7IgXw1pkZxsGIIY1PAT5vyb6Z+UK2EFbntwioTey1BGtha9yRedDWoVABbVrAHSDU1jgLUgnw==
+kitsu@~9.1.0:
+  version "9.1.6"
+  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-9.1.6.tgz#f1a799e073a32078739ac101c418730fe7c60e52"
+  integrity sha512-8JgM3BH5ZwkWA0fbzomIB7XWYR4Ddp5O/pFqBX53zD8tTi+ZB6fiKG/7I00PmINZiJOCeTw6WSBN/sP/19AZrA==
   dependencies:
     axios "^0.19.0"
-    kitsu-core "^9.0.6"
+    kitsu-core "^9.1.6"
     pluralize "^8.0.0"
 
 koa-connect@~2.0.1:
@@ -5762,12 +5762,7 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
-lodash-es@~4.17.14:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.15.tgz#21bd96839354412f23d7a10340e5eac6ee455d78"
-  integrity sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ==
-
-lodash-webpack-plugin@^0.11.5:
+lodash-webpack-plugin@~0.11.5:
   version "0.11.5"
   resolved "https://registry.yarnpkg.com/lodash-webpack-plugin/-/lodash-webpack-plugin-0.11.5.tgz#c4bd064b4f561c3f823fa5982bdeb12c475390b9"
   integrity sha512-QWfEIYxpixOdbd6KBe5g6MDWcyTgP3trDXwKHFqTlXrWiLcs/67fGQ0IWeRyhWlTITQIgMpJAYd2oeIztuV5VA==
@@ -5824,7 +5819,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.17.5, lodash@~4.17.4:
+lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.17.5, lodash@~4.17.14, lodash@~4.17.4:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
