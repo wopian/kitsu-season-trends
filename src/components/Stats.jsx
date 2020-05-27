@@ -157,8 +157,6 @@ export function StatsAverage ({ data }) {
         result.push({ New: round(averages.NEW), Leftovers: round(averages.LEFTOVER), date: new Date(item).getTime()})
     }
 
-    console.log(sortBy(result, ['date']))
-
     return (
       <ResponsiveContainer width='100%' height={200}>
         <LineChart data={sortBy(result, ['date'])}>

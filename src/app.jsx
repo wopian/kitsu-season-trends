@@ -169,7 +169,7 @@ function Container ({ match }) {
   const isCurrentSeason = year === y().toString() && season === s()
   let output = {}
 
-  if (Object.keys(sortedData).length > 0 && !error) {
+  if (data.length > 0 && Object.keys(sortedData).length > 0 && !error) {
     output = sortedData.map((entry, index) => {
       return <TrendContainer
         key={index}
@@ -183,12 +183,16 @@ function Container ({ match }) {
       />
     })
   } else if (error) {
-    console.log(error)
-    output = <p>Sorry, data for this season is not available</p>
+    output = <>
+      <p>Sorry, data for this season is not available</p>
+      <pre>{error}</pre>
+    </>
   } else {
-    sortedData = getData(year, season)
     if (data.length > 0) output = <p>No anime match these filters</p>
-    else output = <p>Getting data</p>
+    else {
+      output = <p>Getting data</p>
+      sortedData = getData(year, season)
+    }
   }
 
   return (

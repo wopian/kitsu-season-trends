@@ -5,6 +5,8 @@ import { AppContainer } from 'react-hot-loader'
 import GA from 'react-ga'
 import App from './app.jsx'
 
+const AppHot = hot(App)
+
 // Don't run analytics in development
 if (window.location.hostname !== 'localhost') {
   GA.initialize('UA-46184267-11')
@@ -14,19 +16,7 @@ if (window.location.hostname !== 'localhost') {
 
 render(
   <AppContainer>
-    <App/>
+    <AppHot/>
   </AppContainer>,
   document.querySelector("#app")
 )
-
-if (module && module.hot) {
-  module.hot.accept('./app.jsx', () => {
-    const AppHot = hot(App)
-    render(
-      <AppContainer>
-        <AppHot/>
-      </AppContainer>,
-      document.querySelector("#app")
-    );
-  });
-}
