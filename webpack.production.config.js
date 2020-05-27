@@ -10,6 +10,7 @@ var OptimizeCSS = require('optimize-css-assets-webpack-plugin')
 var Terser = require('terser-webpack-plugin')
 var ProgressiveManifest = require('webpack-pwa-manifest')
 var SWPrecache = require('sw-precache-webpack-plugin')
+var Lodash = require('lodash-webpack-plugin')
 var { CleanWebpackPlugin } = require('clean-webpack-plugin')
 var { encode } = require('msgpack-lite/lib/encode')
 var { readFileSync } = require('fs')
@@ -37,11 +38,7 @@ module.exports = {
     // chunkFilename: '[name].[chunkhash].js'
   },
   resolve: {
-    extensions: ['.mjs', '.js', '.jsx'],
-    alias: {
-      'lodash.throttle': 'lodash/throttle',
-      'lodash.debounce': 'lodash/debounce'
-    }
+    extensions: ['.mjs', '.js', '.jsx']
   },
   module: {
     rules
@@ -56,6 +53,7 @@ module.exports = {
       }
     }),
     new webpack.NoEmitOnErrorsPlugin(),
+    new Lodash(),
     new MiniCssExtract({
       filename: '[name].[contenthash].css',
     }),
@@ -108,23 +106,25 @@ module.exports = {
       }
     }),
     new ResourceHints(),
-    new Copy([
-      {
-        from: 'data',
-        to: 'data',
-        transform: (content, file) => JSON.stringify(JSON5.parse(readFileSync(file, 'utf8')))
-      },
-      {
-        from: 'data',
-        to: 'msgpack',
-        transform: (content, file) => encode(JSON5.parse(readFileSync(file, 'utf8')))
-      },
-      {
-        from: 'static',
-        to: '.',
-        ignore: ['.*']
-      }
-    ]),
+    new Copy({
+      patterns: [
+        {
+          from: 'data',
+          to: 'data',
+          transform: (content, file) => JSON.stringify(JSON5.parse(readFileSync(file, 'utf8')))
+        },
+        {
+          from: 'data',
+          to: 'msgpack',
+          transform: (content, file) => encode(JSON5.parse(readFileSync(file, 'utf8')))
+        },
+        {
+          from: 'static',
+          to: '.',
+          globOptions: { ignore: ['.*'] }
+        }
+      ]
+    }),
     new ProgressiveManifest({
       name: 'Kitsu Season Trends',
       short_name: 'Season Trend',
