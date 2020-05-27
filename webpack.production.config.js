@@ -53,7 +53,12 @@ module.exports = {
       }
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    new Lodash(),
+    new Lodash({
+      collections: true,
+      paths: true,
+      flattening: true,
+      shorthands: true
+    }),
     new MiniCssExtract({
       filename: '[name].[contenthash].css',
     }),

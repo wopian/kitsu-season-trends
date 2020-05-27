@@ -4,6 +4,7 @@ var rules = require('./webpack.rules')
 var Html = require('html-webpack-plugin')
 var Dashboard = require('webpack-dashboard/plugin')
 var MiniCssExtract = require('mini-css-extract-plugin')
+var Lodash = require('lodash-webpack-plugin')
 var history = require('connect-history-api-fallback')
 var convert = require('koa-connect')
 
@@ -34,6 +35,12 @@ module.exports = {
   node: { Buffer: false },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
+    new Lodash({
+      collections: true,
+      paths: true,
+      flattening: true,
+      shorthands: true
+    }),
     new MiniCssExtract({
       filename: 'style.css',
       allChunks: true
