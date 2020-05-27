@@ -26,11 +26,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.mjs', '.js', '.jsx'],
-    alias: {
-      'lodash.throttle': 'lodash/throttle',
-      'lodash.debounce': 'lodash/debounce'
-    }
+    extensions: ['.mjs', '.js', '.jsx']
   },
   module: {
     rules

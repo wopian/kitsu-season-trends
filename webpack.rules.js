@@ -2,7 +2,10 @@ module.exports = [
   {
     test: /\.jsx?$/,
     exclude: [/(node_modules|public\/)/],
-    loader: 'babel-loader'
+    loader: 'babel-loader',
+    options: {
+      plugins: [ 'lodash' ]
+    }
   },
   {
     test: /\.css$/,
