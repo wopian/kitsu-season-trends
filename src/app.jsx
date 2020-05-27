@@ -61,7 +61,7 @@ function getData (year = y(), season = s()) {
       data[show].u = data[show].u === 0 ? 'TV' : 'ONA'
       for (let date in data[show].d) {
         // Add 0 values
-        if (!data[show].d[date].m) data[show].d[date].m = 0
+        if (!data[show].d[date].m) data[show].d[date].m = null
         if (!data[show].d[date].r) data[show].d[date].r = 0
         if (!data[show].d[date].u) data[show].d[date].u = 0
         if (!data[show].d[date].f) data[show].d[date].f = 0
