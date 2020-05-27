@@ -5,6 +5,11 @@ module.exports = [
     loader: 'babel-loader'
   },
   {
+    test: /\.jsx?$/,
+    include: /node_modules/,
+    use: 'react-hot-loader/webpack'
+  },
+  {
     test: /\.css$/,
     loaders: ['style-loader', 'css-loader?importLoaders=true'],
     exclude: [/node_modules/]

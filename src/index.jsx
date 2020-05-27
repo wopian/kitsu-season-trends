@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader/root'
 import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
@@ -20,7 +21,7 @@ render(
 
 if (module && module.hot) {
   module.hot.accept('./app.jsx', () => {
-    const AppHot = require('./app.jsx').default
+    const AppHot = hot(App)
     render(
       <AppContainer>
         <AppHot/>
