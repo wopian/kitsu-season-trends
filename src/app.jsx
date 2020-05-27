@@ -8,9 +8,11 @@ import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-ro
 import { decode } from 'msgpack-lite/lib/decode'
 import { season as s, year as y, prevSeason, nextSeason, sort } from './util'
 import { Header } from './components/Header'
-import { TrendContainer } from './components/TrendContainer'
-import { Stats } from './components/Stats'
 import '../styles/index.styl'
+import loadable from '@loadable/component'
+
+const Stats = loadable(() => import('./components/Stats'))
+const TrendContainer = loadable(() => import('./components/TrendContainer'))
 
 let thisApp = {}
 let data = []

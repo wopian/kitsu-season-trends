@@ -206,7 +206,7 @@ StatsAverage.propTypes = {
   data: PropTypes.array
 }
 
-export function Stats ({ meta, data }) {
+export default function Stats ({ meta, data }) {
   if (meta && data) {
     return (
       <div className='stats'>

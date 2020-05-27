@@ -230,10 +230,10 @@ TrendBody.propTypes = {
   start: PropTypes.number
 }
 
-export function TrendContainer ({ rank, start, id, title, data, newAnime, isCurrentSeason }) {
+export default function TrendContainer ({ rank, start, id, title, data, newAnime, isCurrentSeason }) {
   return (
-    <LazyLoad className='trend' once>
-      <React.Fragment>
+    <LazyLoad className='trend' offset={132} once>
+      <>
         <TrendHeader
           rank={rank}
           id={id}
@@ -247,7 +247,7 @@ export function TrendContainer ({ rank, start, id, title, data, newAnime, isCurr
           data={data}
           start={start}
         />
-      </React.Fragment>
+      </>
     </LazyLoad>
   )
 }
