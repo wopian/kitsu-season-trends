@@ -104,21 +104,21 @@ function TrendHeader ({ rank, id, newAnime, title, today, yesterday, isCurrentSe
           />
           <TrendChanges
             title='Users'
-            icon={<MdGroup style={{color: '#8686CC'}}/>}
+            icon={<MdGroup style={{color: '#5F5FBB'}}/>}
             today={today.u}
             yesterday={yesterday.u}
             isCurrentSeason={isCurrentSeason}
           />
           <TrendChanges
             title='Users Rated'
-            icon={<MdThumbsUpDown style={{color: '#86CC86'}}/>}
+            icon={<MdThumbsUpDown style={{color: '#5FBB5F'}}/>}
             today={today.r}
             yesterday={yesterday.r}
             isCurrentSeason={isCurrentSeason}
           />
           <TrendChanges
             title='Favourites'
-            icon={<MdFavorite style={{color: '#CC8686'}}/>}
+            icon={<MdFavorite style={{color: '#BB5F5F'}}/>}
             today={today.f}
             yesterday={yesterday.f}
             isCurrentSeason={isCurrentSeason}
