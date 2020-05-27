@@ -16,10 +16,18 @@ readdir(dir, (err, files) => {
 
       data.data.forEach(entry => {
         // Add n to 2017 data (set all as NEW)
-        if (typeof entry.n === 'undefined') entry.n = 1
+        //if (typeof entry.n === 'undefined') entry.n = 1
 
         // Add u to 2017 data (set all as TV)
-        if (typeof entry.u === 'undefined') entry.u = 0
+        //if (typeof entry.u === 'undefined') entry.u = 0
+
+        entry.d = entry.d.filter(day => typeof day.m !== 'undefined')
+
+        entry.d.forEach(day => {
+          if (typeof day.m === 'undefined') console.log(day)
+        })
+
+
       })
 
       // Removed entries with less than 5 user ratings
