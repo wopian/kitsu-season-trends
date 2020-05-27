@@ -124,7 +124,7 @@ button
   &-filters > .active
     color: $white
     background: $accent
-    border: 1px solid darken($accent, 11)
+    border: 1px solid $accent
     border-left: none
   &-sorts button.active:hover
     cursor: default
@@ -185,11 +185,12 @@ button
     padding: .45rem 1rem
     padding: calc(.45rem*1.5) 1rem
     cursor: pointer
+    border: 0
     &:first-of-type
       margin-left: .5rem
       border-left: 1px solid darken($white, 11)
       &.active
-        border-left: 1px solid darken($accent, 11)
+        border-left: 1px solid $accent
     &:last-of-type
       margin-right: .5rem
 
@@ -203,7 +204,7 @@ button
   position: absolute
   top: 8vw
   text-align: center
-  color: lighten($primary, 40)
+  color: $white
   text-transform: uppercase
   text-decoration: none
   width: 80px

@@ -13,7 +13,7 @@ import YAxis from 'recharts/es6/cartesian/YAxis'
 import XAxis from 'recharts/es6/cartesian/XAxis'
 import Pie from 'recharts/es6/polar/Pie'
 
-const COLOURS = [ '#FD755C', '#332532' ]
+const COLOURS = [ '#FC4625', '#332532' ]
 
 function PieLabel ({ cx, cy, midAngle, innerRadius, outerRadius, value }) {
   const RADIAN = Math.PI / 180
