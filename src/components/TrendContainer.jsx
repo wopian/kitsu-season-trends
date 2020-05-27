@@ -82,9 +82,7 @@ function TrendHeader ({ rank, id, newAnime, title, today, yesterday, isCurrentSe
 
   return (
     <a href={animeURI} data-rank={rank}>
-      <LazyLoad className='poster' offsetVertical={132} once>
-        <img src={animePoster} alt=''/>
-      </LazyLoad>
+      <img className='poster' src={animePoster} alt=''/>
       <div className='title'>
         <div title={newAnime === 1 ? 'New' : 'Leftover' }>
           <MdLocalLibrary className={classnames({
@@ -141,8 +139,7 @@ TrendHeader.propTypes = {
 
 function TrendBody ({ data, start }) {
   return (
-    <LazyLoad className='body' width={300} height={100} offsetVertical={400} debounce={false}>
-      <ResponsiveContainer width='100%' height={100}>
+      <ResponsiveContainer className='body' width='100%' height={100}>
         <LineChart width={300} data={data}>
           <XAxis
             type='number'
@@ -221,7 +218,6 @@ function TrendBody ({ data, start }) {
           />
         </LineChart>
       </ResponsiveContainer>
-    </LazyLoad>
   )
 }
 
