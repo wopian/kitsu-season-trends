@@ -2,8 +2,7 @@ os: linux
 dist: xenial
 language: node_js
 node_js: node
-sudo: false
-matrix:
+jobs:
   fast_finish: true
 script:
 - if [ ${TRAVIS_EVENT_TYPE} = "cron" ];
