@@ -2,8 +2,6 @@ os: linux
 dist: xenial
 language: node_js
 node_js: node
-cache:
-  yarn: true
 sudo: false
 matrix:
   fast_finish: true
