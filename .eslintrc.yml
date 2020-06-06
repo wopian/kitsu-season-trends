@@ -9,10 +9,12 @@ extends:
 - plugin:react/recommended
 plugins:
 - react
+- jest
 env:
   browser: true
   node: true
   es6: true
+  jest: true
 globals:
   __DEV__: true
   __SERVER__: true
