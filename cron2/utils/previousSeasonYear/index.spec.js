@@ -2,7 +2,7 @@ import MockDate from 'mockdate'
 import { previousSeasonYear } from './'
 
 describe('util > previousSeason', () => {
-  it('provides the previous season (mocked Jan)', () => {
+  it('provides the previous season (mock Jan)', () => {
     MockDate.set(new Date('2020-01-01'))
     expect(previousSeasonYear()).toStrictEqual({
       current: false,
@@ -12,7 +12,7 @@ describe('util > previousSeason', () => {
     MockDate.reset()
   })
 
-  it('provides the previous season (mocked Sep)', () => {
+  it('provides the previous season (mock Sep)', () => {
     MockDate.set(new Date('2020-09-01'))
     expect(previousSeasonYear()).toStrictEqual({
       current: false,

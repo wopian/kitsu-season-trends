@@ -2,12 +2,12 @@ import mock from 'mock-fs'
 import { bold, green, yellow, gray} from 'colorette'
 import { readData } from './'
 
-const mockedFileData = '{data:[{i:1}]}'
+const mockFileData = '{data:[{i:1}]}'
 
 beforeEach(() => {
   mock({
     'fake': {
-      'data.json5': mockedFileData
+      'data.json5': mockFileData
     }
   })
 })
@@ -24,7 +24,7 @@ describe('components > readData', () => {
       season: 'winter',
       year: 2020
     })
-    expect(data).toStrictEqual(mockedFileData)
+    expect(data).toStrictEqual(mockFileData)
     expect(spy).toHaveBeenCalledWith(`${bold(green('LOADED'))} ${yellow(' CURRENT')} Season data from ${gray('fake/data.json5')}`)
     spy.mockRestore()
   })

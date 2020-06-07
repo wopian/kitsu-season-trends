@@ -1,13 +1,13 @@
 import mock from 'mock-fs'
 import { accessData } from './'
-import * as mockedReadData from '../readData'
+import * as mockReadData from '../readData'
 
-const mockedFileData = '{data:[{i:1}]}'
+const mockFileData = '{data:[{i:1}]}'
 
 beforeEach(() => {
   mock({
     'fake': {
-      'data.json5': mockedFileData
+      'data.json5': mockFileData
     }
   })
 })
@@ -18,8 +18,8 @@ afterEach(() => {
 
 describe('components > accessData', () => {
   it('should return JSON5 parsed data', async () => {
-    mockedReadData.readData = jest.fn()
-    mockedReadData.readData.mockResolvedValueOnce(mockedFileData)
+    mockReadData.readData = jest.fn()
+    mockReadData.readData.mockResolvedValueOnce(mockFileData)
     const data = await accessData('fake/data.json5')
     expect(data).toStrictEqual({ data: [ { i: 1 } ] })
   })

@@ -1,10 +1,10 @@
 import { bold, blue, red } from 'colorette'
 import { api, setAuthorizationToken } from './'
-import * as mockedOwner from '../oauth'
+import * as mockOwner from '../oauth'
 
-beforeAll(() => {
-  mockedOwner.owner.getToken = jest.fn()
-  mockedOwner.owner.getToken.mockResolvedValue({ accessToken: '12345' })
+beforeEach(() => {
+  mockOwner.owner.getToken = jest.fn()
+  mockOwner.owner.getToken.mockResolvedValueOnce({ accessToken: '12345' })
 })
 
 describe('utils > api > setAuthorizationToken', () => {
