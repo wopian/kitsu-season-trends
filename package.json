@@ -12,6 +12,7 @@
     "lint": "eslint --ext js --ext jsx src",
     "limit": "size-limit",
     "cron": "node cron/index.mjs",
+    "cron2": "node --experimental-specifier-resolution=node cron2",
     "test": "jest",
     "test:ci": "jest --coverage"
   },
@@ -22,6 +23,7 @@
   "author": "James Harris <wopian@wopian.me>",
   "license": "MIT",
   "homepage": "https://github.com/wopian/kitsu-season-trends#readme",
+  "type": "module",
   "dependencies": {
     "@loadable/component": "~5.12.0",
     "classnames": "~2.2.5",

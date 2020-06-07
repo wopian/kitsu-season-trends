@@ -4,6 +4,7 @@ export function currentSeasonYear () {
   const date = new Date()
   return {
     season: seasonByDate(date),
-    year: yearByDate(date)
+    year: yearByDate(date),
+    current: true
   }
 }
