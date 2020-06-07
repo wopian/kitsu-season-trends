@@ -1,5 +1,3 @@
-export const IS_PRODUCTION = process.env.NODE_ENV !== 'test'
-
 // Number of resources per request
 export const RANGE = 20
 
