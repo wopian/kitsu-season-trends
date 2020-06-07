@@ -1,18 +1,23 @@
 import { API_ANIME_FIELD, API_SORT, RANGE } from '../../constants'
-import { api, info, seasonKind } from '../../utils'
+import { api, info, error, seasonKind } from '../../utils'
 
 async function getResource (offset, seasonYear) {
-  return api.get('anime', {
-    fields: { anime: API_ANIME_FIELD },
-    sort: API_SORT,
-    page: { offset, limit: RANGE },
-    filter: {
-      subtype: 'tv,ona',
-      status: 'upcoming',
-      season_year: seasonYear.year,
-      season: seasonYear.season === 'autumn' ? 'fall' : seasonYear.season
-    }
-  })
+  try {
+    return api.get('anime', {
+      fields: { anime: API_ANIME_FIELD },
+      sort: API_SORT,
+      page: { offset, limit: RANGE },
+      filter: {
+        subtype: 'tv,ona',
+        status: 'upcoming',
+        season_year: seasonYear.year,
+        season: seasonYear.season === 'autumn' ? 'fall' : seasonYear.season
+      }
+    })
+  } catch (apiError) {
+    error(`requesting upcoming resource\n${apiError}`)
+    process.exit(1)
+  }
 }
 
 async function getUpcoming (offset, seasonYear) {

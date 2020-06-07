@@ -1,10 +1,15 @@
 import { API_ANIME_FIELD } from '../../constants'
-import { api, info, seasonKind } from '../../utils'
+import { api, info, error, seasonKind } from '../../utils'
 
 async function getResource (id) {
-  return api.get(`anime/${id}`, {
-    fields: { anime: API_ANIME_FIELD }
-  })
+  try {
+    return api.get(`anime/${id}`, {
+      fields: { anime: API_ANIME_FIELD }
+    })
+  } catch (apiError) {
+    error(`requesting completed resource\n${apiError}`)
+    process.exit(1)
+  }
 }
 
 async function getCompleted (completedAnime) {

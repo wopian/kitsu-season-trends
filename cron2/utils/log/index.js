@@ -1,19 +1,26 @@
-import chalk from 'chalk'
+import { bold, green, blue, red } from 'colorette'
 
-export const { log } = console
+/* Log types alignment
+LOADED
+ SAVED
+  INFO
+ ERROR
+*/
+
+export const log = console.log
 
 export function loaded (message) {
-  log(chalk`{bold.green LOADED} ${message}`)
+  console.log(`${bold(green('LOADED'))} ${message}`)
 }
 
 export function saved (message) {
-  console.log(chalk`{bold.green  SAVED} ${message}`)
+  console.log(`${bold(green(' SAVED'))} ${message}`)
 }
 
 export function info (message) {
-  console.log(chalk`{bold.blue   INFO} ${message}`)
+  console.log(`${bold(blue('  INFO'))} ${message}`)
 }
 
 export function error (message) {
-  log(chalk`{bold.red  ERROR} ${message}`)
+  console.log(`${bold(red(' ERROR'))} ${message}`)
 }

@@ -1,13 +1,18 @@
 import { API_ANIME_FIELD, API_SORT, RANGE } from '../../constants'
-import { api, info, firstDayOfNextSeason, seasonKind } from '../../utils'
+import { api, info, error, firstDayOfNextSeason, seasonKind } from '../../utils'
 
 async function getResource (offset) {
-  return api.get('anime', {
-    fields: { anime: API_ANIME_FIELD },
-    sort: API_SORT,
-    page: { offset, limit: RANGE },
-    filter: { subtype: 'tv,ona', status: 'current' }
-  })
+  try {
+    return api.get('anime', {
+      fields: { anime: API_ANIME_FIELD },
+      sort: API_SORT,
+      page: { offset, limit: RANGE },
+      filter: { subtype: 'tv,ona', status: 'current' }
+    })
+  } catch (apiError) {
+    error(`requesting current resource\n${apiError}`)
+    process.exit(1)
+  }
 }
 
 async function getCurrent (offset, { season, year }) {
