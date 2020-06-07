@@ -2,6 +2,7 @@
 export * from './log'
 
 export * from './api'
+export * from './oauth'
 
 export * from './currentSeasonYear'
 export * from './previousSeasonYear'

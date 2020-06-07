@@ -7,20 +7,22 @@ LOADED
  ERROR
 */
 
-export const log = console.log
+export function log (message) {
+  console.log(message)
+}
 
 export function loaded (message) {
-  console.log(`${bold(green('LOADED'))} ${message}`)
+  log(`${bold(green('LOADED'))} ${message}`)
 }
 
 export function saved (message) {
-  console.log(`${bold(green(' SAVED'))} ${message}`)
+  log(`${bold(green(' SAVED'))} ${message}`)
 }
 
 export function info (message) {
-  console.log(`${bold(blue('  INFO'))} ${message}`)
+  log(`${bold(blue('  INFO'))} ${message}`)
 }
 
 export function error (message) {
-  console.log(`${bold(red(' ERROR'))} ${message}`)
+  return `${bold(red('ERROR'))} ${message}`
 }

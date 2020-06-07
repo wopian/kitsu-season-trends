@@ -18,14 +18,14 @@ afterEach(() => {
 
 describe('components > readData', () => {
   it('should return raw data from file', async () => {
-    const log = jest.spyOn(console, 'log').mockImplementation()
+    const spy = jest.spyOn(console, 'log').mockImplementation()
     const data = await readData('fake/data.json5', {
       current: true,
       season: 'winter',
       year: 2020
     })
     expect(data).toStrictEqual(mockedFileData)
-    expect(log).toHaveBeenCalledWith(`${bold(green('LOADED'))} ${yellow(' CURRENT')} Season data from ${gray('fake/data.json5')}`)
-    log.mockRestore()
+    expect(spy).toHaveBeenCalledWith(`${bold(green('LOADED'))} ${yellow(' CURRENT')} Season data from ${gray('fake/data.json5')}`)
+    spy.mockRestore()
   })
 })
