@@ -1,5 +1,5 @@
-import { API_ANIME_FIELD } from '../../constants'
-import { api, info, error, seasonKind } from '../../utils'
+import { API_ANIME_FIELD } from '../../../constants'
+import { api, info, error, seasonKind } from '../../../utils'
 
 export async function getFinishedResource (id) {
   try {

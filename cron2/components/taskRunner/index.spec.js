@@ -1,6 +1,6 @@
 import { taskRunner } from './'
-import * as mockAccessData from '../accessData'
-import * as mockProcessData from '../processData'
+import * as mockAccess from '../filesystem/access'
+import * as mockProcess from '../tasks/process'
 
 const data = { data: [ { i: 1 } ] }
 const path = 'fake.json5'
@@ -11,21 +11,21 @@ const seasonYear = {
 }
 
 beforeEach(() => {
-  mockAccessData.accessData = jest.fn()
-  mockProcessData.processData = jest.fn()
-  mockAccessData.accessData.mockResolvedValueOnce(data)
+  mockAccess.access = jest.fn()
+  mockProcess.process = jest.fn()
+  mockAccess.access.mockResolvedValueOnce(data)
 })
 
 describe('components > taskRunner', () => {
-  it('calls accessData', async () => {
+  it('calls access', async () => {
     await taskRunner(path, seasonYear)
-    expect(mockAccessData.accessData)
+    expect(mockAccess.access)
       .toHaveBeenCalledWith(path, seasonYear)
   })
 
-  it('calls processData', async () => {
+  it('calls process', async () => {
     await taskRunner(path, seasonYear)
-    expect(mockProcessData.processData)
+    expect(mockProcess.process)
       .toHaveBeenCalledWith(seasonYear, data)
   })
 })

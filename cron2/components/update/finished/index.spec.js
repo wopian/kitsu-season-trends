@@ -1,7 +1,7 @@
 import MockAdapter from 'axios-mock-adapter'
 import { bold, blue, magenta } from 'colorette'
 import { getFinishedResource, getFinished, updateFinished } from './'
-import { api } from '../../utils'
+import { api } from '../../../utils'
 
 const mock = new MockAdapter(api.axios)
 const rawResource = {
@@ -55,7 +55,7 @@ afterEach(() => {
   mock.reset()
 })
 
-describe('components > updateFinished > getFinishedResource', () => {
+describe('components > update > finished > getFinishedResource', () => {
   it('returns a kitsu-formatted JSON:API response', async () => {
     mock.onGet().replyOnce(200, rawResource)
     const { data } = await getFinishedResource(1)
@@ -83,7 +83,7 @@ describe('components > updateFinished > getFinishedResource', () => {
 })
 
 
-describe('components > updateFinished > getFinished', () => {
+describe('components > update > finished > getFinished', () => {
   it('fetches all resources provided', async () => {
     mock.onGet().replyOnce(200, rawResource).onGet().replyOnce(200, rawResourceNoNext)
     const data = await getFinished([ '1', '2' ], { season: 'spring', year: 2020 })
@@ -105,7 +105,7 @@ describe('components > updateFinished > getFinished', () => {
   })
 })
 
-describe('components > updateFinished > updateFinished', () => {
+describe('components > update > finished > updateFinished', () => {
   it('logs the task status and returns final result', async () => {
     const spy = jest.spyOn(console, 'log').mockImplementation()
     mock.onGet().replyOnce(200, rawResourceNoNext)

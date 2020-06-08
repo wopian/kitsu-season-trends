@@ -1,9 +1,8 @@
-import { accessData, processData } from '../'
-// import { accessData } from '../accessData'
+import { access, process } from '../'
 
 export async function taskRunner (path, seasonYear) {
-  const data = await accessData(path, seasonYear)
-  const processed = await processData(seasonYear, data)
+  const data = await access(path, seasonYear)
+  const processed = await process(seasonYear, data)
 
   // TODO
   // 1. Map processed into expected output

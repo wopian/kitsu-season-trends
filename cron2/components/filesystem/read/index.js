@@ -1,8 +1,8 @@
 import { gray } from 'colorette'
 import { promises as fs } from 'fs'
-import { loaded, error, seasonKind } from '../../utils'
+import { loaded, error, seasonKind } from '../../../utils'
 
-export async function readData (path, seasonYear) {
+export async function read (path, seasonYear) {
   try {
     const contents = await fs.readFile(path, { encoding: 'utf8' })
     loaded(`${seasonKind(seasonYear)} Season data from ${gray(path)}`)

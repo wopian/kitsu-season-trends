@@ -1,7 +1,7 @@
 import MockAdapter from 'axios-mock-adapter'
 import { bold, blue, magenta } from 'colorette'
 import { getCurrentResource, getCurrent, updateCurrent } from './'
-import { api } from '../../utils'
+import { api } from '../../../utils'
 
 const mock = new MockAdapter(api.axios)
 // https://kitsu.io/api/edge/anime?fields[anime]=canonicalTitle,ratingFrequencies,userCount,favoritesCount,tba,subtype,startDate,endDate,status&sort=-averageRating,-userCount&page[offset]=0&page[limit]=1&filter[subtype]=tv,ona&filter[status]=current
@@ -69,7 +69,7 @@ afterEach(() => {
   mock.reset()
 })
 
-describe('components > updateCurrent > getCurrentResource', () => {
+describe('components > update > current > getCurrentResource', () => {
   it('returns a kitsu-formatted JSON:API response', async () => {
     mock.onGet().replyOnce(200, rawResource)
     const { data, links } = await getCurrentResource(0, { season: 'spring', year: 2020 })
@@ -101,7 +101,7 @@ describe('components > updateCurrent > getCurrentResource', () => {
 })
 
 
-describe('components > updateCurrent > getCurrent', () => {
+describe('components > update > current > getCurrent', () => {
   it('fetches data until there\'s no next page', async () => {
     mock.onGet().replyOnce(200, rawResource).onGet().replyOnce(200, rawResourceNoNext)
     const data = await getCurrent(0, { season: 'spring', year: 2020 })
@@ -125,7 +125,7 @@ describe('components > updateCurrent > getCurrent', () => {
   })
 })
 
-describe('components > updateCurrent > updateCurrent', () => {
+describe('components > update > current > updateCurrent', () => {
   it('logs the task status and returns final result', async () => {
     const spy = jest.spyOn(console, 'log').mockImplementation()
     mock.onGet().replyOnce(200, rawResourceNoNext)

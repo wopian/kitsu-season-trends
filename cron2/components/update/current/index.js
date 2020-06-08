@@ -1,5 +1,5 @@
-import { API_ANIME_FIELD, API_SORT, RANGE } from '../../constants'
-import { api, info, error, seasonKind } from '../../utils'
+import { API_ANIME_FIELD, API_SORT, RANGE } from '../../../constants'
+import { api, info, error, seasonKind } from '../../../utils'
 
 export async function getCurrentResource (offset) {
   try {

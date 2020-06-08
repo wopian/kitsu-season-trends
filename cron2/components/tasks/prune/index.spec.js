@@ -1,11 +1,11 @@
-import { pruneData, pruneDuplicate, pruneInvalid } from './'
+import { prune, pruneDuplicate, pruneInvalid } from './'
 
 const seasonYear = {
   season: 'winter',
   year: 2000
 }
 
-describe('components > pruneDuplicate', () => {
+describe('components > tasks > pruneDuplicate', () => {
   it('handles empty arrays', async () => {
     const data = []
     const output = await pruneDuplicate(data)
@@ -28,7 +28,7 @@ describe('components > pruneDuplicate', () => {
   })
 })
 
-describe('components > pruneInvalid', () => {
+describe('components > tasks > pruneInvalid', () => {
   it('handles empty arrays', async () => {
     const data = []
     const output = await pruneInvalid(data, seasonYear)
@@ -87,14 +87,14 @@ describe('components > pruneInvalid', () => {
   })
 })
 
-describe('components > pruneData', () => {
+describe('components > tasks > prune', () => {
   it('deduplicates and removes invalid resources', async () => {
     const data = [
       { id: '1', userCount: 8 },
       { id: '1', userCount: 8 },
       { id: '2', userCount: 1 }
     ]
-    const output = await pruneData(seasonYear, data)
+    const output = await prune(seasonYear, data)
     expect(output).toHaveLength(1)
     expect(output).toStrictEqual([
       { id: '1', userCount: 8 }

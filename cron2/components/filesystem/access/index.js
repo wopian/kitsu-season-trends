@@ -1,9 +1,9 @@
 import JSON5 from 'json5'
 import { promises as fs } from 'fs'
-import { readData } from '../readData'
-import { error } from '../../utils'
+import { read } from '../read'
+import { error } from '../../../utils'
 
-export async function accessData (path, seasonYear) {
+export async function access (path, seasonYear) {
   let data = {
     data: [],
     meta: {},
@@ -12,7 +12,7 @@ export async function accessData (path, seasonYear) {
 
   try {
     await fs.access(path)
-    const contents = await readData(path, seasonYear)
+    const contents = await read(path, seasonYear)
     data = JSON5.parse(contents)
   } catch (accessError) {
     if (accessError.code !== 'ENOENT') {

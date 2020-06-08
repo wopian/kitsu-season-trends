@@ -1,4 +1,4 @@
-import { listIDs, firstDayOfNextSeason, firstDayOfSeason } from '../../utils'
+import { listIDs, firstDayOfNextSeason, firstDayOfSeason } from '../../../utils'
 
 export async function pruneDuplicate (data) {
   const uniqueIDs = new Set(listIDs(data, 'id'))
@@ -15,6 +15,6 @@ export async function pruneInvalid (data, { season, year }) {
   })
 }
 
-export async function pruneData (seasonYear, data) {
+export async function prune (seasonYear, data) {
   return pruneInvalid(await pruneDuplicate(data), seasonYear)
 }
