@@ -26,6 +26,6 @@ describe('components > taskRunner', () => {
   it('calls processData', async () => {
     await taskRunner(path, seasonYear)
     expect(mockProcessData.processData)
-      .toHaveBeenCalledWith(path, seasonYear, data)
+      .toHaveBeenCalledWith(seasonYear, data)
   })
 })

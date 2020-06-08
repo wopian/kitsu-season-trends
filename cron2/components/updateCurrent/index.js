@@ -1,7 +1,7 @@
 import { API_ANIME_FIELD, API_SORT, RANGE } from '../../constants'
-import { api, info, error, firstDayOfNextSeason, seasonKind } from '../../utils'
+import { api, info, error, seasonKind } from '../../utils'
 
-async function getResource (offset) {
+export async function getCurrentResource (offset) {
   try {
     return api.get('anime', {
       fields: { anime: API_ANIME_FIELD },
@@ -10,34 +10,28 @@ async function getResource (offset) {
       filter: { subtype: 'tv,ona', status: 'current' }
     })
   } catch (apiError) {
-    error(`requesting current resource\n${apiError}`)
-    process.exit(1)
+    throw new Error(error(`requesting current resource\n${apiError}`))
   }
 }
 
-async function getCurrent (offset, { season, year }) {
+export async function getCurrent (offset) {
   let currentData = []
   let hasNextPage = true
 
   do {
-    const { data, links} = await getResource(offset);
+    const { data, links} = await getCurrentResource(offset);
     currentData = currentData.concat(data)
     if (!links?.next) hasNextPage = false
     else offset += RANGE
   } while (hasNextPage)
 
-  return currentData.filter(resource => {
-    // Kitsu API status filter is broken as of March 2018
-    if (resource.status !== 'current') return false
-    if (resource.userCount < 5) return false
-    if (new Date(resource.startDate) >= firstDayOfNextSeason(season, year)) return false
-    return true
-  })
+  // Kitsu API status filter is not working as expected as of March 2018
+  return currentData.filter(resource => resource.status === 'current')
 }
 
 export async function updateCurrent (seasonYear) {
   info(`${seasonKind(seasonYear)} Current`)
-  const currentData = await getCurrent(0, seasonYear)
+  const currentData = await getCurrent(0)
   info(`${seasonKind(seasonYear)} Current   ${currentData.length} resources`)
   return currentData
 }

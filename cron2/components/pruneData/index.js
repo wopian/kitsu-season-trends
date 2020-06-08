@@ -1,22 +1,20 @@
-import { firstDayOfNextSeason } from '../../utils'
+import { listIDs, firstDayOfNextSeason, firstDayOfSeason } from '../../utils'
 
-export async function pruneData ({ season, year }, updatedData) {
-  const entriesBefore = updatedData?.length
-  // Deduplicate array
-  //updatedData = Array.from(new Set(updatedData.map(resource => resource.id)))
-  //  .map(id => updatedData.find(resource => resource.id === id))
+export async function pruneDuplicate (data) {
+  const uniqueIDs = new Set(listIDs(data, 'id'))
+  return Array.from(uniqueIDs).map(id => data.find(resource => resource.id === id))
+}
 
-  /*
-  updatedData = await updatedData.filter(resource => {
-    if (!resource.startDate) return true
-    const resourceDate = new Date(resource.startDate)
-    const limit = firstDayOfNextSeason(season, year)
-    console.log(limit < resourceDate, resourceDate < limit)
-    return limit > resourceDate
+export async function pruneInvalid (data, { season, year }) {
+  return data.filter(resource => {
+    if (resource.userCount < 5) return false
+    if (resource.startDate === null) return false
+    if (new Date(resource.startDate) >= firstDayOfNextSeason(season, year)) return false
+    if (resource.endDate && new Date(resource.endDate) < firstDayOfSeason(season, year)) return false
+    return true
   })
-  */
+}
 
-  const entriesAfter = updatedData?.length
-  console.log(entriesBefore, entriesAfter)
-  return updatedData
+export async function pruneData (seasonYear, data) {
+  return pruneInvalid(await pruneDuplicate(data), seasonYear)
 }

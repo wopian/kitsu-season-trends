@@ -1,7 +1,7 @@
 import { API_ANIME_FIELD, API_SORT, RANGE } from '../../constants'
 import { api, info, error, seasonKind } from '../../utils'
 
-async function getResource (offset, seasonYear) {
+export async function getUpcomingResource (offset, seasonYear) {
   try {
     return api.get('anime', {
       fields: { anime: API_ANIME_FIELD },
@@ -15,33 +15,28 @@ async function getResource (offset, seasonYear) {
       }
     })
   } catch (apiError) {
-    error(`requesting upcoming resource\n${apiError}`)
-    process.exit(1)
+    throw new Error(error(`requesting upcoming resource\n${apiError}`))
   }
 }
 
-async function getUpcoming (offset, seasonYear) {
+export async function getUpcoming (offset, seasonYear) {
   let upcomingData = []
   let hasNextPage = true
 
   do {
-    const { data, links} = await getResource(offset, seasonYear);
+    const { data, links} = await getUpcomingResource(offset, seasonYear);
     upcomingData = upcomingData.concat(data)
     if (!links?.next) hasNextPage = false
     else offset += RANGE
   } while (hasNextPage)
 
-  return upcomingData.filter(resource => {
-    // Kitsu API status filter is broken as of March 2018
-    if (resource.status !== 'upcoming') return false
-    if (resource.userCount < 5) return false
-    else return true
-  })
+  // Kitsu API status filter is not working as expected as of March 2018
+  return upcomingData.filter(resource => resource.status === 'upcoming')
 }
 
 export async function updateUpcoming (seasonYear) {
   info(`${seasonKind(seasonYear)} Upcoming`)
-  const airingData = await getUpcoming(0, seasonYear)
-  info(`${seasonKind(seasonYear)} Upcoming  ${airingData.length} resources`)
-  return airingData
+  const upcomingData = await getUpcoming(0, seasonYear)
+  info(`${seasonKind(seasonYear)} Upcoming  ${upcomingData.length} resources`)
+  return upcomingData
 }
