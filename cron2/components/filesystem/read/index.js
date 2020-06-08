@@ -1,6 +1,5 @@
-import { gray } from 'colorette'
 import { promises as fs } from 'fs'
-import { loaded, error, seasonKind } from '../../../utils'
+import { loaded, error, seasonKind, gray } from '../../../utils'
 
 export async function read (path, seasonYear) {
   try {

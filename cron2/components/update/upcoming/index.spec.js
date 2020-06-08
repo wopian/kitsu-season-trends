@@ -1,7 +1,6 @@
 import MockAdapter from 'axios-mock-adapter'
-import { bold, blue, magenta } from 'colorette'
 import { getUpcomingResource, getUpcoming, updateUpcoming } from './'
-import { api } from '../../../utils'
+import { api, bold, blue, magenta } from '../../../utils'
 
 const mock = new MockAdapter(api.axios)
 // https://kitsu.io/api/edge/anime?fields[anime]=canonicalTitle,ratingFrequencies,userCount,favoritesCount,subtype,startDate,endDate,status&sort=-averageRating,-userCount&page[offset]=0&page[limit]=1&filter[subtype]=tv,ona&filter[status]=upcoming&filter[season_year]=2020&filter[season]=spring

@@ -1,3 +1,4 @@
+import { UTC } from '../'
 import { yearBySeason } from './'
 
 describe('util > yearBySeason', () => {
@@ -10,10 +11,10 @@ describe('util > yearBySeason', () => {
   })
 
   it('returns 2019 for November 2019', () => {
-    expect(yearBySeason(new Date('2019-11-01'))).toBe(2019)
+    expect(yearBySeason(new UTC('2019-11-01'))).toBe(2019)
   })
 
   it('returns 2020 for December 2019', () => {
-    expect(yearBySeason(new Date('2019-12-01'))).toBe(2020)
+    expect(yearBySeason(new UTC('2019-12-01'))).toBe(2020)
   })
 })

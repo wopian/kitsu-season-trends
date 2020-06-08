@@ -1,9 +1,10 @@
 import MockDate from 'mockdate'
+import { UTC } from '../'
 import { currentSeasonYear } from './'
 
 describe('util > currentSeasonYear', () => {
   it('returns current season and year', () => {
-    MockDate.set(new Date('2019-01-01'))
+    MockDate.set(new UTC('2019-01-01'))
     expect(currentSeasonYear()).toStrictEqual({
       current: true,
       season: 'winter',

@@ -1,7 +1,6 @@
 import MockAdapter from 'axios-mock-adapter'
-import { bold, blue, magenta } from 'colorette'
 import { getFinishedResource, getFinished, updateFinished } from './'
-import { api } from '../../../utils'
+import { api, bold, blue, magenta } from '../../../utils'
 
 const mock = new MockAdapter(api.axios)
 const rawResource = {

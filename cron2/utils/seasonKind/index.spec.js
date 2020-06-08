@@ -1,3 +1,4 @@
+import strip from 'strip-ansi'
 import { seasonKind } from './'
 
 describe('utils > seasonKind', () => {
@@ -7,7 +8,7 @@ describe('utils > seasonKind', () => {
       season: 'winter',
       year: '2020'
     }
-    expect(seasonKind(seasonYear)).toBe('\u001b[33m CURRENT\u001B[39m')
+    expect(strip(seasonKind(seasonYear))).toBe(' CURRENT')
   })
 
   it('returns PREVIOUS for previous season', () => {
@@ -16,6 +17,6 @@ describe('utils > seasonKind', () => {
       season: 'winter',
       year: '2020'
     }
-    expect(seasonKind(seasonYear)).toBe('\u001b[35mPREVIOUS\u001B[39m')
+    expect(strip(seasonKind(seasonYear))).toBe('PREVIOUS')
   })
 })

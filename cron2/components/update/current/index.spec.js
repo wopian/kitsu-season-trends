@@ -1,7 +1,6 @@
 import MockAdapter from 'axios-mock-adapter'
-import { bold, blue, magenta } from 'colorette'
 import { getCurrentResource, getCurrent, updateCurrent } from './'
-import { api } from '../../../utils'
+import { api, bold, blue, magenta } from '../../../utils'
 
 const mock = new MockAdapter(api.axios)
 // https://kitsu.io/api/edge/anime?fields[anime]=canonicalTitle,ratingFrequencies,userCount,favoritesCount,tba,subtype,startDate,endDate,status&sort=-averageRating,-userCount&page[offset]=0&page[limit]=1&filter[subtype]=tv,ona&filter[status]=current

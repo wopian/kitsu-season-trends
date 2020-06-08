@@ -1,11 +1,11 @@
-import { prune, pruneDuplicate, pruneInvalid } from './'
+import { prune, pruneDuplicate, pruneInvalid, pruneExisting } from './'
 
 const seasonYear = {
   season: 'winter',
   year: 2000
 }
 
-describe('components > tasks > pruneDuplicate', () => {
+describe('components > tasks > prune > pruneDuplicate', () => {
   it('handles empty arrays', async () => {
     const data = []
     const output = await pruneDuplicate(data)
@@ -28,7 +28,7 @@ describe('components > tasks > pruneDuplicate', () => {
   })
 })
 
-describe('components > tasks > pruneInvalid', () => {
+describe('components > tasks > prune > pruneInvalid', () => {
   it('handles empty arrays', async () => {
     const data = []
     const output = await pruneInvalid(data, seasonYear)
@@ -87,7 +87,27 @@ describe('components > tasks > pruneInvalid', () => {
   })
 })
 
-describe('components > tasks > prune', () => {
+describe('components > tasks > prune > pruneExisting', () => {
+  it('WIP', async () => {
+    const updated = [
+      { id: '1', userCount: 8 },
+      { id: '2', userCount: 8 }
+    ]
+    const existing = [
+      { i: '1', u: 0 },
+      { i: '2', u: 1},
+      { i: '3', u: 1 }
+    ]
+    const output = await pruneExisting(existing, updated)
+    expect(output).toHaveLength(2)
+    expect(output).toStrictEqual([
+      { i: '1', u: 0 },
+      { i: '2', u: 1 }
+    ])
+  })
+})
+
+describe('components > tasks > prune > prune', () => {
   it('deduplicates and removes invalid resources', async () => {
     const data = [
       { id: '1', userCount: 8 },

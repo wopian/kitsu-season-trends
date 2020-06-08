@@ -1,5 +1,5 @@
 import { updateCurrent, updateFinished, updateUpcoming } from '../../update'
-import { prune } from '../'
+import { prune, pruneExisting } from '../'
 import { listIDs } from '../../../utils'
 
 export function listFinishedIDs (data, existingIDs) {
@@ -19,9 +19,16 @@ export async function process (seasonYear, data) {
 
   updatedData = updatedData.concat(await updateCurrent(seasonYear))
   if (seasonYear.current) updatedData = updatedData.concat(await updateUpcoming(seasonYear))
-
   updatedData = updatedData.concat(await processFinished(seasonYear, updatedData, existingIDs))
-  updatedData = updatedData.concat(await prune(seasonYear, updatedData))
 
-  return updatedData
+  const prunedUpdatedData = await prune(seasonYear, updatedData)
+  const prunedExistingData = await pruneExisting(data.data, updatedData)
+
+  // const allUpdatedIDs = listIDs(updatedData, 'id')
+  // const prunedUpdatedIDs = allUpdatedIDs.filter(id => !listIDs(prunedUpdatedData, 'id').includes(id))
+
+  // console.log(allUpdatedIDs)
+  // console.log(prunedUpdatedIDs)
+
+  return { prunedExistingData, prunedUpdatedData, existingIDs }
 }

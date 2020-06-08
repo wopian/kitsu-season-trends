@@ -1,3 +1,7 @@
+import { UTC } from '../utils'
+
+export const TIMESTAMP = new UTC().valueOf()
+
 // Number of resources per request
 export const RANGE = 20
 

@@ -1,9 +1,10 @@
 import MockDate from 'mockdate'
+import { UTC } from '../'
 import { nextSeasonYear } from './'
 
 describe('util > nextSeason', () => {
   it('provides the next season (mock Jan)', () => {
-    MockDate.set(new Date('2020-01-01'))
+    MockDate.set(new UTC('2020-01-01'))
     expect(nextSeasonYear()).toStrictEqual({
       current: false,
       season: 'spring',
@@ -13,7 +14,7 @@ describe('util > nextSeason', () => {
   })
 
   it('provides the next season (mock November)', () => {
-    MockDate.set(new Date('2020-11-01'))
+    MockDate.set(new UTC('2020-11-01'))
     expect(nextSeasonYear()).toStrictEqual({
       current: false,
       season: 'winter',

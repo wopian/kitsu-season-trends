@@ -1,4 +1,4 @@
-import { bold, blue, red } from 'colorette'
+import { bold, blue, red } from '../'
 import { api, setAuthorizationToken } from './'
 import * as mockOwner from './oauth'
 

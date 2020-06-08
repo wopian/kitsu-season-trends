@@ -5,7 +5,7 @@ import { seasonDataPath, currentSeasonYear, previousSeasonYear, setAuthorization
 async function runCron () {
   await setAuthorizationToken()
   taskRunner(seasonDataPath(currentSeasonYear()), currentSeasonYear())
-  taskRunner(seasonDataPath(previousSeasonYear()), previousSeasonYear())
+  // taskRunner(seasonDataPath(previousSeasonYear()), previousSeasonYear())
 }
 
 runCron()

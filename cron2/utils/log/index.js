@@ -1,4 +1,4 @@
-import { bold, green, blue, red } from 'colorette'
+import { bold, green, blue, red } from '../'
 
 /* Log types alignment
 LOADED

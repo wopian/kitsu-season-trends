@@ -1,4 +1,4 @@
-import { bold, green, blue, red } from 'colorette'
+import { bold, green, blue, red } from '../'
 import { log, loaded, saved, info, error } from './'
 
 describe('utils > log > log', () => {

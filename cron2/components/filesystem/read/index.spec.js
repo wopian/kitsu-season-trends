@@ -1,5 +1,5 @@
 import mock from 'mock-fs'
-import { bold, green, yellow, gray} from 'colorette'
+import { bold, green, yellow, gray} from '../../../utils'
 import { read } from './'
 
 const mockFile = '{data:[{i:1}]}'

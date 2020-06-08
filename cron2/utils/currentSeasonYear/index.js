@@ -1,7 +1,7 @@
-import { seasonByDate, yearByDate } from '../'
+import { seasonByDate, yearByDate, UTC } from '../'
 
 export function currentSeasonYear () {
-  const date = new Date()
+  const date = new UTC()
   return {
     season: seasonByDate(date),
     year: yearByDate(date),
