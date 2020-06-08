@@ -1,5 +1,6 @@
 import Kitsu from 'kitsu'
-import { info, error, owner } from '../'
+import { owner } from './oauth'
+import { info, error } from '../'
 
 export const api = new Kitsu()
 

@@ -1,6 +1,6 @@
 import { bold, blue, red } from 'colorette'
 import { api, setAuthorizationToken } from './'
-import * as mockOwner from '../oauth'
+import * as mockOwner from './oauth'
 
 beforeEach(() => {
   mockOwner.owner.getToken = jest.fn()
@@ -23,6 +23,7 @@ describe('utils > api > setAuthorizationToken', () => {
     expect(spy).toHaveBeenCalledWith(`${bold(blue('  INFO'))} Authenticated as test`)
     delete process.env.KITSU_USERNAME
     delete process.env.KITSU_PASSWORD
+    spy.mockRestore()
   })
 
   it('throws an error if KITSU_USERNAME is missing', async () => {

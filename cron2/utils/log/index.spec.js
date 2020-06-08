@@ -6,6 +6,7 @@ describe('utils > log > log', () => {
     const spy = jest.spyOn(console, 'log').mockImplementation()
     log('Test')
     expect(spy).toHaveBeenCalledWith('Test')
+    spy.mockRestore()
   })
 })
 
@@ -14,6 +15,7 @@ describe('utils > log > loaded', () => {
     const spy = jest.spyOn(console, 'log').mockImplementation()
     loaded('Test')
     expect(spy).toHaveBeenCalledWith(`${bold(green('LOADED'))} Test`)
+    spy.mockRestore()
   })
 })
 
@@ -22,6 +24,7 @@ describe('utils > log > saved', () => {
     const spy = jest.spyOn(console, 'log').mockImplementation()
     saved('Test')
     expect(spy).toHaveBeenCalledWith(`${bold(green(' SAVED'))} Test`)
+    spy.mockRestore()
   })
 })
 
@@ -30,6 +33,7 @@ describe('utils > log > info', () => {
     const spy = jest.spyOn(console, 'log').mockImplementation()
     info('Test')
     expect(spy).toHaveBeenCalledWith(`${bold(blue('  INFO'))} Test`)
+    spy.mockRestore()
   })
 })
 

@@ -7,7 +7,7 @@ jobs:
 script:
 - if [ ${TRAVIS_EVENT_TYPE} = "cron" ];
   then KITSU_USERNAME=${KITSU_USERNAME} KITSU_PASSWORD=${KITSU_PASSWORD} stdbuf -i0 -o0 -e0 yarn cron;
-  else stdbuf -i0 -o0 -e0 yarn build:ci && yarn limit;
+  else stdbuf -i0 -o0 -e0 yarn test:ci && yarn build:ci && yarn limit;
   fi
 after_success:
 - if [ ${TRAVIS_EVENT_TYPE} = "cron" ];
