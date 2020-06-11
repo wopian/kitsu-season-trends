@@ -6,7 +6,6 @@
 [![travis badge]][travis]
 [![david badge]][david]
 [![david dev badge]][david dev]
-[![donate badge]][donate]
 
 [Kitsu] season trends for the currently airing anime
 
@@ -110,6 +109,3 @@ All code released under the [MIT] license
 
 [contributors]:https://github.com/wopian/kitsu-season-trends/graphs/contributors
 [contributors badge]:https://flat.badgen.net/github/contributors/wopian/kitsu-season-trends
-
-[donate]:https://paypal.me/wopian
-[donate badge]:https://flat.badgen.net/badge/support%20me%20on/paypal.me/pink
