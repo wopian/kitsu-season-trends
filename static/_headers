@@ -5,3 +5,4 @@
   X-Xss-Protection:           1; mode=block
   X-Content-Type-Options:     nosniff
   Referrer-Policy:            strict-origin-when-cross-origin
+  Content-Security-Policy:    default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; img-src *; font-src 'self' fonts.gstatic.com; connect-src 'self'; media-src *; object-src 'none'; prefetch-src *; child-src *; frame-src *; worker-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; upgrade-insecure-requests; block-all-mixed-content
