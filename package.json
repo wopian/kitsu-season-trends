@@ -56,7 +56,7 @@
     "css-loader": "~4.2.0",
     "eslint": "~7.7.0",
     "eslint-config-wopian-react": "~2.0.1",
-    "html-webpack-plugin": "~4.3.0",
+    "html-webpack-plugin": "~4.4.0",
     "json5": "~2.1.0",
     "kitsu": "~9.1.8",
     "koa-connect": "~2.0.1",
