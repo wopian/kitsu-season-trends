@@ -20,7 +20,7 @@
   "license": "MIT",
   "homepage": "https://github.com/wopian/kitsu-season-trends#readme",
   "dependencies": {
-    "@loadable/component": "~5.13.0",
+    "@loadable/component": "~5.14.0",
     "classnames": "~2.2.5",
     "fromnow": "~3.0.0",
     "lodash": "~4.17.14",
