@@ -37,7 +37,10 @@ jobs:
       run: yarn install --prefer-offline --frozen-lockfile
 
     - name: Get seasonal data from Kitsu.io
-      run: cross-env KITSU_USERNAME=${{ secrets.KITSU_USERNAME }} KITSU_PASSWORD=${{ secrets.KITSU_PASSWORD }} yarn cron
+      run: yarn cron
+      env:
+        KITSU_USERNAME: ${{ secrets.KITSU_USERNAME }}
+        KITSU_PASSWORD: ${{ secrets.KITSU_PASSWORD }}
 
     - name: Commit updated seasonal data
       run: |
