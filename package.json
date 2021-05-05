@@ -21,7 +21,7 @@
   "homepage": "https://github.com/wopian/kitsu-season-trends#readme",
   "dependencies": {
     "@loadable/component": "~5.14.0",
-    "classnames": "~2.2.5",
+    "classnames": "~2.3.0",
     "fromnow": "~3.0.0",
     "lodash": "~4.17.14",
     "prop-types": "~15.7.0",
