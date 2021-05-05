@@ -24,7 +24,7 @@ jobs:
 
     - name: Get Yarn cache directory
       id: yarn-cache-dir-path
-      run: echo '::set-output name=dir::$(yarn cache dir)'
+      run: echo "::set-output name=dir::$(yarn cache dir)"
 
     - name: Use Yarn cache
       uses: actions/cache@v2
@@ -42,10 +42,14 @@ jobs:
         KITSU_USERNAME: ${{ secrets.KITSU_USERNAME }}
         KITSU_PASSWORD: ${{ secrets.KITSU_PASSWORD }}
 
+    - name: Get today's date
+      id: date
+      run: echo "::set-output name=today::$(date +%F)"
+
     - name: Commit updated seasonal data
       run: |
         git config --global user.name '${{ secrets.GH_USERNAME }}'
         git config --global user.email '${{ secrets.GH_EMAIL }}'
         git add data/
-        git commit -am 'chore: add data for $(date +%F)'
+        git commit -am 'chore: add data for ${{ steps.date.outputs.today }}'
         git push
