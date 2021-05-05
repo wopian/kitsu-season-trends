@@ -1,4 +1,4 @@
-name: Daily Update
+name: Cron
 
 on:
   schedule:
@@ -6,6 +6,7 @@ on:
 
 jobs:
   update:
+    name: Daily Update
     runs-on: ubuntu-latest
 
     strategy:

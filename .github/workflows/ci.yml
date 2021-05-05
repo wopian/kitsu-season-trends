@@ -1,9 +1,10 @@
-name: Build
+name: CI
 
 on: push
 
 jobs:
   build:
+    name: Build SPA
     runs-on: ubuntu-latest
 
     strategy:
