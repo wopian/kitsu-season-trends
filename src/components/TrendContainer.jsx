@@ -4,12 +4,12 @@ import classnames from 'classnames'
 import LazyLoad from 'react-lazy-load'
 import { TrendTooltip } from './TrendTooltip'
 import { MdGroup, MdFavorite, MdStar, MdThumbsUpDown, MdLocalLibrary } from 'react-icons/md'
-import ResponsiveContainer from 'recharts/es6/component/ResponsiveContainer'
-import Tooltip from 'recharts/es6/component/Tooltip'
-import LineChart from 'recharts/es6/chart/LineChart'
-import Line from 'recharts/es6/cartesian/Line'
-import YAxis from 'recharts/es6/cartesian/YAxis'
-import XAxis from 'recharts/es6/cartesian/XAxis'
+import { ResponsiveContainer } from 'recharts/es6/component/ResponsiveContainer'
+import { Tooltip } from 'recharts/es6/component/Tooltip'
+import { LineChart } from 'recharts/es6/chart/LineChart'
+import { Line } from 'recharts/es6/cartesian/Line'
+import { YAxis } from 'recharts/es6/cartesian/YAxis'
+import { XAxis } from 'recharts/es6/cartesian/XAxis'
 
 function posOrNeg (number) {
   if (number > 0) return `+${number}`
