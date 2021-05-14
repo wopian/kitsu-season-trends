@@ -3,7 +3,7 @@
 [![web badge]][web]
 [![uptime badge]][web]
 [![contributors badge]][contributors]
-[![travis badge]][travis]
+[![actions badge]][actions]
 [![david badge]][david]
 [![david dev badge]][david dev]
 
@@ -110,8 +110,8 @@ All code released under the [MIT] license
 [david dev]:https://david-dm.org/wopian/kitsu-season-trends?type=dev
 [david dev badge]:https://flat.badgen.net/david/dev/wopian/kitsu-season-trends
 
-[travis]:https://travis-ci.org/wopian/kitsu-season-trends
-[travis badge]:https://flat.badgen.net/travis/wopian/kitsu-season-trends
+[actions]:https://github.com/wopian/kitsu-season-trends/actions/workflows/ci.yml
+[actions badge]:https://flat.badgen.net/github/checks/wopian/kitsu-season-trends/master/ci
 
 [contributors]:https://github.com/wopian/kitsu-season-trends/graphs/contributors
 [contributors badge]:https://flat.badgen.net/github/contributors/wopian/kitsu-season-trends
