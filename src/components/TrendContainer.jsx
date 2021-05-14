@@ -14,7 +14,7 @@ import { formatNumber } from '../util/formatNumber'
 
 function posOrNeg (number, isPercent) {
   if (number > 0) return `+${formatNumber(number, isPercent)}`
-  else if (number < 0) return `−${Math.abs(formatNumber(number, isPercent))}`
+  else if (number < 0) return `−${formatNumber(Math.abs(number), isPercent)}`
   else return `±${formatNumber(number, isPercent)}`
 }
 
