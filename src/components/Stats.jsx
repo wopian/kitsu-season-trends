@@ -127,7 +127,7 @@ export function StatsAverage ({ data }) {
 
     data.forEach(anime => {
       anime.d.forEach(day => {
-        average.push({ date: day.d, title: anime.t, [anime.n]: day.m })
+        average.push({ date: day.d, title: anime.t, [anime.n]: day.w })
       })
     })
 
@@ -179,9 +179,10 @@ export function StatsAverage ({ data }) {
             type='number'
             tickLine={false}
             axisLine={false}
-            domain={[6, 10]}
-            ticks={[6, 7, 8, 9, 10]}
+            domain={[20, 80]}
+            ticks={[20, 40, 60, 80]}
             allowDataOverflow={true}
+            unit='%'
           />
           <XAxis
             type='number'

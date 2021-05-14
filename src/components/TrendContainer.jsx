@@ -3,18 +3,19 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import LazyLoad from 'react-lazy-load'
 import { TrendTooltip } from './TrendTooltip'
-import { MdGroup, MdFavorite, MdStar, MdThumbsUpDown, MdLocalLibrary } from 'react-icons/md'
+import { MdGroup, MdStar, MdThumbUp, MdThumbDown, MdLocalLibrary } from 'react-icons/md'
 import { ResponsiveContainer } from 'recharts/es6/component/ResponsiveContainer'
 import { Tooltip } from 'recharts/es6/component/Tooltip'
 import { LineChart } from 'recharts/es6/chart/LineChart'
 import { Line } from 'recharts/es6/cartesian/Line'
 import { YAxis } from 'recharts/es6/cartesian/YAxis'
 import { XAxis } from 'recharts/es6/cartesian/XAxis'
+import { formatNumber } from '../util/formatNumber'
 
-function posOrNeg (number) {
-  if (number > 0) return `+${number}`
-  else if (number < 0) return `−${Math.abs(number)}`
-  else return `±${number}`
+function posOrNeg (number, isPercent) {
+  if (number > 0) return `+${formatNumber(number, isPercent)}`
+  else if (number < 0) return `−${Math.abs(formatNumber(number, isPercent))}`
+  else return `±${formatNumber(number, isPercent)}`
 }
 
 class TrendChanges extends React.Component {
@@ -50,7 +51,7 @@ class TrendChanges extends React.Component {
             pos: diff > 0,
             neg: diff < 0
           })}>
-            &nbsp;{posOrNeg(diff.toFixed(this.props.decimalPlaces))}
+            &nbsp;{posOrNeg(diff, this.props.isPercent)}
           </span>
         </span>
       )
@@ -59,7 +60,7 @@ class TrendChanges extends React.Component {
         <span title={this.props.title}>
           {this.props.icon}
           <span>
-            &nbsp;{this.props.today}
+            &nbsp;{formatNumber(this.props.today, this.props.isPercent)}
           </span>
         </span>
       )
@@ -72,8 +73,8 @@ TrendChanges.propTypes = {
   icon: PropTypes.node,
   today: PropTypes.number,
   yesterday: PropTypes.number,
-  decimalPlaces: PropTypes.number,
-  isCurrentSeason: PropTypes.bool
+  isCurrentSeason: PropTypes.bool,
+  isPercent: PropTypes.bool
 }
 
 function TrendHeader ({ rank, id, newAnime, title, today, yesterday, isCurrentSeason }) {
@@ -95,10 +96,10 @@ function TrendHeader ({ rank, id, newAnime, title, today, yesterday, isCurrentSe
           <TrendChanges
             title='Score'
             icon={<MdStar/>}
-            today={today.m}
-            yesterday={yesterday.m}
-            decimalPlaces={2}
+            today={today.w}
+            yesterday={yesterday.w}
             isCurrentSeason={isCurrentSeason}
+            isPercent={true}
           />
           <TrendChanges
             title='Users'
@@ -108,17 +109,17 @@ function TrendHeader ({ rank, id, newAnime, title, today, yesterday, isCurrentSe
             isCurrentSeason={isCurrentSeason}
           />
           <TrendChanges
-            title='Users Rated'
-            icon={<MdThumbsUpDown style={{color: '#5FBB5F'}}/>}
-            today={today.r}
-            yesterday={yesterday.r}
+            title='Upvotes'
+            icon={<MdThumbUp style={{color: '#5FBB5F'}}/>}
+            today={today.p}
+            yesterday={yesterday.p}
             isCurrentSeason={isCurrentSeason}
           />
           <TrendChanges
-            title='Favourites'
-            icon={<MdFavorite style={{color: '#BB5F5F'}}/>}
-            today={today.f}
-            yesterday={yesterday.f}
+            title='Downvotes'
+            icon={<MdThumbDown style={{color: '#BB5F5F'}}/>}
+            today={today.o}
+            yesterday={yesterday.o}
             isCurrentSeason={isCurrentSeason}
           />
         </div>
@@ -151,11 +152,11 @@ function TrendBody ({ data, start }) {
             tickLine={false}
             axisLine={false}
           />
-          {/* Mean Score */}
+          {/* Score */}
           <YAxis
-            yAxisId='1..20'
+            yAxisId='10..100'
             hide
-            domain={[1, 10]}
+            domain={[10, 100]}
             ticks={[0]}
             tickLine={false}
             axisLine={false}
@@ -173,6 +174,7 @@ function TrendBody ({ data, start }) {
             isAnimationActive={false}
             content={<TrendTooltip/>}
           />
+          {/* Downvotes */}
           <Line
             className='fade-line'
             yAxisId='0..max'
@@ -180,10 +182,11 @@ function TrendBody ({ data, start }) {
             dot={false}
             type='monotone'
             isAnimationActive={false}
-            dataKey='f'
+            dataKey='o'
             stroke='#BB5F5F'
             strokeWidth={0}
           />
+          {/* Upvotes */}
           <Line
             className='fade-line'
             yAxisId='0..max'
@@ -191,10 +194,11 @@ function TrendBody ({ data, start }) {
             dot={false}
             type='monotone'
             isAnimationActive={false}
-            dataKey='r'
+            dataKey='p'
             stroke='#5FBB5F'
             strokeWidth={1.5}
           />
+          {/* Total Users */}
           <Line
             className='fade-line'
             yAxisId='0..max'
@@ -206,13 +210,14 @@ function TrendBody ({ data, start }) {
             stroke='#5F5FBB'
             strokeWidth={1.5}
           />
+          {/* Wilson Score */}
           <Line
-            yAxisId='1..20'
+            yAxisId='10..100'
             activeDot={{ stroke: '#332532', strokeWidth: 2, r: 2 }}
             dot={false}
             type='monotone'
             isAnimationActive={false}
-            dataKey='m'
+            dataKey='w'
             stroke='#332532'
             strokeWidth={1.5}
           />
