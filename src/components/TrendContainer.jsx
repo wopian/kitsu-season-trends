@@ -178,7 +178,7 @@ function TrendBody ({ data, start }) {
           <Line
             className='fade-line'
             yAxisId='0..max'
-            activeDot={{ stroke: '#BB5F5F', strokeWidth: 0, r: 0 }}
+            activeDot={{ stroke: '#BB5F5F', strokeWidth: 2, r: 2 }}
             dot={false}
             type='monotone'
             isAnimationActive={false}
