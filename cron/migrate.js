@@ -26,8 +26,9 @@ readdir(dir, (err, files) => {
           // Migrate to upvotes/downvotes and wilson rating
           if (!day.p && !day.o) {
             if (day.r) {
-              const upvoted = Math.round(day.r * (day.w / 100) * 100) / 100
-              const downvoted = Math.round(day.r * ((100 - day.w) / 100) * 100) / 100
+              const rating = day.m * 10
+              const upvoted = Math.round(day.r * (rating / 100) * 100) / 100
+              const downvoted = Math.round(day.r * ((100 - rating) / 100) * 100) / 100
 
               day.w = decToPercent(wilson(upvoted, downvoted, 1.96))
               day.a = decToPercent(average(upvoted, downvoted))
