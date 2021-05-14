@@ -35,3 +35,31 @@ jobs:
 
     - name: Build SPA
       run: yarn build:ci
+
+  checkDeployNeeded:
+    name: Check Deploy is Needed
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Check for changes
+      uses: netlify/actions/diff-includes@6c34c3fcafc69ac2e1d6dbf226560329c6dfc51b
+      with:
+        args: src,data,dist
+        
+  deploy:
+    name: Deploy SPA
+    runs-on: ubuntu-latest
+    needs: checkDeployNeeded
+    
+    steps:
+    - name: Publish SPA
+      uses: netlify/actions/cli@6c34c3fcafc69ac2e1d6dbf226560329c6dfc51b
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      with:
+        args: deploy --dir=dist --prod
+      
