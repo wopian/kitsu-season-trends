@@ -184,7 +184,7 @@ function TrendBody ({ data, start }) {
             isAnimationActive={false}
             dataKey='o'
             stroke='#BB5F5F'
-            strokeWidth={0}
+            strokeWidth={1.5}
           />
           {/* Upvotes */}
           <Line
