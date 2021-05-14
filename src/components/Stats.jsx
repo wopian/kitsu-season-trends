@@ -193,8 +193,8 @@ export function StatsAverage ({ data }) {
             axisLine={false}
             dataKey='date'
           />
-          <Line isAnimationActive={false} stackId='1' type='monotone' dataKey='Leftovers' strokeWidth={2} stroke={COLOURS[1]} dot={false} unit='%'/>
           <Line isAnimationActive={false} stackId='2' type='monotone' dataKey='New' strokeWidth={2} stroke={COLOURS[0]} dot={false} unit='%'/>
+          <Line isAnimationActive={false} stackId='1' type='monotone' dataKey='Leftovers' strokeWidth={2} stroke={COLOURS[1]} dot={false} unit='%'/>
           <Legend iconType='rect' height={36}/>
         </LineChart>
       </ResponsiveContainer>
