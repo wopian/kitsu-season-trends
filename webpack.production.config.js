@@ -106,8 +106,8 @@ module.exports = {
       skipWaiting: true,
       // dontCacheBustURLsMatching: /\.\w{8}\./,
       inlineWorkboxRuntime: false,
-      directoryIndex: '/',
-      navigateFallback: '/',
+      directoryIndex: '/index.html',
+      navigateFallback: '/index.html',
       /*
       navigateFallbackAllowlist: [
         /\d{4}\/(?:autumn|spring|summer|winter)/
@@ -122,11 +122,12 @@ module.exports = {
         /(?:autumn|spring|summer|winter)\.json$/,
         /\.msgpack$/,
         /_headers$/,
-        /_redirects$/
+        /_redirects$/,
+        /\.txt$/
       ],
       runtimeCaching: [
         { // SPA Pages
-          urlPattern: /\d{4}\/(?:autumn|spring|summer|winter)/,
+          urlPattern: /\/\d{4}\/(?:autumn|spring|summer|winter)\/?/,
           handler: 'NetworkFirst'
         },
         { // Exported Data
