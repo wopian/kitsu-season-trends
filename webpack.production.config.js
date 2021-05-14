@@ -77,10 +77,10 @@ module.exports = {
     }),
     new ProgressiveManifest({
       name: 'Kitsu Season Trends',
-      short_name: 'Season Trend',
+      short_name: 'Kitsu Trends',
       description: 'Daily rating trends of seasonal anime',
       start_url: '.',
-      display: 'standalone',
+      display: 'minimal-ui',
       theme_color: '#332532',
       background_color: '#332532',
       crossorigin: 'anonymous',
@@ -95,6 +95,11 @@ module.exports = {
           ios: true
         }
       ],
+      categories: [ 'kitsu', 'anime', 'utilities'],
+      lang: 'en-GB',
+      orientation: 'any',
+      prefer_related_applications: false,
+      scope: 'https://season.moe',
       inject: true,
       fingerprints: false,
       ios: true
