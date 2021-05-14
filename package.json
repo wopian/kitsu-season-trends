@@ -5,9 +5,8 @@
   "scripts": {
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.production.config.js --progress",
     "build:webpack-ci": "cross-env NODE_ENV=production webpack --config webpack.production.config.js",
-    "build:rename": "node webpack.rename",
-    "build": "yarn build:webpack && yarn build:rename",
-    "build:ci": "yarn build:webpack-ci && yarn build:rename",
+    "build": "yarn build:webpack",
+    "build:ci": "yarn build:webpack-ci",
     "start": "webpack serve",
     "lint": "eslint --ext js --ext jsx src",
     "cron": "node cron/index.mjs"

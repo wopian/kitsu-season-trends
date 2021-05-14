@@ -6,7 +6,7 @@ var Html = require('html-webpack-plugin')
 var ResourceHints = require('resource-hints-webpack-plugin')
 var MiniCssExtract = require('mini-css-extract-plugin')
 var Copy = require('copy-webpack-plugin')
-var OptimizeCSS = require('css-minimizer-webpack-plugin')
+var CssMinimizer = require('css-minimizer-webpack-plugin')
 var ProgressiveManifest = require('webpack-pwa-manifest')
 var { GenerateSW } = require('workbox-webpack-plugin')
 var { encode } = require('msgpack-lite/lib/encode')
@@ -102,7 +102,7 @@ module.exports = {
       cleanupOutdatedCaches: true,
       clientsClaim: true,
       skipWaiting: true,
-      //  dontCacheBustURLsMatching: '/\.\w{8}\./',
+      dontCacheBustURLsMatching: /\.\w{8}\./,
       inlineWorkboxRuntime: false,
       navigateFallback: '/',
       swDest: 'service-worker.js',
@@ -110,6 +110,7 @@ module.exports = {
         /\.map$/,
         /asset-manifest\.json$/,
         /\.json5$/,
+        /(?:autumn|spring|summer|winter)\.json$/,
         /\.msgpack$/,
         /_headers$/,
         /_redirects$/
@@ -132,7 +133,7 @@ module.exports = {
     emitOnErrors: true,
     minimize: true,
     minimizer: [
-      ...new OptimizeCSS({
+      new CssMinimizer({
         minimizerOptions: {
           preset: [
             'default',
