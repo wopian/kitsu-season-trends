@@ -3,8 +3,10 @@ import { api, store, checkExists, error } from '../../util/index.mjs'
 
 function getExisting (id) {
   return api.get('anime', {
-    fields: { anime: API_ANIME_FIELD },
-    filter: { id }
+    params: {
+      fields: { anime: API_ANIME_FIELD },
+      filter: { id }
+    }
   })
 }
 

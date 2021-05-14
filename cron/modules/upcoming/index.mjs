@@ -3,10 +3,12 @@ import { api, checkExists, error } from '../../util/index.mjs'
 
 function getUpcoming (offset) {
   return api.get('anime', {
-    fields: { anime: API_ANIME_FIELD },
-    sort: API_SORT,
-    page: { offset, limit: RANGE },
-    filter: { subtype: 'tv,ona', status: 'upcoming', season_year: YEAR, season: USSEASON }
+    params: {
+      fields: { anime: API_ANIME_FIELD },
+      sort: API_SORT,
+      page: { offset, limit: RANGE },
+      filter: { subtype: 'tv,ona', status: 'upcoming', season_year: YEAR, season: USSEASON }
+    }
   })
 }
 

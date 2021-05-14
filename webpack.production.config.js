@@ -6,21 +6,15 @@ var Html = require('html-webpack-plugin')
 var ResourceHints = require('resource-hints-webpack-plugin')
 var MiniCssExtract = require('mini-css-extract-plugin')
 var Copy = require('copy-webpack-plugin')
-var OptimizeCSS = require('optimize-css-assets-webpack-plugin')
-var Terser = require('terser-webpack-plugin')
+var OptimizeCSS = require('css-minimizer-webpack-plugin')
 var ProgressiveManifest = require('webpack-pwa-manifest')
-var SWPrecache = require('sw-precache-webpack-plugin')
-var { CleanWebpackPlugin } = require('clean-webpack-plugin')
+var { GenerateSW } = require('workbox-webpack-plugin')
 var { encode } = require('msgpack-lite/lib/encode')
 var { readFileSync } = require('fs')
 
 rules.push({
   test: /\.styl$/,
-  use: [
-    MiniCssExtract.loader,
-    'css-loader',
-    'stylus-loader'
-  ],
+  use: [MiniCssExtract.loader, 'css-loader', 'stylus-loader'],
   exclude: [/node_modules/]
 })
 
@@ -32,9 +26,8 @@ module.exports = {
   ],
   output: {
     publicPath: '/',
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].[contenthash:8].js'
-    // chunkFilename: '[name].[chunkhash].js'
+    filename: '[name].[contenthash:8].js',
+    clean: true
   },
   resolve: {
     extensions: ['.mjs', '.js', '.jsx']
@@ -42,57 +35,14 @@ module.exports = {
   module: {
     rules
   },
-  node: { Buffer: false },
   plugins: [
-    new CleanWebpackPlugin(),
-    new webpack.HashedModuleIdsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
       }
     }),
-    new webpack.NoEmitOnErrorsPlugin(),
     new MiniCssExtract({
       filename: '[name].[contenthash].css',
-    }),
-    new OptimizeCSS({
-      cssProcessorOptions: {
-        autoprefixer: true,
-        rawCache: true,
-        calc: true,
-        colormin: true,
-        convertValues: true,
-        discardComments: { removeAll: true },
-        discardDuplicates: true,
-        discardEmpty: true,
-        discardOverridden: true,
-        discardUnused: true, // May be unsafe
-        mergeIdents: true,
-        mergeLonghand: true,
-        mergeRules: true,
-        minifyFontValues: true,
-        minifyGradients: true,
-        minifyParams: true,
-        minifySelectors: true,
-        normalizeCharset: true,
-        normalizeDisplayValues: true,
-        normalizePositions: true,
-        normalizeRepeatStyle: true,
-        normalizeString: {
-          preferredQuote: 'single'
-        },
-        normalizeTimingFunctions: true,
-        normalizeUnicode: true,
-        normalizeUrl: true,
-        normalizeWhitespace: true,
-        orderedValues: true,
-        reduceIdents: true, // May be unsafe
-        reduceInitial: true,
-        reduceTransforms: true,
-        svgo: true,
-        uniqueSelectors: true,
-        zindex: true // May be unsafe
-      }
     }),
     new Html({
       template: './src/template.html',
@@ -107,13 +57,13 @@ module.exports = {
     new Copy({
       patterns: [
         {
-          from: 'data',
-          to: 'data',
+          from: 'data/*.json5',
+          to: 'data/[name].json',
           transform: (content, file) => JSON.stringify(JSON5.parse(readFileSync(file, 'utf8')))
         },
         {
-          from: 'data',
-          to: 'msgpack',
+          from: 'data/*.json5',
+          to: 'msgpack/[name].msgpack',
           transform: (content, file) => encode(JSON5.parse(readFileSync(file, 'utf8')))
         },
         {
@@ -147,13 +97,16 @@ module.exports = {
       fingerprints: false,
       ios: true
     }),
-    new SWPrecache({
+    new GenerateSW({
       cacheId: 'kitsu-season-trends',
-      dontCacheBustUrlsMatching: /\.\w{8}\./,
-      filename: 'service-worker.js',
-      minify: true,
+      cleanupOutdatedCaches: true,
+      clientsClaim: true,
+      skipWaiting: true,
+      //  dontCacheBustURLsMatching: '/\.\w{8}\./',
+      inlineWorkboxRuntime: false,
       navigateFallback: '/',
-      staticFileGlobsIgnorePatterns: [
+      swDest: 'service-worker.js',
+      exclude: [
         /\.map$/,
         /asset-manifest\.json$/,
         /\.json5$/,
@@ -161,7 +114,7 @@ module.exports = {
         /_headers$/,
         /_redirects$/
       ]
-    }),
+    })
   ],
   optimization: {
     runtimeChunk: 'single',
@@ -175,12 +128,59 @@ module.exports = {
         }
       }
     },
+    moduleIds: 'deterministic',
+    emitOnErrors: true,
+    minimize: true,
     minimizer: [
-      new Terser({
-        parallel: true,
-        cache: true,
-        extractComments: () => {}
+      ...new OptimizeCSS({
+        minimizerOptions: {
+          preset: [
+            'default',
+            {
+              autoprefixer: true,
+              rawCache: true,
+              calc: true,
+              colormin: true,
+              convertValues: true,
+              discardComments: { removeAll: true },
+              discardDuplicates: true,
+              discardEmpty: true,
+              discardOverridden: true,
+              discardUnused: true, // May be unsafe
+              mergeIdents: true,
+              mergeLonghand: true,
+              mergeRules: true,
+              minifyFontValues: true,
+              minifyGradients: true,
+              minifyParams: true,
+              minifySelectors: true,
+              normalizeCharset: true,
+              normalizeDisplayValues: true,
+              normalizePositions: true,
+              normalizeRepeatStyle: true,
+              normalizeString: {
+                preferredQuote: 'single'
+              },
+              normalizeTimingFunctions: true,
+              normalizeUnicode: true,
+              normalizeUrl: true,
+              normalizeWhitespace: true,
+              orderedValues: true,
+              reduceIdents: true, // May be unsafe
+              reduceInitial: true,
+              reduceTransforms: true,
+              svgo: true,
+              uniqueSelectors: true,
+              zindex: true // May be unsafe
+            }
+          ]
+        }
       })
     ]
+  },
+  performance: {
+    assetFilter: assetFilename => !(
+      assetFilename.startsWith('data') || assetFilename.startsWith('msgpack')
+    )
   }
 }

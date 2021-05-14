@@ -1,15 +1,15 @@
-var webpack = require('webpack')
-var path = require('path')
-var rules = require('./webpack.rules')
+var JSON5 = require('json5')
 var Html = require('html-webpack-plugin')
 var Dashboard = require('webpack-dashboard/plugin')
+var Copy = require('copy-webpack-plugin')
 var MiniCssExtract = require('mini-css-extract-plugin')
-var history = require('connect-history-api-fallback')
-var convert = require('koa-connect')
+var { encode } = require('msgpack-lite/lib/encode')
+var { readFileSync } = require('fs')
+var rules = require('./webpack.rules')
 
 rules.push({
   test: /\.styl$/,
-  loaders: ['style-loader', 'css-loader?importLoaders=true', 'stylus-loader'],
+  use: ['style-loader', 'css-loader?importLoaders=true', 'stylus-loader'],
   exclude: [/node_modules/]
 })
 
@@ -22,8 +22,8 @@ module.exports = {
   devtool: process.env.WEBPACK_DEVTOOL || 'eval-source-map',
   output: {
     publicPath: '/',
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    clean: true
   },
   resolve: {
     extensions: ['.mjs', '.js', '.jsx']
@@ -31,12 +31,9 @@ module.exports = {
   module: {
     rules
   },
-  node: { Buffer: false },
   plugins: [
-    new webpack.NoEmitOnErrorsPlugin(),
     new MiniCssExtract({
-      filename: 'style.css',
-      allChunks: true
+      filename: 'style.css'
     }),
     new Dashboard(),
     new Html({
@@ -45,12 +42,22 @@ module.exports = {
         css: ['style.css'],
         js: [ "bundle.js"],
       }
+    }),
+    new Copy({
+      patterns: [
+        {
+          from: 'data/*.json5',
+          to: 'msgpack/[name].msgpack',
+          transform: (content, file) => encode(JSON5.parse(readFileSync(file, 'utf8')))
+        },
+      ]
     })
-  ]
-}
-
-module.exports.serve = {
-  add: app => {
-    app.use(convert(history({})))
+  ],
+  optimization: {
+    emitOnErrors: true
+  },
+  devServer: {
+    historyApiFallback: true,
+    hot: true
   }
 }

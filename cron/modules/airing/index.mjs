@@ -3,10 +3,12 @@ import { api, checkExists, startSeason, year, error } from '../../util/index.mjs
 
 function getAiring (offset) {
   return api.get('anime', {
-    fields: { anime: API_ANIME_FIELD },
-    sort: API_SORT,
-    page: { offset, limit: RANGE },
-    filter: { subtype: 'tv,ona', status: 'current' }
+    params: {
+      fields: { anime: API_ANIME_FIELD },
+      sort: API_SORT,
+      page: { offset, limit: RANGE },
+      filter: { subtype: 'tv,ona', status: 'current' }
+    }
   })
 }
 
