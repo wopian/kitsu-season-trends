@@ -43,4 +43,4 @@ jobs:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
       with:
-        args: deploy --dir=dist --prod --message "Deployed ${{ github.sha }} from ${{ github.ref }} via GitHub Actions"
+        args: deploy --dir=dist --prod --message="Deployed ${{ github.sha }} from ${{ github.ref }} via GitHub Actions"
