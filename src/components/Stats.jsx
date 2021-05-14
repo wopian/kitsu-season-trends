@@ -179,7 +179,7 @@ export function StatsAverage ({ data }) {
             type='number'
             tickLine={false}
             axisLine={false}
-            domain={[20, 80]}
+            domain={[20, 90]}
             ticks={[20, 40, 60, 80]}
             allowDataOverflow={true}
             unit='%'
