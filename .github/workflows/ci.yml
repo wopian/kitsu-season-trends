@@ -61,7 +61,7 @@ jobs:
     - name: Check for changes
       uses: netlify/actions/diff-includes@6c34c3fcafc69ac2e1d6dbf226560329c6dfc51b
       with:
-        args: src,data,dist
+        args: dist
 
   deploy:
     name: Deploy SPA
