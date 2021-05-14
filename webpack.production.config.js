@@ -107,6 +107,7 @@ module.exports = {
       // dontCacheBustURLsMatching: /\.\w{8}\./,
       inlineWorkboxRuntime: false,
       navigateFallback: '/',
+      navigationPreload: true,
       swDest: 'service-worker.js',
       exclude: [
         /\.map$/,
@@ -119,8 +120,13 @@ module.exports = {
       ],
       runtimeCaching: [
         {
-          urlPattern: /\/$/,
-          handler: 'NetworkFirst'
+          urlPattern: ({ request }) => request.mode === 'navigate',
+          handler: 'NetworkOnly',
+          options: {
+            precacheFallback: {
+              fallbackURL: '/'
+            }
+          }
         }
       ]
     })
