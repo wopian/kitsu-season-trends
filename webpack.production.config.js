@@ -104,7 +104,7 @@ module.exports = {
       cleanupOutdatedCaches: true,
       clientsClaim: true,
       skipWaiting: true,
-      dontCacheBustURLsMatching: /\.\w{8}\./,
+      // dontCacheBustURLsMatching: /\.\w{8}\./,
       inlineWorkboxRuntime: false,
       navigateFallback: '/',
       swDest: 'service-worker.js',
@@ -113,9 +113,15 @@ module.exports = {
         /asset-manifest\.json$/,
         /\.json5$/,
         /(?:autumn|spring|summer|winter)\.json$/,
-        /\.msgpack$/,
+        // /\.msgpack$/,
         /_headers$/,
         /_redirects$/
+      ],
+      runtimeCaching: [
+        {
+          urlPattern: /\/$/,
+          handler: 'NetworkFirst'
+        }
       ]
     })
   ],
