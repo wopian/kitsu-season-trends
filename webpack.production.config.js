@@ -106,7 +106,13 @@ module.exports = {
       skipWaiting: true,
       // dontCacheBustURLsMatching: /\.\w{8}\./,
       inlineWorkboxRuntime: false,
+      directoryIndex: '/',
       navigateFallback: '/',
+      /*
+      navigateFallbackAllowlist: [
+        /\d{4}\/(?:autumn|spring|summer|winter)/
+      ],
+      */
       navigationPreload: true,
       swDest: 'service-worker.js',
       exclude: [
@@ -114,19 +120,18 @@ module.exports = {
         /asset-manifest\.json$/,
         /\.json5$/,
         /(?:autumn|spring|summer|winter)\.json$/,
-        // /\.msgpack$/,
+        /\.msgpack$/,
         /_headers$/,
         /_redirects$/
       ],
       runtimeCaching: [
-        {
-          urlPattern: ({ request }) => request.mode === 'navigate',
-          handler: 'NetworkOnly',
-          options: {
-            precacheFallback: {
-              fallbackURL: '/'
-            }
-          }
+        { // SPA Pages
+          urlPattern: /\d{4}\/(?:autumn|spring|summer|winter)/,
+          handler: 'NetworkFirst'
+        },
+        { // Exported Data
+          urlPattern: /\.msgpack$/,
+          handler: 'NetworkFirst'
         }
       ]
     })
