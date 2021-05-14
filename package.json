@@ -76,7 +76,7 @@
     "webpack-dashboard": "~3.3.0",
     "webpack-dev-server": "~3.11.0",
     "webpack-pwa-manifest": "~4.3.0",
-    "weighted-mean": "~1.0.2"
+    "wilson-rate": "~1.0.2"
   },
   "renovate": {
     "extends": [

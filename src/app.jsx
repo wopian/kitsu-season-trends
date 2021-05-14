@@ -64,9 +64,12 @@ function getData (year = y(), season = s()) {
 
       for (let date in data[show].d) {
         // Add 0 values
-        if (!data[show].d[date].r) data[show].d[date].r = 0
+        if (!data[show].d[date].p) data[show].d[date].p = 0
+        if (!data[show].d[date].o) data[show].d[date].o = 0
         if (!data[show].d[date].u) data[show].d[date].u = 0
-        if (!data[show].d[date].f) data[show].d[date].f = 0
+        if (!data[show].d[date].w) data[show].d[date].w = 0
+        if (!data[show].d[date].a) data[show].d[date].a = 0
+        if (!data[show].d[date].m) data[show].d[date].m = 0
 
         // Convert hours since epoch into milliseconds
         data[show].d[date].d = data[show].d[date].d * 36e5
@@ -78,7 +81,7 @@ function getData (year = y(), season = s()) {
     }
   })
   .then(() => {
-    sortData({ by: 'm', update: false })
+    sortData({ by: 'w', update: false })
     thisApp.forceUpdate()
   })
   .catch(e => {
@@ -99,7 +102,7 @@ function SortButton ({ by, label }) {
 }
 
 SortButton.propTypes = {
-  by: PropTypes.oneOf([ 'm', 'u', 'r', 'f' ]),
+  by: PropTypes.oneOf([ 'w', 'p', 'o', 'u' ]),
   label: PropTypes.string
 }
 
@@ -123,10 +126,10 @@ function Bar () {
       <div>
         <div className='bar-sorts'>
           <span>Sort</span>
-          <SortButton by='m' label='Score'/>
+          <SortButton by='w' label='Rating'/>
+          <SortButton by='p' label='Upvotes'/>
+          <SortButton by='o' label='Downvotes'/>
           <SortButton by='u' label='Users'/>
-          <SortButton by='r' label='% Rated'/>
-          <SortButton by='f' label='Favourites'/>
         </div>
         <div className='bar-filters'>
           <span>Filter</span>
@@ -135,7 +138,7 @@ function Bar () {
           <FilterButton filter='new' label='New'/>
           <FilterButton filter='old' label='Leftovers'/>
         </div>
-        <span className='info'>Airing anime this season, updated {updated ? fromNow(updated, { max: 1, suffix: true }) : 'daily'}</span>
+        <span className='info'>Airing anime during this season, updated {updated ? fromNow(updated, { max: 1, suffix: true }) : 'daily'}</span>
       </div>
     </div>
   )

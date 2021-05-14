@@ -1,8 +1,8 @@
 import { TIMESTAMP, SEASON, YEAR } from '../../constants/index.mjs'
-import { store, mean, doNotPrune, year, startSeason } from '../index.mjs'
+import { store, wilsonRating, doNotPrune, year, startSeason } from '../index.mjs'
 
 export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, userCount, favoritesCount, startDate }) {
-  const ratings = mean(ratingFrequencies)
+  const ratings = wilsonRating(ratingFrequencies)
   let currentlyAiring = false
 
   if (ratings.usersRated < 5) {
@@ -29,7 +29,11 @@ export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, u
         i: entry.d[entry.d.length - 1].i + 1 || 0, // Increment index
         d: ~~(TIMESTAMP / 36e5).toFixed(0) // Hours since epoch
       },
-      ~~ratings.usersRated === 0 ? '' : { m: ratings.mean },
+      ~~ratings.usersRated === 0 ? '' : { w: ratings.wilson },
+      ~~ratings.usersRated === 0 ? '' : { a: ratings.average },
+      ~~ratings.usersRated === 0 ? '' : { m: ratings.mid },
+      ~~ratings.usersRated === 0 ? '' : { p: ratings.upvotes },
+      ~~ratings.usersRated === 0 ? '' : { o: ratings.downvotes },
       ~~ratings.usersRated === 0 ? '' : { r: ~~ratings.usersRated },
       ~~userCount === 0 ? '' : { u: ~~userCount },
       ~~favoritesCount === 0 ? '' : { f: ~~favoritesCount }
@@ -46,7 +50,11 @@ export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, u
           i: 0, // Index
           d: ~~(TIMESTAMP / 36e5).toFixed(0) // Hours since epoch
         },
-        ~~ratings.usersRated === 0 ? '' : { m: ratings.mean },
+        ~~ratings.usersRated === 0 ? '' : { w: ratings.wilson },
+        ~~ratings.usersRated === 0 ? '' : { a: ratings.average },
+        ~~ratings.usersRated === 0 ? '' : { m: ratings.mid },
+        ~~ratings.usersRated === 0 ? '' : { p: ratings.upvotes },
+        ~~ratings.usersRated === 0 ? '' : { o: ratings.downvotes },
         ~~ratings.usersRated === 0 ? '' : { r: ~~ratings.usersRated },
         ~~userCount === 0 ? '' : { u: ~~userCount },
         ~~favoritesCount === 0 ? '' : { f: ~~favoritesCount }

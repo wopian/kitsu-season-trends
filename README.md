@@ -11,12 +11,14 @@
 
 ## Using the Data
 
-All the data is free to use and available in:
+All the data is free to use and available from:
 
 - JSON format in `./data` or online at `season.moe/data/{year}-{season}.json`
 - [MessagePack] format online at `season.moe/msgpack/{year}-{season}.msgpack`
 
 ## Data Format
+
+Property names are compressed to save storage space and bandwidth.
 
 ```js
 {
@@ -25,24 +27,28 @@ All the data is free to use and available in:
       i: 12, // Kitsu anime ID
       t: 'One Piece', // Canonical title
       u: 0, // Subtype (0: TV, 1: ONA)
-      n: 1, // 0: Leftover, 1: New
+      n: 0, // 0: Leftover, 1: New
       d: [ // Data array containing each daily update
         {
           i: 0, // Index
-          d: 416359, // Hours since epoch (x3600000 to get datetime)
-          m: 8.54,  // Mean score (omitted if 0)
-          r: 14030, // Users Rated (omitted if 0)
-          u: 25518, // Users (omitted if 0)
-          f: 2387, // Users Favourited (omitted if 0)
+          d: 450263, // Hours since epoch (x3600000 to get datetime)
+          w: 82.19, // Wilson's confidence level (0.95) out of 100 (omitted if 0)
+          a: 82.4, // Average of the total upvotes/downvotes out of 100 (omitted if 0)
+          m: 82.4, // Median of the total upvotes/downvotes  out of 100 (omitted if 0)
+          p: 100359.75, // Upvotes, ratings >= 3 out of 5, omitted if 0)
+          o: 21433.25, // Downvotes, ratings < 3 out of 5, omitted if 0)
+          r: 121793, // Users Rated (omitted if 0)
+          u: 186101, // Users (omitted if 0)
+          f: 6578, // Users Favourited (omitted if 0)
         }
       ]
     }
   ],
   meta: {
-    current: 65, // Total started airing this season
-    total: 277 // Total shows being tracked
+    current: 52, // Total started airing this season
+    total: 226 // Total shows being tracked
   }
-  updated: '2017-07-22T15:12:09.391Z' // ISO date of the last cron update
+  updated: '2021-05-13T23:03:55.841Z' // ISO date of the last cron update
 }
 ```
 
