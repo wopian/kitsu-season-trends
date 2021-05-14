@@ -8,6 +8,7 @@ var MiniCssExtract = require('mini-css-extract-plugin')
 var Copy = require('copy-webpack-plugin')
 var CssMinimizer = require('css-minimizer-webpack-plugin')
 var ProgressiveManifest = require('webpack-pwa-manifest')
+var Terser = require('terser-webpack-plugin')
 var { GenerateSW } = require('workbox-webpack-plugin')
 var { encode } = require('msgpack-lite/lib/encode')
 var { readFileSync } = require('fs')
@@ -30,7 +31,8 @@ module.exports = {
     clean: true
   },
   resolve: {
-    extensions: ['.mjs', '.js', '.jsx']
+    mainFields: ['module', 'main'],
+    extensions: ['.ts', '.tsx', '.mjs', '.js', '.jsx']
   },
   module: {
     rules
@@ -133,6 +135,10 @@ module.exports = {
     emitOnErrors: true,
     minimize: true,
     minimizer: [
+      new Terser({
+        parallel: true,
+        extractComments: () => {}
+      }),
       new CssMinimizer({
         minimizerOptions: {
           preset: [
