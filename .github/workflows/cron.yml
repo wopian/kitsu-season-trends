@@ -54,11 +54,11 @@ jobs:
         git commit -am 'chore: add data for ${{ steps.date.outputs.today }}'
         git push
 
-    - name: Deploy SPA
-      if: success() && github.ref == 'refs/heads/master'
-      uses: netlify/actions/cli@6c34c3fcafc69ac2e1d6dbf226560329c6dfc51b
-      env:
-        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+    - name: Trigger CI Workflow
+      if: success()
+      uses: peter-evans/repository-dispatch@v1
       with:
-        args: deploy --dir=dist --prod --message='Deployed ${{ github.sha }} via GitHub Actions'
+        token: ${{ secrets.GH_TOKEN }}
+        repository: ${{ github.repository }}
+        event-type: trigger-ci-workflow
+        client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'

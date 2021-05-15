@@ -1,6 +1,9 @@
 name: CI
 
-on: push
+on:
+  push:
+  repository_dispatch:
+    types: [trigger-ci-workflow]
 
 jobs:
   build:
@@ -12,7 +15,15 @@ jobs:
         node-version: [16]
 
     steps:
+    - name: Print GitHub event action
+      run: echo "${{ github.event.action }}"
+
     - uses: actions/checkout@v2
+      if: github.event.action == 'push'
+
+    - uses: actions/checkout@v2
+      if: github.event.action == 'repository_dispatch'
+      ref: ${{ github.event.client_payload.sha }}
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
