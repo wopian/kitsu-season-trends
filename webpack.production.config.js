@@ -2,6 +2,7 @@ var JSON5 = require('json5')
 var webpack = require('webpack')
 var path = require('path')
 var rules = require('./webpack.rules')
+var Dashboard = require('webpack-dashboard/plugin')
 var Html = require('html-webpack-plugin')
 var ResourceHints = require('resource-hints-webpack-plugin')
 var MiniCssExtract = require('mini-css-extract-plugin')
@@ -46,6 +47,7 @@ module.exports = {
     new MiniCssExtract({
       filename: '[name].[contenthash].css',
     }),
+    new Dashboard(),
     new Html({
       template: './src/template.html',
       inject: true,

@@ -7,7 +7,7 @@
     "build:webpack-ci": "cross-env NODE_ENV=production webpack --config webpack.production.config.js",
     "build": "yarn build:webpack",
     "build:ci": "yarn build:webpack-ci",
-    "start": "webpack serve",
+    "start": "webpack-dashboard -- webpack serve",
     "lint": "eslint --ext js --ext jsx src",
     "cron": "node cron/index.mjs"
   },
@@ -67,7 +67,7 @@
     "stylus-loader": "~6.0.0",
     "webpack": "~5.37.0",
     "webpack-cli": "~4.7.0",
-    "webpack-dashboard": "~3.3.0",
+    "webpack-dashboard": "~3.3.3",
     "webpack-dev-server": "~4.0.0-beta.3",
     "webpack-pwa-manifest": "~4.3.0",
     "wilson-rate": "~1.0.2",
