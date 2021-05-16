@@ -19,7 +19,7 @@ jobs:
       run: echo "${{ github.event.action }}"
 
     - uses: actions/checkout@v2
-      if: github.event.action == 'push'
+      if: github.event.action != 'repository_dispatch'
 
     - uses: actions/checkout@v2
       if: github.event.action == 'repository_dispatch'
