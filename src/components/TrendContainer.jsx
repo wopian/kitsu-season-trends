@@ -102,7 +102,7 @@ function TrendHeader ({ rank, id, newAnime, title, today, yesterday, isCurrentSe
             isPercent={true}
           />
           <TrendChanges
-            title='Users'
+            title='Users Rated'
             icon={<MdGroup style={{color: '#5F5FBB'}}/>}
             today={today.u}
             yesterday={yesterday.u}
