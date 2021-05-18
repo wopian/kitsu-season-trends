@@ -73,10 +73,16 @@ function getData (year = y(), season = s()) {
 
         // Convert hours since epoch into milliseconds
         data[show].d[date].d = data[show].d[date].d * 36e5
+
         // Get the oldest date value from data collection
         if (data[show].d[date].d < collectionStartDate) {
           collectionStartDate = data[show].d[date].d
         }
+
+        // FIX: Counter in JSON:API request for total users appears to be frozen in time as of May 2021
+        //      Use the total upvotes/downvotes as a temporary means of tracking the user growth
+        data[show].d[date].u = data[show].d[date].p + data[show].d[date].o
+        data[show].d[date].r = data[show].d[date].u
       }
     }
   })
