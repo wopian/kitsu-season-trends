@@ -133,9 +133,9 @@ function Bar () {
         <div className='bar-sorts'>
           <span>Sort</span>
           <SortButton by='w' label='Rating'/>
+          <SortButton by='u' label='Users Rated'/>
           <SortButton by='p' label='Upvotes'/>
           <SortButton by='o' label='Downvotes'/>
-          <SortButton by='u' label='Users'/>
         </div>
         <div className='bar-filters'>
           <span>Filter</span>
