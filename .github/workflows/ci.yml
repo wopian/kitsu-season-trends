@@ -5,6 +5,9 @@ on:
   repository_dispatch:
     types: [trigger-ci-workflow]
 
+env:
+  FORCE_COLOR: true
+
 jobs:
   build:
     name: Build SPA
