@@ -59,7 +59,7 @@ jobs:
         git config --global user.name '${{ secrets.GH_USERNAME }}'
         git config --global user.email '${{ secrets.GH_EMAIL }}'
         git add data/
-        git commit -amS 'chore: add data for ${{ steps.date.outputs.today }}'
+        git commit -S -am 'chore: add data for ${{ steps.date.outputs.today }}'
         git push
 
     - name: Trigger CI Workflow
