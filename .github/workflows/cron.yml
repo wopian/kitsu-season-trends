@@ -21,9 +21,9 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Configure GPG Key
-      run: echo -n "$GPG_PUBLIC_KEY" | gpg --import
+      run: echo -n "$GPG_KEY" | gpg --import
       env:
-        GPG_PUBLIC_KEY: ${{ secrets.GPG_PUBLIC_KEY }}
+        GPG_KEY: ${{ secrets.GPG_KEY }}
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
@@ -61,7 +61,7 @@ jobs:
         git config --global user.signingkey ${{ secrets.GPG_SIGNING_KEY }}
         git config --global commit.gpgsign true
         git add data/
-        git commit -s -am 'chore: add data for ${{ steps.date.outputs.today }}'
+        git commit -am 'chore: add data for ${{ steps.date.outputs.today }}'
         git push
 
     - name: Trigger CI Workflow
