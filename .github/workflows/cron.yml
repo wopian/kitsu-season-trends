@@ -61,7 +61,7 @@ jobs:
         git config --global user.signingkey ${{ secrets.GPG_SIGNING_KEY }}
         git config --global commit.gpgsign true
         git add data/
-        git commit -am 'chore: add data for ${{ steps.date.outputs.today }}'
+        git commit -s -am 'chore: add data for ${{ steps.date.outputs.today }}'
         git push
 
     - name: Trigger CI Workflow
