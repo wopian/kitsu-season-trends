@@ -39,7 +39,7 @@ Property names are compressed to save storage space and bandwidth.
           o: 21433.25, // Downvotes, ratings < 3 out of 5, omitted if 0)
           r: 121793, // Users Rated (omitted if 0)
           u: 186101, // Users (omitted if 0)
-          f: 6578, // Users Favourited (omitted if 0)
+          f: 6578 // Users Favourited (omitted if 0)
         }
       ]
     }
@@ -47,7 +47,7 @@ Property names are compressed to save storage space and bandwidth.
   meta: {
     current: 52, // Total started airing this season
     total: 226 // Total shows being tracked
-  }
+  },
   updated: '2021-05-13T23:03:55.841Z' // ISO date of the last cron update
 }
 ```
