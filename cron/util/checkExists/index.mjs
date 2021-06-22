@@ -5,7 +5,7 @@ export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, u
   const ratings = wilsonRating(ratingFrequencies)
   let currentlyAiring = false
 
-  if (ratings.usersRated < 5) {
+  if (ratings.usersRated < 1) {
     store.count.skipped.push(canonicalTitle)
     return
   }
