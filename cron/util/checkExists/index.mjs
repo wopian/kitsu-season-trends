@@ -1,8 +1,8 @@
 import { TIMESTAMP, SEASON, YEAR } from '../../constants/index.mjs'
-import { store, wilsonRating, doNotPrune, year, startSeason } from '../index.mjs'
+import { store, ratingStats, doNotPrune, year, startSeason } from '../index.mjs'
 
 export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, userCount, favoritesCount, startDate }) {
-  const ratings = wilsonRating(ratingFrequencies)
+  const ratings = ratingStats(ratingFrequencies)
   let currentlyAiring = false
 
   if (ratings.usersRated < 1) {
@@ -32,6 +32,7 @@ export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, u
       ~~ratings.usersRated === 0 ? '' : { w: ratings.wilson },
       ~~ratings.usersRated === 0 ? '' : { a: ratings.average },
       ~~ratings.usersRated === 0 ? '' : { m: ratings.mid },
+      ~~ratings.usersRated === 0 ? '' : { l: ratings.laplace },
       ~~ratings.usersRated === 0 ? '' : { p: ratings.upvotes },
       ~~ratings.usersRated === 0 ? '' : { o: ratings.downvotes },
       ~~ratings.usersRated === 0 ? '' : { r: ~~ratings.usersRated },
