@@ -35,7 +35,7 @@ Property names are compressed to save storage space and bandwidth.
           w: 82.19, // Wilson's confidence level (0.95) out of 100 (omitted if 0)
           a: 82.4, // Average of the total upvotes/downvotes out of 100 (omitted if 0)
           m: 82.4, // Median of the total upvotes/downvotes  out of 100 (omitted if 0)
-          l: 82.4 // Laplace smoothing out of 100 (omitted if 0)
+          l: 82.4, // Laplace smoothing out of 100 (omitted if 0)
           p: 100359.75, // Upvotes, ratings >= 3 out of 5, omitted if 0)
           o: 21433.25, // Downvotes, ratings < 3 out of 5, omitted if 0)
           r: 121793, // Users Rated (omitted if 0)
