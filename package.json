@@ -63,7 +63,7 @@
     "postcss": "^8.3.0",
     "react-hot-loader": "^4.13.0",
     "resource-hints-webpack-plugin": "~0.0.2",
-    "style-loader": "^2.0.0",
+    "style-loader": "^3.0.0",
     "stylus": "~0.54.5",
     "stylus-loader": "^6.1.0",
     "webpack": "^5.39.0",
