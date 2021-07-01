@@ -1,26 +1,31 @@
 import { store, log } from '../../util/index.mjs'
-import chalk from 'chalk'
+import { bold, gray, greenBright, blueBright, redBright, magentaBright } from 'colorette'
 
-const travis = process.env.TRAVIS
+function counterLabelColour (counter) {
+  const label = counter.toUpperCase()
+  switch(counter) {
+    case 'added':
+      return greenBright(label)
+    case 'updated':
+      return blueBright(label)
+    case 'skipped':
+      return magentaBright(label)
+    default:
+      return redBright(label)
+  }
+}
 
 export async function stats () {
   await Promise.all(Object.keys(store.count).map(async counter => {
     const count = store.count[counter].length
-    const counterColour = counter === 'added' ? 'greenBright'
-                        : counter === 'updated' ? 'blueBright'
-                        : counter === 'skipped' ? 'magentaBright'
-                        : 'redBright'
-    const counterLabel = counter.toUpperCase()
+    const counterLabel = counterLabelColour(counter)
 
-    if (travis && count > 0) log(`travis_fold:start:${counter}`)
-    if (count > 0) log(chalk`{bold.${counterColour} ${counterLabel}} ${count} anime`)
+    if (count > 0) log(`${bold(counterLabel)} ${count} anime`)
 
     store.count[counter]
       .sort((a, b) => a.localeCompare(b, 'en', {'sensitivity': 'base'}))
       .map(anime => {
-        log(chalk`  {gray ${anime}}`)
+        log(gray(`  ${anime}`))
       })
-
-    if (travis && count > 0) log(`travis_fold:end:${counter}`)
   }))
 }

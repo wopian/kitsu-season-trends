@@ -19,6 +19,7 @@ let data = []
 let sortedData = []
 let meta = {}
 let updated = ''
+let useLaplace = false
 let collectionStartDate = Number.MAX_SAFE_INTEGER
 let error = false
 let sortOrder = 'm'
@@ -56,7 +57,7 @@ function getData (year = y(), season = s()) {
   })
   .then(res => {
     const buffer = new Uint8Array(res);
-    ({ data, meta, updated } = decode(buffer))
+    ({ data, meta, updated, useLaplace } = decode(buffer))
 
     for (let show in data) {
       // 0: TV, 1: ONA, >1: ???
@@ -64,12 +65,12 @@ function getData (year = y(), season = s()) {
 
       for (let date in data[show].d) {
         // Add 0 values
-        if (!data[show].d[date].p) data[show].d[date].p = 0
-        if (!data[show].d[date].o) data[show].d[date].o = 0
-        if (!data[show].d[date].u) data[show].d[date].u = 0
-        if (!data[show].d[date].w) data[show].d[date].w = 0
-        if (!data[show].d[date].a) data[show].d[date].a = 0
-        if (!data[show].d[date].m) data[show].d[date].m = 0
+        if (!data[show].d[date].p) data[show].d[date].p = 0 // upvotes
+        if (!data[show].d[date].o) data[show].d[date].o = 0 // downvotes
+        if (!data[show].d[date].r) data[show].d[date].r = 0 // users rated
+        // Laplace from Summer 2021, Wilson before Summer 2021
+        if (useLaplace) data[show].d[date].w = data[show].d[date].l || 0
+        if (!useLaplace && !data[show].d[date].w) data[show].d[date].w = 0
 
         // Convert hours since epoch into milliseconds
         data[show].d[date].d = data[show].d[date].d * 36e5
@@ -78,11 +79,6 @@ function getData (year = y(), season = s()) {
         if (data[show].d[date].d < collectionStartDate) {
           collectionStartDate = data[show].d[date].d
         }
-
-        // FIX: Counter in JSON:API request for total users appears to be frozen in time as of May 2021
-        //      Use the total upvotes/downvotes as a temporary means of tracking the user growth
-        data[show].d[date].u = data[show].d[date].p + data[show].d[date].o
-        data[show].d[date].r = data[show].d[date].u
       }
     }
   })
@@ -108,7 +104,7 @@ function SortButton ({ by, label }) {
 }
 
 SortButton.propTypes = {
-  by: PropTypes.oneOf([ 'w', 'p', 'o', 'u' ]),
+  by: PropTypes.oneOf([ 'w', 'p', 'o', 'r' ]),
   label: PropTypes.string
 }
 
@@ -133,7 +129,7 @@ function Bar () {
         <div className='bar-sorts'>
           <span>Sort</span>
           <SortButton by='w' label='Rating'/>
-          <SortButton by='u' label='Users Rated'/>
+          <SortButton by='r' label='Users Rated'/>
           <SortButton by='p' label='Upvotes'/>
           <SortButton by='o' label='Downvotes'/>
         </div>

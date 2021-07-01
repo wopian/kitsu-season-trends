@@ -7,7 +7,8 @@ export let store = {
       current: 0,
       total: 0
     },
-    updated: ''
+    updated: '',
+    useLaplace: true
   },
   count: {
     updated: [],

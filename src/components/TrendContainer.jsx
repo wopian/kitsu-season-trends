@@ -104,8 +104,8 @@ function TrendHeader ({ rank, id, newAnime, title, today, yesterday, isCurrentSe
           <TrendChanges
             title='Users Rated'
             icon={<MdGroup style={{color: '#5F5FBB'}}/>}
-            today={today.u}
-            yesterday={yesterday.u}
+            today={today.r}
+            yesterday={yesterday.r}
             isCurrentSeason={isCurrentSeason}
           />
           <TrendChanges
@@ -206,11 +206,11 @@ function TrendBody ({ data, start }) {
             dot={false}
             type='monotone'
             isAnimationActive={false}
-            dataKey='u'
+            dataKey='r'
             stroke='#5F5FBB'
             strokeWidth={1.5}
           />
-          {/* Wilson Score */}
+          {/* Score */}
           <Line
             yAxisId='10..100'
             activeDot={{ stroke: '#332532', strokeWidth: 2, r: 2 }}

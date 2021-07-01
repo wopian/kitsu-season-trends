@@ -21,6 +21,7 @@
   "dependencies": {
     "@loadable/component": "~5.15.0",
     "classnames": "~2.3.0",
+    "colorette": "^1.2.2",
     "fromnow": "~3.0.0",
     "lodash": "~4.17.14",
     "prop-types": "~15.7.0",
@@ -47,7 +48,6 @@
     "@loadable/babel-plugin": "^5.13.0",
     "autoprefixer": "^10.2.0",
     "babel-loader": "^8.2.0",
-    "chalk": "^4.1.0",
     "client-oauth2": "^4.3.0",
     "copy-webpack-plugin": "^9.0.0",
     "cross-env": "^7.0.0",

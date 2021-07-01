@@ -1,4 +1,4 @@
-import { stars, wilson, average, mid } from 'wilson-rate'
+import { stars, wilson } from 'wilson-rate'
 
 function isBetween (rating, min, max) {
   return max
@@ -52,8 +52,6 @@ export function ratingStats (frequency) {
       downvotes,
       usersRated,
       wilson: decToPercent(wilson(upvotes, downvotes, 1.96)),
-      average: decToPercent(average(upvotes, downvotes)),
-      mid: decToPercent(mid(upvotes, downvotes)),
       laplace: laplace(upvotes, downvotes)
     }
   } catch (E) {

@@ -1,7 +1,7 @@
 import { TIMESTAMP, SEASON, YEAR } from '../../constants/index.mjs'
 import { store, ratingStats, doNotPrune, year, startSeason } from '../index.mjs'
 
-export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, userCount, favoritesCount, startDate }) {
+export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, favoritesCount, startDate }) {
   const ratings = ratingStats(ratingFrequencies)
   let currentlyAiring = false
 
@@ -27,16 +27,13 @@ export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, u
     entry.d.push(Object.assign(
       {
         i: entry.d[entry.d.length - 1].i + 1 || 0, // Increment index
-        d: ~~(TIMESTAMP / 36e5).toFixed(0) // Hours since epoch
+        d: ~~(TIMESTAMP / 36e5).toFixed(0), // Hours since epoch
+        w: ratings.wilson,
+        l: ratings.laplace,
+        p: ratings.upvotes,
+        o: ratings.downvotes,
+        r: ~~ratings.usersRated
       },
-      ~~ratings.usersRated === 0 ? '' : { w: ratings.wilson },
-      ~~ratings.usersRated === 0 ? '' : { a: ratings.average },
-      ~~ratings.usersRated === 0 ? '' : { m: ratings.mid },
-      ~~ratings.usersRated === 0 ? '' : { l: ratings.laplace },
-      ~~ratings.usersRated === 0 ? '' : { p: ratings.upvotes },
-      ~~ratings.usersRated === 0 ? '' : { o: ratings.downvotes },
-      ~~ratings.usersRated === 0 ? '' : { r: ~~ratings.usersRated },
-      ~~userCount === 0 ? '' : { u: ~~userCount },
       ~~favoritesCount === 0 ? '' : { f: ~~favoritesCount }
     ))
   } else {
@@ -49,15 +46,13 @@ export function checkExists ({ ratingFrequencies, id, canonicalTitle, subtype, u
       d: [Object.assign(
         {
           i: 0, // Index
-          d: ~~(TIMESTAMP / 36e5).toFixed(0) // Hours since epoch
+          d: ~~(TIMESTAMP / 36e5).toFixed(0), // Hours since epoch
+          w: ratings.wilson,
+          l: ratings.laplace,
+          p: ratings.upvotes,
+          o: ratings.downvotes,
+          r: ~~ratings.usersRated
         },
-        ~~ratings.usersRated === 0 ? '' : { w: ratings.wilson },
-        ~~ratings.usersRated === 0 ? '' : { a: ratings.average },
-        ~~ratings.usersRated === 0 ? '' : { m: ratings.mid },
-        ~~ratings.usersRated === 0 ? '' : { p: ratings.upvotes },
-        ~~ratings.usersRated === 0 ? '' : { o: ratings.downvotes },
-        ~~ratings.usersRated === 0 ? '' : { r: ~~ratings.usersRated },
-        ~~userCount === 0 ? '' : { u: ~~userCount },
         ~~favoritesCount === 0 ? '' : { f: ~~favoritesCount }
       )]
     })

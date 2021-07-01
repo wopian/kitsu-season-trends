@@ -6,7 +6,7 @@ export const NOW = new Date().toISOString()
 export const TIMESTAMP = new Date(NOW).getTime()
 
 export const RANGE = 20
-export const API_ANIME_FIELD = 'canonicalTitle,ratingFrequencies,userCount,favoritesCount,subtype,startDate,endDate,status'
+export const API_ANIME_FIELD = 'canonicalTitle,ratingFrequencies,favoritesCount,subtype,startDate,endDate,status'
 export const API_SORT = '-averageRating,-userCount'
 
 export const SEASON = season()
