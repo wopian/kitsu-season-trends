@@ -22,10 +22,10 @@ jobs:
       run: echo "${{ github.event.action }}"
 
     - uses: actions/checkout@v2
-      if: github.event.action != 'repository_dispatch'
+      if: ${{ github.event.action != 'repository_dispatch' }}
 
     - uses: actions/checkout@v2
-      if: github.event.action == 'repository_dispatch'
+      if: ${{ github.event.action == 'repository_dispatch' }}
       with:
         ref: ${{ github.event.client_payload.sha }}
 
@@ -52,7 +52,7 @@ jobs:
       run: yarn build:ci
 
     - name: Deploy SPA
-      if: success() && github.ref == 'refs/heads/master'
+      if: success() && ${{ github.ref == 'refs/heads/master' }}
       uses: netlify/actions/cli@6c34c3fcafc69ac2e1d6dbf226560329c6dfc51b
       env:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
