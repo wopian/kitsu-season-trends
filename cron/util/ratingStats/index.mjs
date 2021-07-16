@@ -34,7 +34,7 @@ function decToPercent (decimal) {
 function laplace (upvotes, downvotes) {
   const totalVotes = upvotes + downvotes
   const α = 0
-  const β = 10
+  const β = 5
   const score = (upvotes + α) / (totalVotes + β)
 
   return decToPercent(score)
