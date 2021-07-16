@@ -1,5 +1,0 @@
-export * from './airing/index.mjs'
-export * from './existing/index.mjs'
-export * from './prune/index.mjs'
-export * from './stats/index.mjs'
-export * from './upcoming/index.mjs'

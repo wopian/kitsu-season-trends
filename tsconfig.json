@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM", "WebWorker"],
+    "types": [
+      "vite-plugin-pwa/client"
+    ]
+  },
+  "include": ["app/**/*.ts", "app/**/*.d.ts", "app/**/*.tsx", "app/**/*.vue"],
+  "rules": {
+    "semicolon": [true, "never"]
+  }
+}
