@@ -1,5 +1,5 @@
 import { store, log } from '../../util/index.mjs'
-import { bold, gray, greenBright, blueBright, redBright, magentaBright } from 'colorette'
+import { bold, gray, greenBright, blueBright, redBright, magentaBright } from 'picocolors'
 
 function counterLabelColour (counter) {
   const label = counter.toUpperCase()

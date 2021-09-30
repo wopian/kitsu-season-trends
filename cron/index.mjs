@@ -1,6 +1,6 @@
 import JSON5 from 'json5'
 import { access, readFile, writeFile } from 'fs'
-import { bold, green, gray } from 'colorette'
+import { bold, green, gray } from 'picocolors'
 import { store, initStore, log } from './util/index.mjs'
 import { updateAiring, updateExisting, updateUpcoming, prune, stats } from './modules/index.mjs'
 import { FILE, NOW, SEASON, YEAR } from './constants/index.mjs'

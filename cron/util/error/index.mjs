@@ -1,4 +1,4 @@
-import { bold, red, gray } from 'colorette'
+import { bold, red, gray } from 'picocolors'
 import { query } from 'kitsu-core'
 import { log } from '../index.mjs'
 
