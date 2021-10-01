@@ -1,17 +1,17 @@
 import { store, log } from '../../util/index.mjs'
-import { bold, gray, greenBright, blueBright, redBright, magentaBright } from 'picocolors'
+import { bold, gray, green, blue, red, magenta } from 'picocolors'
 
 function counterLabelColour (counter) {
   const label = counter.toUpperCase()
   switch(counter) {
     case 'added':
-      return greenBright(label)
+      return green(label)
     case 'updated':
-      return blueBright(label)
+      return blue(label)
     case 'skipped':
-      return magentaBright(label)
+      return magenta(label)
     default:
-      return redBright(label)
+      return red(label)
   }
 }
 
