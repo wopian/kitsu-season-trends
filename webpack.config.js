@@ -1,6 +1,5 @@
 var JSON5 = require('json5')
 var Html = require('html-webpack-plugin')
-var Dashboard = require('webpack-dashboard/plugin')
 var Copy = require('copy-webpack-plugin')
 var MiniCssExtract = require('mini-css-extract-plugin')
 var { encode } = require('msgpack-lite/lib/encode')
@@ -35,7 +34,6 @@ module.exports = {
     new MiniCssExtract({
       filename: 'style.css'
     }),
-    new Dashboard(),
     new Html({
       template: './src/template.html',
       files: {
