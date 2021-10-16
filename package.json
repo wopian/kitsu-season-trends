@@ -59,7 +59,7 @@
     "kitsu": "10.0.0-alpha.15",
     "mini-css-extract-plugin": "^2.4.2",
     "msgpack-lite": "^0.1.26",
-    "picocolors": "0.1.0",
+    "picocolors": "1.0.0",
     "postcss": "^8.3.0",
     "react-hot-loader": "^4.13.0",
     "resource-hints-webpack-plugin": "~0.0.2",
