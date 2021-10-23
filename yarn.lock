@@ -1925,10 +1925,10 @@ autoprefixer@^10.2.0:
     picocolors "^0.2.1"
     postcss-value-parser "^4.1.0"
 
-axios@^0.22.0:
-  version "0.22.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.22.0.tgz#bf702c41fb50fbca4539589d839a077117b79b25"
-  integrity sha512-Z0U3uhqQeg1oNcihswf4ZD57O3NrR1+ZXhxaROaWpDmsDTx7T2HNBV2ulBtie2hwJptu8UvgnJoK+BIqdzh/1w==
+axios@^0.23.0:
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.23.0.tgz#b0fa5d0948a8d1d75e3d5635238b6c4625b05149"
+  integrity sha512-NmvAE4i0YAv5cKq8zlDoPd1VLKAqX5oLuZKs8xkJa4qi6RGn0uhCYFjWtHHC9EM/MwOwYWOs53W+V0aqEXq1sg==
   dependencies:
     follow-redirects "^1.14.4"
 
@@ -3996,11 +3996,6 @@ is-path-inside@^3.0.2:
   resolved "https://registry.yarnpkg.com/is-path-inside/-/is-path-inside-3.0.3.tgz#d231362e53a07ff2b0e0ea7fed049161ffd16283"
   integrity sha512-Fd4gABb+ycGAmKou8eMftCupSir5lRxqf4aD/vd0cD2qc4HL07OjCeuHMr8Ro4CoMaeCKDB0/ECBOVWjTwUvPQ==
 
-is-plain-obj@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-2.1.0.tgz#45e42e37fccf1f40da8e5f76ee21515840c09287"
-  integrity sha512-YWnfyRwxL/+SsrWYfOpUtz5b3YD+nyfkHvjbcanzk8zgyO4ASD67uVMRt8k5bM4lLMDnXfriRhOpemw+NfT1eA==
-
 is-plain-obj@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-3.0.0.tgz#af6f2ea14ac5a646183a5bbdb5baabbc156ad9d7"
@@ -4219,19 +4214,18 @@ kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
-kitsu-core@^10.0.0-alpha.15:
-  version "10.0.0-alpha.15"
-  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-10.0.0-alpha.15.tgz#68bd619e2414df9afdd4ebd93c11e9249e5e3bd7"
-  integrity sha512-FReGREJ+2mT4+oT7Xr4DbJHvIZeS2n0Zj9x2cAMv+qAalQCFWgCLDMAes1kZBeToY8Nqd1rwoXyxJz8+7AqLYg==
+kitsu-core@^10.0.0-alpha.17:
+  version "10.0.0-alpha.17"
+  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-10.0.0-alpha.17.tgz#9e4987444a25f9daf9b59c013de7b205363ca694"
+  integrity sha512-traOc8ppMl1xPIpLHmz/qan+YulO9ZIlcrQyDF3m0WB6V3HpRcWtmNmVT/FdLgGIPUtBrPsei6oVDwTZ/jVN9g==
 
-kitsu@10.0.0-alpha.15:
-  version "10.0.0-alpha.15"
-  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-10.0.0-alpha.15.tgz#506828a3d32e6dafe5d6077319c288084e9e1781"
-  integrity sha512-zKArSgrI4LW7Ta4+0I9XheNmX1CVzPAVMNGAy7CeP4ZtyEtq6mf3XIargntCRQEyGY6mYBo4ftNo6vo2a7g8YQ==
+kitsu@10.0.0-alpha.17:
+  version "10.0.0-alpha.17"
+  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-10.0.0-alpha.17.tgz#c2d15dd9139680077c67eea91490da234152e0d2"
+  integrity sha512-w0HmgYPtOPTFeoQ/8J4MQUPgQxbv2P/elYx6VvUHsXKmM1XvR/b714xfdWe5/TJy3mH7jERso9n7JtPVgnlIzA==
   dependencies:
-    axios "^0.22.0"
-    kitsu-core "^10.0.0-alpha.15"
-    merge-options "^3.0.0"
+    axios "^0.23.0"
+    kitsu-core "^10.0.0-alpha.17"
     pluralize "^8.0.0"
 
 klona@^2.0.4:
@@ -4419,13 +4413,6 @@ merge-descriptors@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
   integrity sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=
-
-merge-options@^3.0.0:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/merge-options/-/merge-options-3.0.4.tgz#84709c2aa2a4b24c1981f66c179fe5565cc6dbb7"
-  integrity sha512-2Sug1+knBjkaMsMgf1ctR1Ujx+Ayku4EdJN4Z+C2+JzoeF7A3OZ9KM2GY0CpQS51NR61LTurMJrRKPhSs3ZRTQ==
-  dependencies:
-    is-plain-obj "^2.1.0"
 
 merge-stream@^2.0.0:
   version "2.0.0"
