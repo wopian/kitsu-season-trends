@@ -4,8 +4,6 @@
 [![uptime badge]][web]
 [![contributors badge]][contributors]
 [![actions badge]][actions]
-[![david badge]][david]
-[![david dev badge]][david dev]
 
 [Kitsu] season trends for the currently airing anime
 
@@ -102,12 +100,6 @@ All code released under the [MIT] license
 [web]:https://season.moe
 [web badge]:https://flat.badgen.net/uptime-robot/status/m779133972-4da0d8f104f1d6ffaf921257
 [uptime badge]:https://flat.badgen.net/uptime-robot/month/m779133972-4da0d8f104f1d6ffaf921257
-
-[david]:https://david-dm.org/wopian/kitsu-season-trends
-[david badge]:https://flat.badgen.net/david/dep/wopian/kitsu-season-trends
-
-[david dev]:https://david-dm.org/wopian/kitsu-season-trends?type=dev
-[david dev badge]:https://flat.badgen.net/david/dev/wopian/kitsu-season-trends
 
 [actions]:https://github.com/wopian/kitsu-season-trends/actions/workflows/ci.yml
 [actions badge]:https://flat.badgen.net/github/checks/wopian/kitsu-season-trends/master/ci
