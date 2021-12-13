@@ -4221,18 +4221,18 @@ kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
-kitsu-core@^10.0.0-alpha.18:
-  version "10.0.0-alpha.18"
-  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-10.0.0-alpha.18.tgz#ba0e791a48901d5c7da5fa42a493951e879df159"
-  integrity sha512-RLm4YPFRHhBTdRoXOrR5K50+DVbQFuAo8n+oESFzamfGw9JafEsAoVorPZEw9XJ8sj6Pskvn14M/Qxd4cU/bmw==
+kitsu-core@^10.0.0-alpha.19:
+  version "10.0.0-alpha.19"
+  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-10.0.0-alpha.19.tgz#62698bc2df4bd7f4d873ed93a6f673effd112181"
+  integrity sha512-zpWBiVz7hjD4958JIbu0XdNe+PklxoRea5rh4zz197w9DufRe5OIZ5oSs61iDHXhjI7LUilo9NvWMbfaJyWB3w==
 
-kitsu@10.0.0-alpha.18:
-  version "10.0.0-alpha.18"
-  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-10.0.0-alpha.18.tgz#f1744090e3cc65f226eb8197a553535d6b5a848c"
-  integrity sha512-9RWiwoIAciTv6bnmJHP8SDp3pKbH/J0JTWHzODN0uaYK838tZlxpR94TiXbEGk8A1PRXMd1N9vJPDyqomsx8pg==
+kitsu@10.0.0-alpha.19:
+  version "10.0.0-alpha.19"
+  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-10.0.0-alpha.19.tgz#c935a4a7b4511c186aba0ac590dee19d8907e83e"
+  integrity sha512-klGBasazkWPyhIFSxBhFb9zAGKu4XBQQbd3oS6v1R4wWm0tnr/EDCflexMDF+tWovxo9Zw95ZSICZOqomGZ/UA==
   dependencies:
     axios "^0.24.0"
-    kitsu-core "^10.0.0-alpha.18"
+    kitsu-core "^10.0.0-alpha.19"
     pluralize "^8.0.0"
 
 klona@^2.0.4:
