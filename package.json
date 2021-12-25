@@ -23,7 +23,7 @@
     "classnames": "~2.3.0",
     "fromnow": "~3.0.0",
     "lodash": "~4.17.14",
-    "prop-types": "~15.7.0",
+    "prop-types": "~15.8.0",
     "react": "~17.0.0",
     "react-dom": "~17.0.0",
     "react-ga": "~3.3.0",
