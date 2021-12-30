@@ -2,6 +2,7 @@
   "name": "kitsu-season-trends",
   "version": "1.0.0",
   "description": "Kitsu seasonal anime trends",
+  "type": "module",
   "scripts": {
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.production.config.js --progress",
     "build:webpack-ci": "cross-env NODE_ENV=production webpack --config webpack.production.config.js",
@@ -71,7 +72,8 @@
     "webpack-dev-server": "~4.7.0",
     "webpack-pwa-manifest": "^4.3.0",
     "wilson-rate": "^1.0.2",
-    "workbox-webpack-plugin": "^6.1.5"
+    "workbox-webpack-plugin": "^6.1.5",
+    "yocto-queue": "^1.0.0"
   },
   "renovate": {
     "extends": [
