@@ -1,29 +1,33 @@
-import JSON5 from 'json5'
-import { access, readFile, writeFile } from 'fs'
-import { bold, green, gray } from 'picocolors'
-import { store, initStore, log } from './util/index.mjs'
-import { updateAiring, updateExisting, updateUpcoming, prune, stats } from './modules/index.mjs'
-import { FILE, NOW, SEASON, YEAR } from './constants/index.mjs'
+import { currentTime, log } from './utils/index.mjs'
+import { tasks, read, addToQueue, batchFetchExisting, fetchNew, processData, write } from './modules/index.mjs'
+import { TYPE } from './constants.mjs'
 
-access(FILE, async err => {
-  if (!err) await readFile(FILE, 'utf8', async (readError, res) => {
-    if (readError) throw readError
-    await initStore(res)
-    log(`${bold(green('LOADED'))} ${SEASON} ${YEAR} season data from ${gray(FILE)}`)
-  })
+await Promise.allSettled([
+  read(tasks[TYPE.CURRENT]),
+  read(tasks[TYPE.PREVIOUS])
+])
 
-  await updateAiring()
-  await updateUpcoming()
-  await updateExisting()
-  await prune()
-  await stats()
+await Promise.allSettled([
+  addToQueue(TYPE.CURRENT, tasks),
+  addToQueue(TYPE.PREVIOUS, tasks),
+])
 
-  store.data.meta.current = await store.currentlyAiring.length
-  store.data.meta.total = await store.data.data.length
-  store.data.updated = NOW
+await Promise.allSettled([
+  fetchNew(TYPE.CURRENT, 'current'),
+  fetchNew(TYPE.CURRENT, 'upcoming')
+])
 
-  await writeFile(FILE, JSON5.stringify(store.data, { space: 1 }), writeError => {
-    if (writeError) throw writeError
-    log(`${bold(green('SAVED'))} ${SEASON} ${YEAR} season data to ${gray(FILE)}`)
-  })
-})
+await Promise.allSettled([
+  batchFetchExisting(TYPE.SHARED),
+  batchFetchExisting(TYPE.CURRENT),
+  batchFetchExisting(TYPE.PREVIOUS)
+])
+
+await processData()
+
+await Promise.allSettled([
+  write(tasks[TYPE.CURRENT]),
+  write(tasks[TYPE.PREVIOUS])
+])
+
+log('info', `Finished processing at ${currentTime()}`)

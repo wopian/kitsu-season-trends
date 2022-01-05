@@ -2,7 +2,6 @@
   "name": "kitsu-season-trends",
   "version": "1.0.0",
   "description": "Kitsu seasonal anime trends",
-  "type": "module",
   "scripts": {
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.production.config.js --progress",
     "build:webpack-ci": "cross-env NODE_ENV=production webpack --config webpack.production.config.js",
@@ -47,12 +46,14 @@
     "@babel/runtime": "^7.14.0",
     "@loadable/babel-plugin": "^5.13.0",
     "autoprefixer": "^10.2.0",
+    "axios-request-throttle": "^1.0.0",
     "babel-loader": "^8.2.0",
     "client-oauth2": "^4.3.0",
     "copy-webpack-plugin": "^9.0.0",
     "cross-env": "^7.0.0",
     "css-loader": "^6.0.0",
     "css-minimizer-webpack-plugin": "^3.0.0",
+    "date-fns": "^2.28.0",
     "eslint": "^8.0.0",
     "eslint-config-wopian-react": "^3.0.0",
     "html-webpack-plugin": "^5.3.0",
@@ -60,7 +61,6 @@
     "kitsu": "10.0.0-alpha.19",
     "mini-css-extract-plugin": "^2.4.2",
     "msgpack-lite": "^0.1.26",
-    "picocolors": "0.1.0",
     "postcss": "^8.3.0",
     "react-hot-loader": "^4.13.0",
     "resource-hints-webpack-plugin": "~0.0.2",
@@ -73,7 +73,8 @@
     "webpack-pwa-manifest": "^4.3.0",
     "wilson-rate": "^1.0.2",
     "workbox-webpack-plugin": "^6.1.5",
-    "yocto-queue": "^1.0.0"
+    "yocto-queue": "^1.0.0",
+    "yoctocolors": "^0.2.0"
   },
   "renovate": {
     "extends": [
