@@ -19,13 +19,12 @@ export const fetchNew = async (type, status = 'current', offset = 0) => {
   const { data, links } = await getNew(status, offset).catch(({ message, config }) => console.error(message, config))
 
   await Promise.all(data.map(async entry => {
+    const entrySeason = currentSeason(entry.startDate)
     const types = new Set()
-    // const types = startsBeforeSeasonStart('current', entry.startDate, entry.id === '45252' ? entry.id : undefined) ? ['current', 'previous'] : [type]
+
     if (startsBeforeSeasonStart(type, entry.startDate)) {
       types.add('previous')
     }
-
-    const entrySeason = currentSeason(entry.startDate)
 
     if (currentSeason().year === entrySeason.year && currentSeason().season === entrySeason.season) {
       types.add('current')

@@ -14,7 +14,6 @@ export const addToQueue = (type, tasks) => {
   if (!tasks[type]?.data?.data) return
   log(type, 'Started adding entries to queue')
   for (const entry of tasks[type].data.data) {
-    // queue.ids.add(entry.i)
     if (
       (type === TYPE.CURRENT && tasks[TYPE.PREVIOUS]?.data?.data?.find(previous => previous.i === entry.i)) ||
       (type === TYPE.PREVIOUS && tasks[TYPE.CURRENT]?.data?.data?.find(current => current.i === entry.i))) {
