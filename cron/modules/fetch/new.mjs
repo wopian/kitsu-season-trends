@@ -1,5 +1,11 @@
-import { api, startsBeforeSeasonStart, finishedBeforeSeasonStart, currentSeason, log } from '../../utils/index.mjs'
-import { API_ANIME_FIELD, API_SORT, API_RANGE } from '../../constants.mjs'
+import { API_ANIME_FIELD, API_RANGE, API_SORT } from '../../constants.mjs'
+import {
+  api,
+  currentSeason,
+  finishedBeforeSeasonStart,
+  log,
+  startsBeforeSeasonStart
+} from '../../utils/index.mjs'
 import { queue } from '../index.mjs'
 
 const getNew = (status, offset) => {
@@ -14,31 +20,43 @@ const getNew = (status, offset) => {
 }
 
 export const fetchNew = async (type, status = 'current', offset = 0) => {
-  log(type, `Fetching request ${(Math.ceil(offset / API_RANGE)).toString().padStart(2)} for ${status}`)
+  log(
+    type,
+    `Fetching request ${Math.ceil(offset / API_RANGE)
+      .toString()
+      .padStart(2)} for ${status}`
+  )
 
-  const { data, links } = await getNew(status, offset).catch(({ message, config }) => console.error(message, config))
+  const { data, links } = await getNew(status, offset).catch(
+    ({ message, config }) => console.error(message, config)
+  )
 
-  await Promise.all(data.map(async entry => {
-    const entrySeason = currentSeason(entry.startDate)
-    const types = new Set()
+  await Promise.all(
+    data.map(async entry => {
+      const entrySeason = currentSeason(entry.startDate)
+      const types = new Set()
 
-    if (startsBeforeSeasonStart(type, entry.startDate)) {
-      types.add('previous')
-    }
+      if (startsBeforeSeasonStart(type, entry.startDate)) {
+        types.add('previous')
+      }
 
-    if (currentSeason().year === entrySeason.year && currentSeason().season === entrySeason.season) {
-      types.add('current')
-    }
+      if (
+        currentSeason().year === entrySeason.year &&
+        currentSeason().season === entrySeason.season
+      ) {
+        types.add('current')
+      }
 
-    if (!finishedBeforeSeasonStart(type, entry.endDate)) {
-      types.add('current')
-    }
+      if (!finishedBeforeSeasonStart(type, entry.endDate)) {
+        types.add('current')
+      }
 
-    if (queue.ids.has(~~entry.id)) return // Ignore duplicate entries
-    if (entry.status !== status) return
-    queue.process.enqueue({ types, entry })
-    queue.ids.add(~~entry.id)
-  }))
+      if (queue.ids.has(Math.trunc(entry.id))) return // Ignore duplicate entries
+      if (entry.status !== status) return
+      queue.process.enqueue({ types, entry })
+      queue.ids.add(Math.trunc(entry.id))
+    })
+  )
 
   if (links && links.next) await fetchNew(type, status, offset + API_RANGE)
   else {

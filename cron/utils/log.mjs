@@ -1,4 +1,4 @@
-import { green, blue, yellow, magenta } from 'yoctocolors'
+import { blue, green, magenta, yellow } from 'yoctocolors'
 
 export const log = (label, message) => {
   const formattedLabel = label.toUpperCase().padStart(8)

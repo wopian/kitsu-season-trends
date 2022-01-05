@@ -1,4 +1,4 @@
-import { startOfMonth, format, subMonths, isBefore } from 'date-fns'
+import { format, isBefore, startOfMonth, subMonths } from 'date-fns'
 
 const SEASONS = {
   WINTER: 'winter',
@@ -7,13 +7,16 @@ const SEASONS = {
   AUTUMN: 'autumn'
 }
 
-export const removeLocale = (date = new Date) => {
-  return format(new Date(date.valueOf() + (date.getTimezoneOffset() * -1) * 60 * 1000), 'yyyy-MM-dd')
+export const removeLocale = (date = new Date()) => {
+  return format(
+    new Date(date.valueOf() + date.getTimezoneOffset() * -1 * 60 * 1000),
+    'yyyy-MM-dd'
+  )
 }
 
-const year = (date = new Date) => new Date(date).getFullYear()
+const year = (date = new Date()) => new Date(date).getFullYear()
 
-const season = (date = new Date) => {
+const season = (date = new Date()) => {
   if (date === null) return null
   switch (startOfMonth(new Date(date)).getMonth()) {
     case 0:
@@ -35,7 +38,7 @@ const season = (date = new Date) => {
   }
 }
 
-export const currentSeason = (date = new Date) => {
+export const currentSeason = (date = new Date()) => {
   const current = startOfMonth(new Date(date))
   return {
     year: year(current),
@@ -44,12 +47,20 @@ export const currentSeason = (date = new Date) => {
   }
 }
 
-export const previousSeason = (date = new Date) => currentSeason(subMonths(new Date(date), 3))
+export const previousSeason = (date = new Date()) =>
+  currentSeason(subMonths(new Date(date), 3))
 
-export const currentTime = () => format(new Date(), 'yyyy-MM-dd HH:mm:ssXXXX (z)')
+export const currentTime = () =>
+  format(new Date(), 'yyyy-MM-dd HH:mm:ssXXXX (z)')
 
-export const didStartPreviousSeason = date => startOfMonth(new Date(date)) >= subMonths(startOfMonth(new Date()), 3)
+export const didStartPreviousSeason = date =>
+  startOfMonth(new Date(date)) >= subMonths(startOfMonth(new Date()), 3)
 
-export const finishedBeforeSeasonStart = (type, date) => isBefore(currentSeason(date ?? new Date()).rawDate, (type === 'current' ? currentSeason() : previousSeason()).rawDate)
+export const finishedBeforeSeasonStart = (type, date) =>
+  isBefore(
+    currentSeason(date ?? new Date()).rawDate,
+    (type === 'current' ? currentSeason() : previousSeason()).rawDate
+  )
 
-export const startsBeforeSeasonStart = (type, date) => finishedBeforeSeasonStart(type, date)
+export const startsBeforeSeasonStart = (type, date) =>
+  finishedBeforeSeasonStart(type, date)

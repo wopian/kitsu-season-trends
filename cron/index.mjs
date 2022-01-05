@@ -1,6 +1,14 @@
-import { currentTime, log } from './utils/index.mjs'
-import { tasks, read, addToQueue, batchFetchExisting, fetchNew, processData, write } from './modules/index.mjs'
 import { TYPE } from './constants.mjs'
+import {
+  addToQueue,
+  batchFetchExisting,
+  fetchNew,
+  processData,
+  read,
+  tasks,
+  write
+} from './modules/index.mjs'
+import { currentTime, log } from './utils/index.mjs'
 
 await Promise.allSettled([
   read(tasks[TYPE.CURRENT]),
@@ -9,7 +17,7 @@ await Promise.allSettled([
 
 await Promise.allSettled([
   addToQueue(TYPE.CURRENT, tasks),
-  addToQueue(TYPE.PREVIOUS, tasks),
+  addToQueue(TYPE.PREVIOUS, tasks)
 ])
 
 await Promise.allSettled([

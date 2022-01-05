@@ -1,19 +1,21 @@
+import { API_ANIME_FIELD, API_RANGE } from '../../constants.mjs'
 import { api, log } from '../../utils/index.mjs'
 import { queue } from '../index.mjs'
-import { API_RANGE, API_ANIME_FIELD } from '../../constants.mjs'
 
 export const fetchExisting = async (type, batch) => {
-  const data = await api.get('/anime', { params: {
-    filter: {
-      id: batch.join(',')
-    },
-    fields: {
-      anime: API_ANIME_FIELD
-    },
-    page: {
-      limit: API_RANGE
+  const data = await api.get('/anime', {
+    params: {
+      filter: {
+        id: batch.join(',')
+      },
+      fields: {
+        anime: API_ANIME_FIELD
+      },
+      page: {
+        limit: API_RANGE
+      }
     }
-  }})
+  })
   return data
 }
 
@@ -24,7 +26,7 @@ export const batchFetchExisting = async type => {
 
   do {
     let batch = []
-    for (let i = 0; i < 20; i++) {
+    for (let index = 0; index < 20; index++) {
       const id = queue[type].dequeue()
       if (!id) break
       !queue.ids.has(id) && batch.push(id)
@@ -35,8 +37,13 @@ export const batchFetchExisting = async type => {
       queue.process.enqueue({ types, entry })
     }
 
-    log(type, `${Math.ceil(queue[type].size / API_RANGE).toString().padStart(2)} requests remaining`)
-  } while (queue[type].size)
+    log(
+      type,
+      `${Math.ceil(queue[type].size / API_RANGE)
+        .toString()
+        .padStart(2)} requests remaining`
+    )
+  } while (queue[type].size > 0)
 
   log(type, 'Finished batch update')
 }

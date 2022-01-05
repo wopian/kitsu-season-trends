@@ -1,4 +1,4 @@
-export const prevSeason = ({ season, year }) => {
+export const previousSeason = ({ season, year }) => {
   switch (season) {
     case 'winter':
       return { season: 'autumn', year: --year }
