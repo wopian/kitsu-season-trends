@@ -1,39 +1,47 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import PropTypes from 'prop-types'
+import React from 'react'
+import {
+  MdGroup,
+  MdLocalLibrary,
+  MdStar,
+  MdThumbDown,
+  MdThumbUp
+} from 'react-icons/md'
 import LazyLoad from 'react-lazy-load'
-import { TrendTooltip } from './TrendTooltip'
-import { MdGroup, MdStar, MdThumbUp, MdThumbDown, MdLocalLibrary } from 'react-icons/md'
+import { Line } from 'recharts/es6/cartesian/Line'
+import { XAxis } from 'recharts/es6/cartesian/XAxis'
+import { YAxis } from 'recharts/es6/cartesian/YAxis'
+import { LineChart } from 'recharts/es6/chart/LineChart'
 import { ResponsiveContainer } from 'recharts/es6/component/ResponsiveContainer'
 import { Tooltip } from 'recharts/es6/component/Tooltip'
-import { LineChart } from 'recharts/es6/chart/LineChart'
-import { Line } from 'recharts/es6/cartesian/Line'
-import { YAxis } from 'recharts/es6/cartesian/YAxis'
-import { XAxis } from 'recharts/es6/cartesian/XAxis'
-import { formatNumber } from '../util/formatNumber'
 
-function posOrNeg (number, isPercent) {
+import { formatNumber } from '../util/formatNumber'
+import { TrendTooltip } from './TrendTooltip'
+
+function posOrNeg(number, isPercent) {
   if (number > 0) return `+${formatNumber(number, isPercent)}`
   else if (number < 0) return `−${formatNumber(Math.abs(number), isPercent)}`
   else return `±${formatNumber(number, isPercent)}`
 }
 
 class TrendChanges extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor(properties) {
+    super(properties)
     this.state = {
       toggleChangesTotal: true
     }
   }
 
   tick() {
-    this.setState(prevState => ({
-      toggleChangesTotal: !prevState.toggleChangesTotal
+    this.setState(previousState => ({
+      toggleChangesTotal: !previousState.toggleChangesTotal
     }))
   }
 
   componentDidMount() {
-    if (this.props.isCurrentSeason) this.interval = setInterval(() => this.tick(), 10e3)
+    if (this.props.isCurrentSeason)
+      this.interval = setInterval(() => this.tick(), 10e3)
     else clearInterval(this.interval)
   }
 
@@ -47,10 +55,11 @@ class TrendChanges extends React.Component {
       return (
         <span title={this.props.title}>
           {this.props.icon}
-          <span className={classnames({
-            pos: diff > 0,
-            neg: diff < 0
-          })}>
+          <span
+            className={classnames({
+              pos: diff > 0,
+              neg: diff < 0
+            })}>
             &nbsp;{posOrNeg(diff, this.props.isPercent)}
           </span>
         </span>
@@ -77,25 +86,35 @@ TrendChanges.propTypes = {
   isPercent: PropTypes.bool
 }
 
-function TrendHeader ({ rank, id, newAnime, title, today, yesterday, isCurrentSeason }) {
+function TrendHeader({
+  rank,
+  id,
+  newAnime,
+  title,
+  today,
+  yesterday,
+  isCurrentSeason
+}) {
   const animeURI = `https://kitsu.io/anime/${id}`
   const animePoster = `https://media.kitsu.io/anime/poster_images/${id}/tiny.jpg`
 
   return (
     <a href={animeURI} data-rank={rank}>
-      <img className='poster' src={animePoster} alt=''/>
+      <img className='poster' src={animePoster} alt='' />
       <div className='title'>
-        <div title={newAnime === 1 ? 'New' : 'Leftover' }>
-          <MdLocalLibrary className={classnames({
-            new: newAnime === 1,
-            leftover: newAnime === 0
-          })}/>
+        <div title={newAnime === 1 ? 'New' : 'Leftover'}>
+          <MdLocalLibrary
+            className={classnames({
+              new: newAnime === 1,
+              leftover: newAnime === 0
+            })}
+          />
           <div>{title}</div>
         </div>
         <div className='changes'>
           <TrendChanges
             title='Score'
-            icon={<MdStar/>}
+            icon={<MdStar />}
             today={today.w}
             yesterday={yesterday.w}
             isCurrentSeason={isCurrentSeason}
@@ -103,21 +122,21 @@ function TrendHeader ({ rank, id, newAnime, title, today, yesterday, isCurrentSe
           />
           <TrendChanges
             title='Users Rated'
-            icon={<MdGroup style={{color: '#5F5FBB'}}/>}
+            icon={<MdGroup style={{ color: '#5F5FBB' }} />}
             today={today.r}
             yesterday={yesterday.r}
             isCurrentSeason={isCurrentSeason}
           />
           <TrendChanges
             title='Upvotes'
-            icon={<MdThumbUp style={{color: '#5FBB5F'}}/>}
+            icon={<MdThumbUp style={{ color: '#5FBB5F' }} />}
             today={today.p}
             yesterday={yesterday.p}
             isCurrentSeason={isCurrentSeason}
           />
           <TrendChanges
             title='Downvotes'
-            icon={<MdThumbDown style={{color: '#BB5F5F'}}/>}
+            icon={<MdThumbDown style={{ color: '#BB5F5F' }} />}
             today={today.o}
             yesterday={yesterday.o}
             isCurrentSeason={isCurrentSeason}
@@ -138,91 +157,88 @@ TrendHeader.propTypes = {
   isCurrentSeason: PropTypes.bool
 }
 
-function TrendBody ({ data, start }) {
+function TrendBody({ data, start }) {
   return (
-      <ResponsiveContainer className='body' width='100%' height={100}>
-        <LineChart width={300} data={data}>
-          <XAxis
-            type='number'
-            hide
-            domain={[start, 'dataMax']}
-            namekey='d'
-            dataKey='d'
-            tick={false}
-            tickLine={false}
-            axisLine={false}
-          />
-          {/* Score */}
-          <YAxis
-            yAxisId='10..100'
-            hide
-            domain={[10, 100]}
-            ticks={[0]}
-            tickLine={false}
-            axisLine={false}
-          />
-          {/* Users, Rated & Favourites */}
-          <YAxis
-            yAxisId='0..max'
-            hide
-            domain={[0, 'max']}
-            ticks={[0]}
-            tickLine={false}
-            axisLine={false}
-          />
-          <Tooltip
-            isAnimationActive={false}
-            content={<TrendTooltip/>}
-          />
-          {/* Downvotes */}
-          <Line
-            className='fade-line'
-            yAxisId='0..max'
-            activeDot={{ stroke: '#BB5F5F', strokeWidth: 2, r: 2 }}
-            dot={false}
-            type='monotone'
-            isAnimationActive={false}
-            dataKey='o'
-            stroke='#BB5F5F'
-            strokeWidth={1.5}
-          />
-          {/* Upvotes */}
-          <Line
-            className='fade-line'
-            yAxisId='0..max'
-            activeDot={{ stroke: '#5FBB5F', strokeWidth: 2, r: 2 }}
-            dot={false}
-            type='monotone'
-            isAnimationActive={false}
-            dataKey='p'
-            stroke='#5FBB5F'
-            strokeWidth={1.5}
-          />
-          {/* Total Users */}
-          <Line
-            className='fade-line'
-            yAxisId='0..max'
-            activeDot={{ stroke: '#5F5FBB', strokeWidth: 2, r: 2 }}
-            dot={false}
-            type='monotone'
-            isAnimationActive={false}
-            dataKey='r'
-            stroke='#5F5FBB'
-            strokeWidth={1.5}
-          />
-          {/* Score */}
-          <Line
-            yAxisId='10..100'
-            activeDot={{ stroke: '#332532', strokeWidth: 2, r: 2 }}
-            dot={false}
-            type='monotone'
-            isAnimationActive={false}
-            dataKey='w'
-            stroke='#332532'
-            strokeWidth={1.5}
-          />
-        </LineChart>
-      </ResponsiveContainer>
+    <ResponsiveContainer className='body' width='100%' height={100}>
+      <LineChart width={300} data={data}>
+        <XAxis
+          type='number'
+          hide
+          domain={[start, 'dataMax']}
+          namekey='d'
+          dataKey='d'
+          tick={false}
+          tickLine={false}
+          axisLine={false}
+        />
+        {/* Score */}
+        <YAxis
+          yAxisId='10..100'
+          hide
+          domain={[10, 100]}
+          ticks={[0]}
+          tickLine={false}
+          axisLine={false}
+        />
+        {/* Users, Rated & Favourites */}
+        <YAxis
+          yAxisId='0..max'
+          hide
+          domain={[0, 'max']}
+          ticks={[0]}
+          tickLine={false}
+          axisLine={false}
+        />
+        <Tooltip isAnimationActive={false} content={<TrendTooltip />} />
+        {/* Downvotes */}
+        <Line
+          className='fade-line'
+          yAxisId='0..max'
+          activeDot={{ stroke: '#BB5F5F', strokeWidth: 2, r: 2 }}
+          dot={false}
+          type='monotone'
+          isAnimationActive={false}
+          dataKey='o'
+          stroke='#BB5F5F'
+          strokeWidth={1.5}
+        />
+        {/* Upvotes */}
+        <Line
+          className='fade-line'
+          yAxisId='0..max'
+          activeDot={{ stroke: '#5FBB5F', strokeWidth: 2, r: 2 }}
+          dot={false}
+          type='monotone'
+          isAnimationActive={false}
+          dataKey='p'
+          stroke='#5FBB5F'
+          strokeWidth={1.5}
+        />
+        {/* Total Users */}
+        <Line
+          className='fade-line'
+          yAxisId='0..max'
+          activeDot={{ stroke: '#5F5FBB', strokeWidth: 2, r: 2 }}
+          dot={false}
+          type='monotone'
+          isAnimationActive={false}
+          dataKey='r'
+          stroke='#5F5FBB'
+          strokeWidth={1.5}
+        />
+        {/* Score */}
+        <Line
+          yAxisId='10..100'
+          activeDot={{ stroke: '#332532', strokeWidth: 2, r: 2 }}
+          dot={false}
+          type='monotone'
+          isAnimationActive={false}
+          dataKey='w'
+          stroke='#332532'
+          strokeWidth={1.5}
+        />
+      </LineChart>
+    </ResponsiveContainer>
   )
 }
 
@@ -231,7 +247,15 @@ TrendBody.propTypes = {
   start: PropTypes.number
 }
 
-export default function TrendContainer ({ rank, start, id, title, data, newAnime, isCurrentSeason }) {
+export default function TrendContainer({
+  rank,
+  start,
+  id,
+  title,
+  data,
+  newAnime,
+  isCurrentSeason
+}) {
   return (
     <LazyLoad className='trend' offset={132} once>
       <>
@@ -244,10 +268,7 @@ export default function TrendContainer ({ rank, start, id, title, data, newAnime
           yesterday={data.slice(-2)[0]}
           isCurrentSeason={isCurrentSeason}
         />
-        <TrendBody
-          data={data}
-          start={start}
-        />
+        <TrendBody data={data} start={start} />
       </>
     </LazyLoad>
   )

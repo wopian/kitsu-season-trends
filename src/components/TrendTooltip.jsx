@@ -1,10 +1,11 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-import { MdGroup, MdStar, MdThumbUp, MdThumbDown } from 'react-icons/md'
+import React from 'react'
+import { MdGroup, MdStar, MdThumbDown, MdThumbUp } from 'react-icons/md'
+
 import { formatNumber } from '../util/formatNumber'
 
 export class TrendTooltip extends React.Component {
-  render () {
+  render() {
     const { active } = this.props
 
     if (active) {
@@ -24,19 +25,19 @@ export class TrendTooltip extends React.Component {
           {label}
           <div className='changes'>
             <span>
-              <MdStar style={{color: '#332532'}}/> {/* Wilson Score */}
+              <MdStar style={{ color: '#332532' }} /> {/* Wilson Score */}
               <span> {formatNumber(wilson.value, true)}</span>
             </span>
             <span>
-              <MdGroup style={{color: '#5F5FBB'}}/> {/* Users */}
+              <MdGroup style={{ color: '#5F5FBB' }} /> {/* Users */}
               <span> {formatNumber(users.value)}</span>
             </span>
             <span>
-              <MdThumbUp style={{color: '#5FBB5F'}}/> {/* Upvotes */}
+              <MdThumbUp style={{ color: '#5FBB5F' }} /> {/* Upvotes */}
               <span> {formatNumber(upvotes.value)}</span>
             </span>
             <span>
-              <MdThumbDown style={{color: '#BB5F5F'}}/> {/* Downvotes */}
+              <MdThumbDown style={{ color: '#BB5F5F' }} /> {/* Downvotes */}
               <span> {formatNumber(downvotes.value)}</span>
             </span>
           </div>

@@ -1,10 +1,10 @@
-export function year (date = new Date()) {
+export function year(date = new Date()) {
   return new Date(date).getFullYear()
   // December 2016 is 2017-winter
   // if (season() === 'winter' && new Date().getMonth() + 1 === 12) year++
 }
 
-export function season (date = new Date()) {
+export function season(date = new Date()) {
   if (date === null) return null
   switch (new Date(date).getMonth()) {
     case 0:
@@ -26,12 +26,12 @@ export function season (date = new Date()) {
   }
 }
 
-export function seasonUSFormat (date = new Date()) {
+export function seasonUSFormat(date = new Date()) {
   const output = season(date)
   return output === 'autumn' ? 'fall' : output
 }
 
-export function prevSeason ({ s, y }) {
+export function previousSeason({ s, y }) {
   switch (s) {
     case 'winter':
       return { s: 'autumn', y: --y }
@@ -44,7 +44,7 @@ export function prevSeason ({ s, y }) {
   }
 }
 
-export function nextSeason ({ s, y }) {
+export function nextSeason({ s, y }) {
   switch (s) {
     case 'winter':
       return { s: 'spring', y }
@@ -57,35 +57,37 @@ export function nextSeason ({ s, y }) {
   }
 }
 
-export function sort (data, by, exclude = new Set()) {
-  return Object.values(data).sort((A, B) => {
-    let a = null, b = null
+export function sort(data, by, exclude = new Set()) {
+  return Object.values(data)
+    .sort((A, B) => {
+      let a = null,
+        b = null
 
-    if (by === 'r') {
-      a = A.d.slice(-1)[0][by] / A.d.slice(-1)[0].u
-      b = B.d.slice(-1)[0][by] / B.d.slice(-1)[0].u
-    } else {
-      a = A.d.slice(-1)[0][by]
-      b = B.d.slice(-1)[0][by]
-    }
+      if (by === 'r') {
+        a = A.d.slice(-1)[0][by] / A.d.slice(-1)[0].u
+        b = B.d.slice(-1)[0][by] / B.d.slice(-1)[0].u
+      } else {
+        a = A.d.slice(-1)[0][by]
+        b = B.d.slice(-1)[0][by]
+      }
 
-    return a > b ? -1 : a < b ? 1 : 0
-  }).filter(({ u, n }) => {
-    const toFilter = []
-    if (u === 'TV') toFilter.push('tv')
-    if (u === 'ONA') toFilter.push('ona')
-    if (n === 1) toFilter.push('new')
-    if (n === 0) toFilter.push('old')
+      return a > b ? -1 : a < b ? 1 : 0
+    })
+    .filter(({ u, n }) => {
+      const toFilter = []
+      if (u === 'TV') toFilter.push('tv')
+      if (u === 'ONA') toFilter.push('ona')
+      if (n === 1) toFilter.push('new')
+      if (n === 0) toFilter.push('old')
 
-    // u: TV/ONA
-    // n: 0/1 old/new
-    const filterable = new Set([
-      u === 'TV' ? 'tv' : 'ona',
-      n === 1 ? 'new' : 'old'
-    ])
+      // u: TV/ONA
+      // n: 0/1 old/new
+      const filterable = new Set([
+        u === 'TV' ? 'tv' : 'ona',
+        n === 1 ? 'new' : 'old'
+      ])
 
-    const diff = [...exclude].filter(x => filterable.has(x))
-    if (diff.length > 0) return false
-    else return true
-  })
+      const diff = [...exclude].filter(x => filterable.has(x))
+      return diff.length > 0 ? false : true
+    })
 }

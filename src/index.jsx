@@ -1,18 +1,18 @@
-import { hot } from 'react-hot-loader/root'
+import loadable from '@loadable/component'
 import React from 'react'
 import { render } from 'react-dom'
-import { AppContainer } from 'react-hot-loader'
-import loadable from '@loadable/component'
 import GA from 'react-ga'
+import { AppContainer } from 'react-hot-loader'
+import { hot } from 'react-hot-loader/root'
 
 const App = loadable(() => import('./app.jsx'))
 const AppHot = hot(App)
 
 render(
   <AppContainer>
-    <AppHot/>
+    <AppHot />
   </AppContainer>,
-  document.querySelector("#app")
+  document.querySelector('#app')
 )
 
 // Don't run analytics in development
