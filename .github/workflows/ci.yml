@@ -21,10 +21,10 @@ jobs:
     - name: Print GitHub event action
       run: echo "${{ github.event.action }}"
 
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       if: ${{ github.event.action != 'repository_dispatch' }}
 
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       if: ${{ github.event.action == 'repository_dispatch' }}
       with:
         ref: ${{ github.event.client_payload.sha }}
