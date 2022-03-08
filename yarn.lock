@@ -2069,12 +2069,12 @@ axios@*:
   dependencies:
     follow-redirects "^1.14.4"
 
-axios@^0.25.0:
-  version "0.25.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.25.0.tgz#349cfbb31331a9b4453190791760a8d35b093e0a"
-  integrity sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g==
+axios@^0.26.0:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.26.0.tgz#9a318f1c69ec108f8cd5f3c3d390366635e13928"
+  integrity sha512-lKoGLMYtHvFrPVt3r+RBMp9nh34N0M8zEfCWqdWZx6phynIEhQqAdydpyBAAG211zlhX9Rgu08cOamy6XjE5Og==
   dependencies:
-    follow-redirects "^1.14.7"
+    follow-redirects "^1.14.8"
 
 babel-loader@^8.2.0:
   version "8.2.3"
@@ -3520,10 +3520,15 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.4.tgz#28d9969ea90661b5134259f312ab6aa7929ac5e2"
   integrity sha512-8/sOawo8tJ4QOBX8YlQBMxL8+RLZfxMQOif9o0KUKTNTjMYElWPE0r/m5VNFxTRd0NSw8qSy8dajrwX4RYI1Hw==
 
-follow-redirects@^1.0.0, follow-redirects@^1.14.4, follow-redirects@^1.14.7:
+follow-redirects@^1.0.0, follow-redirects@^1.14.4:
   version "1.14.8"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.8.tgz#016996fb9a11a100566398b1c6839337d7bfa8fc"
   integrity sha512-1x0S9UVJHsQprFcEC/qnNzBLcIxsjAV905f/UkQxbclCsoTWlacCNOpQa/anodLl2uaEKFhfWOvM2Qg77+15zA==
+
+follow-redirects@^1.14.8:
+  version "1.14.9"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.9.tgz#dd4ea157de7bfaf9ea9b3fbd85aa16951f78d8d7"
+  integrity sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==
 
 forwarded@0.2.0:
   version "0.2.0"
@@ -4316,18 +4321,18 @@ kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
-kitsu-core@^10.0.0-alpha.20:
-  version "10.0.0-alpha.20"
-  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-10.0.0-alpha.20.tgz#2bf772452f9c2ab4709c826ee072c74846e22776"
-  integrity sha512-NEQ1Q/ZBTxY0jzjLpBXtSw6awki6adOHpHafGH4uGRGq2eBBQeuaPl6C0NFnjAqVF39iIk40j5LOEXfC1yPNDA==
+kitsu-core@^10.0.0-alpha.22:
+  version "10.0.0-alpha.22"
+  resolved "https://registry.yarnpkg.com/kitsu-core/-/kitsu-core-10.0.0-alpha.22.tgz#783fa6352245f147b1ddde057aef424d4d0e4da9"
+  integrity sha512-+1O27hmKlTxYSTOuJw0D5leJMD5KMpcRczb4k3CGKylRMyBlNqsCCFLb6FNDRIDVu4szRYKAnypljVJMgSkovg==
 
-kitsu@10.0.0-alpha.20:
-  version "10.0.0-alpha.20"
-  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-10.0.0-alpha.20.tgz#0c819e27d0c347bf85807c61dd012a31f93def9e"
-  integrity sha512-eqWtrIpOMAXDK933BkuDGMc1KL6x6GnPeuZpRqQXeq1/T9BIvcS1T0Yal8Qst9j2FFeRAOt1VVXZjgFcUNQM0w==
+kitsu@10.0.0-alpha.22:
+  version "10.0.0-alpha.22"
+  resolved "https://registry.yarnpkg.com/kitsu/-/kitsu-10.0.0-alpha.22.tgz#d30281bad42572bed5ea78adf6fe3e7b92e93b65"
+  integrity sha512-EgDxOfiBEBj7n0FgEqzJSReqiXcUDwcKNKiVJcgbaCjISdkN9PdiSNTN3KWRYS4EuetLkIjWpH40VMkGAW4fjg==
   dependencies:
-    axios "^0.25.0"
-    kitsu-core "^10.0.0-alpha.20"
+    axios "^0.26.0"
+    kitsu-core "^10.0.0-alpha.22"
     pluralize "^8.0.0"
 
 klona@^2.0.4:
