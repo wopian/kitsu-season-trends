@@ -135,6 +135,7 @@ module.exports = {
         /asset-manifest\.json$/,
         /\.json5$/,
         /(?:autumn|spring|summer|winter)\.json$/,
+        /id\/\d*.json$/,
         /\.msgpack$/,
         /_headers$/,
         /_redirects$/,
