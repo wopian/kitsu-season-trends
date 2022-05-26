@@ -69,6 +69,16 @@ module.exports = {
           transform: (content, file) => encode(JSON5.parse(readFileSync(file, 'utf8')))
         },
         {
+          from: 'data/id/*.json5',
+          to: 'data/id/[name].json',
+          transform: (content, file) => JSON.stringify(JSON5.parse(readFileSync(file, 'utf8')))
+        },
+        {
+          from: 'data/id/*.json5',
+          to: 'msgpack/id/[name].msgpack',
+          transform: (content, file) => encode(JSON5.parse(readFileSync(file, 'utf8')))
+        },
+        {
           from: 'static',
           to: '.',
           globOptions: { ignore: ['.*'] }
