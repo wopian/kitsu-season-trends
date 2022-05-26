@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 13866,
+  t: 'Nissin no Donbei x Kemono Friends',
+  u: 1,
+ },
+ data: [
+  {
+   d: 420753,
+   m: 56,
+   r: 11,
+   u: 23,
+   w: 30.88,
+   a: 58.18,
+   p: 6.4,
+   o: 4.6,
+  },
+ ],
+}
