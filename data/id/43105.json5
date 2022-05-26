@@ -1,0 +1,20 @@
+{
+ meta: {
+  i: 43105,
+  t: 'Hitori no Shita: The Outcast 3rd Season',
+  u: 1,
+ },
+ data: [
+  {
+   d: 450050,
+   m: 69.06,
+   r: 103,
+   u: 798,
+   f: 3,
+   w: 60.35,
+   a: 69.8,
+   p: 71.89,
+   o: 31.11,
+  },
+ ],
+}

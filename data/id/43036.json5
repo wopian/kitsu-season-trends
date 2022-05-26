@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 43036,
+  t: 'Norimono Man: Mobile Land no Car-kun',
+  u: 0,
+ },
+ data: [
+  {
+   d: 450050,
+   m: 62.22,
+   r: 5,
+   u: 30,
+   w: 31.34,
+   a: 72,
+   p: 3.6,
+   o: 1.4,
+  },
+ ],
+}

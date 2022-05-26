@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 43201,
+  t: 'Thunderbolt Fantasy: Touriken Yuuki 3',
+  u: 0,
+ },
+ data: [
+  {
+   d: 450050,
+   m: 65.83,
+   r: 8,
+   u: 5,
+   w: 39.83,
+   a: 73.75,
+   p: 5.9,
+   o: 2.1,
+  },
+ ],
+}

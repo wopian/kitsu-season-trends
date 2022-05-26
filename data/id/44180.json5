@@ -1,0 +1,18 @@
+{
+ meta: {
+  i: 44180,
+  t: 'Fairy Ranmaru: Anata no Kokoro Otasuke Shimasu',
+  u: 0,
+ },
+ data: [
+  {
+   d: 450050,
+   m: 50.97,
+   r: 28,
+   w: 33.61,
+   a: 51.11,
+   p: 14.31,
+   o: 13.69,
+  },
+ ],
+}
