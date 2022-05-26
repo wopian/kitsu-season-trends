@@ -20,7 +20,8 @@ readdir(dir, (error, files) => {
     if ([
       '2017-autumn.json5',
       '2017-spring.json5',
-      '2017-summer.json5'
+      '2017-summer.json5',
+      '2018-autumn.json5'
     ].includes(file)) continue
 
     readFile(`${dir}/${file}`, async (error2, DATA) => {
