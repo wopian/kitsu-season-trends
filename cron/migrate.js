@@ -3,15 +3,10 @@
  */
 
 const JSON5 = require('json5')
-const { readdir, readFile, readFileSync, writeFile } = require('node:fs')
+const { readdir, readFile, writeFile } = require('node:fs')
 const { readFile: readFilePromise } = require('node:fs/promises')
-const { wilson, average, mid } = require('wilson-rate')
 
 const dir = './data'
-
-function decToPercent(decimal) {
-  return Math.round(decimal.toFixed(6) * 1e4) / 1e2
-}
 
 readdir(dir, (error, files) => {
   if (error) throw error
