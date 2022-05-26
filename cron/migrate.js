@@ -15,39 +15,48 @@ function decToPercent(decimal) {
 readdir(dir, (error, files) => {
   if (error) throw error
   for (const file of files) {
+    console.log(file)
+    // if (['2017-autumn.json5'].includes(file)) continue
+
     readFile(`${dir}/${file}`, (error2, DATA) => {
       if (error2) throw error2
 
       const data = JSON5.parse(DATA)
 
       for (const entry of data.data) {
-        entry.d = entry.d.filter(day => typeof day.m !== 'undefined')
+        const newFile = `${dir}/id/${entry.i}.json5`
 
-        for (const day of entry.d) {
-          // Migrate to upvotes/downvotes and wilson rating
-          if (!day.p && !day.o && day.r) {
-            const rating = day.m * 10
-            const upvoted = Math.round(day.r * (rating / 100) * 100) / 100
-            const downvoted =
-              Math.round(day.r * ((100 - rating) / 100) * 100) / 100
-
-            day.w = decToPercent(wilson(upvoted, downvoted, 1.96))
-            day.a = decToPercent(average(upvoted, downvoted))
-            day.m = decToPercent(mid(upvoted, downvoted))
-            day.p = upvoted
-            day.o = downvoted
-          }
-        }
-      }
-
-      writeFile(
-        `${dir}/${file}`,
-        JSON5.stringify(data, { space: 1 }),
-        error3 => {
+        let existingFile = null
+        readFile(newFile, (error3, DATA2) => {
+          if (error3.code === 'ENOENT') return
           if (error3) throw error3
-          console.log(`migrated ${file}`)
+          existingFile = JSON5.parse(DATA2)
+        })
+
+        entry.d.forEach(item => {
+          delete item.i
+        })
+
+        const newFormat = {
+          meta: {
+            i: entry.i,
+            t: entry.t,
+            u: entry.u
+          },
+          data: existingFile ? [...existingFile.data, ...entry.d] : entry.d
         }
-      )
+
+        writeFile(
+          newFile,
+          JSON5.stringify(newFormat, { space: 1 }),
+          error3 => {
+            if (error3) throw error3
+            // console.log(`Generated ${newFile}`)
+          }
+        )
+      }
     })
+
+    break;
   }
 })
