@@ -17,7 +17,10 @@ readdir(dir, (error, files) => {
   if (error) throw error
   for (const file of files) {
     console.log(file)
-    if (['2017-autumn.json5'].includes(file)) continue
+    if ([
+      '2017-autumn.json5',
+      '2017-spring.json5',
+    ].includes(file)) continue
 
     readFile(`${dir}/${file}`, async (error2, DATA) => {
       if (error2) throw error2
