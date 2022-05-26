@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 43570,
+  t: 'Digimon Adventure: 20 Shuunen Memorial Story',
+  u: 1,
+ },
+ data: [
+  {
+   d: 450050,
+   m: 65.32,
+   r: 27,
+   u: 46,
+   w: 48.74,
+   a: 67.59,
+   p: 18.25,
+   o: 8.75,
+  },
+ ],
+}

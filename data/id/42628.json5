@@ -1,0 +1,20 @@
+{
+ meta: {
+  i: 42628,
+  t: 'Slime Taoshite 300-nen, Shiranai Uchi ni Level Max ni Nattemashita',
+  u: 0,
+ },
+ data: [
+  {
+   d: 450050,
+   m: 73.27,
+   r: 281,
+   u: 722,
+   f: 2,
+   w: 68.15,
+   a: 73.6,
+   p: 206.82,
+   o: 74.18,
+  },
+ ],
+}

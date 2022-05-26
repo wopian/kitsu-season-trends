@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 42923,
+  t: 'Hige wo Soru. Soshite Joshikousei wo Hirou.',
+  u: 0,
+ },
+ data: [
+  {
+   d: 450050,
+   m: 78.67,
+   r: 509,
+   u: 463,
+   w: 75.15,
+   a: 78.9,
+   p: 401.6,
+   o: 107.4,
+  },
+ ],
+}

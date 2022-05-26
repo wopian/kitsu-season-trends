@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 43861,
+  t: 'Kyuukyoku Shinka Shita Full Dive RPG ga Genjitsu yori mo Kusogee Dattara',
+  u: 0,
+ },
+ data: [
+  {
+   d: 450050,
+   m: 69.08,
+   r: 180,
+   u: 49,
+   w: 62.42,
+   a: 69.5,
+   p: 125.1,
+   o: 54.9,
+  },
+ ],
+}

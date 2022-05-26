@@ -4,50 +4,70 @@
 
 const JSON5 = require('json5')
 const { readdir, readFile, writeFile } = require('node:fs')
-const { wilson, average, mid } = require('wilson-rate')
+const { readFile: readFilePromise } = require('node:fs/promises')
 
 const dir = './data'
-
-function decToPercent(decimal) {
-  return Math.round(decimal.toFixed(6) * 1e4) / 1e2
-}
 
 readdir(dir, (error, files) => {
   if (error) throw error
   for (const file of files) {
-    readFile(`${dir}/${file}`, (error2, DATA) => {
+    console.log(file)
+    if ([
+      '2017-autumn.json5',
+      '2017-spring.json5',
+      '2017-summer.json5',
+      '2018-autumn.json5',
+      '2018-spring.json5',
+      '2018-summer.json5',
+      '2018-winter.json5',
+      '2019-autumn.json5',
+      '2019-spring.json5',
+      '2019-summer.json5',
+      '2019-winter.json5',
+      '2020-autumn.json5',
+      '2020-spring.json5',
+      '2020-summer.json5',
+      '2020-winter.json5',
+    ].includes(file)) continue
+
+    readFile(`${dir}/${file}`, async (error2, DATA) => {
       if (error2) throw error2
 
       const data = JSON5.parse(DATA)
 
       for (const entry of data.data) {
-        entry.d = entry.d.filter(day => typeof day.m !== 'undefined')
+        const newFile = `${dir}/id/${entry.i}.json5`
 
-        for (const day of entry.d) {
-          // Migrate to upvotes/downvotes and wilson rating
-          if (!day.p && !day.o && day.r) {
-            const rating = day.m * 10
-            const upvoted = Math.round(day.r * (rating / 100) * 100) / 100
-            const downvoted =
-              Math.round(day.r * ((100 - rating) / 100) * 100) / 100
+        const existingFile = JSON5.parse(await readFilePromise(newFile).catch(error4 => {
+          if (error4.code !== 'ENOENT') throw error4
+          else return '{}'
+        }))
 
-            day.w = decToPercent(wilson(upvoted, downvoted, 1.96))
-            day.a = decToPercent(average(upvoted, downvoted))
-            day.m = decToPercent(mid(upvoted, downvoted))
-            day.p = upvoted
-            day.o = downvoted
+        entry.d.forEach(item => {
+          delete item.i
+        })
+
+        const newFormatData = existingFile?.data ? [...existingFile.data, ...entry.d] : entry.d
+        const newFormat = {
+          meta: {
+            i: entry.i,
+            t: entry.t,
+            u: entry.u
+          },
+          data: newFormatData.sort((a, b) => a.d - b.d)
+        }
+
+        writeFile(
+          newFile,
+          JSON5.stringify(newFormat, { space: 1 }),
+          error3 => {
+            if (error3) throw error3
+            // console.log(`Generated ${newFile}`)
           }
-        }
+        )
       }
-
-      writeFile(
-        `${dir}/${file}`,
-        JSON5.stringify(data, { space: 1 }),
-        error3 => {
-          if (error3) throw error3
-          console.log(`migrated ${file}`)
-        }
-      )
     })
+
+    break;
   }
 })

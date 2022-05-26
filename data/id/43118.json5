@@ -1,0 +1,20 @@
+{
+ meta: {
+  i: 43118,
+  t: 'Isekai Maou to Shoukan Shoujo no Dorei Majutsu Ω',
+  u: 0,
+ },
+ data: [
+  {
+   d: 450050,
+   m: 78.2,
+   r: 578,
+   u: 1477,
+   f: 4,
+   w: 74.86,
+   a: 78.4,
+   p: 453.15,
+   o: 124.85,
+  },
+ ],
+}

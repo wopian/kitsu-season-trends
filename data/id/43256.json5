@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 43256,
+  t: 'Fushigi Dagashiya: Zenitendou',
+  u: 0,
+ },
+ data: [
+  {
+   d: 450050,
+   m: 54.44,
+   r: 5,
+   u: 87,
+   w: 21.81,
+   a: 58,
+   p: 2.9,
+   o: 2.1,
+  },
+ ],
+}

@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 43252,
+  t: 'Battle Athletess Daiundoukai: ReSTART!',
+  u: 0,
+ },
+ data: [
+  {
+   d: 450050,
+   m: 52.95,
+   r: 18,
+   u: 17,
+   w: 32.05,
+   a: 53.61,
+   p: 9.65,
+   o: 8.35,
+  },
+ ],
+}

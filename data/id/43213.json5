@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 43213,
+  t: 'Yuuki Yuuna wa Yuusha de Aru Churutto!',
+  u: 0,
+ },
+ data: [
+  {
+   d: 450050,
+   m: 53.5,
+   r: 6,
+   u: 52,
+   w: 22.45,
+   a: 55.83,
+   p: 3.35,
+   o: 2.65,
+  },
+ ],
+}
