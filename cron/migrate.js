@@ -32,6 +32,7 @@ readdir(dir, (error, files) => {
       '2020-autumn.json5',
       '2020-spring.json5',
       '2020-summer.json5',
+      '2020-winter.json5',
     ].includes(file)) continue
 
     readFile(`${dir}/${file}`, async (error2, DATA) => {
