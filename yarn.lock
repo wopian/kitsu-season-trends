@@ -7030,7 +7030,7 @@ yocto-queue@^1.0.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-1.0.0.tgz#7f816433fb2cbc511ec8bf7d263c3b58a1a3c251"
   integrity sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==
 
-yoctocolors@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/yoctocolors/-/yoctocolors-0.2.0.tgz#d2fea56eb974afc75b7d010dc1f678c617b61a87"
-  integrity sha512-DDlh4x8CXpKXsCzKlN6TKwTOC3oVJAc+JQAYODaz/YHl+UB2gwNareGwr22FB0vpGQF5tKq0AByAoAPOvhtL6Q==
+yoctocolors@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/yoctocolors/-/yoctocolors-1.0.0.tgz#6f6dd95d736adade55ff1eaf89aa737df1b69c94"
+  integrity sha512-qJNAmSF77lWjfRVwCZK3PcKYWrr+55RUQTiXDxXHGbxzf8WuuRgftIB3hqZ5fykjOF/MC62cazsG/2ZDBedOnQ==
