@@ -74,7 +74,7 @@
     "wilson-rate": "^1.0.2",
     "workbox-webpack-plugin": "^6.1.5",
     "yocto-queue": "^1.0.0",
-    "yoctocolors": "^0.2.0"
+    "yoctocolors": "^1.0.0"
   },
   "renovate": {
     "extends": [
