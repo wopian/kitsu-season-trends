@@ -53,8 +53,7 @@ jobs:
 
     - name: Deploy SPA
       if: success() && ${{ github.ref == 'refs/heads/master' }}
-      # uses: netlify/actions/cli@6c34c3fcafc69ac2e1d6dbf226560329c6dfc51b # Broken by Malak publishing malicious colors.js version
-      uses: wopian/netlify-actions-colors-fix/cli@e120165a3282ad303f0ee47593f13b15d935b7d6
+      uses: wopian/netlify-actions-colors-fix/cli@1e378c943b20b381c815ca478fef65fe3a30937a
       env:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
