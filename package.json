@@ -30,7 +30,7 @@
     "react-icons": "~4.7.0",
     "react-lazy-load": "~3.1.0",
     "react-router-dom": "~5.3.0",
-    "recharts": "~2.2.0"
+    "recharts": "~2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.0",
