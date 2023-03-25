@@ -53,7 +53,7 @@ jobs:
 
     - name: Deploy SPA
       if: success() && ${{ github.ref == 'refs/heads/master' }}
-      uses: wopian/netlify-actions-colors-fix/cli@1e378c943b20b381c815ca478fef65fe3a30937a
+      uses: wopian/netlify-actions-colors-fix/cli@b336c456c5b67c3f95e06fc1221725a657d896d6
       env:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
