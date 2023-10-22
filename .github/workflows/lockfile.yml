@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Digest Lock File
-        uses: Simek/yarn-lock-changes@8e95cae1cdd038f9650ca0ffda612fd7389033e0
+        uses: Simek/yarn-lock-changes@a14bb956a5880a7031bedd6f3017fa6853793ea2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           collapsibleThreshold: 25
