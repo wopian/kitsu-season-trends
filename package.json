@@ -79,6 +79,11 @@
   "renovate": {
     "extends": [
       "github>wopian/renovate-config"
+    ],
+    "ignoreDeps": [
+      "react",
+      "react-dom",
+      "react-router-dom"
     ]
   }
 }
