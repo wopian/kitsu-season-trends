@@ -77,6 +77,7 @@
     "yoctocolors": "^1.0.0"
   },
   "renovate": {
+    "enabled": false,
     "extends": [
       "github>wopian/renovate-config"
     ],
