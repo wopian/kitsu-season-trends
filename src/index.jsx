@@ -17,7 +17,7 @@ render(
 
 // Don't run analytics in development
 if (window.location.hostname !== 'localhost') {
-  GA.initialize('UA-46184267-11')
+  GA.initialize('G-WK3W38P3N0')
   GA.set({ page: window.location.pathname + window.location.search })
   GA.pageview(window.location.pathname + window.location.search)
 }
