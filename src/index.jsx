@@ -1,7 +1,7 @@
 import loadable from '@loadable/component'
 import React from 'react'
 import { render } from 'react-dom'
-import GA from 'react-ga'
+import GA from 'react-ga4'
 import { AppContainer } from 'react-hot-loader'
 import { hot } from 'react-hot-loader/root'
 
