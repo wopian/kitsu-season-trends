@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18]
+        node-version: [26]
 
     steps:
     - name: Print GitHub event action
