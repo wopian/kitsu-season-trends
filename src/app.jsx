@@ -61,7 +61,9 @@ function sortData({ by = sortOrder, update = true, filter = null }) {
 }
 
 function getData(year = y(), season = s()) {
-  fetch(`/msgpack/${year}-${season}.msgpack`, {
+  // Enforce HTTPS explicitly instead of relying on a protocol-relative URL
+  const protocol = window.location.protocol === 'http:' ? 'https:' : window.location.protocol
+  fetch(`${protocol}//${window.location.host}/msgpack/${year}-${season}.msgpack`, {
     method: 'get'
   })
     .then(res => {
