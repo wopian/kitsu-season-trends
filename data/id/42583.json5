@@ -1,8 +1,9 @@
 {
  meta: {
   i: 42583,
-  t: 'Dungeon ni Deai o Motomeru no wa Machigatte Iru Darouka III',
+  t: 'Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka III',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42583/small.jpg',
  },
  data: [
   {

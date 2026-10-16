@@ -3,8 +3,21 @@
   i: 43105,
   t: 'Hitori no Shita: The Outcast 3rd Season',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/43105/poster_image/small-0dfad8cc164b20ea52ada6d6f1aa6eca.jpeg',
  },
  data: [
+  {
+   i: 0,
+   d: 447171,
+   m: 69.06,
+   r: 103,
+   u: 798,
+   f: 3,
+   w: 60.35,
+   a: 69.8,
+   p: 71.89,
+   o: 31.11,
+  },
   {
    d: 450050,
    m: 69.06,

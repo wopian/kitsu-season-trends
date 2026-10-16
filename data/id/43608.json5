@@ -3,6 +3,7 @@
   i: 43608,
   t: 'Himitsukessha Taka no Tsume: Golden Spell',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/43608/small.jpg',
  },
  data: [
   {
@@ -254,6 +255,18 @@
    a: 61.36,
    p: 6.75,
    o: 4.25,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 62.39,
+   r: 29,
+   u: 59,
+   f: 1,
+   w: 45.96,
+   a: 64.1,
+   p: 18.59,
+   o: 10.41,
   },
   {
    d: 450050,

@@ -3,6 +3,7 @@
   i: 43550,
   t: 'Inu to Neko Docchi mo Katteru to Mainichi Tanoshii',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/43550/small.jpg',
  },
  data: [
   {
@@ -439,6 +440,18 @@
    a: 68.6,
    p: 30.87,
    o: 14.13,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 70.69,
+   r: 201,
+   u: 335,
+   f: 1,
+   w: 64.48,
+   a: 71.1,
+   p: 142.91,
+   o: 58.09,
   },
   {
    d: 450050,

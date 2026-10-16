@@ -3,6 +3,7 @@
   i: 13914,
   t: 'Yodel no Onna',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/13914/small.jpg',
  },
  data: [
   {
@@ -8304,6 +8305,17 @@
    a: 44.69,
    p: 7.15,
    o: 8.85,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 51.5,
+   r: 20,
+   u: 77,
+   w: 31.45,
+   a: 51.8,
+   p: 10.36,
+   o: 9.64,
   },
   {
    d: 450050,

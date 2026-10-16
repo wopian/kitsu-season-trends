@@ -3,6 +3,7 @@
   i: 42928,
   t: 'Youkai Watch Jam: Youkai Gakuen Y - N to no Souguu',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42928/small.jpg',
  },
  data: [
   {
@@ -154,6 +155,17 @@
    a: 70,
    p: 4.2,
    o: 1.8,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 60,
+   r: 12,
+   u: 50,
+   w: 36.15,
+   a: 63.33,
+   p: 7.6,
+   o: 4.4,
   },
   {
    d: 450050,

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kitsu.wopian.me/sitemap.xml

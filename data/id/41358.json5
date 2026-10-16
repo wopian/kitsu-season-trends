@@ -3,6 +3,7 @@
   i: 41358,
   t: 'Quanzhi Gaoshou 2nd Season',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/41358/poster_image/small-a041c5397d130592ee8590202359bc74.jpeg',
  },
  data: [
   {
@@ -279,6 +280,18 @@
    a: 83.1,
    p: 184.48,
    o: 37.52,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 80.14,
+   r: 743,
+   u: 4399,
+   f: 30,
+   w: 77.29,
+   a: 80.3,
+   p: 596.63,
+   o: 146.37,
   },
   {
    d: 450050,

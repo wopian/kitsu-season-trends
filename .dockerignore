@@ -1,0 +1,10 @@
+.git
+.yarn
+node_modules
+.nuxt
+.cache
+.generated
+.env*
+test-results
+playwright-report
+dist

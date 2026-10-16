@@ -3,6 +3,7 @@
   i: 42926,
   t: 'Huyao Xiao Hongniang: Wei Sheng',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/42926/small.jpg',
  },
  data: [
   {
@@ -2424,6 +2425,18 @@
    a: 79.78,
    p: 18.35,
    o: 4.65,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 72.67,
+   r: 32,
+   u: 85,
+   f: 1,
+   w: 58.42,
+   a: 75.5,
+   p: 24.16,
+   o: 7.84,
   },
   {
    d: 450050,

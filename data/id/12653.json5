@@ -3,6 +3,7 @@
   i: 12653,
   t: 'Tama & Friends: Uchi no Tama Shirimasenka?',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/12653/small.jpg',
  },
  data: [
   {
@@ -3244,6 +3245,17 @@
    a: 71.07,
    p: 9.95,
    o: 4.05,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 66.7,
+   r: 16,
+   u: 69,
+   w: 46.44,
+   a: 70.88,
+   p: 11.34,
+   o: 4.66,
   },
   {
    d: 450050,

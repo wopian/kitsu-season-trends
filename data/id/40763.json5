@@ -3,6 +3,7 @@
   i: 40763,
   t: 'Pa-ri Nezumi-kun',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/40763/small.jpg',
  },
  data: [
   {
@@ -1984,6 +1985,17 @@
    a: 52.5,
    p: 4.2,
    o: 3.8,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 52.86,
+   r: 10,
+   u: 19,
+   w: 26.61,
+   a: 54,
+   p: 5.4,
+   o: 4.6,
   },
   {
    d: 450050,

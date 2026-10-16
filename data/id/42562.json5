@@ -3,6 +3,7 @@
   i: 42562,
   t: 'OBSOLETE',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/42562/small.jpg',
  },
  data: [
   {
@@ -3414,6 +3415,17 @@
    a: 55.1,
    p: 38.57,
    o: 31.43,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 53.84,
+   r: 93,
+   u: 555,
+   w: 43.91,
+   a: 54,
+   p: 50.22,
+   o: 42.78,
   },
   {
    d: 450050,

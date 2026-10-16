@@ -3,6 +3,7 @@
   i: 41354,
   t: 'Oshiete Mahou no Pendulum: Rilu Rilu Fairilu',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/41354/small.jpg',
  },
  data: [
   {
@@ -2077,16 +2078,6 @@
   },
   {
    d: 432772,
-   m: 59,
-   r: 6,
-   u: 72,
-   w: 28.78,
-   a: 65,
-   p: 3.9,
-   o: 2.1,
-  },
-  {
-   d: 432796,
    m: 59,
    r: 6,
    u: 72,

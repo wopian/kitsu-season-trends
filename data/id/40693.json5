@@ -3,6 +3,7 @@
   i: 40693,
   t: 'Panpaka Pants O New-san',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/40693/small.jpg',
  },
  data: [
   {
@@ -1244,6 +1245,17 @@
    a: 44,
    p: 2.2,
    o: 2.8,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 46,
+   r: 6,
+   u: 27,
+   w: 14.87,
+   a: 43.33,
+   p: 2.6,
+   o: 3.4,
   },
   {
    d: 450050,

@@ -3,6 +3,7 @@
   i: 43175,
   t: 'Yesterday wo Utatte Haishin-ban Episode',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43175/small.jpg',
  },
  data: [
   {
@@ -1901,6 +1902,18 @@
    a: 66.5,
    p: 154.28,
    o: 77.72,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 65.82,
+   r: 358,
+   u: 879,
+   f: 3,
+   w: 60.95,
+   a: 66,
+   p: 236.28,
+   o: 121.72,
   },
   {
    d: 450050,

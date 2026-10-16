@@ -3,6 +3,7 @@
   i: 43556,
   t: 'One Room 3',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/43556/small.jpg',
  },
  data: [
   {
@@ -397,17 +398,6 @@
    m: 59.9,
    r: 36,
    u: 400,
-   f: 1,
-   w: 44.76,
-   a: 61,
-   p: 21.96,
-   o: 14.04,
-  },
-  {
-   d: 446344,
-   m: 59.9,
-   r: 36,
-   u: 404,
    f: 1,
    w: 44.76,
    a: 61,

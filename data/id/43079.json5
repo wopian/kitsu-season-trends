@@ -3,6 +3,7 @@
   i: 43079,
   t: 'Watanuki-san Chi to',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/43079/small.jpg',
  },
  data: [
   {
@@ -1024,6 +1025,17 @@
    a: 56.43,
    p: 3.95,
    o: 3.05,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 55,
+   r: 9,
+   u: 75,
+   w: 27.91,
+   a: 57.22,
+   p: 5.15,
+   o: 3.85,
   },
   {
    d: 450050,

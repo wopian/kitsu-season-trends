@@ -3,6 +3,7 @@
   i: 42595,
   t: 'Egg Car',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42595/small.jpg',
  },
  data: [
   {
@@ -1284,6 +1285,17 @@
    a: 51.11,
    p: 4.6,
    o: 4.4,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 52,
+   r: 11,
+   u: 21,
+   w: 26.61,
+   a: 52.73,
+   p: 5.8,
+   o: 5.2,
   },
   {
    d: 450050,

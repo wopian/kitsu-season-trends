@@ -3,6 +3,7 @@
   i: 14219,
   t: 'Pikachin-Kit',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/14219/small.jpg',
  },
  data: [
   {
@@ -2004,6 +2005,17 @@
    a: 58,
    p: 5.8,
    o: 4.2,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 56.25,
+   r: 12,
+   u: 43,
+   w: 31.95,
+   a: 58.33,
+   p: 7,
+   o: 5,
   },
   {
    d: 450050,

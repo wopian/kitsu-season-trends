@@ -3,6 +3,7 @@
   i: 43479,
   t: 'Shi Zhi Ge: Hua Yu Yan De Kuangxiang Shi',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43479/small.jpg',
  },
  data: [
   {
@@ -464,6 +465,17 @@
    a: 54.38,
    p: 4.35,
    o: 3.65,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 58.33,
+   r: 14,
+   u: 88,
+   w: 35.63,
+   a: 60.71,
+   p: 8.5,
+   o: 5.5,
   },
   {
    d: 450050,

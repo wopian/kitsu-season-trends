@@ -3,6 +3,7 @@
   i: 43710,
   t: 'Kusoge tte Iuna! Animation',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43710/small.jpg',
  },
  data: [
   {
@@ -254,6 +255,18 @@
    a: 50.32,
    p: 9.56,
    o: 9.44,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 52.83,
+   r: 66,
+   u: 97,
+   f: 1,
+   w: 41.13,
+   a: 53,
+   p: 34.98,
+   o: 31.02,
   },
   {
    d: 450050,

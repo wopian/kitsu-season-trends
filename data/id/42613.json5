@@ -3,6 +3,7 @@
   i: 42613,
   t: 'Shadowverse',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42613/small.jpg',
  },
  data: [
   {
@@ -2410,6 +2411,18 @@
    a: 52.8,
    p: 44.35,
    o: 39.65,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 53.11,
+   r: 134,
+   u: 626,
+   f: 2,
+   w: 44.78,
+   a: 53.2,
+   p: 71.29,
+   o: 62.71,
   },
   {
    d: 450050,

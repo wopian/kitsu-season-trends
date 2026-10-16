@@ -3,6 +3,7 @@
   i: 13943,
   t: 'Road to You',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/13943/small.jpg',
  },
  data: [
   {
@@ -3942,6 +3943,18 @@
    a: 68.7,
    p: 171.06,
    o: 77.94,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 68.14,
+   r: 282,
+   u: 961,
+   f: 3,
+   w: 62.76,
+   a: 68.4,
+   p: 192.89,
+   o: 89.11,
   },
   {
    d: 450050,

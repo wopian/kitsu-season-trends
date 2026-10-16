@@ -3,6 +3,7 @@
   i: 42320,
   t: 'Super Shiro',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42320/small.jpg',
  },
  data: [
   {
@@ -3557,6 +3558,18 @@
    a: 62.6,
    p: 21.91,
    o: 13.09,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 58.91,
+   r: 51,
+   u: 168,
+   f: 1,
+   w: 45.93,
+   a: 59.61,
+   p: 30.4,
+   o: 20.6,
   },
   {
    d: 450050,

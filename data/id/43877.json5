@@ -1,0 +1,32 @@
+{
+ meta: {
+  i: 43877,
+  t: 'Fanren Xiu Xian Chuan Special',
+  u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43877/small.jpg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 447171,
+   m: 56.67,
+   r: 5,
+   u: 3,
+   w: 24.37,
+   a: 62,
+   p: 3.1,
+   o: 1.9,
+  },
+  {
+   i: 1,
+   d: 450050,
+   m: 56.67,
+   r: 5,
+   u: 3,
+   w: 24.37,
+   a: 62,
+   p: 3.1,
+   o: 1.9,
+  },
+ ],
+}

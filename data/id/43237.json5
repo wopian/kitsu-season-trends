@@ -3,6 +3,7 @@
   i: 43237,
   t: 'Gal-gaku.: Hijiri Girls Square Gakuin',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/43237/poster_image/small-75b9f7486780fcfbc2c6cddf922a1575.jpeg',
  },
  data: [
   {
@@ -1284,6 +1285,17 @@
    a: 49.17,
    p: 5.9,
    o: 6.1,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 46.67,
+   r: 17,
+   u: 77,
+   w: 25.23,
+   a: 45.88,
+   p: 7.8,
+   o: 9.2,
   },
   {
    d: 450050,

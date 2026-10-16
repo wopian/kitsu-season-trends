@@ -3,6 +3,7 @@
   i: 43350,
   t: 'Huyao Xiao Hongniang: Jin Chenxi',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43350/small.jpg',
  },
  data: [
   {
@@ -654,6 +655,17 @@
    a: 73.64,
    p: 8.1,
    o: 2.9,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 66.35,
+   r: 22,
+   u: 76,
+   w: 48.43,
+   a: 69.32,
+   p: 15.25,
+   o: 6.75,
   },
   {
    d: 450050,

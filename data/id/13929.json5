@@ -3,6 +3,7 @@
   i: 13929,
   t: 'Tokyo Ghoul:re',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/13929/small.jpg',
  },
  data: [
   {
@@ -15,17 +16,6 @@
    a: 86,
    p: 120.4,
    o: 19.6,
-  },
-  {
-   d: 422953,
-   m: 86.01,
-   r: 162,
-   u: 4706,
-   f: 124,
-   w: 80.84,
-   a: 86.9,
-   p: 140.78,
-   o: 21.22,
   },
   {
    d: 422953,

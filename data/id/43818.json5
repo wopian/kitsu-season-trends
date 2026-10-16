@@ -1,0 +1,32 @@
+{
+ meta: {
+  i: 43818,
+  t: 'Kai Byoui Ramune',
+  u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/43818/small.jpg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 447171,
+   m: 72.2,
+   r: 434,
+   u: 603,
+   w: 68.01,
+   a: 72.4,
+   p: 314.22,
+   o: 119.78,
+  },
+  {
+   i: 1,
+   d: 450050,
+   m: 72.2,
+   r: 434,
+   u: 603,
+   w: 68.01,
+   a: 72.4,
+   p: 314.22,
+   o: 119.78,
+  },
+ ],
+}

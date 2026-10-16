@@ -1,0 +1,7 @@
+telemetry = false
+[run]
+noOrphans = true
+[install]
+minimumReleaseAge = 259200
+# Explicitly requested release, published on migration day.
+minimumReleaseAgeExcludes = ["kitsu-native", "kitsu-core"]

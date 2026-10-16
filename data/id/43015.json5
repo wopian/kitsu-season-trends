@@ -3,6 +3,7 @@
   i: 43015,
   t: 'Jin Tian Kai Shi Zuo Ming Xing',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43015/small.jpg',
  },
  data: [
   {
@@ -1907,6 +1908,18 @@
    a: 67.5,
    p: 16.2,
    o: 7.8,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 66.36,
+   r: 32,
+   u: 123,
+   f: 1,
+   w: 51.09,
+   a: 68.41,
+   p: 21.89,
+   o: 10.11,
   },
   {
    d: 450050,

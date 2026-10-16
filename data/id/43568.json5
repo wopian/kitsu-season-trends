@@ -1,0 +1,32 @@
+{
+ meta: {
+  i: 43568,
+  t: 'Hortensia Saga',
+  u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/43568/small.jpg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 447171,
+   m: 57.6,
+   r: 301,
+   u: 703,
+   w: 52.06,
+   a: 57.7,
+   p: 173.68,
+   o: 127.32,
+  },
+  {
+   i: 1,
+   d: 450050,
+   m: 57.6,
+   r: 301,
+   u: 703,
+   w: 52.06,
+   a: 57.7,
+   p: 173.68,
+   o: 127.32,
+  },
+ ],
+}

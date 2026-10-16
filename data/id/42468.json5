@@ -3,6 +3,7 @@
   i: 42468,
   t: 'Zoids Wild Zero',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42468/small.jpg',
  },
  data: [
   {
@@ -1462,6 +1463,18 @@
    a: 87.14,
    p: 6.1,
    o: 0.9,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 72.73,
+   r: 7,
+   u: 116,
+   f: 1,
+   w: 48.69,
+   a: 85.71,
+   p: 6,
+   o: 1,
   },
   {
    d: 450050,

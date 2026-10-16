@@ -3,6 +3,7 @@
   i: 43289,
   t: 'Wu Dong Qian Kun 2nd Season',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43289/small.jpg',
  },
  data: [
   {
@@ -587,6 +588,18 @@
    a: 70.28,
    p: 12.65,
    o: 5.35,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 68.09,
+   r: 30,
+   u: 64,
+   f: 1,
+   w: 52.63,
+   a: 70.5,
+   p: 21.15,
+   o: 8.85,
   },
   {
    d: 450050,

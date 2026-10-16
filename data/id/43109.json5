@@ -3,6 +3,7 @@
   i: 43109,
   t: 'MAJOR SECOND Season 2',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/43109/small.jpg',
  },
  data: [
   {
@@ -2104,6 +2105,17 @@
    a: 78.4,
    p: 75.26,
    o: 20.74,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 78.21,
+   r: 192,
+   u: 468,
+   w: 72.49,
+   a: 78.8,
+   p: 151.3,
+   o: 40.7,
   },
   {
    d: 450050,

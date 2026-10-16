@@ -3,6 +3,7 @@
   i: 42451,
   t: 'Hensuki▽',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42451/small.jpg',
  },
  data: [
   {
@@ -3088,6 +3089,18 @@
    a: 70,
    p: 11.2,
    o: 4.8,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 68.65,
+   r: 19,
+   u: 182,
+   f: 2,
+   w: 50.1,
+   a: 72.58,
+   p: 13.79,
+   o: 5.21,
   },
   {
    d: 450050,

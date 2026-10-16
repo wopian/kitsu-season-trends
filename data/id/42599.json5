@@ -3,6 +3,7 @@
   i: 42599,
   t: 'RWBY VIII',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/42599/small.jpg',
  },
  data: [
   {
@@ -64,6 +65,17 @@
    a: 82.21,
    p: 23.84,
    o: 5.16,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 79.48,
+   r: 229,
+   u: 512,
+   w: 74.34,
+   a: 80,
+   p: 183.2,
+   o: 45.8,
   },
   {
    d: 450050,

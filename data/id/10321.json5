@@ -3,6 +3,7 @@
   i: 10321,
   t: 'Teach',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/10321/small.jpg',
  },
  data: [
   {
@@ -1237,6 +1238,17 @@
   },
   {
    d: 446368,
+   m: 65.56,
+   r: 5,
+   u: 24,
+   w: 35.94,
+   a: 78,
+   p: 3.9,
+   o: 1.1,
+  },
+  {
+   i: 0,
+   d: 447171,
    m: 65.56,
    r: 5,
    u: 24,

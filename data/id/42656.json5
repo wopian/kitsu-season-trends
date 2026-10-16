@@ -3,6 +3,7 @@
   i: 42656,
   t: 'Chuizhi Shijie',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/42656/small.jpg',
  },
  data: [
   {
@@ -1284,6 +1285,17 @@
    a: 60,
    p: 4.2,
    o: 2.8,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 56.92,
+   r: 9,
+   u: 15,
+   w: 30.05,
+   a: 60,
+   p: 5.4,
+   o: 3.6,
   },
   {
    d: 450050,

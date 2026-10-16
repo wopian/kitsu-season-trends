@@ -3,6 +3,7 @@
   i: 43277,
   t: 'You Yao',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43277/small.jpg',
  },
  data: [
   {
@@ -254,6 +255,17 @@
    a: 69.29,
    p: 4.85,
    o: 2.15,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 65,
+   r: 14,
+   u: 74,
+   w: 43.33,
+   a: 69.29,
+   p: 9.7,
+   o: 4.3,
   },
   {
    d: 450050,

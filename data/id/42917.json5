@@ -3,6 +3,7 @@
   i: 42917,
   t: 'Qin Shi Ming Yue: Tian Xing Jiu Ge 2nd Season',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/42917/small.jpg',
  },
  data: [
   {
@@ -164,6 +165,17 @@
    a: 82,
    p: 4.1,
    o: 0.9,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 65.45,
+   r: 7,
+   u: 42,
+   w: 38.28,
+   a: 74.29,
+   p: 5.2,
+   o: 1.8,
   },
   {
    d: 450050,

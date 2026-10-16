@@ -3,6 +3,7 @@
   i: 43232,
   t: 'Quanzhi Fashi 4th Season',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/43232/poster_image/small-cbbc9b8ef55c78f96ca0ef5780197bc2.jpeg',
  },
  data: [
   {
@@ -1537,6 +1538,18 @@
    a: 79.4,
    p: 88.93,
    o: 23.07,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 76.73,
+   r: 229,
+   u: 559,
+   f: 6,
+   w: 71.34,
+   a: 77.2,
+   p: 176.79,
+   o: 52.21,
   },
   {
    d: 450050,

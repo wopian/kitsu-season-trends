@@ -3,6 +3,7 @@
   i: 43101,
   t: 'Wan Jie Xian Zong Season 3',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43101/small.jpg',
  },
  data: [
   {
@@ -1134,6 +1135,17 @@
    a: 81.67,
    p: 9.8,
    o: 2.2,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 74.48,
+   r: 25,
+   u: 44,
+   w: 59.13,
+   a: 78.4,
+   p: 19.6,
+   o: 5.4,
   },
   {
    d: 450050,

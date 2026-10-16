@@ -3,6 +3,7 @@
   i: 12357,
   t: 'Jinxiu Shenzhou Zhi Qi You Ji',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/12357/small.jpg',
  },
  data: [
   {
@@ -3800,6 +3801,17 @@
    m: 68.46,
    r: 9,
    u: 95,
+   w: 44.22,
+   a: 76.67,
+   p: 6.9,
+   o: 2.1,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 68.46,
+   r: 9,
+   u: 97,
    w: 44.22,
    a: 76.67,
    p: 6.9,

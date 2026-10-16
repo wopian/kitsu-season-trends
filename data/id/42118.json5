@@ -3,6 +3,7 @@
   i: 42118,
   t: 'Monkey Peak',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/42118/small.jpg',
  },
  data: [
   {
@@ -1243,6 +1244,17 @@
    w: 48.35,
    a: 88.33,
    p: 5.3,
+   o: 0.7,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 75.45,
+   r: 7,
+   u: 71,
+   w: 53.03,
+   a: 90,
+   p: 6.3,
    o: 0.7,
   },
   {

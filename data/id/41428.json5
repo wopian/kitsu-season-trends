@@ -3,6 +3,7 @@
   i: 41428,
   t: 'Tabechatta tte Iinoni na!',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/41428/small.jpg',
  },
  data: [
   {
@@ -5624,6 +5625,17 @@
    a: 46.67,
    p: 5.6,
    o: 6.4,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 53.1,
+   r: 17,
+   u: 38,
+   w: 31.7,
+   a: 53.82,
+   p: 9.15,
+   o: 7.85,
   },
   {
    d: 450050,

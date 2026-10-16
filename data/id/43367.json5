@@ -3,6 +3,7 @@
   i: 43367,
   t: '100-man no Inochi no Ue ni Ore wa Tatteiru',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/43367/small.jpg',
  },
  data: [
   {
@@ -367,17 +368,6 @@
    a: 63.4,
    p: 173.72,
    o: 100.28,
-  },
-  {
-   d: 446176,
-   m: 63.21,
-   r: 275,
-   u: 2836,
-   f: 2,
-   w: 57.56,
-   a: 63.4,
-   p: 174.35,
-   o: 100.65,
   },
   {
    d: 446176,

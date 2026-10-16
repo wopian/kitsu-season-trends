@@ -3,6 +3,7 @@
   i: 43536,
   t: 'Min Diao Ju Yi Wen Lu',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43536/small.jpg',
  },
  data: [
   {
@@ -147,6 +148,18 @@
    a: 75,
    p: 5.25,
    o: 1.75,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 67.75,
+   r: 16,
+   u: 59,
+   f: 1,
+   w: 47.71,
+   a: 72.19,
+   p: 11.55,
+   o: 4.45,
   },
   {
    d: 450050,

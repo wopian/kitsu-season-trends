@@ -1,0 +1,71 @@
+name: Build static Kitsu
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      revision:
+        type: string
+        required: true
+permissions:
+  contents: read
+concurrency:
+  group: kitsu-static-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    env:
+      RELEASE_REVISION: ${{ inputs.revision || github.sha }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.revision || github.sha }}
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: .bun-version
+      - run: bun install --frozen-lockfile
+      - run: bun run typecheck
+      - run: bun run test
+      - run: bun run build
+      - run: bunx playwright install --with-deps chromium
+      - run: bun run test:browser
+      - name: Check immutable assets across builds
+        run: |
+          previous_build=$(mktemp -d)
+          cp -a .output/public/. "$previous_build/"
+          bun run build
+          bun scripts/check-immutable-assets.ts "$previous_build" .output/public
+      - name: Verify static HTTP output
+        run: |
+          PORT=4173 bun run preview > /tmp/kitsu-preview.log 2>&1 &
+          preview_pid=$!
+          trap 'kill "$preview_pid"' EXIT
+          sleep 2
+          bun run check:http http://127.0.0.1:4173
+      - run: python3 deployment/hetzner/tools/kitsu-site/test-release.py
+      - run: tar -czf kitsu-static.tar.gz -C .output/public .
+      - uses: actions/upload-artifact@v7
+        with:
+          name: kitsu-static-${{ inputs.revision || github.sha }}
+          path: kitsu-static.tar.gz
+      - uses: docker/login-action@v4
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish verified file-only image
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        env:
+          REVISION: ${{ inputs.revision || github.sha }}
+        run: |
+          image="ghcr.io/${{ github.repository }}/static"
+          docker build --target artifact -t "$image:latest" -t "$image:sha-$REVISION" .
+          docker push "$image:sha-$REVISION"
+          docker push "$image:latest"

@@ -3,6 +3,7 @@
   i: 42408,
   t: 'B Rappers Street',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42408/small.jpg',
  },
  data: [
   {
@@ -1284,6 +1285,17 @@
    a: 56.25,
    p: 4.5,
    o: 3.5,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 57.5,
+   r: 12,
+   u: 27,
+   w: 33.33,
+   a: 60,
+   p: 7.2,
+   o: 4.8,
   },
   {
    d: 450050,

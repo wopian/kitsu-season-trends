@@ -3,6 +3,7 @@
   i: 11271,
   t: 'Xi Yang Yang Yu Hui Tai Lang',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/11271/small.jpg',
  },
  data: [
   {
@@ -3154,6 +3155,17 @@
    a: 45.5,
    p: 5.01,
    o: 6,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 50,
+   r: 17,
+   u: 45,
+   w: 28.53,
+   a: 50,
+   p: 8.5,
+   o: 8.5,
   },
   {
    d: 450050,

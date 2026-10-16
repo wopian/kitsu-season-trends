@@ -3,6 +3,7 @@
   i: 12749,
   t: 'Shima Kousaku no Asia Shinseki-den',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/12749/small.jpg',
  },
  data: [
   {
@@ -1284,6 +1285,17 @@
    a: 52,
    p: 2.6,
    o: 2.4,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 51,
+   r: 6,
+   u: 78,
+   w: 19.79,
+   a: 51.67,
+   p: 3.1,
+   o: 2.9,
   },
   {
    d: 450050,

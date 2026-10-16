@@ -3,6 +3,7 @@
   i: 43092,
   t: 'Kyojinzoku no Hanayome',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/43092/small.jpg',
  },
  data: [
   {
@@ -1423,6 +1424,18 @@
    a: 60,
    p: 121.8,
    o: 81.2,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 59.41,
+   r: 404,
+   u: 1326,
+   f: 31,
+   w: 54.65,
+   a: 59.5,
+   p: 240.38,
+   o: 163.62,
   },
   {
    d: 450050,

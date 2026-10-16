@@ -3,6 +3,7 @@
   i: 43229,
   t: 'Those Years I Opened a Zoo',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43229/small.jpg',
  },
  data: [
   {
@@ -1310,6 +1311,18 @@
    a: 67.62,
    p: 14.2,
    o: 6.8,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 67,
+   r: 31,
+   u: 123,
+   f: 1,
+   w: 51.6,
+   a: 69.19,
+   p: 21.45,
+   o: 9.55,
   },
   {
    d: 450050,

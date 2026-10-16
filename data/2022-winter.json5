@@ -1817,6 +1817,7 @@
      f: 6578,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/12/small.jpg',
   },
   {
    i: 210,
@@ -3635,6 +3636,7 @@
      f: 826,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/210/small.jpg',
   },
   {
    i: 856,
@@ -5453,6 +5455,7 @@
      f: 52,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/856/small.jpg',
   },
   {
    i: 1078,
@@ -7271,6 +7274,7 @@
      f: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/1078/small.jpg',
   },
   {
    i: 1766,
@@ -9089,6 +9093,7 @@
      f: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/1766/small.jpg',
   },
   {
    i: 2182,
@@ -10907,6 +10912,7 @@
      f: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/2182/small.jpg',
   },
   {
    i: 3618,
@@ -12544,6 +12550,7 @@
      r: 43,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/3618/small.jpg',
   },
   {
    i: 4445,
@@ -14181,6 +14188,7 @@
      r: 149,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/4445/small.jpg',
   },
   {
    i: 5007,
@@ -15999,6 +16007,7 @@
      f: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/5007/small.jpg',
   },
   {
    i: 5297,
@@ -17636,6 +17645,7 @@
      r: 14,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/5297/small.jpg',
   },
   {
    i: 5443,
@@ -19454,6 +19464,7 @@
      f: 3,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/5443/small.jpg',
   },
   {
    i: 6212,
@@ -21091,6 +21102,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/6212/small.jpg',
   },
   {
    i: 8563,
@@ -22728,6 +22740,7 @@
      r: 10,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/8563/small.jpg',
   },
   {
    i: 8884,
@@ -24546,6 +24559,7 @@
      f: 15,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/8884/small.jpg',
   },
   {
    i: 9039,
@@ -26183,6 +26197,7 @@
      r: 7,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/9039/small.jpg',
   },
   {
    i: 9832,
@@ -27820,6 +27835,7 @@
      r: 8,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/9832/small.jpg',
   },
   {
    i: 9908,
@@ -29457,6 +29473,7 @@
      r: 10,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/9908/small.jpg',
   },
   {
    i: 10659,
@@ -31094,6 +31111,7 @@
      r: 10,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/10659/small.jpg',
   },
   {
    i: 10682,
@@ -32731,6 +32749,7 @@
      r: 9,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/10682/small.jpg',
   },
   {
    i: 11450,
@@ -34260,6 +34279,7 @@
      r: 4,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/11450/poster_image/small-889d3d28b4661c9bc755fc0e79207a34.jpeg',
   },
   {
    i: 12050,
@@ -36078,6 +36098,7 @@
      f: 3,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/12050/small.jpg',
   },
   {
    i: 12168,
@@ -37715,6 +37736,7 @@
      r: 15,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/12168/small.jpg',
   },
   {
    i: 12288,
@@ -39352,6 +39374,7 @@
      r: 10,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/12288/small.jpg',
   },
   {
    i: 12401,
@@ -41170,6 +41193,7 @@
      f: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/12401/small.jpg',
   },
   {
    i: 12503,
@@ -42807,6 +42831,7 @@
      r: 3,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/12503/small.jpg',
   },
   {
    i: 12509,
@@ -45200,6 +45225,7 @@
      r: 75,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/12509/small.jpg',
   },
   {
    i: 12595,
@@ -47018,6 +47044,7 @@
      f: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/12595/poster_image/small-e2e266b0b91dcbdfcbabe60f2b75bdf1.jpeg',
   },
   {
    i: 12638,
@@ -48655,6 +48682,7 @@
      r: 12,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/12638/small.jpg',
   },
   {
    i: 13003,
@@ -50473,6 +50501,7 @@
      f: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/13003/small.jpg',
   },
   {
    i: 13051,
@@ -52291,6 +52320,7 @@
      f: 1058,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/13051/poster_image/small-ac969c0db85ff43d78eaea02c50a7bf0.jpeg',
   },
   {
    i: 14170,
@@ -53928,6 +53958,7 @@
      r: 7,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/14170/small.jpg',
   },
   {
    i: 14241,
@@ -55565,6 +55596,7 @@
      r: 9,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/14241/small.jpg',
   },
   {
    i: 14253,
@@ -57202,6 +57234,7 @@
      r: 6,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/14253/small.jpg',
   },
   {
    i: 14263,
@@ -59020,6 +59053,7 @@
      f: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/14263/small.jpg',
   },
   {
    i: 40625,
@@ -60657,6 +60691,7 @@
      r: 8,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/40625/small.jpg',
   },
   {
    i: 40766,
@@ -62294,6 +62329,7 @@
      r: 10,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/40766/small.jpg',
   },
   {
    i: 40806,
@@ -63931,6 +63967,7 @@
      r: 7,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/40806/small.jpg',
   },
   {
    i: 40820,
@@ -65568,6 +65605,7 @@
      r: 6,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/40820/small.jpg',
   },
   {
    i: 40821,
@@ -67205,6 +67243,7 @@
      r: 6,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/40821/small.jpg',
   },
   {
    i: 40822,
@@ -68842,6 +68881,7 @@
      r: 3,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/40822/small.jpg',
   },
   {
    i: 40850,
@@ -70479,6 +70519,7 @@
      r: 5,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/40850/small.jpg',
   },
   {
    i: 40946,
@@ -72116,6 +72157,7 @@
      r: 6,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/40946/small.jpg',
   },
   {
    i: 40957,
@@ -73753,6 +73795,7 @@
      r: 5,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/40957/small.jpg',
   },
   {
    i: 41143,
@@ -75571,6 +75614,7 @@
      f: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/41143/small.jpg',
   },
   {
    i: 41210,
@@ -77389,6 +77433,7 @@
      f: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/41210/small.jpg',
   },
   {
    i: 41311,
@@ -78819,6 +78864,7 @@
      r: 298,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/41311/poster_image/small-da5ad05330e075af8a36adddbd978a2f.jpeg',
   },
   {
    i: 41319,
@@ -80637,6 +80683,7 @@
      f: 50,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/41319/small.jpg',
   },
   {
    i: 41998,
@@ -82760,6 +82807,7 @@
      r: 127,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/41998/small.jpg',
   },
   {
    i: 42077,
@@ -85153,6 +85201,7 @@
      r: 669,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/42077/poster_image/small-a6d4b1560d581aa8d5152ddf238812c2.jpeg',
   },
   {
    i: 42243,
@@ -86790,6 +86839,7 @@
      r: 6,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/42243/small.jpg',
   },
   {
    i: 42330,
@@ -89183,6 +89233,7 @@
      r: 122,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/42330/small.jpg',
   },
   {
    i: 42338,
@@ -91851,6 +91902,7 @@
      f: 18,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/42338/small.jpg',
   },
   {
    i: 42384,
@@ -93439,6 +93491,7 @@
      f: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/42384/small.jpg',
   },
   {
    i: 42530,
@@ -94667,6 +94720,7 @@
      f: 17,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/42530/poster_image/small-54bd592f53287c163c7ecef6e7519a42.jpeg',
   },
   {
    i: 42534,
@@ -96485,6 +96539,7 @@
      f: 21,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/42534/small.jpg',
   },
   {
    i: 42611,
@@ -99203,6 +99258,7 @@
      f: 11,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/42611/poster_image/small-8f0d5a08d9efbff80a391212cc133e36.jpeg',
   },
   {
    i: 42617,
@@ -100840,6 +100896,7 @@
      r: 16,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/42617/small.jpg',
   },
   {
    i: 42797,
@@ -101694,6 +101751,7 @@
      r: 68,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/42797/poster_image/small-4189641cf5dc49f720eea00147e94256.jpeg',
   },
   {
    i: 42899,
@@ -103512,6 +103570,7 @@
      f: 3,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/42899/small.jpg',
   },
   {
    i: 42900,
@@ -105330,6 +105389,7 @@
      f: 6,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/42900/small.jpg',
   },
   {
    i: 42906,
@@ -106967,6 +107027,7 @@
      r: 13,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/42906/small.jpg',
   },
   {
    i: 42991,
@@ -108901,6 +108962,7 @@
      r: 460,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/42991/small.jpg',
   },
   {
    i: 43036,
@@ -110538,6 +110600,7 @@
      r: 9,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43036/small.jpg',
   },
   {
    i: 43065,
@@ -111516,6 +111579,7 @@
      f: 4,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43065/poster_image/small-bef003af29e0a3483b6281ff8533fc4e.jpeg',
   },
   {
    i: 43081,
@@ -113153,6 +113217,7 @@
      r: 5,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43081/small.jpg',
   },
   {
    i: 43126,
@@ -114745,6 +114810,7 @@
      r: 159,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43126/poster_image/small-b8102385b94e94a15b6c5700f4a571ff.jpeg',
   },
   {
    i: 43198,
@@ -116693,6 +116759,7 @@
      f: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43198/poster_image/small-36d8ae6db21aac64e7d0bb46833236ee.jpeg',
   },
   {
    i: 43222,
@@ -119211,6 +119278,7 @@
      f: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43222/small.jpg',
   },
   {
    i: 43224,
@@ -119768,6 +119836,7 @@
      r: 47,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43224/poster_image/small-9e91e4a0571738856aa6a0a8a12713e1.jpeg',
   },
   {
    i: 43228,
@@ -121531,6 +121600,7 @@
      r: 159,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43228/poster_image/small-2f10e9129ce97724155e270432f78f5b.jpeg',
   },
   {
    i: 43248,
@@ -123366,6 +123436,7 @@
      r: 6,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43248/poster_image/small-fdbda75792bdfdbfe89e2c2b507e1450.jpeg',
   },
   {
    i: 43256,
@@ -125003,6 +125074,7 @@
      r: 9,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43256/small.jpg',
   },
   {
    i: 43333,
@@ -126640,6 +126712,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43333/small.jpg',
   },
   {
    i: 43399,
@@ -128277,6 +128350,7 @@
      r: 9,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43399/small.jpg',
   },
   {
    i: 43527,
@@ -129914,6 +129988,7 @@
      r: 24,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43527/small.jpg',
   },
   {
    i: 43528,
@@ -131551,6 +131626,7 @@
      r: 22,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43528/small.jpg',
   },
   {
    i: 43530,
@@ -133404,6 +133480,7 @@
      r: 131,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43530/poster_image/small-2f42ae2057cd230031af45b7ac3a5855.jpeg',
   },
   {
    i: 43543,
@@ -135041,6 +135118,7 @@
      r: 19,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43543/small.jpg',
   },
   {
    i: 43547,
@@ -135895,6 +135973,7 @@
      r: 104,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43547/poster_image/small-9a85b05c35cae596ecdce6ebc3552e46.jpeg',
   },
   {
    i: 43600,
@@ -137733,6 +137812,7 @@
      f: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43600/poster_image/small-41797d19ed266d41e13e9d600d8ed83d.jpeg',
   },
   {
    i: 43607,
@@ -139021,6 +139101,7 @@
      f: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43607/poster_image/small-c411330df3409c25219fdde36e46abe6.jpeg',
   },
   {
    i: 43609,
@@ -139695,6 +139776,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43609/small.jpg',
   },
   {
    i: 43634,
@@ -141332,6 +141414,7 @@
      r: 5,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43634/small.jpg',
   },
   {
    i: 43640,
@@ -142969,6 +143052,7 @@
      r: 4,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43640/small.jpg',
   },
   {
    i: 43681,
@@ -143643,6 +143727,7 @@
      r: 313,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43681/poster_image/small-860b72ef518adc49abd77767771b23c8.jpeg',
   },
   {
    i: 43691,
@@ -144911,6 +144996,7 @@
      f: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43691/poster_image/small-5f0bc88722f473f556667458990cb804.jpeg',
   },
   {
    i: 43702,
@@ -145774,6 +145860,7 @@
      r: 149,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43702/poster_image/small-c7ee1f6fc8282cd65ef7ec4709236100.jpeg',
   },
   {
    i: 43729,
@@ -147411,6 +147498,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43729/small.jpg',
   },
   {
    i: 43739,
@@ -149048,6 +149136,7 @@
      r: 10,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43739/small.jpg',
   },
   {
    i: 43740,
@@ -150866,6 +150955,7 @@
      f: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43740/small.jpg',
   },
   {
    i: 43750,
@@ -153061,6 +153151,7 @@
      r: 131,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43750/poster_image/small-e7104af38ddba58e6f6e59e8136c7b47.jpeg',
   },
   {
    i: 43755,
@@ -154968,6 +155059,7 @@
      r: 8,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43755/poster_image/small-31edffd72487f2f45059cbb1e0824264.jpeg',
   },
   {
    i: 43795,
@@ -157289,6 +157381,7 @@
      r: 468,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43795/small.jpg',
   },
   {
    i: 43801,
@@ -159107,6 +159200,7 @@
      f: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43801/small.jpg',
   },
   {
    i: 43802,
@@ -161419,6 +161513,7 @@
      r: 10,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43802/small.jpg',
   },
   {
    i: 43817,
@@ -163812,6 +163907,7 @@
      r: 821,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43817/small.jpg',
   },
   {
    i: 43821,
@@ -165980,6 +166076,7 @@
      r: 152,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43821/small.jpg',
   },
   {
    i: 43828,
@@ -167617,6 +167714,7 @@
      r: 5,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43828/small.jpg',
   },
   {
    i: 43849,
@@ -169317,6 +169415,7 @@
      r: 3861,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43849/poster_image/small-4ea92770fde6d0553ff4878548e894fb.jpeg',
   },
   {
    i: 43862,
@@ -171053,6 +171152,7 @@
      r: 1615,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43862/small.jpg',
   },
   {
    i: 43890,
@@ -172690,6 +172790,7 @@
      r: 20,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43890/small.jpg',
   },
   {
    i: 43899,
@@ -174327,6 +174428,7 @@
      r: 18,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43899/small.jpg',
   },
   {
    i: 43929,
@@ -176009,6 +176111,7 @@
      r: 233,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/43929/poster_image/small-4810f1c64eca8d6b2c631bae642c457c.jpeg',
   },
   {
    i: 43970,
@@ -177655,6 +177758,7 @@
      r: 126,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/43970/small.jpg',
   },
   {
    i: 44011,
@@ -179067,6 +179171,7 @@
      r: 477,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44011/poster_image/small-84fdf5f12c860e633da8cc3674ced71b.jpeg',
   },
   {
    i: 44020,
@@ -181514,6 +181619,7 @@
      r: 1254,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44020/poster_image/small-00e716ce36a825c0a577989e7a9b330f.jpeg',
   },
   {
    i: 44025,
@@ -183196,6 +183302,7 @@
      r: 1238,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44025/poster_image/small-126f96120eb4fddac0067b5fc1e5c446.jpeg',
   },
   {
    i: 44032,
@@ -184275,6 +184382,7 @@
      r: 373,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44032/poster_image/small-6f7cb0ea957f968f3b0edd7bda8e5d05.jpeg',
   },
   {
    i: 44081,
@@ -186326,6 +186434,7 @@
      r: 38333,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44081/poster_image/small-bad9c70bdbe84bdc00b0704fb54c4f9f.jpeg',
   },
   {
    i: 44088,
@@ -187630,6 +187739,7 @@
      r: 190,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44088/small.jpg',
   },
   {
    i: 44120,
@@ -189267,6 +189377,7 @@
      r: 11,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44120/small.jpg',
   },
   {
    i: 44121,
@@ -190913,6 +191024,7 @@
      r: 624,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44121/poster_image/small-4e468b0427aa28ccc2622227a464262c.jpeg',
   },
   {
    i: 44159,
@@ -192271,6 +192383,7 @@
      r: 743,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44159/poster_image/small-ff1760c98503f2ebdd356c1ce1bab7f3.jpeg',
   },
   {
    i: 44167,
@@ -194664,6 +194777,7 @@
      r: 1675,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44167/small.jpg',
   },
   {
    i: 44169,
@@ -195518,6 +195632,7 @@
      r: 58,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44169/poster_image/small-12e52bd1fa8b76dde207282f77b7b2d4.jpeg',
   },
   {
    i: 44172,
@@ -197155,6 +197270,7 @@
      r: 13,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44172/small.jpg',
   },
   {
    i: 44186,
@@ -198855,6 +198971,7 @@
      r: 1023,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44186/poster_image/small-e692de97a47580684ba34ff8c4d69f44.jpeg',
   },
   {
    i: 44187,
@@ -200240,6 +200357,7 @@
      r: 746,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44187/poster_image/small-10ddd354b6e9fcf3d5d3ecf15ada7378.jpeg',
   },
   {
    i: 44189,
@@ -201868,6 +201986,7 @@
      r: 1220,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44189/poster_image/small-e1aa8b5b64cd0a65331df328f1631fd6.jpeg',
   },
   {
    i: 44195,
@@ -204261,6 +204380,7 @@
      r: 516,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44195/small.jpg',
   },
   {
    i: 44199,
@@ -206591,6 +206711,7 @@
      r: 217,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44199/small.jpg',
   },
   {
    i: 44205,
@@ -208300,6 +208421,7 @@
      r: 517,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44205/poster_image/small-eb67094757a43d0cbbcbe148de625f07.jpeg',
   },
   {
    i: 44208,
@@ -209937,6 +210059,7 @@
      r: 156,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44208/poster_image/small-8cef19b0dffc058b438f8b39470845fa.jpeg',
   },
   {
    i: 44210,
@@ -211619,6 +211742,7 @@
      r: 794,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44210/poster_image/small-d9db451e0cf713e5c3972d7cb633aed7.jpeg',
   },
   {
    i: 44214,
@@ -213256,6 +213380,7 @@
      r: 10,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44214/small.jpg',
   },
   {
    i: 44215,
@@ -214893,6 +215018,7 @@
      r: 11,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44215/small.jpg',
   },
   {
    i: 44216,
@@ -216530,6 +216656,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44216/small.jpg',
   },
   {
    i: 44218,
@@ -218167,6 +218294,7 @@
      r: 9,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44218/small.jpg',
   },
   {
    i: 44221,
@@ -219804,6 +219932,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44221/small.jpg',
   },
   {
    i: 44225,
@@ -221441,6 +221570,7 @@
      r: 8,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44225/small.jpg',
   },
   {
    i: 44226,
@@ -223888,6 +224018,7 @@
      r: 692,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44226/poster_image/small-cbd4fb1910aac112d08e5547f21636ab.jpeg',
   },
   {
    i: 44239,
@@ -225525,6 +225656,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44239/small.jpg',
   },
   {
    i: 44240,
@@ -227954,6 +228086,7 @@
      r: 13356,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44240/poster_image/small-8c75b87515be1e63e23e1d78c3a43dc1.jpeg',
   },
   {
    i: 44294,
@@ -229627,6 +229760,7 @@
      r: 2539,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44294/poster_image/small-b40a5db62fb4e28b29ea71c20960c5ca.jpeg',
   },
   {
    i: 44310,
@@ -230661,6 +230795,7 @@
      r: 300,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44310/poster_image/small-1b0ad67ca5693e5754f5ccc0822096b1.jpeg',
   },
   {
    i: 44313,
@@ -231362,6 +231497,7 @@
      r: 564,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44313/poster_image/small-3186e72e09f8071a0642f81eb4422c6b.jpeg',
   },
   {
    i: 44319,
@@ -233746,6 +233882,7 @@
      r: 43,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44319/poster_image/small-c0c90327ec1326cdd4df2a26ac8f4d76.jpeg',
   },
   {
    i: 44376,
@@ -234375,6 +234512,7 @@
      r: 180,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44376/poster_image/small-b66415b5b82b6f9f7f31a867cf9a00ab.jpeg',
   },
   {
    i: 44381,
@@ -236003,6 +236141,7 @@
      r: 366,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44381/small.jpg',
   },
   {
    i: 44382,
@@ -237685,6 +237824,7 @@
      r: 7844,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44382/poster_image/small-7852e278813b03aaddfabb084a5d3ccc.jpeg',
   },
   {
    i: 44383,
@@ -238278,6 +238418,7 @@
      r: 176,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44383/poster_image/small-d92de0ba021f364fdaa6302cf70fedd5.jpeg',
   },
   {
    i: 44396,
@@ -240572,6 +240713,7 @@
      r: 591,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44396/poster_image/small-7b5b6aca989fd3b8618b2c4e9e6708ca.jpeg',
   },
   {
    i: 44398,
@@ -242317,6 +242459,7 @@
      r: 2594,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44398/small.jpg',
   },
   {
    i: 44400,
@@ -243954,6 +244097,7 @@
      r: 14,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44400/small.jpg',
   },
   {
    i: 44413,
@@ -245429,6 +245573,7 @@
      r: 112,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44413/poster_image/small-3903d21f0257d18f4680fb0ee27915e4.jpeg',
   },
   {
    i: 44419,
@@ -246337,6 +246482,7 @@
      r: 282,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44419/poster_image/small-f6b434f21126194e94be53f88a701ff0.jpeg',
   },
   {
    i: 44423,
@@ -246957,6 +247103,7 @@
      r: 905,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44423/poster_image/small-8cd30dd009a9c68d2274861437761fce.jpeg',
   },
   {
    i: 44426,
@@ -247523,6 +247670,7 @@
      r: 48,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44426/small.jpg',
   },
   {
    i: 44428,
@@ -248125,6 +248273,7 @@
      r: 329,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44428/poster_image/small-fafa2508498dadd7cc41437addd66ba4.jpeg',
   },
   {
    i: 44436,
@@ -249762,6 +249911,7 @@
      r: 187,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44436/small.jpg',
   },
   {
    i: 44494,
@@ -250409,6 +250559,7 @@
      r: 141,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44494/poster_image/small-aecab779e08ef0b15fd5379e68fb5c38.jpeg',
   },
   {
    i: 44511,
@@ -251281,6 +251432,7 @@
      r: 260,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44511/poster_image/small-c185e8aadca9fb4c6c874fa50d1f83e4.jpeg',
   },
   {
    i: 44528,
@@ -252918,6 +253070,7 @@
      r: 24,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44528/small.jpg',
   },
   {
    i: 44537,
@@ -254060,6 +254213,7 @@
      r: 114,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44537/poster_image/small-53d45b07d5bfa062020e2d3747822e06.jpeg',
   },
   {
    i: 44573,
@@ -255759,6 +255913,7 @@
      r: 1288,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44575/poster_image/small-a96c46515f3c4e2a40306c51720b9d5c.jpeg',
   },
   {
    i: 44580,
@@ -257405,6 +257560,7 @@
      r: 826,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44580/poster_image/small-3d8b15a6d1e43e37160a15ff82138573.jpeg',
   },
   {
    i: 44592,
@@ -259042,6 +259198,7 @@
      r: 19,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44592/small.jpg',
   },
   {
    i: 44593,
@@ -260211,6 +260368,7 @@
      r: 7,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44593/small.jpg',
   },
   {
    i: 44602,
@@ -260885,6 +261043,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44602/poster_image/small-77ffea12d3a0b79d8e41192611aa418a.jpeg',
   },
   {
    i: 44618,
@@ -263305,6 +263464,7 @@
      r: 89,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44618/small.jpg',
   },
   {
    i: 44629,
@@ -264330,6 +264490,7 @@
      r: 214,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44629/poster_image/small-241c17f0d01004d97f71295070999f9d.jpeg',
   },
   {
    i: 44644,
@@ -265967,6 +266128,7 @@
      r: 4,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44644/small.jpg',
   },
   {
    i: 44672,
@@ -268414,6 +268576,7 @@
      r: 1137,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44672/poster_image/small-6952de24e6d1676ebfc92def3d02cd23.jpeg',
   },
   {
    i: 44673,
@@ -270060,6 +270223,7 @@
      r: 32,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44673/poster_image/small-4ff4e51531451323d329ba60bf05e867.jpeg',
   },
   {
    i: 44689,
@@ -270680,6 +270844,7 @@
      r: 149,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44689/poster_image/small-0d6874760d6ed36c9881b931cb20b0f0.jpeg',
   },
   {
    i: 44813,
@@ -273082,6 +273247,7 @@
      r: 139,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44813/poster_image/small-50a972413f1005fa0e5d10adb7adb50a.jpeg',
   },
   {
    i: 44814,
@@ -274719,6 +274885,7 @@
      r: 28,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44814/small.jpg',
   },
   {
    i: 44815,
@@ -276446,6 +276613,7 @@
      r: 6,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44815/small.jpg',
   },
   {
    i: 44819,
@@ -277867,6 +278035,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44819/small.jpg',
   },
   {
    i: 44859,
@@ -278379,6 +278548,7 @@
      r: 40,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44859/poster_image/small-2d113676c8046691d76a3bd19edd5774.jpeg',
   },
   {
    i: 44876,
@@ -280736,6 +280906,7 @@
      r: 298,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44876/poster_image/small-fdddf4703b3661735956b37e595aad11.jpeg',
   },
   {
    i: 44879,
@@ -282373,6 +282544,7 @@
      r: 13,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44879/small.jpg',
   },
   {
    i: 44888,
@@ -284271,6 +284443,7 @@
      r: 58,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44888/small.jpg',
   },
   {
    i: 44926,
@@ -286214,6 +286387,7 @@
      r: 8,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44926/small.jpg',
   },
   {
    i: 44943,
@@ -288661,6 +288835,7 @@
      r: 99,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44943/small.jpg',
   },
   {
    i: 44944,
@@ -289326,6 +289501,7 @@
      r: 947,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44944/poster_image/small-f3912e5bd859c5105cb5b5eb93655313.jpeg',
   },
   {
    i: 44946,
@@ -290963,6 +291139,7 @@
      r: 53,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44946/poster_image/small-ebf3092fa1beb6781f5ab1efa7bb15c1.jpeg',
   },
   {
    i: 44948,
@@ -292573,6 +292750,7 @@
      r: 367,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44948/poster_image/small-88a75d06a824fc804407801a103ebe13.jpeg',
   },
   {
    i: 44957,
@@ -294210,6 +294388,7 @@
      r: 20,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44957/small.jpg',
   },
   {
    i: 44960,
@@ -295235,6 +295414,7 @@
      r: 54,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44960/poster_image/small-9b90a8f1b0a60626ac20042b18488db6.jpeg',
   },
   {
    i: 44973,
@@ -297313,6 +297493,7 @@
      r: 18,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44973/poster_image/small-66cfb7db9f51b469edd6acdb9a7fdbc2.jpeg',
   },
   {
    i: 44978,
@@ -298950,6 +299131,7 @@
      r: 31,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44978/small.jpg',
   },
   {
    i: 44979,
@@ -300560,6 +300742,7 @@
      r: 104,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/44979/poster_image/small-528802b9be2589afd0a747b3e9c0437e.jpeg',
   },
   {
    i: 44980,
@@ -302638,6 +302821,7 @@
      r: 31,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/44980/small.jpg',
   },
   {
    i: 45018,
@@ -304275,6 +304459,7 @@
      r: 4,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/45018/small.jpg',
   },
   {
    i: 45022,
@@ -305966,6 +306151,7 @@
      r: 908,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45022/poster_image/small-c2abe801976002f7e9d75615312ded3e.jpeg',
   },
   {
    i: 45030,
@@ -306559,6 +306745,7 @@
      r: 71,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45030/poster_image/small-58c1c601ec1568ea175c436ddf298ce9.jpeg',
   },
   {
    i: 45031,
@@ -307161,6 +307348,7 @@
      r: 198,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45031/poster_image/small-d7741ae1367426f416ceb722552221d4.jpeg',
   },
   {
    i: 45044,
@@ -308798,6 +308986,7 @@
      r: 11,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/poster_images/45044/small.jpg',
   },
   {
    i: 45149,
@@ -310309,6 +310498,7 @@
      r: 51,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45149/poster_image/small-48d3de37ae7c79ca5b79c2941c4a35b0.jpeg',
   },
   {
    i: 45195,
@@ -312423,6 +312613,7 @@
      r: 5,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45195/poster_image/small-9848ece3626646d977ed6dd6161ee5f3.jpeg',
   },
   {
    i: 45218,
@@ -313079,6 +313270,7 @@
      r: 60,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45218/poster_image/small-41aab87c3cec29340f14bf060c94c3bd.jpeg',
   },
   {
    i: 45223,
@@ -313420,6 +313612,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45223/poster_image/small-c10479975b14f29be158f2bdfd25c759.jpeg',
   },
   {
    i: 45241,
@@ -314868,6 +315061,7 @@
      r: 58,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45241/poster_image/small-78c95101e1d17c3ab5d4754f21c96faf.jpeg',
   },
   {
    i: 45245,
@@ -315893,6 +316087,7 @@
      r: 1060,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45245/poster_image/small-b998debc696d6d137629c09fbbbf5515.jpeg',
   },
   {
    i: 45252,
@@ -318322,6 +318517,7 @@
      r: 1211,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45252/poster_image/small-414bce00f3888f8dbe86b75f551d56a1.jpeg',
   },
   {
    i: 45259,
@@ -319959,6 +320155,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45259/poster_image/small-b9ed0084d1a963076808cb5c6ce1081f.jpeg',
   },
   {
    i: 45271,
@@ -321542,6 +321739,7 @@
      r: 216,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45271/poster_image/small-7011b90bbe952f292b35da2bfd253322.jpeg',
   },
   {
    i: 45274,
@@ -323179,6 +323377,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45274/poster_image/small-60ad0407c7e1bc8450300bde72060ec4.jpeg',
   },
   {
    i: 45278,
@@ -325320,6 +325519,7 @@
      r: 5,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45278/poster_image/small-3b668b8d808ea898229454923b7b58f6.jpeg',
   },
   {
    i: 45281,
@@ -326336,6 +326536,7 @@
      r: 32,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45281/poster_image/small-6569509e253caebe4077ea5421dd77a3.jpeg',
   },
   {
    i: 45291,
@@ -327973,6 +328174,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45291/poster_image/small-02a0c3cd88a2d2b086115125ac12d4a1.jpeg',
   },
   {
    i: 45296,
@@ -328530,6 +328732,7 @@
      r: 4,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45296/poster_image/small-32c142bf0ec65001df6bb41f460a6ec9.jpeg',
   },
   {
    i: 45297,
@@ -330599,6 +330802,7 @@
      r: 30,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45297/poster_image/small-95cd1f6bb30e06dfc38c17e6adf854d8.jpeg',
   },
   {
    i: 45305,
@@ -332272,6 +332476,7 @@
      r: 5,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45305/poster_image/small-83058355463d804fff9239a43cf60da6.jpeg',
   },
   {
    i: 45308,
@@ -333909,6 +334114,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45308/poster_image/small-9c45cdfc41609ae1f1f0da46a1b3aa0a.jpeg',
   },
   {
    i: 45324,
@@ -334673,6 +334879,7 @@
      r: 32,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45324/poster_image/small-06cc18cf3a50a6103f30fc6bb531783c.jpeg',
   },
   {
    i: 45341,
@@ -335590,6 +335797,7 @@
      r: 807,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45341/poster_image/small-61db5c889f2215918a21b39be41adee9.jpeg',
   },
   {
    i: 45372,
@@ -337983,6 +338191,7 @@
      r: 344,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45372/poster_image/small-66fa3215d9093d65c19fafac5d327a69.jpeg',
   },
   {
    i: 45378,
@@ -340070,6 +340279,7 @@
      r: 5,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45378/poster_image/small-912c2693a93e517327863ca69a8df810.jpeg',
   },
   {
    i: 45388,
@@ -342292,6 +342502,7 @@
      r: 357,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45388/poster_image/small-1803c1b98d960bb17c78fa888c1d7398.jpeg',
   },
   {
    i: 45391,
@@ -342858,6 +343069,7 @@
      r: 132,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45391/poster_image/small-cb0c04905cab4593c3d560eba4d50c7a.jpeg',
   },
   {
    i: 45398,
@@ -343694,6 +343906,7 @@
      r: 8395,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45398/poster_image/small-d2d2ddd1b7f5a9c20bbb69b2b476a0d6.jpeg',
   },
   {
    i: 45401,
@@ -344332,6 +344545,7 @@
      r: 861,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45401/poster_image/small-fa116e5fc6f376dd0884c8fab72fae5e.jpeg',
   },
   {
    i: 45412,
@@ -346392,6 +346606,7 @@
      r: 10,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45412/poster_image/small-98aa50b2411b23056b40ffc24c5e5f4d.jpeg',
   },
   {
    i: 45464,
@@ -346949,6 +347164,7 @@
      r: 102,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45464/poster_image/small-43acb366e508ba9ce066dc42f7a73fb3.jpeg',
   },
   {
    i: 45468,
@@ -348316,6 +348532,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45468/poster_image/small-93e683bc0ff501abf2e62b885c1389a5.jpeg',
   },
   {
    i: 45491,
@@ -350556,6 +350773,7 @@
      r: 6,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45491/poster_image/small-1c5f3ebaff1d6e5f550a697ddddd938c.jpeg',
   },
   {
    i: 45499,
@@ -352193,6 +352411,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45499/poster_image/small-c2d9f531456ff5411e8ec537bd4c139a.jpeg',
   },
   {
    i: 45503,
@@ -353830,6 +354049,7 @@
      r: 20,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45503/poster_image/small-3bba6a5889907805d3d15b82ca73382a.jpeg',
   },
   {
    i: 45506,
@@ -354441,6 +354661,7 @@
      r: 807,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45506/poster_image/small-e37453c628e021383e3fd3fa4968469f.jpeg',
   },
   {
    i: 45510,
@@ -356078,6 +356299,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45510/poster_image/small-dac13a0733c35b01e52f81cb83c52ef5.jpeg',
   },
   {
    i: 45516,
@@ -357715,6 +357937,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45516/poster_image/small-5bdd8f8f89e61b3c8c15304d44bea93f.jpeg',
   },
   {
    i: 45518,
@@ -359523,6 +359746,7 @@
      r: 9,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45518/poster_image/small-cd8d4b286a39d9e140edfafe5eb33c6e.jpeg',
   },
   {
    i: 45523,
@@ -360224,6 +360448,7 @@
      r: 49,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45523/poster_image/small-199ded304889f9dfe90a36ed76e98f50.jpeg',
   },
   {
    i: 45529,
@@ -361249,6 +361474,7 @@
      r: 895,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45529/poster_image/small-63b47476c458244e1b71d45c230ee9de.jpeg',
   },
   {
    i: 45549,
@@ -362616,6 +362842,7 @@
      r: 3,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45549/poster_image/small-bfa120f664a70580e60af53da9fd304e.jpeg',
   },
   {
    i: 45550,
@@ -364001,6 +364228,7 @@
      r: 4,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45550/poster_image/small-eac7ba37e2223db73e488756d6bc99fc.jpeg',
   },
   {
    i: 45551,
@@ -366070,6 +366298,7 @@
      r: 144,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45551/poster_image/small-6c9bb2c6584f2a2ba8b2a04b0524052f.jpeg',
   },
   {
    i: 45574,
@@ -367707,6 +367936,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45574/poster_image/small-fd755e7db36bb2ec5d17d6850af78c99.jpeg',
   },
   {
    i: 45575,
@@ -369218,6 +369448,7 @@
      r: 6,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45575/poster_image/small-991d06617f60197ed5166e7cb1d1c3d8.jpeg',
   },
   {
    i: 45576,
@@ -370828,6 +371059,7 @@
      r: 4,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45576/poster_image/small-a6361a9a27b1f9c03c081ea18e131e1b.jpeg',
   },
   {
    i: 45577,
@@ -372708,6 +372940,7 @@
      r: 67,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45577/poster_image/small-7dcad3d154085221535e68b34cfc4ff1.jpeg',
   },
   {
    i: 45582,
@@ -374651,6 +374884,7 @@
      r: 6,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45582/poster_image/small-ed5587d22aabc1d8e524b3f61105f2c8.jpeg',
   },
   {
    i: 45586,
@@ -376270,6 +376504,7 @@
      r: 5,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45586/poster_image/small-b0c6b2c62c2b6c77995b2fe8e3d57f2b.jpeg',
   },
   {
    i: 45589,
@@ -378519,6 +378754,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45589/poster_image/small-4d4eebc72d516558ed199c4cdaa3bad3.jpeg',
   },
   {
    i: 45599,
@@ -380129,6 +380365,7 @@
      r: 34,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45599/poster_image/small-495744f1b24fa96620d83eb822ecf3f4.jpeg',
   },
   {
    i: 45600,
@@ -381037,6 +381274,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45600/poster_image/small-2141e873b87ba6b8cd14ebfc85c500a8.jpeg',
   },
   {
    i: 45601,
@@ -383376,6 +383614,7 @@
      r: 48,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45601/poster_image/small-3a20645f75321d6e33d381fec838c575.jpeg',
   },
   {
    i: 45603,
@@ -384932,6 +385171,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45603/poster_image/small-4c010481218b3449f02c1dd045eabbdf.jpeg',
   },
   {
    i: 45605,
@@ -385489,6 +385729,7 @@
      r: 5,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45605/poster_image/small-4eb9ce6f22703e8a891083ce0d7d29a1.jpeg',
   },
   {
    i: 45606,
@@ -387198,6 +387439,7 @@
      r: 40,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45606/poster_image/small-348504be09f9196bf031de61368883f9.jpeg',
   },
   {
    i: 45641,
@@ -388295,6 +388537,7 @@
      r: 2039,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45641/poster_image/small-28f830d4a090a19030d74cf8f84d9b52.jpeg',
   },
   {
    i: 45644,
@@ -389932,6 +390175,7 @@
      r: 4,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45644/poster_image/small-9103652987c1759ce0a5f529f749cb52.jpeg',
   },
   {
    i: 45661,
@@ -391992,6 +392236,7 @@
      r: 13,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45661/poster_image/small-a6e4438fd4bb87c818e414999d219a2e.jpeg',
   },
   {
    i: 45664,
@@ -393134,6 +393379,7 @@
      r: 4,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45664/poster_image/small-15df44397123c1fa02fcf20b5bc9a2e2.jpeg',
   },
   {
    i: 45670,
@@ -393988,6 +394234,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45670/poster_image/small-8ac81c9085128a9384799a270394b116.jpeg',
   },
   {
    i: 45685,
@@ -395319,6 +395566,7 @@
      r: 4,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45685/poster_image/small-741ffb99e2dd855f56a489209e5a243e.jpeg',
   },
   {
    i: 45693,
@@ -396416,6 +396664,7 @@
      r: 4,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45693/poster_image/small-73740cdfd5157f8c8c716597cc5829f1.jpeg',
   },
   {
    i: 45699,
@@ -396973,6 +397222,7 @@
      r: 34,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45699/poster_image/small-1aa86741bb624febe6a1c12937c02a1b.jpeg',
   },
   {
    i: 45703,
@@ -397548,6 +397798,7 @@
      r: 45,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45703/poster_image/small-f6145fa285279c999e4e63d2e0d2622a.jpeg',
   },
   {
    i: 45730,
@@ -397916,6 +398167,7 @@
      r: 7,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45730/poster_image/small-541d6e3fad58df92cc94122fcf734f29.jpeg',
   },
   {
    i: 45733,
@@ -399229,6 +399481,7 @@
      r: 16,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45733/poster_image/small-bee6d734998020858ccd75ae303a00de.jpeg',
   },
   {
    i: 45735,
@@ -400785,6 +401038,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45735/poster_image/small-d648b3f47352bb18ffec5540b0f445e5.jpeg',
   },
   {
    i: 45737,
@@ -401360,6 +401614,7 @@
      r: 34,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45737/poster_image/small-dfb62d25bf3b09177915a55c640c79ec.jpeg',
   },
   {
    i: 45743,
@@ -402538,6 +402793,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45743/poster_image/small-fccdc2ba15370d5047adb94c2f9d538e.jpeg',
   },
   {
    i: 45744,
@@ -404076,6 +404332,7 @@
      r: 40,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45744/poster_image/small-93b1e66a4f1deefce015e1923003f57d.jpeg',
   },
   {
    i: 45749,
@@ -406019,6 +406276,7 @@
      r: 16,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45749/poster_image/small-267564c14af7398ddf53a2e9f10b97ce.jpeg',
   },
   {
    i: 45760,
@@ -407494,6 +407752,7 @@
      r: 4,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45760/poster_image/small-19a2c7e035e17e0e2db28f241b170b8c.jpeg',
   },
   {
    i: 45763,
@@ -408978,6 +409237,7 @@
      r: 31,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45763/poster_image/small-27494c608a81b990f6fed952b46a330a.jpeg',
   },
   {
    i: 45774,
@@ -410201,6 +410461,7 @@
      r: 6,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45774/poster_image/small-3ce5a59a5f1f3bb5e9b68ac1dd266007.jpeg',
   },
   {
    i: 45775,
@@ -411748,6 +412009,7 @@
      r: 6,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45775/poster_image/small-c6e27b53f4b9b08f4d2ef69db66fd2b7.jpeg',
   },
   {
    i: 45779,
@@ -412845,6 +413107,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45779/poster_image/small-bfa166a6ba63247cfdff130c656ab905.jpeg',
   },
   {
    i: 45793,
@@ -414770,6 +415033,7 @@
      r: 5,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45793/poster_image/small-7d0f8a9e85152f4e15599cb41a72d74b.jpeg',
   },
   {
    i: 45805,
@@ -416128,6 +416392,7 @@
      r: 7,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45805/poster_image/small-164fe217666cdc92dc43c4321371f0dc.jpeg',
   },
   {
    i: 45824,
@@ -416658,6 +416923,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45824/poster_image/small-44de788c9a3ad623c178cf62624296e1.jpeg',
   },
   {
    i: 45835,
@@ -417215,6 +417481,7 @@
      r: 30,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45835/poster_image/small-04ebb34f2a9283cfbbc7e057044f4843.jpeg',
   },
   {
    i: 45837,
@@ -418177,6 +418444,7 @@
      r: 49,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45837/poster_image/small-bfe0aa4274f2aa1d0ab1e5d07d0ef9c2.jpeg',
   },
   {
    i: 45840,
@@ -419625,6 +419893,7 @@
      r: 3,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45840/poster_image/small-80d5cef2ac6c2331632c9717b0d67cbb.jpeg',
   },
   {
    i: 45842,
@@ -420605,6 +420874,7 @@
      r: 3,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45842/poster_image/small-c666f2b3df711ab655a9807f324800d0.jpeg',
   },
   {
    i: 45843,
@@ -422359,6 +422629,7 @@
      r: 3,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45843/poster_image/small-a2a5fc2ed21a5ba55125d4f67b0b8caa.jpeg',
   },
   {
    i: 45858,
@@ -423627,6 +423898,7 @@
      r: 22,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45858/poster_image/small-0bee059926e104306557e9779c615920.jpeg',
   },
   {
    i: 45899,
@@ -424814,6 +425086,7 @@
      r: 5,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45899/poster_image/small-1153a25850f64912d0a36a07a568d14b.jpeg',
   },
   {
    i: 45931,
@@ -425947,6 +426220,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45931/poster_image/small-d47e72732abdd622118e4b0181214cea.jpeg',
   },
   {
    i: 45933,
@@ -426297,6 +426571,7 @@
      r: 47,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45933/poster_image/small-177d2aa3cee1cdfcb25273c26b957276.jpeg',
   },
   {
    i: 45948,
@@ -427214,6 +427489,7 @@
      r: 5,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45948/poster_image/small-3cbf70a7d7cfa3d2b22eefc1ef230cdf.jpeg',
   },
   {
    i: 45953,
@@ -428995,6 +429271,7 @@
      r: 6,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/45953/poster_image/small-063b62ed3ab12713de67bbdf77d3634a.jpeg',
   },
   {
    i: 46017,
@@ -429480,6 +429757,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/46017/poster_image/small-c5f2f15627a371c4bb4448a61c8ac478.jpeg',
   },
   {
    i: 46022,
@@ -430631,6 +430909,7 @@
      r: 4,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/46022/poster_image/small-dc5dd13df89a55e7b785c353f90f2a6a.jpeg',
   },
   {
    i: 46032,
@@ -431071,6 +431350,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/46032/poster_image/small-98e43bd3218e09e200852f85917aa7e7.jpeg',
   },
   {
    i: 46041,
@@ -431556,6 +431836,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/46041/poster_image/small-192fafc6780c10fc7a6aff4f5b495f4d.jpeg',
   },
   {
    i: 46046,
@@ -432086,6 +432367,7 @@
      r: 4,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/46046/poster_image/small-7089959edc283cb7d0ac20395718af14.jpeg',
   },
   {
    i: 46081,
@@ -432643,6 +432925,7 @@
      r: 37,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/46081/poster_image/small-40a69ac534b81fb4344e9f1e9c7d3863.jpeg',
   },
   {
    i: 46092,
@@ -432669,6 +432952,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/46092/poster_image/small-a65c3981b4923fdbb233cce64bcc2978.jpeg',
   },
   {
    i: 46093,
@@ -433190,6 +433474,7 @@
      r: 6,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/46093/poster_image/small-839f3173acfd305b10929f23c520fde5.jpeg',
   },
   {
    i: 46095,
@@ -433468,6 +433753,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/46095/poster_image/small-91d1668392ac6d9752193a4b33a7069e.jpeg',
   },
   {
    i: 46096,
@@ -433836,6 +434122,7 @@
      r: 3,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/46096/poster_image/small-50ae1e6de96c72e4c906d6d1c4184f86.jpeg',
   },
   {
    i: 46098,
@@ -434303,6 +434590,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/46098/poster_image/small-15baf0b66ceba8b33d7f9760de753e15.jpeg',
   },
   {
    i: 46109,
@@ -434752,6 +435040,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/46109/poster_image/small-a6d31b3178e13f4a7087a8e61833d82a.jpeg',
   },
   {
    i: 46111,
@@ -435219,6 +435508,7 @@
      r: 1,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/46111/poster_image/small-5e83cb5331dd9d6e7204e53b13136484.jpeg',
   },
   {
    i: 46150,
@@ -435443,6 +435733,7 @@
      r: 2,
     },
    ],
+   poster: 'https://media.kitsu.app/anime/46150/poster_image/small-19ed14ccd4fc0bd9ebcf3f6a9bba83ec.jpeg',
   },
  ],
  meta: {

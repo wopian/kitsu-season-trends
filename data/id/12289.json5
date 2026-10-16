@@ -3,6 +3,7 @@
   i: 12289,
   t: 'Shiritsu Liyon Gakuen',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/12289/small.jpg',
  },
  data: [
   {
@@ -1237,6 +1238,17 @@
   },
   {
    d: 446368,
+   m: 44.44,
+   r: 5,
+   u: 27,
+   w: 11.76,
+   a: 40,
+   p: 2,
+   o: 3,
+  },
+  {
+   i: 0,
+   d: 447171,
    m: 44.44,
    r: 5,
    u: 27,

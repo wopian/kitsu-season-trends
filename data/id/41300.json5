@@ -3,6 +3,7 @@
   i: 41300,
   t: 'Midori-chan',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/41300/small.jpg',
  },
  data: [
   {
@@ -1474,6 +1475,17 @@
    a: 72.22,
    p: 6.5,
    o: 2.5,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 68.13,
+   r: 12,
+   u: 68,
+   w: 45.97,
+   a: 74.17,
+   p: 8.9,
+   o: 3.1,
   },
   {
    d: 450050,

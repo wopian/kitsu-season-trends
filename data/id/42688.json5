@@ -3,6 +3,7 @@
   i: 42688,
   t: 'ARGONAVIS from BanG Dream!',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42688/small.jpg',
  },
  data: [
   {
@@ -2314,6 +2315,18 @@
    a: 66.7,
    p: 46.02,
    o: 22.98,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 65.49,
+   r: 102,
+   u: 465,
+   f: 5,
+   w: 56.48,
+   a: 66.1,
+   p: 67.42,
+   o: 34.58,
   },
   {
    d: 450050,

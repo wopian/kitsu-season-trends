@@ -3,6 +3,7 @@
   i: 43501,
   t: 'Da Wang Bu Gaoxing 2',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43501/small.jpg',
  },
  data: [
   {
@@ -134,6 +135,17 @@
    a: 70,
    p: 3.5,
    o: 1.5,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 63.75,
+   r: 12,
+   u: 37,
+   w: 40.55,
+   a: 68.33,
+   p: 8.2,
+   o: 3.8,
   },
   {
    d: 450050,

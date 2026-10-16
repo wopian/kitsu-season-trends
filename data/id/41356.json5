@@ -3,6 +3,7 @@
   i: 41356,
   t: 'I-O Data x Taka no Tsume',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/41356/small.jpg',
  },
  data: [
   {
@@ -1244,6 +1245,17 @@
    a: 63.33,
    p: 3.8,
    o: 2.2,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 61.54,
+   r: 9,
+   u: 29,
+   w: 35.42,
+   a: 66.67,
+   p: 6,
+   o: 3,
   },
   {
    d: 450050,

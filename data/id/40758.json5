@@ -3,6 +3,7 @@
   i: 40758,
   t: 'Nui Nui Hinobori San Kyoudai',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/40758/small.jpg',
  },
  data: [
   {
@@ -3474,6 +3475,17 @@
    a: 52.5,
    p: 6.3,
    o: 5.7,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 54.21,
+   r: 15,
+   u: 53,
+   w: 31.77,
+   a: 55.33,
+   p: 8.3,
+   o: 6.7,
   },
   {
    d: 450050,

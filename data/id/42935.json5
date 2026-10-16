@@ -3,6 +3,7 @@
   i: 42935,
   t: 'Higurashi no Naku Koro ni Gou',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42935/small.jpg',
  },
  data: [
   {
@@ -477,6 +478,18 @@
    a: 74.3,
    p: 190.21,
    o: 65.79,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 70.53,
+   r: 1114,
+   u: 4635,
+   f: 20,
+   w: 67.86,
+   a: 70.6,
+   p: 786.48,
+   o: 327.52,
   },
   {
    d: 450050,

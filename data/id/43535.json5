@@ -3,6 +3,7 @@
   i: 43535,
   t: 'Iwa Kakeru!: Sport Climbing Girls',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/43535/small.jpg',
  },
  data: [
   {
@@ -444,6 +445,18 @@
    a: 66.8,
    p: 100.87,
    o: 50.13,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 65.62,
+   r: 762,
+   u: 1879,
+   f: 3,
+   w: 62.26,
+   a: 65.7,
+   p: 500.63,
+   o: 261.37,
   },
   {
    d: 450050,

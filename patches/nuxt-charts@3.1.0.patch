@@ -1,0 +1,16 @@
+diff --git a/dist/runtime/utils/data.js b/dist/runtime/utils/data.js
+index 9af7a454eaa2c72dd61d6b106c651c865ca02627..c9878a339563113887a367604f390fe350021043 100644
+--- a/dist/runtime/utils/data.js
++++ b/dist/runtime/utils/data.js
+@@ -33,6 +33,11 @@ export function normalizeNumericRows(data, keys) {
+   return data.flatMap((row) => {
+     const copy = { ...row };
+     for (const key of keys) {
++      // Preserve explicit gaps on time axes instead of shifting later dates.
++      if (row[key] === null) {
++        copy[key] = null;
++        continue;
++      }
+       const value = toFiniteNumber(row[key]);
+       if (value === void 0) return [];
+       copy[key] = value;

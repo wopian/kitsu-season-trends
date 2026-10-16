@@ -3,8 +3,20 @@
   i: 43334,
   t: 'Core Sense',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43334/small.jpg',
  },
  data: [
+  {
+   i: 0,
+   d: 447171,
+   m: 53.85,
+   r: 9,
+   u: 39,
+   w: 26.66,
+   a: 55.56,
+   p: 5,
+   o: 4,
+  },
   {
    d: 450050,
    m: 53.85,

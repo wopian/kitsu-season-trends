@@ -3,6 +3,7 @@
   i: 42169,
   t: 'Aikatsu Friends!: Kagayaki no Jewel',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42169/small.jpg',
  },
  data: [
   {
@@ -241,17 +242,6 @@
    m: 68.18,
    r: 7,
    u: 67,
-   f: 1,
-   w: 42.01,
-   a: 78.57,
-   p: 5.5,
-   o: 1.5,
-  },
-  {
-   d: 432796,
-   m: 68.18,
-   r: 7,
-   u: 69,
    f: 1,
    w: 42.01,
    a: 78.57,

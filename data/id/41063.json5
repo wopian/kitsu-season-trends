@@ -3,6 +3,7 @@
   i: 41063,
   t: 'Usagi no Matthew',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/41063/small.jpg',
  },
  data: [
   {
@@ -527,6 +528,17 @@
   },
   {
    d: 446368,
+   m: 68.89,
+   r: 5,
+   u: 52,
+   w: 40.9,
+   a: 84,
+   p: 4.2,
+   o: 0.8,
+  },
+  {
+   i: 0,
+   d: 447171,
    m: 68.89,
    r: 5,
    u: 52,

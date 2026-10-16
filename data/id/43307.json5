@@ -1,0 +1,34 @@
+{
+ meta: {
+  i: 43307,
+  t: 'I★Chu: Halfway Through the Idol',
+  u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/43307/small.jpg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 447171,
+   m: 69.46,
+   r: 83,
+   u: 175,
+   f: 1,
+   w: 59.85,
+   a: 70.4,
+   p: 58.43,
+   o: 24.57,
+  },
+  {
+   i: 1,
+   d: 450050,
+   m: 69.46,
+   r: 83,
+   u: 175,
+   f: 1,
+   w: 59.85,
+   a: 70.4,
+   p: 58.43,
+   o: 24.57,
+  },
+ ],
+}

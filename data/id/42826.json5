@@ -3,6 +3,7 @@
   i: 42826,
   t: 'Hypnosis Mic -Division Rap Battle- Rhyme Anima',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42826/small.jpg',
  },
  data: [
   {
@@ -455,6 +456,18 @@
    a: 70.9,
    p: 60.97,
    o: 25.03,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 67.72,
+   r: 385,
+   u: 1331,
+   f: 11,
+   w: 63.08,
+   a: 67.9,
+   p: 261.42,
+   o: 123.58,
   },
   {
    d: 450050,

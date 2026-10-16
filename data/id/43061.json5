@@ -3,6 +3,7 @@
   i: 43061,
   t: 'Cardfight!! Vanguard Gaiden: If',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/43061/small.jpg',
  },
  data: [
   {
@@ -1487,16 +1488,6 @@
   },
   {
    d: 446224,
-   m: 63.3,
-   r: 16,
-   u: 89,
-   w: 42.41,
-   a: 66.63,
-   p: 10.66,
-   o: 5.34,
-  },
-  {
-   d: 446248,
    m: 63.3,
    r: 16,
    u: 89,

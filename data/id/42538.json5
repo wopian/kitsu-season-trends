@@ -3,6 +3,7 @@
   i: 42538,
   t: 'Go! Go! Atom',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42538/small.jpg',
  },
  data: [
   {
@@ -1284,6 +1285,18 @@
    a: 60,
    p: 4.8,
    o: 3.2,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 54.29,
+   r: 17,
+   u: 47,
+   f: 1,
+   w: 32.95,
+   a: 55.29,
+   p: 9.4,
+   o: 7.6,
   },
   {
    d: 450050,

@@ -3,6 +3,7 @@
   i: 42532,
   t: 'Gal to Kyouryuu',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42532/small.jpg',
  },
  data: [
   {
@@ -2435,6 +2436,18 @@
    a: 61.8,
    p: 110.62,
    o: 68.38,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 63.34,
+   r: 338,
+   u: 1523,
+   f: 2,
+   w: 58.24,
+   a: 63.5,
+   p: 214.63,
+   o: 123.37,
   },
   {
    d: 450050,

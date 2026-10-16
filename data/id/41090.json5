@@ -3,6 +3,7 @@
   i: 41090,
   t: 'Oretacha Youkai Ningen G',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/41090/small.jpg',
  },
  data: [
   {
@@ -2384,6 +2385,17 @@
    a: 52,
    p: 5.2,
    o: 4.8,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 52.78,
+   r: 14,
+   u: 56,
+   w: 29.65,
+   a: 53.57,
+   p: 7.5,
+   o: 6.5,
   },
   {
    d: 450050,

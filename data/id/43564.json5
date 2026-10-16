@@ -3,6 +3,7 @@
   i: 43564,
   t: 'Yao Shen Ji 4',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43564/small.jpg',
  },
  data: [
   {
@@ -264,6 +265,17 @@
    a: 70,
    p: 7.7,
    o: 3.3,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 69.35,
+   r: 33,
+   u: 50,
+   w: 54.71,
+   a: 71.7,
+   p: 23.66,
+   o: 9.34,
   },
   {
    d: 450050,

@@ -3,6 +3,7 @@
   i: 43001,
   t: 'Yao Jing Zhong Zhi Shou Ce',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43001/small.jpg',
  },
  data: [
   {
@@ -2743,6 +2744,18 @@
    a: 66.5,
    p: 53.2,
    o: 26.8,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 65.84,
+   r: 113,
+   u: 554,
+   f: 3,
+   w: 57.28,
+   a: 66.4,
+   p: 75.03,
+   o: 37.97,
   },
   {
    d: 450050,

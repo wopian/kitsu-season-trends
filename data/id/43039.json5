@@ -3,6 +3,7 @@
   i: 43039,
   t: 'Tomica Kizuna Gattai: Earth Granner',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/43039/small.jpg',
  },
  data: [
   {
@@ -1284,6 +1285,17 @@
    a: 54.09,
    p: 5.95,
    o: 5.05,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 50.64,
+   r: 18,
+   u: 51,
+   w: 29.67,
+   a: 50.78,
+   p: 9.14,
+   o: 8.86,
   },
   {
    d: 450050,

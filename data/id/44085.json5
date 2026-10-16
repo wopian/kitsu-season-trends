@@ -3,8 +3,19 @@
   i: 44085,
   t: 'Xue Ying Lingzhu 2',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/44085/small.jpg',
  },
  data: [
+  {
+   i: 0,
+   d: 447171,
+   m: 62.78,
+   r: 5,
+   w: 32.08,
+   a: 73,
+   p: 3.65,
+   o: 1.35,
+  },
   {
    d: 450050,
    m: 62.78,

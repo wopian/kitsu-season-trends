@@ -3,8 +3,20 @@
   i: 43892,
   t: 'Wan Jie Xian Zong Season 4',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43892/small.jpg',
  },
  data: [
+  {
+   i: 0,
+   d: 447171,
+   m: 62,
+   r: 6,
+   u: 1,
+   w: 32.52,
+   a: 70,
+   p: 4.2,
+   o: 1.8,
+  },
   {
    d: 450050,
    m: 62,

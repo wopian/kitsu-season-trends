@@ -3,6 +3,7 @@
   i: 6972,
   t: 'Panda no Taputapu',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/6972/small.jpg',
  },
  data: [
   {
@@ -1277,6 +1278,17 @@
   },
   {
    d: 446368,
+   m: 33.64,
+   r: 7,
+   u: 44,
+   w: 6.29,
+   a: 24.29,
+   p: 1.7,
+   o: 5.3,
+  },
+  {
+   i: 0,
+   d: 447171,
    m: 33.64,
    r: 7,
    u: 44,

@@ -1,0 +1,30 @@
+{
+ meta: {
+  i: 44075,
+  t: 'Shan He Jian Xin',
+  u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/44075/small.jpg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 447171,
+   m: 66.25,
+   r: 8,
+   w: 40.37,
+   a: 74.38,
+   p: 5.95,
+   o: 2.05,
+  },
+  {
+   i: 1,
+   d: 450050,
+   m: 66.25,
+   r: 8,
+   w: 40.37,
+   a: 74.38,
+   p: 5.95,
+   o: 2.05,
+  },
+ ],
+}

@@ -3,6 +3,7 @@
   i: 43552,
   t: "King's Raid: Ishi wo Tsugumono-tachi",
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/43552/small.jpg',
  },
  data: [
   {
@@ -454,6 +455,18 @@
    a: 57.4,
    p: 58.55,
    o: 43.45,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 57.41,
+   r: 326,
+   u: 1336,
+   f: 2,
+   w: 52.08,
+   a: 57.5,
+   p: 187.45,
+   o: 138.55,
   },
   {
    d: 450050,

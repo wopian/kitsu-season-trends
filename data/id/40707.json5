@@ -3,6 +3,7 @@
   i: 40707,
   t: 'Yoshida no Matsue Beauty Daisakusen',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/40707/small.jpg',
  },
  data: [
   {
@@ -2004,6 +2005,17 @@
    a: 58.33,
    p: 3.5,
    o: 2.5,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 55.83,
+   r: 8,
+   u: 33,
+   w: 27.73,
+   a: 58.75,
+   p: 4.7,
+   o: 3.3,
   },
   {
    d: 450050,

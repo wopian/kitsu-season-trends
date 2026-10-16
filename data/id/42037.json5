@@ -3,6 +3,7 @@
   i: 42037,
   t: 'Douluo Dalu 2',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/42037/small.jpg',
  },
  data: [
   {
@@ -6934,6 +6935,18 @@
    a: 81.7,
    p: 89.87,
    o: 20.13,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 79.42,
+   r: 173,
+   u: 547,
+   f: 20,
+   w: 73.52,
+   a: 80.1,
+   p: 138.57,
+   o: 34.43,
   },
   {
    d: 450050,

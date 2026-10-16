@@ -1,0 +1,32 @@
+{
+ meta: {
+  i: 43934,
+  t: 'Chang Jian Feng Yun',
+  u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43934/small.jpg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 447171,
+   m: 61.15,
+   r: 9,
+   u: 2,
+   w: 34.96,
+   a: 66.11,
+   p: 5.95,
+   o: 3.05,
+  },
+  {
+   i: 1,
+   d: 450050,
+   m: 61.15,
+   r: 9,
+   u: 2,
+   w: 34.96,
+   a: 66.11,
+   p: 5.95,
+   o: 3.05,
+  },
+ ],
+}

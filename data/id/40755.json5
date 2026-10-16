@@ -3,6 +3,7 @@
   i: 40755,
   t: 'Hortensia Saga: Aoi no Kishidan',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/40755/small.jpg',
  },
  data: [
   {
@@ -1621,6 +1622,18 @@
    a: 76.67,
    p: 6.9,
    o: 2.1,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 70.23,
+   r: 19,
+   u: 130,
+   f: 5,
+   w: 52.03,
+   a: 74.49,
+   p: 14.16,
+   o: 4.85,
   },
   {
    d: 450050,

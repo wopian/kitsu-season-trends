@@ -3,6 +3,7 @@
   i: 40759,
   t: 'Neko to Mata',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/40759/small.jpg',
  },
  data: [
   {
@@ -3494,6 +3495,17 @@
    a: 71,
    p: 7.1,
    o: 2.9,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 64.38,
+   r: 12,
+   u: 36,
+   w: 41.31,
+   a: 69.17,
+   p: 8.3,
+   o: 3.7,
   },
   {
    d: 450050,

@@ -3,6 +3,7 @@
   i: 41157,
   t: 'Wangu Xian Qiong 2nd Season',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/41157/small.jpg',
  },
  data: [
   {
@@ -3085,17 +3086,6 @@
   },
   {
    d: 432412,
-   m: 70,
-   r: 20,
-   u: 151,
-   f: 1,
-   w: 52.11,
-   a: 74,
-   p: 14.8,
-   o: 5.2,
-  },
-  {
-   d: 432436,
    m: 70,
    r: 20,
    u: 151,

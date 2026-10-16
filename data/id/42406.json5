@@ -3,6 +3,7 @@
   i: 42406,
   t: 'Duel Masters!!',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42406/small.jpg',
  },
  data: [
   {
@@ -1244,6 +1245,17 @@
    a: 58.57,
    p: 4.1,
    o: 2.9,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 50,
+   r: 11,
+   u: 39,
+   w: 24.56,
+   a: 50,
+   p: 5.5,
+   o: 5.5,
   },
   {
    d: 450050,

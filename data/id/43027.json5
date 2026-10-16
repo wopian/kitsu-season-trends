@@ -3,6 +3,7 @@
   i: 43027,
   t: 'Wu Geng Ji 3rd Season',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43027/small.jpg',
  },
  data: [
   {
@@ -434,6 +435,17 @@
    a: 84.09,
    p: 9.25,
    o: 1.75,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 75.79,
+   r: 15,
+   u: 66,
+   w: 57.66,
+   a: 82.67,
+   p: 12.4,
+   o: 2.6,
   },
   {
    d: 450050,

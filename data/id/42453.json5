@@ -3,6 +3,7 @@
   i: 42453,
   t: 'IDOLiSH7: Second BEAT!',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42453/small.jpg',
  },
  data: [
   {
@@ -2479,6 +2480,18 @@
    a: 78.8,
    p: 80.38,
    o: 21.62,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 80.84,
+   r: 269,
+   u: 800,
+   f: 7,
+   w: 76.21,
+   a: 81.3,
+   p: 218.7,
+   o: 50.3,
   },
   {
    d: 450050,

@@ -3,6 +3,7 @@
   i: 42361,
   t: 'Puso Ni Comi',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/42361/small.jpg',
  },
  data: [
   {
@@ -2434,6 +2435,18 @@
    a: 62.78,
    p: 11.3,
    o: 6.7,
+  },
+  {
+   i: 0,
+   d: 447171,
+   m: 62.07,
+   r: 25,
+   u: 65,
+   f: 1,
+   w: 44.52,
+   a: 64,
+   p: 16,
+   o: 9,
   },
   {
    d: 450050,

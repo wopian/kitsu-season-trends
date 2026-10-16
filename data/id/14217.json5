@@ -3,6 +3,7 @@
   i: 14217,
   t: 'Uchi no Oochopus',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/14217/small.jpg',
  },
  data: [
   {
@@ -1237,6 +1238,17 @@
   },
   {
    d: 446368,
+   m: 66,
+   r: 6,
+   u: 22,
+   w: 37.86,
+   a: 76.67,
+   p: 4.6,
+   o: 1.4,
+  },
+  {
+   i: 0,
+   d: 447171,
    m: 66,
    r: 6,
    u: 22,

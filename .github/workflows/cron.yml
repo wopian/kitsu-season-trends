@@ -1,74 +1,51 @@
-name: Cron
-
+name: Daily Kitsu collection
 on:
   workflow_dispatch:
   schedule:
-  - cron: '0 22 * * *' # Every night at 22:00 UTC+0
-
-env:
-  FORCE_COLOR: true
-
+    - cron: '0 22 * * *'
+permissions:
+  contents: write
+  packages: write
+concurrency:
+  group: kitsu-daily-collection
+  cancel-in-progress: false
 jobs:
-  update:
-    name: Daily Update
+  collect:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [26]
-
+    outputs:
+      revision: ${{ steps.commit.outputs.revision }}
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Configure GPG Key
-      run: echo -n "$GPG_KEY" | gpg --import
-      env:
-        GPG_KEY: ${{ secrets.GPG_KEY }}
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-
-    - name: Get Yarn cache directory
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
-
-    - name: Use Yarn cache
-      uses: actions/cache@v3
-      id: yarn-cache
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
-
-    - name: Install dependencies
-      run: yarn install --prefer-offline --frozen-lockfile
-
-    - name: Get seasonal data from Kitsu.io
-      run: yarn cron
-      env:
-        KITSU_USERNAME: ${{ secrets.KITSU_USERNAME }}
-        KITSU_PASSWORD: ${{ secrets.KITSU_PASSWORD }}
-
-    - name: Get today's date
-      id: date
-      run: echo "::set-output name=today::$(date +%F)"
-
-    - name: Commit updated seasonal data
-      run: |
-        git config --global user.name '${{ secrets.GH_USERNAME }}'
-        git config --global user.email '${{ secrets.GH_EMAIL }}'
-        git config --global user.signingkey ${{ secrets.GPG_SIGNING_KEY }}
-        git config --global commit.gpgsign true
-        git add data/
-        git commit -am 'chore: add data for ${{ steps.date.outputs.today }}'
-        git push
-
-    - name: Trigger CI Workflow
-      if: success()
-      uses: peter-evans/repository-dispatch@v2
-      with:
-        token: ${{ secrets.GH_TOKEN }}
-        repository: ${{ github.repository }}
-        event-type: trigger-ci-workflow
-        client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+      - uses: actions/checkout@v7
+        with:
+          ref: master
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: .bun-version
+      - run: bun install --frozen-lockfile
+      - run: bun run test
+      - run: bun run cron
+      - name: Sign and commit data
+        id: commit
+        env:
+          GPG_KEY: ${{ secrets.GPG_KEY }}
+          GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
+          GH_USERNAME: ${{ secrets.GH_USERNAME }}
+          GH_EMAIL: ${{ secrets.GH_EMAIL }}
+        run: |
+          printf '%s' "$GPG_KEY" | gpg --batch --import
+          git config user.name "$GH_USERNAME"
+          git config user.email "$GH_EMAIL"
+          git config user.signingkey "$GPG_SIGNING_KEY"
+          git config commit.gpgsign true
+          git add data/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: add data for $(date -u +%F)"
+            git push origin HEAD:master
+          fi
+          echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+  publish:
+    needs: collect
+    uses: ./.github/workflows/static.yml
+    with:
+      revision: ${{ needs.collect.outputs.revision }}
+    secrets: inherit

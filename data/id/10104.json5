@@ -3,6 +3,7 @@
   i: 10104,
   t: 'Disney Tsum Tsum',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/10104/small.jpg',
  },
  data: [
   {
@@ -5792,17 +5793,6 @@
   },
   {
    d: 429459,
-   m: 62.62,
-   r: 17,
-   u: 75,
-   f: 2,
-   w: 42.12,
-   a: 65.59,
-   p: 11.15,
-   o: 5.85,
-  },
-  {
-   d: 429483,
    m: 62.62,
    r: 17,
    u: 75,

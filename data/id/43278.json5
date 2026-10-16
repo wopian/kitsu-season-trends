@@ -3,6 +3,7 @@
   i: 43278,
   t: 'Yi Nian Yong Heng',
   u: 1,
+  poster: 'https://media.kitsu.app/anime/poster_images/43278/small.jpg',
  },
  data: [
   {
@@ -360,17 +361,6 @@
    m: 68.53,
    r: 13,
    u: 87,
-   w: 47.1,
-   a: 74.23,
-   p: 9.65,
-   o: 3.35,
-  },
-  {
-   d: 446248,
-   m: 68.53,
-   r: 13,
-   u: 88,
-   f: 1,
    w: 47.1,
    a: 74.23,
    p: 9.65,

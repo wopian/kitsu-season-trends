@@ -1,136 +1,105 @@
-# Season Trends
+# Kitsu Season Trends
 
-[![web badge]][web]
-[![uptime badge]][web]
-[![contributors badge]][contributors]
-[![actions badge]][actions]
-
-[Kitsu] season trends for the currently airing anime
-
-## Using the Data
-
-All the data is free to use and available from:
-
-- JSON format in `./data` or online at `season.moe/data/{year}-{season}.json`
-- [MessagePack] format online at `season.moe/msgpack/{year}-{season}.msgpack`
-
-## Data Format
-
-Property names are compressed to save storage space and bandwidth.
-
-### Seasonal Data
-
-Data grouped by airing season - Winter, Spring, Summer and Autumn/Fall.
-
-As of January 2022, the previous season is updated in tandem with the current season.
-
-```js
-{
-  data: [
-    {
-      i: 12, // Kitsu anime ID
-      t: 'One Piece', // Canonical title
-      u: 0, // Subtype (0: TV, 1: ONA)
-      n: 0, // 0: Leftover, 1: New
-      d: [ // Data array containing each daily update
-        {
-          i: 0, // Index
-          d: 450263, // Hours since epoch (x3600000 to get datetime)
-          w: 82.19, // Wilson's confidence level (0.95) out of 100 (omitted if 0)
-          l: 82.4, // Laplace smoothing out of 100 (omitted if 0)
-          p: 100359.75, // Upvotes, ratings >= 3 out of 5, omitted if 0)
-          o: 21433.25, // Downvotes, ratings < 3 out of 5, omitted if 0)
-          r: 121793, // Users Rated (omitted if 0)
-          u: 186101, // Users (omitted if 0)
-          f: 6578 // Users Favourited (omitted if 0)
-        }
-      ]
-    }
-  ],
-  meta: {
-    current: 52, // Total started airing this season
-    total: 226 // Total shows being tracked
-  },
-  updated: '2021-05-13T23:03:55.841Z' // ISO date of the last cron update
-}
-```
-
-### Anime Data
-
-```js
-{
-  data: [
-    {
-      i: 0 // index
-      d: 450263, // Hours since epoch (x3600000 to get datetime)
-      w: 82.19 // Wilson's confidence level (0.95) out of 100 (omitted if 0)
-      l: 82.4 // Laplace smoothing out of 100 (omitted if 0)
-      p: 100359.75 // Upvotes, ratings >= 3 out of 5, omitted if 0)
-      o: 21433.25 // Downvotes, ratings < 3 out of 5, omitted if 0)
-      r: 121793 // Users Rated (omitted if 0)
-      u: 186101 // Users (omitted if 0)
-      f: 6578 // Users Favourited (omitted if 0)
-    }
-  ],
-  meta: {
-    i: 12, // Kitsu anime ID
-    t: 'One Piece', // Canonical title
-    u: 0, // Subtype (0: TV, 1: ONA)
-  }
-}
-```
+Daily anime ratings, votes and favourites since 2017: **https://kitsu.wopian.me**.
 
 ## Development
 
-### Requirements
+Use Bun 1.4.2. Dependencies follow reference projects' three-day release age;
+explicitly requested `kitsu-native@13.0.0` and `kitsu-core@13.0.0` are exceptions.
 
-- [git] `>= 2.0.0`
-- [node.js] `>= 8.0.0`
-- [yarn] `>= 1.0.0`
+```sh
+bun install --frozen-lockfile
+bun run dev
+bun run typecheck
+bun run test
+bun run build
+bun run preview
+bun run check:http http://127.0.0.1:4173
+bunx playwright install chromium
+bun run test:browser
+```
 
-### Commands
+Use `PLAYWRIGHT_CHANNEL=chrome` to test installed Chrome. After dependency changes,
+run `bun dedupe` and `bun dedupe --check`.
 
-- `yarn start` - live reload local server
-- `yarn lint` - lint source code
-- `yarn build` - build from source
-- `yarn cron` - manually run cron task to fetch new data
+## Data
 
-### Guide
+Tracked sources are JSON5 under `data/`. Builds generate public JSON and
+MessagePack using `msgpack-lite`; browser charts load MessagePack.
 
-1. [Fork the repo]
+- `/data/{year}-{season}.json`
+- `/msgpack/{year}-{season}.msgpack`
+- `/data/id/{id}.json`
+- `/msgpack/id/{id}.msgpack`
 
-2. Clone the repo (`git clone https://github.com/{yourusername}/api-docs.git`)
+Season entries contain `i` (Kitsu ID), `t` (title), `u` (0 TV, 1 ONA), `n` (1 new,
+0 leftover), optional `poster` (current API image URL), and daily observations `d`.
+Per-anime archives place optional `poster` in `meta`. Observations retain `d`
+(hours since epoch), `w` (Wilson), `l` (Laplace), `p` (weighted upvotes), `o`
+(weighted downvotes), `r` (ratings), `u` (legacy users), and `f` (favourites).
+Omitted numeric metrics mean zero. Poster errors display a local text fallback.
 
-3. Create a new branch (`git checkout -b improve-docs`)
+```sh
+bun run cron
+bun run backfill:posters --dry-run
+bun run backfill:posters
+bun run backfill:history --dry-run
+bun run backfill:history
+```
 
-4. Install dependencies (`yarn install`)
+GitHub Actions runs daily at **22:00 UTC**, signs data commits and invokes static build with exact committed SHA. No Kitsu credentials
+are needed. Required signing secrets: `GPG_KEY`, `GPG_SIGNING_KEY`, `GH_USERNAME`,
+`GH_EMAIL`. Repository Actions token needs contents/package write permission.
 
-5. Make the appropriate changes in the source files
+## Ratings
 
-6. Check your changes for issues (`yarn test`)
+Historical `useLaplace` selects Laplace scores; older archives use Wilson scores.
+Formulas remain unchanged: weighted votes from `wilson-rate`, Wilson confidence
+1.96, and Laplace `upvotes / (upvotes + downvotes + 5)`. Rating changes use percentage
+points. Count changes compare previous recorded observation, which may not be yesterday.
+Charts show missing observation dates as gaps. Ranking uses latest metric value,
+then anime ID.
 
-7. Commit your changes (`git commit -am 'Improve docs'`)
+## Season stats
 
-8. Push to your branch (`git push origin improve-docs`)
+`/stats/` compares archived seasons with counts, TV/ONA mix, mean rating, rating
+submissions, and favourites. Year filters affect charts and the linked season
+table; summary cards cover the full archive. Audience totals are not unique users.
 
-9. [Create a Pull Request]
+Counts come from stored entries and New/Leftover flags, including older archives
+whose metadata totals differ. Ratings and audience use each anime's latest sample
+within its season archive, even when collection continues after that quarter.
+Mean ratings exclude zero scores and retain each archive's Wilson/Laplace method.
+Early coverage can be incomplete; current-quarter totals remain in progress.
 
-## License
+Daily collection stages `data/stats.json5` with season and ID updates after all
+collection succeeds. Rebuild stats from existing archives without API calls:
 
-All code released under the [MIT] license
+```sh
+bun run backfill:stats --dry-run
+bun run backfill:stats
+```
 
-[kitsu]: https://kitsu.io
-[messagepack]: https://msgpack.org
-[fork the repo]: https://help.github.com/articles/fork-a-repo/#fork-an-example-repository
-[create a pull request]: https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request
-[mit]: https://github.com/wopian/kitsu-season-trends/blob/master/LICENSE.md
-[git]: https://git-scm.com
-[node.js]: https://nodejs.org
-[yarn]: https://yarnpkg.com
-[web]: https://season.moe
-[web badge]: https://flat.badgen.net/uptime-robot/status/m779133972-4da0d8f104f1d6ffaf921257
-[uptime badge]: https://flat.badgen.net/uptime-robot/month/m779133972-4da0d8f104f1d6ffaf921257
-[actions]: https://github.com/wopian/kitsu-season-trends/actions/workflows/ci.yml
-[actions badge]: https://flat.badgen.net/github/checks/wopian/kitsu-season-trends/master/ci
-[contributors]: https://github.com/wopian/kitsu-season-trends/graphs/contributors
-[contributors badge]: https://flat.badgen.net/github/contributors/wopian/kitsu-season-trends
+Backfill changes only `data/stats.json5` and uses the collector lock. Build rejects
+stale stats with a backfill instruction. JSON and MessagePack exports are available
+at `/stats.json` and `/stats.msgpack`, with aliases `/data/stats.json` and
+`/msgpack/stats.msgpack`. All exports contain identical versioned data.
+
+## Static hosting
+
+`bun run build` generates `.output/public`, every archived season page, JSON and
+MessagePack downloads, custom 404, sitemap, and SHA-256 release manifest. Root shows
+current season or latest available archive. `/year/fall` aliases same year's autumn.
+Unknown paths return HTTP 404; do not configure an SPA fallback.
+
+CI validates PRs and publishes master to:
+
+```text
+ghcr.io/wopian/kitsu-season-trends/static:latest
+ghcr.io/wopian/kitsu-season-trends/static:sha-<commit>
+```
+
+Docker target `artifact` packages verified files at `/site`; `production` builds
+from source. Both final images contain only files. Archive: `kitsu-static.tar.gz`.
+
+MIT licensed. Kitsu data is freely downloadable.

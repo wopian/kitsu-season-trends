@@ -3,6 +3,7 @@
   i: 10308,
   t: 'Robot Pulta',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/10308/small.jpg',
  },
  data: [
   {
@@ -1467,6 +1468,17 @@
   },
   {
    d: 446368,
+   m: 56.36,
+   r: 7,
+   u: 30,
+   w: 27.08,
+   a: 60,
+   p: 4.2,
+   o: 2.8,
+  },
+  {
+   i: 0,
+   d: 447171,
    m: 56.36,
    r: 7,
    u: 30,

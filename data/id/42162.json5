@@ -1,8 +1,9 @@
 {
  meta: {
   i: 42162,
-  t: 'Youkai Watch!',
+  t: 'Youkai Watch! (2019)',
   u: 0,
+  poster: 'https://media.kitsu.app/anime/poster_images/42162/small.jpg',
  },
  data: [
   {
