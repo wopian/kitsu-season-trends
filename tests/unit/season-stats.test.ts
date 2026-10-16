@@ -57,6 +57,14 @@ test('empty stats and zero denominators stay unavailable; missing quarters remai
   expect(isSeasonStatsDocument(null)).toBe(false)
 })
 
+test('aggregate timestamp keeps newer archive when another season has an older override', () => {
+  const override = { ...document, updated: '2026-10-16T22:00:00Z' }
+  const newer = { ...document, updated: '2026-10-16T22:06:14.415Z' }
+  const stats = buildSeasonStats([source(2026, 'autumn', override), source(2026, 'summer', newer)])
+  expect(stats.seasons.find((row) => row.season === 'autumn')!.updated).toBe('2026-10-16T22:00:00.000Z')
+  expect(stats.updated).toBe('2026-10-16T22:06:14.415Z')
+})
+
 test('growth compares exact quarter across year boundary', () => {
   const rows = buildSeasonStats([source(2025, 'autumn', { ...document, data: document.data.slice(0, 2) }), source(2026, 'winter')]).seasons
   expect(seasonGrowth(rows[1]!, rows)).toEqual({ change: 2, percent: 100 })
@@ -87,7 +95,7 @@ test('archive stats use fresh overrides and poster sources exclude aggregate doc
   const override = { ...document, updated: '2026-10-16T22:00:00Z' }
   const stats = await statsFromArchives([{ path: 'data/2026-autumn.json5', data: override }])
   expect(stats.seasons.find((row) => row.year === 2026 && row.season === 'autumn')!.total).toBe(4)
-  expect(stats.updated).toBe('2026-10-16T22:00:00.000Z')
+  expect(stats.seasons.find((row) => row.year === 2026 && row.season === 'autumn')!.updated).toBe('2026-10-16T22:00:00.000Z')
   const files = await animeSourceFiles()
   expect(files).not.toContain('data/stats.json5')
   expect(files.every((path) => !path.endsWith('stats.json5'))).toBe(true)
