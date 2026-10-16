@@ -3,7 +3,7 @@
   i: 50338,
   t: 'Mahou Shoujo Ikusei Keikaku: restart',
   u: 0,
-  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50338/poster_image/487a04862ba11ee73f7445a3c8d60ac2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261016%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261016T023404Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=060df4ea4ee3033b2c390e31469b11935b2353f84e4e6cdb4c28d2adcfbf48b7',
+  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50338/poster_image/487a04862ba11ee73f7445a3c8d60ac2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261016%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261016T220624Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=22775e83dd3b5a9f6a330977c02b60b40c03fd34d2724f1805705d1472b18ac5',
  },
  data: [
   {
@@ -114,6 +114,16 @@
    p: 2.5,
    o: 1.5,
    r: 4,
+   f: 1,
+  },
+  {
+   i: 11,
+   d: 497830,
+   w: 29.88,
+   l: 35,
+   p: 3.5,
+   o: 1.5,
+   r: 5,
    f: 1,
   },
  ],
