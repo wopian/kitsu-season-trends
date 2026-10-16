@@ -79,7 +79,7 @@ const weights = [
           <li>Full history includes all archived seasons for an anime. Histories with more than 90 observations show each metric’s highest value per ISO week, Monday–Sunday UTC. Shorter histories show daily samples.</li>
           <li>Weekly peaks can come from different observations. The 30/90-day views show daily samples. Gaps mark missing days or weeks.</li>
         </ul>
-        <p>Data updates daily. Downloads retain original observations, including values omitted from weekly charts.</p>
+        <p>Current and previous seasons update daily. Older seasons are archived and frozen. Downloads retain original observations, including values omitted from weekly charts.</p>
       </section>
       <NuxtLink to="/" class="back-link">Back to seasons</NuxtLink>
     </main>

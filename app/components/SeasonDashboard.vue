@@ -11,6 +11,7 @@ import {
   metrics,
   seasons,
   seasonAt,
+  previousSeason,
   selectAnime,
   parseUpdated,
   type Metric,
@@ -28,7 +29,9 @@ const filterGroups = [
   { label: 'Format', options: { tv: 'TV', ona: 'ONA' } },
   { label: 'Season status', options: { new: 'New', old: 'Leftovers' } },
 ] as const
-const current = seasonAt()
+const now = new Date()
+const current = seasonAt(now)
+const previous = previousSeason(now)
 const home =
   seasonCatalog.find(
     (item) => item.year === current.year && item.season === current.season,
@@ -46,6 +49,11 @@ const selected = computed(() =>
 if (!selected.value)
   throw createError({ statusCode: 404, statusMessage: 'Season not found' })
 const key = computed(() => selected.value!.key)
+const updatedDaily = computed(() =>
+  [current, previous].some(
+    (item) => item.year === selected.value!.year && item.season === selected.value!.season,
+  ),
+)
 const { data: summary } = await useAsyncData(
   () => `summary-${key.value}`,
   () => loadSummary(key.value),
@@ -227,7 +235,7 @@ useSeoMeta({
   ogUrl: () => canonical.value,
   ogType: 'website',
   description: () =>
-    `Explore ${selected.value!.label} anime ratings, votes and favourites. Updated daily from Kitsu.app.`,
+    `Explore ${selected.value!.label} anime ratings, votes and favourites. ${updatedDaily.value ? 'Updated daily from Kitsu.app.' : 'Archived snapshot from Kitsu.app.'}`,
 })
 </script>
 <template>
@@ -359,8 +367,8 @@ useSeoMeta({
           </h2>
         </div>
         <div class="update-status">
-          <span :class="{ 'live-dot': !error }" />{{
-            loading ? 'Loading season history…' : 'Updated daily'
+          <span v-if="updatedDaily && !error" class="live-dot" />{{
+            loading ? 'Loading season history…' : updatedDaily ? 'Updated daily' : 'Archived'
           }}<small>{{ updated }}</small>
         </div>
       </div>
@@ -390,7 +398,7 @@ useSeoMeta({
     <footer>
       <div>
         <p>
-          Data from <a href="https://kitsu.app" class="kitsu-link"><IconWorld :size="14" aria-hidden="true" />Kitsu.app</a>. Collected daily
+          Data from <a href="https://kitsu.app" class="kitsu-link"><IconWorld :size="14" aria-hidden="true" />Kitsu.app</a>. Current and previous seasons update daily. Older seasons are archived.
           at 22:00 UTC.
         </p>
       </div>
