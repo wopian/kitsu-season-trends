@@ -1,8 +1,13 @@
 import { readFile } from 'node:fs/promises'
+import { aliasSocialHead, type SocialPreviewCatalog } from './shared/social-preview'
+import type { SeasonInfo } from './shared/trends'
 
 const catalog = JSON.parse(
   await readFile(new URL('./.generated/catalog.json', import.meta.url), 'utf8'),
-) as { year: number; season: string }[]
+) as SeasonInfo[]
+const socialPreviews: SocialPreviewCatalog = JSON.parse(
+  await readFile(new URL('./.generated/social-previews.json', import.meta.url), 'utf8'),
+)
 export default defineNuxtConfig({
   ssr: true,
   compatibilityDate: '2026-10-16',
@@ -19,6 +24,14 @@ export default defineNuxtConfig({
   ui: { fonts: false },
   colorMode: { preference: 'system', fallback: 'light' },
   nitro: {
+    hooks: {
+      'prerender:generate'(route) {
+        const alias = /^\/(\d{4})\/fall\/?$/.exec(route.route)
+        if (!alias || !route.contents) return
+        const info = catalog.find((item) => item.year === Number(alias[1]) && item.season === 'autumn')
+        if (info) route.contents = route.contents.replace('</head>', `${aliasSocialHead(info, socialPreviews[info.key]!)}</head>`)
+      },
+    },
     prerender: {
       routes: [
         '/',

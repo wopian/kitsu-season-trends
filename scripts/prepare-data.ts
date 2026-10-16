@@ -6,6 +6,7 @@ import { sourceFiles, readDocument } from './data-files'
 import { statsFromArchives } from './season-stats'
 import type { SeasonStatsDocument } from '../shared/season-stats'
 import { seasons, type SeasonData, type SeasonInfo } from '../shared/trends'
+import { generateSocialPreviews } from './social-preview'
 
 const stats = await readDocument<SeasonStatsDocument>('data/stats.json5').catch((error) => {
   if (error.code !== 'ENOENT') throw error
@@ -13,15 +14,16 @@ const stats = await readDocument<SeasonStatsDocument>('data/stats.json5').catch(
 })
 assert.deepEqual(stats, await statsFromArchives(), 'Season stats stale. Run bun run backfill:stats')
 
-for (const path of ['public/data', 'public/msgpack', '.generated/summaries']) {
+for (const path of ['public/data', 'public/msgpack', 'public/social', '.generated/summaries']) {
   await mkdir(path, { recursive: true })
 }
 // Generated directories contain no hand-authored files.
-for (const path of ['public/data', 'public/msgpack', '.generated/summaries']) {
+for (const path of ['public/data', 'public/msgpack', 'public/social', '.generated/summaries']) {
   await rm(path, { recursive: true, force: true })
   await mkdir(path, { recursive: true })
 }
 const catalog: SeasonInfo[] = []
+const previewSources: { info: SeasonInfo; document: SeasonData }[] = []
 for (const path of await sourceFiles()) {
   const document = await readDocument<unknown>(path)
   const name = relative('data', path)
@@ -40,12 +42,14 @@ for (const path of await sourceFiles()) {
     const seasonDocument = document as SeasonData
     const year = Number(match[1])
     const season = match[2] as SeasonInfo['season']
-    catalog.push({
+    const info: SeasonInfo = {
       year,
       season,
       key: name,
       label: `${season[0]!.toUpperCase()}${season.slice(1)} ${year}`,
-    })
+    }
+    catalog.push(info)
+    previewSources.push({ info, document: seasonDocument })
     await writeFile(
       `.generated/summaries/${name}.json`,
       JSON.stringify({
@@ -65,6 +69,7 @@ catalog.sort(
     b.year - a.year || seasons.indexOf(b.season) - seasons.indexOf(a.season),
 )
 await writeFile('.generated/catalog.json', JSON.stringify(catalog))
+await generateSocialPreviews(previewSources)
 await writeFile('.generated/stats.json', JSON.stringify(stats))
 await writeFile('public/stats.json', JSON.stringify(stats))
 await writeFile('public/stats.msgpack', encode(stats))

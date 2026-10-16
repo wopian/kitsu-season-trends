@@ -1,5 +1,6 @@
 import { strict as assert } from 'node:assert'
 import { decode } from 'msgpack-lite'
+import { createHash } from 'node:crypto'
 const base = process.argv[2] ?? 'http://127.0.0.1:4173'
 const manifest = (await (
   await fetch(`${base}/release-manifest.json`)
@@ -10,11 +11,15 @@ for (const route of manifest.routes) {
   assert((await response.text()).includes('<h1'), route)
 }
 for (const path of Object.keys(manifest.files).filter(
-  (path) => path.startsWith('_nuxt/') || path.startsWith('msgpack/'),
+  (path) => path.startsWith('_nuxt/') || path.startsWith('msgpack/') || path.startsWith('social/'),
 )) {
   const response = await fetch(`${base}/${path}`)
   assert.equal(response.status, 200, path)
-  await response.arrayBuffer()
+  const bytes = new Uint8Array(await response.arrayBuffer())
+  if (path.startsWith('social/')) {
+    assert.equal(createHash('sha256').update(bytes).digest('hex'), manifest.files[path], path)
+    assert(response.headers.get('content-type')?.includes(path.endsWith('.svg') ? 'image/svg+xml' : 'image/png'), path)
+  }
 }
 const notFound = await fetch(`${base}/2099/not-a-season/`)
 const statsResponses = await Promise.all(['/stats.json', '/data/stats.json', '/stats.msgpack', '/msgpack/stats.msgpack'].map((path) => fetch(`${base}${path}`)))
@@ -30,5 +35,5 @@ for (const route of manifest.routes.filter((route) => route.endsWith('/autumn'))
   assert((await alias.text()).includes(`url=${route}`), `Wrong autumn alias: ${route}`)
 }
 console.log(
-  `HTTP checks passed: ${manifest.routes.length} routes, client assets, MessagePack downloads, and real 404.`,
+  `HTTP checks passed: ${manifest.routes.length} routes, client assets, social previews, MessagePack downloads, and real 404.`,
 )

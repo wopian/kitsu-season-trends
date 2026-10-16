@@ -5,6 +5,7 @@ node_modules/
 .generated/
 public/data/
 public/msgpack/
+public/social/
 public/sitemap.xml
 public/stats.json
 public/stats.msgpack
@@ -14,3 +15,4 @@ playwright-report/
 *.log
 .env*
 __pycache__/
+/deployment/

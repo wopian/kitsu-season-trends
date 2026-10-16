@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@playwright/test": "1.62.1",
+    "@resvg/resvg-js": "2.6.2",
     "@types/bun": "1.4.2",
     "@types/msgpack-lite": "0.1.12",
     "@types/node": "^24.0.0",

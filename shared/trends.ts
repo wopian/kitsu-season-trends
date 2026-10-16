@@ -62,6 +62,11 @@ export function previousSeason(date = new Date()) {
     new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() - 3, 1)),
   )
 }
+export function isDailySeason(target: { year: number; season: Season }, date = new Date()) {
+  return [seasonAt(date), previousSeason(date)].some(
+    (item) => item.year === target.year && item.season === target.season,
+  )
+}
 export function bounds(year: number, season: Season): [number, number] {
   const month = seasons.indexOf(season) * 3
   return [Date.UTC(year, month, 1), Date.UTC(year, month + 3, 1)]

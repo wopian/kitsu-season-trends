@@ -48,7 +48,6 @@ jobs:
           trap 'kill "$preview_pid"' EXIT
           sleep 2
           bun run check:http http://127.0.0.1:4173
-      - run: python3 deployment/hetzner/tools/kitsu-site/test-release.py
       - run: tar -czf kitsu-static.tar.gz -C .output/public .
       - uses: actions/upload-artifact@v7
         with:

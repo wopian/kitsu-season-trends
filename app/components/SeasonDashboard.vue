@@ -11,7 +11,7 @@ import {
   metrics,
   seasons,
   seasonAt,
-  previousSeason,
+  isDailySeason,
   selectAnime,
   parseUpdated,
   type Metric,
@@ -19,6 +19,8 @@ import {
   type Anime,
 } from '../../shared/trends'
 import { seasonCatalog, loadSummary } from '../composables/useSeasonData'
+import previewCatalog from '../../.generated/social-previews.json'
+import { socialImageUrl, type SocialPreviewCatalog } from '../../shared/social-preview'
 
 const route = useRoute()
 const graphs = ref<Metric[]>(metrics.map((metric) => metric.key))
@@ -31,7 +33,6 @@ const filterGroups = [
 ] as const
 const now = new Date()
 const current = seasonAt(now)
-const previous = previousSeason(now)
 const home =
   seasonCatalog.find(
     (item) => item.year === current.year && item.season === current.season,
@@ -49,11 +50,7 @@ const selected = computed(() =>
 if (!selected.value)
   throw createError({ statusCode: 404, statusMessage: 'Season not found' })
 const key = computed(() => selected.value!.key)
-const updatedDaily = computed(() =>
-  [current, previous].some(
-    (item) => item.year === selected.value!.year && item.season === selected.value!.season,
-  ),
-)
+const updatedDaily = computed(() => isDailySeason(selected.value!, now))
 const { data: summary } = await useAsyncData(
   () => `summary-${key.value}`,
   () => loadSummary(key.value),
@@ -226,6 +223,8 @@ const canonical = computed(
   () =>
     `https://kitsu.wopian.me/${selected.value!.year}/${selected.value!.season}/`,
 )
+const socialPreview = computed(() => (previewCatalog as SocialPreviewCatalog)[key.value]!)
+const socialImage = computed(() => socialImageUrl(socialPreview.value))
 useHead(() => ({
   title: `${selected.value!.label} — Kitsu Season Trends`,
   link: [{ rel: 'canonical', href: canonical.value }],
@@ -234,6 +233,15 @@ useSeoMeta({
   ogTitle: () => `${selected.value!.label} — Kitsu Season Trends`,
   ogUrl: () => canonical.value,
   ogType: 'website',
+  ogSiteName: 'Kitsu Season Trends',
+  ogImage: () => socialImage.value,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageType: 'image/png',
+  ogImageAlt: () => socialPreview.value.alt,
+  twitterCard: 'summary_large_image',
+  twitterImage: () => socialImage.value,
+  twitterImageAlt: () => socialPreview.value.alt,
   description: () =>
     `Explore ${selected.value!.label} anime ratings, votes and favourites. ${updatedDaily.value ? 'Updated daily from Kitsu.app.' : 'Archived snapshot from Kitsu.app.'}`,
 })
@@ -398,8 +406,7 @@ useSeoMeta({
     <footer>
       <div>
         <p>
-          Data from <a href="https://kitsu.app" class="kitsu-link"><IconWorld :size="14" aria-hidden="true" />Kitsu.app</a>. Current and previous seasons update daily. Older seasons are archived.
-          at 22:00 UTC.
+          Data from <a href="https://kitsu.app" class="kitsu-link"><IconWorld :size="14" aria-hidden="true" />Kitsu.app</a>. Current and previous seasons update daily at 22:00 UTC. Older seasons are archived.
         </p>
       </div>
       <div class="downloads">

@@ -4,12 +4,56 @@ import { readdir, readFile, writeFile } from 'node:fs/promises'
 import { join, relative, resolve } from 'node:path'
 import { decode } from 'msgpack-lite'
 import { sourceFiles, readDocument } from './data-files'
-import type { SeasonInfo } from '../shared/trends'
+import { seasonAt, type SeasonInfo, type SeasonData } from '../shared/trends'
+import { seasonPreview, socialImageUrl, type SocialPreviewCatalog } from '../shared/social-preview'
+import { checksum, xml } from './social-preview'
+import { Resvg } from '@resvg/resvg-js'
 
 const root = resolve('.output/public')
 const catalog = JSON.parse(
   await readFile('.generated/catalog.json', 'utf8'),
 ) as SeasonInfo[]
+const previews: SocialPreviewCatalog = JSON.parse(await readFile('.generated/social-previews.json', 'utf8'))
+assert.deepEqual(Object.keys(previews).sort(), catalog.map((item) => item.key).sort(), 'Missing season previews')
+function verifySocialHead(html: string, info: SeasonInfo) {
+  const asset = previews[info.key]!
+  const image = socialImageUrl(asset)
+  for (const [key, expected] of Object.entries({
+    'og:image': image, 'twitter:image': image, 'og:image:width': '1200', 'og:image:height': '630',
+    'og:image:type': 'image/png', 'twitter:card': 'summary_large_image',
+    'og:image:alt': asset.alt, 'twitter:image:alt': asset.alt,
+  })) {
+    const tag = [...html.matchAll(/<meta\b[^>]*>/g)].find(([tag]) => tag.includes(`="${key}"`))?.[0]
+    const encoded = tag?.match(/content="([^"]*)"/)?.[1]
+    const entities: Record<string, string> = { '&amp;': '&', '&quot;': '"', '&lt;': '<', '&gt;': '>', '&apos;': "'", '&#39;': "'", '&#x27;': "'" }
+    const content = encoded?.replace(/&(?:amp|quot|lt|gt|apos|#39|#x27);/g, (entity) => entities[entity]!)
+    assert.equal(content, expected, `Wrong social metadata for ${info.key}: ${key}`)
+  }
+}
+for (const info of catalog) {
+  const asset = previews[info.key]!
+  const model = seasonPreview(info, await readDocument<SeasonData>(`data/${info.key}.json5`))
+  assert.equal(asset.alt, model.alt, `Social preview stale: ${info.key}`)
+  const svg = await readFile(join(root, asset.svg), 'utf8')
+  const png = await readFile(join(root, asset.png))
+  assert(svg.includes(`<title>${xml(model.alt)}</title>`), `Wrong SVG content: ${info.key}`)
+  assert.match(svg, /width="1200" height="630"/)
+  const parsed = new Resvg(svg, { font: { loadSystemFonts: false } })
+  assert.equal(parsed.width, 1200)
+  assert.equal(parsed.height, 630)
+  assert(!/<text\b|<script\b|<foreignObject\b/.test(svg), `SVG not self-contained: ${info.key}`)
+  for (const match of svg.matchAll(/(?:xlink:)?href="([^"]+)"/g))
+    assert(/^(?:#|data:image\/)/.test(match[1]!), `External SVG resource: ${info.key}`)
+  assert(png.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])), `Invalid PNG: ${info.key}`)
+  assert.equal(png.readUInt32BE(16), 1200)
+  assert.equal(png.readUInt32BE(20), 630)
+  assert.equal(asset.checksum, checksum(png))
+  verifySocialHead(await readFile(join(root, `${info.year}/${info.season}/index.html`), 'utf8'), info)
+  if (info.season === 'autumn') verifySocialHead(await readFile(join(root, `${info.year}/fall/index.html`), 'utf8'), info)
+}
+const current = seasonAt()
+const home = catalog.find((info) => info.year === current.year && info.season === current.season) ?? catalog[0]!
+verifySocialHead(await readFile(join(root, 'index.html'), 'utf8'), home)
 const routes = ['/', '/ratings', '/stats', ...catalog.map((item) => `/${item.year}/${item.season}`)]
 for (const route of routes) {
   const html = await readFile(join(root, route, 'index.html'), 'utf8')

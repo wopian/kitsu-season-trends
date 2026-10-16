@@ -105,7 +105,6 @@ summary:focus-visible {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--border);
   gap: 20px;
 }
 .wordmark {
@@ -235,8 +234,6 @@ select {
   padding: 3px 0;
 }
 .control-panel {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
   padding: 20px 0;
   display: grid;
   gap: 12px;
@@ -505,7 +502,6 @@ select {
   background: none;
   color: var(--muted);
   border: 0;
-  border-top: 1px solid var(--border);
   font-size: 10px;
   font-weight: 600;
 }
@@ -574,7 +570,6 @@ footer {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  border-top: 1px solid var(--border);
   margin-top: 52px;
   padding: 32px 0 40px;
 }
@@ -933,7 +928,6 @@ footer p {
 .ratings-page section {
   margin: 32px 0;
   padding-top: 24px;
-  border-top: 1px solid var(--border);
 }
 .ratings-page h2 {
   margin-bottom: 16px;

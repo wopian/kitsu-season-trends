@@ -85,6 +85,23 @@ stale stats with a backfill instruction. JSON and MessagePack exports are availa
 at `/stats.json` and `/stats.msgpack`, with aliases `/data/stats.json` and
 `/msgpack/stats.msgpack`. All exports contain identical versioned data.
 
+## Social previews
+
+Build generates a 1200 × 630 SVG and PNG per season at
+`/social/{year}-{season}.svg` and `.png`. Open Graph and Twitter metadata use PNG
+with a content checksum query parameter. Root uses its displayed season; fall
+aliases use their canonical autumn preview.
+
+Previews show season counts, three highest-rated New anime, scoring method,
+source snapshot date (UTC), and daily/archive status. Rankings use latest seasonal
+observations and the archive's Wilson/Laplace method. Zero scores are excluded;
+ties use ascending anime IDs. Counts include all stored entries, including leftovers.
+
+Posters download during data preparation, cache by URL in `.cache/social-posters`,
+and embed directly. Unavailable posters use branded placeholders. SVG text becomes
+paths using bundled, licensed fonts. PNG generation needs no browser or runtime
+server. Generated previews remain build artifacts; source archives stay unchanged.
+
 ## Static hosting
 
 `bun run build` generates `.output/public`, every archived season page, JSON and
