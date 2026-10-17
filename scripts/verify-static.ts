@@ -82,7 +82,19 @@ for (const path of await sourceFiles()) {
 const stats = await readDocument('data/stats.json5')
 assert.deepEqual(JSON.parse(await readFile(join(root, 'stats.json'), 'utf8')), stats)
 assert.deepEqual(decode(await readFile(join(root, 'stats.msgpack'))), stats)
-assert((await readFile(join(root, 'sitemap.xml'), 'utf8')).includes('https://kitsu.wopian.me/stats/'))
+const sitemap = await readFile(join(root, 'sitemap.xml'), 'utf8')
+const sitemapLocs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]!)
+assert(
+  sitemapLocs.some((loc) => {
+    try {
+      const url = new URL(loc)
+      return url.hostname === 'kitsu.wopian.me' && url.pathname === '/stats/'
+    } catch {
+      return false
+    }
+  }),
+  'Missing https://kitsu.wopian.me/stats/ in sitemap loc entries',
+)
 const styles =
   (await readFile(join(root, 'index.html'), 'utf8'))
     .match(/<link[^>]*rel="stylesheet"[^>]*>/g)
