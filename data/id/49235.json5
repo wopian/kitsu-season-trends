@@ -1,7 +1,7 @@
 {
  meta: {
   i: 49235,
-  t: 'Tensei Shitara Slime Datta Ken 4th Season',
+  t: 'Tensei Shitara Slime Datta Ken 4th Season Part 1 & 2',
   u: 0,
   poster: 'https://media.kitsu.app/anime/49235/poster_image/small-eaf4e9bfdec25a71c1c5acdda32d6b95.jpeg',
  },
@@ -2534,6 +2534,16 @@
    p: 644,
    o: 113,
    r: 757,
+   f: 21,
+  },
+  {
+   i: 107,
+   d: 497878,
+   w: 82.41,
+   l: 84.56,
+   p: 647.75,
+   o: 113.25,
+   r: 761,
    f: 21,
   },
  ],

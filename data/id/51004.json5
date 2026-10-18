@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 51004,
+  t: 'Pan Dorobou',
+  u: 0,
+  poster: 'https://media.kitsu.app/anime/51004/poster_image/small-1611eff7cc39481a25e385a806dba912.jpeg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 497878,
+   w: 20.65,
+   l: 16.67,
+   p: 1,
+   o: 0,
+   r: 1,
+  },
+ ],
+}
