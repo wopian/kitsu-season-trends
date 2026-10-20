@@ -15,6 +15,7 @@ export default defineNuxtConfig({
   nuxtCharts: { include: ['LineChart', 'AreaChart'], global: false },
   css: ['~/assets/css/main.css'],
   devtools: { enabled: false },
+  devServer: { port: 4001 },
   typescript: { strict: true },
   experimental: { entryImportMap: false },
   // Keep server externals absolute so Nitro resolves shared TypeScript on Windows.
@@ -50,6 +51,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      viewport: 'width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content',
       htmlAttrs: { lang: 'en-GB' },
       title: 'Kitsu Season Trends',
       meta: [

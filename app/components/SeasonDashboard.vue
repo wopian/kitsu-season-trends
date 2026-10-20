@@ -185,6 +185,15 @@ const fullHistoryAnime = computed<Anime | undefined>(() =>
       }
     : undefined,
 )
+const historyHandoff = ref(false)
+watch(expanded, () => { historyHandoff.value = false }, { flush: 'sync' })
+watch(animeHistoryLoading, (loading) => {
+  if (loading) historyHandoff.value = true
+  else if (animeHistoryError.value || !graphs.value.length) historyHandoff.value = false
+}, { flush: 'sync' })
+watch(animeHistoryError, (error) => {
+  if (error) historyHandoff.value = false
+}, { flush: 'sync' })
 const recordedRange = computed(() => {
   const points = fullHistoryAnime.value?.d
   if (!points?.length) return ''
@@ -362,6 +371,9 @@ useSeoMeta({
             ><IconSearch :size="18" /><input
               v-model="search"
               type="search"
+              enterkeyhint="search"
+              autocapitalize="none"
+              autocorrect="off"
               placeholder="Find an anime…"
               aria-label="Find an anime"
           /></label>
@@ -422,7 +434,7 @@ useSeoMeta({
       v-model:open="dialogOpen"
       :title="expandedAnime?.t ?? 'Anime history'"
       description="Rating, favourites and vote history across all seasons"
-      :ui="{ content: 'max-w-5xl', body: 'min-h-0', footer: 'shrink-0' }"
+      :ui="{ content: 'max-w-5xl history-dialog', body: 'min-h-0 overscroll-contain', footer: 'shrink-0' }"
       :content="{ onCloseAutoFocus: restoreHistoryFocus }"
       ><template #body
         ><div v-if="expandedAnime" class="detail-body">
@@ -444,29 +456,42 @@ useSeoMeta({
             >
           </div>
           <p
-            v-if="recordedRange"
-            class="muted"
-            aria-label="Recorded history range"
+            class="muted history-range"
+            :aria-label="recordedRange ? 'Recorded history range' : undefined"
+            :aria-hidden="recordedRange ? undefined : true"
           >
-            {{ recordedRange }}
+            {{ recordedRange || '\u00a0' }}
           </p>
-          <div v-if="animeHistoryError" class="error-banner" role="alert">
-            {{ animeHistoryError }}.
-            <button @click="retryAnimeHistory">Retry anime history</button>
+          <div class="history-chart-slot" :aria-busy="animeHistoryLoading">
+            <div v-if="animeHistoryError" class="error-banner" role="alert">
+              {{ animeHistoryError }}.
+              <button @click="retryAnimeHistory">Retry anime history</button>
+            </div>
+            <p v-else-if="animeHistoryLoading" role="status">
+              Loading anime history…
+            </p>
+            <p v-else-if="!graphs.length">Select graph metrics above.</p>
+            <Transition
+              name="history-ready"
+              :css="historyHandoff"
+              @after-enter="historyHandoff = false"
+              @enter-cancelled="historyHandoff = false"
+            >
+              <div
+                v-if="!animeHistoryError && !animeHistoryLoading && fullHistoryAnime && graphs.length"
+                class="history-chart-ready"
+              >
+                <TrendChart
+                  :anime="fullHistoryAnime"
+                  :metrics="graphs"
+                  use-laplace="auto"
+                  :days="Number(days)"
+                  :weekly="weeklyHistory"
+                  :height="360"
+                />
+              </div>
+            </Transition>
           </div>
-          <p v-else-if="animeHistoryLoading" role="status">
-            Loading anime history…
-          </p>
-          <TrendChart
-            v-else-if="fullHistoryAnime && graphs.length"
-            :anime="fullHistoryAnime"
-            :metrics="graphs"
-            use-laplace="auto"
-            :days="Number(days)"
-            :weekly="weeklyHistory"
-            :height="360"
-          />
-          <p v-else-if="!graphs.length">Select graph metrics above.</p>
         </div></template
       >
       <template #footer>

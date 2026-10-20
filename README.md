@@ -22,6 +22,9 @@ bun run test:browser
 Use `PLAYWRIGHT_CHANNEL=chrome` to test installed Chrome. After dependency changes,
 run `bun dedupe` and `bun dedupe --check`.
 
+Nuxt dev server uses port 4001. For phone testing, run `bun run dev --host 0.0.0.0`
+and open `http://<LAN-IP>:4001` on the phone.
+
 ## Data
 
 Tracked sources are JSON5 under `data/`. Builds generate public JSON and
