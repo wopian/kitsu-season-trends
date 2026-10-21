@@ -3,7 +3,7 @@
   i: 47985,
   t: 'Magical★Explorer: Eroge no Yuujin Chara ni Tensei Shitakedo, Game Chishiki Tsukatte Jiyuu ni Ikiru',
   u: 0,
-  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/47985/poster_image/62a2090f3ebb0e109feba38571716180.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261020%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261020T220638Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=5e7ce07c5e5bd1fe2c6845934a8415ec5ca97c84a81eb6e54914df720e292a74',
+  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/47985/poster_image/62a2090f3ebb0e109feba38571716180.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261021%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261021T220619Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=cf2ea242b2774a068c31613e0cb9c1bace54bc766cb1e800e1356ffc01a01a69',
  },
  data: [
   {
@@ -158,6 +158,15 @@
    p: 17.5,
    o: 8.5,
    r: 26,
+  },
+  {
+   i: 17,
+   d: 497950,
+   w: 48.74,
+   l: 57.03,
+   p: 18.25,
+   o: 8.75,
+   r: 27,
   },
  ],
 }

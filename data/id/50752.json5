@@ -3,7 +3,7 @@
   i: 50752,
   t: 'Kanojo no Tomodachi',
   u: 0,
-  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50752/poster_image/73f0d499dd508338b8474461a090999a.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261020%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261020T220639Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=e01c562f1f9828058e7d38f447208f516ddfb16991ad6fe550590988ffaf3afe',
+  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50752/poster_image/73f0d499dd508338b8474461a090999a.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261021%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261021T220620Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=a2bd43994bcb3aed9dabb4b920c8567c094d72dc7a914e86971c4f18a8c88875',
  },
  data: [
   {
@@ -212,6 +212,16 @@
   {
    i: 6,
    d: 497926,
+   w: 33.48,
+   l: 42.19,
+   p: 6.75,
+   o: 4.25,
+   r: 11,
+   f: 1,
+  },
+  {
+   i: 7,
+   d: 497950,
    w: 33.48,
    l: 42.19,
    p: 6.75,
