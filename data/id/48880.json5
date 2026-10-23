@@ -3,7 +3,7 @@
   i: 48880,
   t: 'Sayonara Lara',
   u: 0,
-  poster: 'https://media.kitsu.app/anime/48880/poster_image/small-36f85ce1e7dae6e08518c28f894f4565.jpeg',
+  poster: 'https://media.kitsu.app/anime/48880/poster_image/small-bc495d1572b0db048648665a8f115ccb.jpeg',
  },
  data: [
   {
@@ -1684,6 +1684,16 @@
    p: 160.5,
    o: 45.5,
    r: 206,
+   f: 7,
+  },
+  {
+   i: 117,
+   d: 497998,
+   w: 71.77,
+   l: 76.06,
+   p: 161.25,
+   o: 45.75,
+   r: 207,
    f: 7,
   },
  ],
