@@ -1,7 +1,7 @@
 {
  meta: {
   i: 49889,
-  t: 'Shiguang Dailiren III',
+  t: 'Shiguang Dailiren III Part 1',
   u: 1,
   poster: 'https://media.kitsu.app/anime/49889/poster_image/small-dd280a80d2f0f1ca45d71962bfaafb18.jpeg',
  },
@@ -1147,6 +1147,16 @@
    p: 27.25,
    o: 4.75,
    r: 32,
+   f: 2,
+  },
+  {
+   i: 108,
+   d: 498022,
+   w: 69.79,
+   l: 74.38,
+   p: 29.75,
+   o: 5.25,
+   r: 35,
    f: 2,
   },
  ],
