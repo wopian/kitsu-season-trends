@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 51137,
+  t: 'Duel Masters LOST: Danzai no Shounen',
+  u: 1,
+  poster: 'https://media.kitsu.app/anime/51137/poster_image/small-b8102f095d783dc7ae03c85f7d373c7c.jpeg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 498046,
+   w: 5.46,
+   l: 8.33,
+   p: 0.5,
+   o: 0.5,
+   r: 1,
+  },
+ ],
+}
