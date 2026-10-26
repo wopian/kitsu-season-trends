@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 51152,
+  t: 'Da Wang Rao Ming 3',
+  u: 1,
+  poster: 'https://media.kitsu.app/anime/51152/poster_image/small-77ebfba573cac870054b9c32b474e644.jpeg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 498070,
+   w: 5.46,
+   l: 8.33,
+   p: 0.5,
+   o: 0.5,
+   r: 1,
+  },
+ ],
+}

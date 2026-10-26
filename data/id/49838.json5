@@ -3,7 +3,7 @@
   i: 49838,
   t: 'Watashi no Shiawase na Kekkon Tokubetsu-hen',
   u: 1,
-  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/49838/poster_image/f6e968f9d3fcc3675a7b6538d5370363.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261025%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261025T220533Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=969a1de1ea9b615ff344a5a61df108100e1cd3add5d79ad1be94a2e097dfc5b2',
+  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/49838/poster_image/f6e968f9d3fcc3675a7b6538d5370363.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261026%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261026T220719Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=ded979688ddd4dabe1effec8f3a1f2bdd29fcb906b08c7be5f5f7c0d23b215ae',
  },
  data: [
   {
@@ -255,6 +255,16 @@
    o: 1,
    r: 5,
    f: 1,
+  },
+  {
+   i: 25,
+   d: 498070,
+   w: 55.69,
+   l: 59.72,
+   p: 10.75,
+   o: 2.25,
+   r: 13,
+   f: 2,
   },
  ],
 }
