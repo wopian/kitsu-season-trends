@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 51148,
+  t: 'Zeri Feisheng',
+  u: 1,
+  poster: 'https://media.kitsu.app/anime/51148/poster_image/small-db99287e43700d665f4e14999f47db00.jpeg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 498214,
+   w: 11.79,
+   l: 12.5,
+   p: 0.75,
+   o: 0.25,
+   r: 1,
+  },
+ ],
+}
