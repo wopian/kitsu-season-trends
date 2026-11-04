@@ -3,7 +3,7 @@
   i: 47988,
   t: 'Tenkousaki no Seiso Karen na Bishoujo ga, Mukashi Danshi to Omotte Issho ni Asonda Osananajimi datta Ken',
   u: 0,
-  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/47988/poster_image/713e94bfca3c8ddb61ab7568bf22e01a.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261103%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261103T220345Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=f205fb678dec1c6a3996e4a548d089741e26db039785d3c981f4e8f940c1eb51',
+  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/47988/poster_image/713e94bfca3c8ddb61ab7568bf22e01a.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261104%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261104T220400Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=adfb987da38ba6d31ff1db2585b1ec6f80cb85f2c02659658b30ad017a740899',
  },
  data: [
   {
@@ -1249,6 +1249,16 @@
   {
    i: 128,
    d: 498262,
+   w: 54.58,
+   l: 60.13,
+   p: 114.25,
+   o: 70.75,
+   r: 185,
+   f: 3,
+  },
+  {
+   i: 129,
+   d: 498286,
    w: 54.58,
    l: 60.13,
    p: 114.25,
