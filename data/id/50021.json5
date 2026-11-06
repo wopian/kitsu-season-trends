@@ -3,7 +3,7 @@
   i: 50021,
   t: 'Kusuriya no Hitorigoto 3rd Season',
   u: 0,
-  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50021/poster_image/86805fd5105a8da9c0d9c34e5d254992.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261106%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261106T100712Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=70bf1e1ccb50d79b3de0bffd9751efbd3d640180629286c96b7cf9bed4028bf0',
+  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50021/poster_image/86805fd5105a8da9c0d9c34e5d254992.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261106%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261106T220334Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=c8b425da9bb9e27f479165257c09d44afd93a5b5b773502b02e307119fa3b57f',
  },
  data: [
   {
@@ -918,7 +918,7 @@
   },
   {
    i: 76,
-   d: 498322,
+   d: 498334,
    w: 82.4,
    l: 85.62,
    p: 96.75,

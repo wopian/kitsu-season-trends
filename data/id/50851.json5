@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 50851,
+  t: "Demon's Crest",
+  u: 0,
+  poster: 'https://media.kitsu.app/anime/50851/poster_image/small-3c0ae49555eeedb37a6171d65e752ba9.jpeg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 498334,
+   w: 1.46,
+   l: 4.17,
+   p: 0.25,
+   o: 0.75,
+   r: 1,
+  },
+ ],
+}
