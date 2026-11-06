@@ -1,6 +1,6 @@
 import { test, expect, type Page, type Route } from '@playwright/test'
-import { metrics } from '../../shared/trends'
-import { encode } from 'msgpack-lite'
+import { metrics, type AnimeArchive } from '../../shared/trends'
+import { decode, encode } from 'msgpack-lite'
 
 type Reveal = { duration: string; property: string; easing: string }
 type HandoffWindow = Window & { historyReveals: Reveal[] }
@@ -208,7 +208,17 @@ test('Full history loads ID archive across seasons, retries failures and caches 
   await expect(dialog.getByRole('alert')).toContainText('HTTP 503')
   await expect(dialog.locator('.chart-frame')).toHaveCount(0)
   await page.unroute('**/msgpack/id/12.msgpack')
+  const archiveResponse = page.waitForResponse((response) =>
+    response.url().endsWith('/msgpack/id/12.msgpack') && response.ok(),
+  )
   await dialog.getByRole('button', { name: 'Retry anime history' }).click()
+  const archive = decode(await (await archiveResponse).body()) as AnimeArchive
+  const latest = new Date(Math.max(...archive.data.map((point) => point.d)) * 36e5)
+  // Weekly samples use Monday UTC, which can fall in the previous month or year.
+  latest.setUTCDate(latest.getUTCDate() - (latest.getUTCDay() + 6) % 7)
+  const endpointLabel = latest.toLocaleDateString('en-GB', {
+    month: 'short', year: 'numeric', timeZone: 'UTC',
+  })
   await expect(dialog.getByLabel('Recorded history range')).toContainText(
     '2017',
     { timeout: 30000 },
@@ -218,7 +228,7 @@ test('Full history loads ID archive across seasons, retries failures and caches 
   )
   await expect(dialog.locator('.chart-frame')).toContainText('2017')
   await expect(dialog.locator('.chart-frame')).toContainText('2026')
-  await expect(dialog.locator('.chart-frame svg')).toContainText('Oct 2026')
+  await expect(dialog.locator('.chart-frame svg')).toContainText(endpointLabel)
   await expect(dialog.getByText(/Weekly maxima/)).toBeVisible()
   const footer = dialog.locator('[data-slot="footer"]')
   const downloads = footer.getByRole('group', { name: 'Download full history' })
