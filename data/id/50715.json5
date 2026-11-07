@@ -3,7 +3,7 @@
   i: 50715,
   t: 'Kizu darake Seijo yori Houfuku wo Komete Season2',
   u: 0,
-  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50715/poster_image/af27ac2e1646af805fa05fd1b2f3c834.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261106%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261106T220339Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=8305f5d350fa38ebb4c09277ca50fa213461b917d5e4828e1d3630030e277104',
+  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50715/poster_image/af27ac2e1646af805fa05fd1b2f3c834.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261107%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261107T220341Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=0969121538fdf58157ac61688208c83dc7316ea21566a22fbdc5ab27f86dcab2',
  },
  data: [
   {
@@ -297,6 +297,15 @@
   {
    i: 32,
    d: 498334,
+   w: 19.96,
+   l: 27.5,
+   p: 2.75,
+   o: 2.25,
+   r: 5,
+  },
+  {
+   i: 33,
+   d: 498358,
    w: 19.96,
    l: 27.5,
    p: 2.75,
