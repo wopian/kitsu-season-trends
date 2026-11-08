@@ -3,7 +3,7 @@
   i: 50404,
   t: 'Yasei no Last Boss ga Arawareta! 2nd Season',
   u: 0,
-  poster: 'https://media.kitsu.app/anime/50404/poster_image/small-451499d67c5df3d18ed687260df28074.jpeg',
+  poster: 'https://media.kitsu.app/anime/50404/poster_image/small-44152e5b69a1bf89a710b0d756bd8c36.jpeg',
  },
  data: [
   {
@@ -439,6 +439,16 @@
   {
    i: 43,
    d: 498358,
+   w: 55.92,
+   l: 63.37,
+   p: 27.25,
+   o: 10.75,
+   r: 38,
+   f: 1,
+  },
+  {
+   i: 44,
+   d: 498382,
    w: 55.92,
    l: 63.37,
    p: 27.25,
