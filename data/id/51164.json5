@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 51164,
+  t: 'Luo De Dao Xueyuan',
+  u: 1,
+  poster: 'https://media.kitsu.app/anime/51164/poster_image/small-8a92a63070ff1f6eec3cf5b025821f4b.jpeg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 498406,
+   w: 5.46,
+   l: 8.33,
+   p: 0.5,
+   o: 0.5,
+   r: 1,
+  },
+ ],
+}
