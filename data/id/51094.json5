@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 51094,
+  t: 'Luo Xiaohei Zhanji: Xueqian Pian',
+  u: 1,
+  poster: 'https://media.kitsu.app/anime/51094/poster_image/small-6c22b5747c826ae8136f2dfd35842c44.jpeg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 498454,
+   w: 20.65,
+   l: 16.67,
+   p: 1,
+   o: 0,
+   r: 1,
+  },
+ ],
+}
