@@ -3,7 +3,7 @@
   i: 50497,
   t: 'Dragon Ball Super: Beerus',
   u: 0,
-  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50497/poster_image/24c59ad7f8a33219f53fc4d057bca645.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261111%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261111T220355Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=06249755a4e8854ae70ceaaf6ffc150b9729f45c970777c5c1d4c0e591df34ad',
+  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50497/poster_image/24c59ad7f8a33219f53fc4d057bca645.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261112%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261112T220406Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=92486583b957c424db107ec855d4485e80500606376f922215eb5d9e1881e065',
  },
  data: [
   {
@@ -439,6 +439,16 @@
   {
    i: 28,
    d: 498454,
+   w: 64.15,
+   l: 68.97,
+   p: 20,
+   o: 4,
+   r: 24,
+   f: 2,
+  },
+  {
+   i: 29,
+   d: 498478,
    w: 64.15,
    l: 68.97,
    p: 20,
