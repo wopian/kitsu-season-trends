@@ -3,7 +3,7 @@
   i: 50032,
   t: 'Honoo no Toukyuujyo Dodge Danko',
   u: 0,
-  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50032/poster_image/105891126e812c0baf2d27c090ec6468.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261112%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261112T220359Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=080fc9a04007d1b47650188ac36c4571d46eac7a7a7df95c9a3368df607e851b',
+  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50032/poster_image/105891126e812c0baf2d27c090ec6468.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261113%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261113T220343Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=760b5ec46b906ec1a2a2d6991c428aa17d1b40db824f64a9affa3274e732787c',
  },
  data: [
   {
@@ -1062,6 +1062,15 @@
   {
    i: 127,
    d: 498478,
+   w: 45.45,
+   l: 53.41,
+   p: 11.75,
+   o: 5.25,
+   r: 17,
+  },
+  {
+   i: 128,
+   d: 498502,
    w: 45.45,
    l: 53.41,
    p: 11.75,

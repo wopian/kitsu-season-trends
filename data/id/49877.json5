@@ -3,7 +3,7 @@
   i: 49877,
   t: 'Seitokai ni mo Ana wa Aru!',
   u: 0,
-  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/49877/poster_image/4850b0a42082f0554af1dd38bf4e7bfe.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261112%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261112T220403Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=2b40c7dba7e46adcaf3552f12669fd867991fe9c772fdf52259be792a7f6eb48',
+  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/49877/poster_image/4850b0a42082f0554af1dd38bf4e7bfe.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261113%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261113T220345Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=2bc6c8ff658dd63675200ef759b1c2340499d61231441776635835e84fefe39d',
  },
  data: [
   {
@@ -619,6 +619,16 @@
    p: 60.75,
    o: 14.25,
    r: 75,
+   f: 3,
+  },
+  {
+   i: 49,
+   d: 498502,
+   w: 70.69,
+   l: 75.93,
+   p: 61.5,
+   o: 14.5,
+   r: 76,
    f: 3,
   },
  ],

@@ -3,7 +3,7 @@
   i: 50137,
   t: 'Bang Dream! Yume∞Mita',
   u: 0,
-  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50137/poster_image/bd36ff49de52ed8f5302366981bb77e1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261112%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261112T220359Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=aa8f02a75915b0ca0957445ac2a0687c4bb1b6803d6bfde2adf2f3ea20be1fa9',
+  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50137/poster_image/bd36ff49de52ed8f5302366981bb77e1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261113%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261113T220343Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=6bd27abc8869359fe4e01cf4ce6360a48ab5326da208966ac9de16870332fc71',
  },
  data: [
   {
@@ -1125,6 +1125,15 @@
   {
    i: 144,
    d: 498478,
+   w: 54.13,
+   l: 61.79,
+   p: 32.75,
+   o: 15.25,
+   r: 48,
+  },
+  {
+   i: 145,
+   d: 498502,
    w: 54.13,
    l: 61.79,
    p: 32.75,
