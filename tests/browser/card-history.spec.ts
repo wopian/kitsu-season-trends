@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test'
 
 test('card background, poster, statistics and chart open history', async ({ page }) => {
   await page.goto('/2026/autumn/')
+  await page.getByRole('button', { name: 'Trends', exact: true }).click()
   await expect(page.getByText('Loading season history…')).toHaveCount(0, { timeout: 30000 })
   const card = page.locator('.anime-card').first()
   const dialog = page.getByRole('dialog')

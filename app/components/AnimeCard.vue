@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { IconWorld } from '@tabler/icons-vue'
 import {
-  posterFor,
   metrics as metricOptions,
   value,
   formatValue,
@@ -20,7 +19,6 @@ const props = defineProps<{
 defineEmits<{ expand: [event: MouseEvent] }>()
 const root = ref<HTMLElement>()
 const visible = ref(false)
-const failedPoster = ref(false)
 let observer: IntersectionObserver | undefined
 onMounted(() => {
   observer = new IntersectionObserver(
@@ -51,17 +49,7 @@ const statistics = computed(() =>
 <template>
   <article ref="root" class="anime-card" @click="$emit('expand', $event)">
     <div class="card-top">
-      <div class="poster">
-        <img
-          v-if="!failedPoster"
-          :src="posterFor(anime)"
-          :alt="`${anime.t} poster`"
-          loading="lazy"
-          width="88"
-          height="124"
-          @error="failedPoster = true"
-        /><span v-else aria-hidden="true">{{ anime.t.slice(0, 1) }}</span>
-      </div>
+      <AnimePoster :anime="anime" />
       <div class="anime-info">
         <div class="card-label">
           <span class="rank">#{{ rank.toString().padStart(2, '0') }}</span

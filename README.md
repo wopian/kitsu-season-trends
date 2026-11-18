@@ -4,7 +4,7 @@ Daily anime ratings, votes and favourites since 2017: **https://kitsu.wopian.me*
 
 ## Development
 
-Use Bun 1.4.2. Dependencies follow reference projects' three-day release age;
+Use Bun 1.4.4. Dependencies follow reference projects' three-day release age;
 explicitly requested `kitsu-native@13.0.0` and `kitsu-core@13.0.0` are exceptions.
 
 ```sh

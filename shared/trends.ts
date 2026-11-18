@@ -3,11 +3,11 @@ export type Season = (typeof seasons)[number]
 export type Metric = 'rating' | 'r' | 'p' | 'o' | 'f'
 export type ChartRow = { date: number } & Record<Metric, number | null>
 export const metrics: { key: Metric; label: string; color: string }[] = [
-  { key: 'rating', label: 'Rating', color: '#d65e43' },
-  { key: 'r', label: 'Users Rated', color: '#8262ae' },
-  { key: 'p', label: 'Upvotes', color: '#b87945' },
-  { key: 'o', label: 'Downvotes', color: '#a15175' },
-  { key: 'f', label: 'Favourites', color: '#a66b9f' },
+  { key: 'rating', label: 'Rating', color: '#bc5955' },
+  { key: 'r', label: 'Users Rated', color: '#8c70ad' },
+  { key: 'p', label: 'Upvotes', color: '#427f73' },
+  { key: 'o', label: 'Downvotes', color: '#a57137' },
+  { key: 'f', label: 'Favourites', color: '#5380a9' },
 ]
 export interface Snapshot {
   i?: number
@@ -96,6 +96,10 @@ export function formatValue(number: number, metric: Metric, compact = false) {
   )
 }
 export function posterFor(anime: { i: number; poster?: string }) {
+  const bucket = 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com'
+  if (anime.poster?.startsWith(`${bucket}/anime/${anime.i}/poster_image/`))
+    return `https://media.kitsu.app${new URL(anime.poster).pathname}`
+
   return (
     anime.poster ||
     `https://media.kitsu.app/anime/poster_images/${anime.i}/small.jpg`

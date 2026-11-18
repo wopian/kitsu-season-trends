@@ -51,6 +51,7 @@ for (const reducedMotion of ['no-preference', 'reduce'] as const) {
     })
     try {
       await page.goto('/2026/autumn/')
+      await page.getByRole('button', { name: 'Trends', exact: true }).click()
       await expect(page.getByText('Loading season history…')).toHaveCount(0, { timeout: 30000 })
       await observeHistoryReveals(page)
       const trigger = page.locator('.anime-card').first().getByRole('button', { name: 'Explore history', exact: true })
@@ -59,7 +60,7 @@ for (const reducedMotion of ['no-preference', 'reduce'] as const) {
       const slot = dialog.locator('.history-chart-slot')
       await expect(dialog.getByRole('alert')).toContainText('HTTP 503')
       await expect(dialog.locator('.chart-frame')).toHaveCount(0)
-      expect((await slot.boundingBox())!.height).toBeGreaterThanOrEqual(360)
+      await expect.poll(async () => (await slot.boundingBox())!.height).toBeGreaterThanOrEqual(360)
 
       fail = false
       await dialog.getByRole('button', { name: 'Retry anime history' }).click()
@@ -112,6 +113,7 @@ test('history handoff consumes hidden reveal and ignores cancelled requests', as
   })
   try {
     await page.goto('/2026/autumn/')
+    await page.getByRole('button', { name: 'Trends', exact: true }).click()
     await expect(page.getByText('Loading season history…')).toHaveCount(0, { timeout: 30000 })
     await observeHistoryReveals(page)
     const cards = page.locator('.anime-card')
@@ -155,6 +157,7 @@ test('Full history switches to weekly only above 90 observations', async ({ page
       }) })
     })
     await page.goto('/2026/autumn/')
+    await page.getByRole('button', { name: 'Trends', exact: true }).click()
     await expect(page.getByText('Loading season history…')).toHaveCount(0, { timeout: 30000 })
     await page.locator('.anime-card').first().getByRole('button', { name: 'Explore history', exact: true }).click()
     const dialog = page.getByRole('dialog')
@@ -193,6 +196,7 @@ test('Full history loads ID archive across seasons, retries failures and caches 
     route.fulfill({ status: 503, body: 'unavailable' }),
   )
   await page.goto('/2026/autumn/')
+  await page.getByRole('button', { name: 'Trends', exact: true }).click()
   await expect(page.getByText('Loading season history…')).toHaveCount(0, {
     timeout: 30000,
   })

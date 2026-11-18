@@ -23,10 +23,27 @@ import previewCatalog from '../../.generated/social-previews.json'
 import { socialImageUrl, type SocialPreviewCatalog } from '../../shared/social-preview'
 
 const route = useRoute()
+const { markDestination } = usePageMotion()
 const graphs = ref<Metric[]>(metrics.map((metric) => metric.key))
 const sort = ref<Metric>('rating')
+const sortMetric = computed(() => metrics.find((metric) => metric.key === sort.value)!)
+type SeasonView = 'rankings' | 'trends'
+const view = ref<SeasonView>('rankings')
+const pointerViewChange = ref(false)
+function changeView(next: SeasonView, event: MouseEvent) {
+  if (view.value === next) return
+  pointerViewChange.value = event.detail > 0
+  view.value = next
+}
 const search = ref('')
-const filters = reactive({ tv: true, ona: true, new: true, old: false })
+const searchInput = ref<HTMLInputElement>()
+const defaultFilters = { tv: true, ona: true, new: true, old: false }
+const filters = reactive({ ...defaultFilters })
+function resetFilters() {
+  search.value = ''
+  Object.assign(filters, defaultFilters)
+  searchInput.value?.focus()
+}
 const filterGroups = [
   { label: 'Format', options: { tv: 'TV', ona: 'ONA' } },
   { label: 'Season status', options: { new: 'New', old: 'Leftovers' } },
@@ -123,6 +140,8 @@ const entries = computed(() =>
     search.value,
   ),
 )
+const featured = computed(() => entries.value.slice(0, 3))
+const remaining = computed(() => entries.value.slice(3))
 const timeBounds = computed(() => {
   let first = Infinity
   let last = -Infinity
@@ -142,11 +161,14 @@ const seasonIndex = computed(() =>
   seasonCatalog.findIndex((item) => item.key === key.value),
 )
 const yearOptions = [...new Set(seasonCatalog.map((item) => item.year))]
-function navigate(year: number, season: string) {
+function navigate(year: number, season: string, event?: MouseEvent) {
   const target = seasonCatalog.find(
     (item) => item.year === year && item.season === season,
   )
-  if (target) navigateTo(`/${target.year}/${target.season}`)
+  if (!target) return
+  const path = `/${target.year}/${target.season}`
+  if (event) markDestination(path, event)
+  navigateTo(path)
 }
 function changeYear(year: number) {
   navigate(
@@ -216,9 +238,10 @@ const days = ref('0')
 const weeklyHistory = computed(() => days.value === '0' && (fullHistoryAnime.value?.d.length ?? 0) > 90)
 let historyReturnFocus: HTMLElement | null = null
 function expandAnime(id: number, event: MouseEvent) {
-  const card = event.currentTarget as HTMLElement
-  historyReturnFocus = (event.target as Element).closest<HTMLElement>('button')
-    ?? card.querySelector<HTMLElement>('.title-button')
+  const trigger = event.currentTarget as HTMLElement
+  historyReturnFocus = trigger.closest('button')
+    ?? (event.target as Element).closest<HTMLElement>('button')
+    ?? trigger.querySelector<HTMLElement>('.title-button')
   expanded.value = id
   days.value = '0'
 }
@@ -260,15 +283,23 @@ useSeoMeta({
     <SiteHeader />
     <main>
       <section class="season-hero" aria-labelledby="season-heading">
-        <div class="hero-copy">
-          <h1 id="season-heading">
-            {{ selected!.label }}
-          </h1>
-        </div>
-        <div class="season-console">
-          <div class="console-header">
-            <span>Season</span
-            ><select
+        <h1 id="season-heading">{{ selected!.label }}</h1>
+        <nav class="season-console" aria-label="Browse seasons">
+          <div class="season-step">
+            <button
+              aria-label="Previous available season"
+              :disabled="seasonIndex >= seasonCatalog.length - 1"
+              @click="
+                navigate(
+                  seasonCatalog[seasonIndex + 1]!.year,
+                  seasonCatalog[seasonIndex + 1]!.season,
+                  $event,
+                )
+              "
+            >
+              <IconChevronLeft :size="20" aria-hidden="true" />
+            </button>
+            <select
               aria-label="Year"
               :value="selected!.year"
               @change="
@@ -279,6 +310,19 @@ useSeoMeta({
                 {{ year }}
               </option>
             </select>
+            <button
+              aria-label="Next available season"
+              :disabled="seasonIndex <= 0"
+              @click="
+                navigate(
+                  seasonCatalog[seasonIndex - 1]!.year,
+                  seasonCatalog[seasonIndex - 1]!.season,
+                  $event,
+                )
+              "
+            >
+              <IconChevronRight :size="20" aria-hidden="true" />
+            </button>
           </div>
           <div class="season-buttons" role="group" aria-label="Season">
             <button
@@ -291,129 +335,137 @@ useSeoMeta({
                     item.year === selected!.year && item.season === season,
                 )
               "
-              @click="navigate(selected!.year, season)"
+              @click="navigate(selected!.year, season, $event)"
             >
               {{ season }}
             </button>
           </div>
-          <div class="season-step">
-            <button
-              aria-label="Previous available season"
-              :disabled="seasonIndex >= seasonCatalog.length - 1"
-              @click="
-                navigate(
-                  seasonCatalog[seasonIndex + 1]!.year,
-                  seasonCatalog[seasonIndex + 1]!.season,
-                )
-              "
-            >
-              <IconChevronLeft :size="18" /> Previous</button
-            ><span>{{ document.meta.total ?? 0 }} anime tracked</span
-            ><button
-              aria-label="Next available season"
-              :disabled="seasonIndex <= 0"
-              @click="
-                navigate(
-                  seasonCatalog[seasonIndex - 1]!.year,
-                  seasonCatalog[seasonIndex - 1]!.season,
-                )
-              "
-            >
-              Next <IconChevronRight :size="18" />
-            </button>
-          </div>
-        </div>
+        </nav>
       </section>
-      <SeasonOverview :document="document" :history-ready="!!history" />
-      <section class="control-panel" aria-label="Chart and ranking controls">
-        <div class="metric-row">
-          <span class="control-label">Graphs</span>
-          <GraphToggles v-model="graphs" />
-        </div>
-        <div class="metric-row">
-          <span class="control-label">Sort by</span>
-          <div class="sort-buttons" role="group" aria-label="Sort metric">
-            <button
-              v-for="metric in metrics"
-              :key="metric.key"
-              :aria-pressed="sort === metric.key"
-              @click="sort = metric.key"
-            >
-              <span
-                class="metric-swatch"
-                :style="{ backgroundColor: metric.color }"
-                aria-hidden="true"
-              />
-              {{ metric.label }}
-            </button>
-          </div>
-        </div>
-        <div class="filter-row">
-          <div class="metric-row filter-controls">
-            <span class="control-label">Filter by</span>
-            <div class="filter-groups">
-              <template v-for="(group, index) in filterGroups" :key="group.label">
-                <span v-if="index" class="filter-divider" aria-hidden="true">/</span>
-                <div class="filter-buttons" role="group" :aria-label="group.label">
-                  <button
-                    v-for="(label, filter) in group.options"
-                    :key="filter"
-                    :aria-pressed="filters[filter]"
-                    @click="filters[filter] = !filters[filter]"
-                  >
-                    {{ label }}
-                  </button>
-                </div>
-              </template>
-            </div>
-          </div>
-          <label class="search"
-            ><IconSearch :size="18" /><input
-              v-model="search"
-              type="search"
-              enterkeyhint="search"
-              autocapitalize="none"
-              autocorrect="off"
-              placeholder="Find an anime…"
-              aria-label="Find an anime"
-          /></label>
-        </div>
-      </section>
-      <div class="grid-heading">
-        <div>
-          <h2>
-            Anime
-            <span class="muted">/ {{ entries.length }} anime</span>
-          </h2>
+      <div class="view-bar">
+        <div class="view-switch" :data-pointer-change="pointerViewChange || undefined" role="group" aria-label="Season view">
+          <button :aria-pressed="view === 'rankings'" @click="changeView('rankings', $event)">Rankings</button>
+          <button :aria-pressed="view === 'trends'" @click="changeView('trends', $event)">Trends</button>
         </div>
         <div class="update-status">
           <span v-if="updatedDaily && !error" class="live-dot" />{{
-            loading ? 'Loading season history…' : updatedDaily ? 'Updated daily' : 'Archived'
+            error ? 'History unavailable' : loading ? 'Loading season history…' : updatedDaily ? 'Updated daily' : 'Archived'
           }}<small>{{ updated }}</small>
         </div>
       </div>
+      <section class="control-panel" aria-label="Chart and ranking controls">
+        <label class="search">
+          <IconSearch :size="18" aria-hidden="true" />
+          <input
+            ref="searchInput"
+            v-model="search"
+            type="search"
+            enterkeyhint="search"
+            autocapitalize="none"
+            autocorrect="off"
+            placeholder="Find an anime…"
+            aria-label="Find an anime"
+          />
+        </label>
+        <label class="metric-row sort-row">
+          <span class="control-label">Sort by</span>
+          <select v-model="sort">
+            <option v-for="metric in metrics" :key="metric.key" :value="metric.key">
+              {{ metric.label }}
+            </option>
+          </select>
+        </label>
+        <div class="metric-row filter-controls">
+          <span class="control-label">Filter by</span>
+          <div class="filter-groups">
+            <template v-for="(group, index) in filterGroups" :key="group.label">
+              <span v-if="index" class="filter-divider" aria-hidden="true">/</span>
+              <div class="filter-buttons" role="group" :aria-label="group.label">
+                <button
+                  v-for="(label, filter) in group.options"
+                  :key="filter"
+                  :aria-pressed="filters[filter]"
+                  @click="filters[filter] = !filters[filter]"
+                >
+                  {{ label }}
+                </button>
+              </div>
+            </template>
+          </div>
+        </div>
+        <div v-if="view === 'trends'" class="metric-row graph-row">
+          <span class="control-label">Graphs</span>
+          <GraphToggles v-model="graphs" />
+        </div>
+      </section>
       <div v-if="error" class="error-banner" role="alert">
         {{ error }}. Showing last available summaries.
         <button @click="load">Retry</button>
       </div>
-      <div v-if="!entries.length" class="empty-state">
-        <h2>No anime match these filters.</h2>
-        <p>Change filters or try another title.</p>
-      </div>
-      <div v-else class="anime-grid" :aria-busy="loading">
-        <AnimeCard
-          v-for="(anime, index) in entries"
-          :key="`${key}-${anime.i}`"
-          :anime="anime"
-          :rank="index + 1"
-          :metrics="graphs"
-          :use-laplace="!!document.useLaplace"
-          :start="timeBounds.start"
-          :end="timeBounds.end"
-          :history-ready="!!history"
-          @expand="expandAnime(anime.i, $event)"
-        />
-      </div>
+      <section aria-labelledby="results-heading">
+        <div class="results-heading">
+          <h2 id="results-heading">Anime</h2>
+          <p role="status">{{ entries.length }} anime</p>
+        </div>
+        <ol
+          v-if="view === 'rankings' && featured.length"
+          class="ranking-spotlight"
+          role="list"
+          aria-label="Top anime"
+          :data-count="featured.length"
+        >
+          <RankingEntry
+            v-for="(anime, index) in featured"
+            :key="`${key}-${anime.i}`"
+            :anime="anime"
+            :rank="index + 1"
+            :metric="sortMetric"
+            :use-laplace="!!document.useLaplace"
+            @expand="expandAnime(anime.i, $event)"
+          />
+        </ol>
+        <div
+          class="season-results"
+          :class="{ 'with-ranking-list': view === 'rankings' && remaining.length }"
+        >
+          <SeasonOverview :document="document" :history-ready="!!history" :failed="!!error" />
+          <div v-if="!entries.length" class="empty-state">
+            <h3>No anime match these filters.</h3>
+            <button type="button" @click="resetFilters">Reset filters</button>
+          </div>
+          <ol
+            v-else-if="view === 'rankings' && remaining.length"
+            class="ranking-list"
+            role="list"
+            start="4"
+            aria-label="More ranked anime"
+          >
+            <RankingEntry
+              v-for="(anime, index) in remaining"
+              :key="`${key}-${anime.i}`"
+              :anime="anime"
+              :rank="index + 4"
+              :metric="sortMetric"
+              :use-laplace="!!document.useLaplace"
+              @expand="expandAnime(anime.i, $event)"
+            />
+          </ol>
+          <div v-else-if="view === 'trends'" class="anime-grid" :aria-busy="loading">
+            <AnimeCard
+              v-for="(anime, index) in entries"
+              :key="`${key}-${anime.i}`"
+              :anime="anime"
+              :rank="index + 1"
+              :metrics="graphs"
+              :use-laplace="!!document.useLaplace"
+              :start="timeBounds.start"
+              :end="timeBounds.end"
+              :history-ready="!!history"
+              @expand="expandAnime(anime.i, $event)"
+            />
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
       <div>

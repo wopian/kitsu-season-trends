@@ -6,7 +6,7 @@ test('season stats charts, filters, downloads and table work across themes', asy
   page.on('pageerror', (error) => errors.push(error.message))
   await page.emulateMedia({ colorScheme: 'dark' })
   await page.goto('/')
-  await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'Stats', exact: true }).click()
+  await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'Season stats', exact: true }).click()
   await expect(page).toHaveURL(/\/stats\/$/)
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Season stats')
   await expect(page.locator('.stats-plot svg')).toHaveCount(4)

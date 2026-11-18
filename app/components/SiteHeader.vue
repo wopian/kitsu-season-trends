@@ -2,14 +2,15 @@
 import { IconMoon, IconSun, IconDeviceDesktop, IconBrandGithub } from '@tabler/icons-vue'
 
 const colorMode = useColorMode()
+const { markDestination } = usePageMotion()
 </script>
 <template>
   <header class="site-header">
-    <NuxtLink to="/" class="wordmark">Kitsu Season Trends</NuxtLink>
+    <NuxtLink to="/" class="wordmark" @click.capture="markDestination('/', $event)">Kitsu Season Trends</NuxtLink>
     <div class="header-actions">
       <nav class="header-navigation" aria-label="Main navigation">
-        <NuxtLink to="/stats/">Stats</NuxtLink>
-        <NuxtLink to="/ratings/">How ratings work</NuxtLink>
+        <NuxtLink to="/stats/" @click.capture="markDestination('/stats/', $event)">Season stats</NuxtLink>
+        <NuxtLink to="/ratings/" @click.capture="markDestination('/ratings/', $event)">How ratings work</NuxtLink>
         <a
           class="source-link"
           href="https://github.com/wopian/kitsu-season-trends"

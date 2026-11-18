@@ -7,6 +7,7 @@ import {
   value,
   chartPoints,
   parseUpdated,
+  posterFor,
   type Anime,
 } from '../../shared/trends'
 const entries: Anime[] = [
@@ -122,4 +123,12 @@ test('legacy and ISO timestamps parse consistently', () => {
   )
   expect(parseUpdated('2017-06-30T07:06:12.000Z')?.getUTCFullYear()).toBe(2017)
   expect(parseUpdated('broken')).toBeNull()
+})
+
+test('Kitsu bucket posters use stable public URLs', () => {
+  const path = '/anime/50021/poster_image/86805fd5105a8da9c0d9c34e5d254992.jpg'
+  const poster = `https://kitsu-production-media.s3.us-west-002.backblazeb2.com${path}?X-Amz-Expires=900`
+  expect(posterFor({ i: 50021, poster })).toBe(`https://media.kitsu.app${path}`)
+  expect(posterFor({ i: 12, poster: 'https://example.test/poster.jpg?size=2' })).toBe('https://example.test/poster.jpg?size=2')
+  expect(posterFor({ i: 12 })).toBe('https://media.kitsu.app/anime/poster_images/12/small.jpg')
 })

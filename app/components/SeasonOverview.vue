@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { metrics, score, type SeasonData } from '../../shared/trends'
 import { seasonCounts } from '../../shared/season-stats'
-const props = defineProps<{ document: SeasonData; historyReady: boolean }>()
+const props = defineProps<{ document: SeasonData; historyReady: boolean; failed: boolean }>()
 const counts = computed(() => seasonCounts(props.document.data))
 const averages = computed(() => {
   const days = new Map<number, { new: number[]; old: number[] }>()
@@ -53,32 +53,39 @@ const categories = {
       </div>
       <div class="overview-chart">
         <h3>Average rating</h3>
-        <ClientOnly
-          ><LineChart
-            v-if="historyReady"
-            :data="averages"
-            :categories="categories"
-            x-axis="date"
-            :height="190"
-            :y-domain="[0, 100]"
-            :x-formatter="
-              (tick: number | Date) =>
-                new Date(
-                  averages[Number(tick)]?.date ?? Number(tick),
-                ).toLocaleDateString('en-GB', {
-                  month: 'short',
-                  day: 'numeric',
-                  timeZone: 'UTC',
-                })
-            "
-            :y-formatter="
-              (tick: number | Date) => `${Number(tick).toFixed(1)}%`
-            " />
+        <ClientOnly>
+          <div v-if="historyReady" class="overview-chart-ready">
+            <LineChart
+              :data="averages"
+              :categories="categories"
+              x-axis="date"
+              :height="190"
+              :y-domain="[0, 100]"
+              :x-num-ticks="3"
+              :y-num-ticks="3"
+              :x-formatter="
+                (tick: number | Date) =>
+                  new Date(
+                    averages[Number(tick)]?.date ?? Number(tick),
+                  ).toLocaleDateString('en-GB', {
+                    month: 'short',
+                    day: 'numeric',
+                    timeZone: 'UTC',
+                  })
+              "
+              :y-formatter="
+                (tick: number | Date) => `${Number(tick).toFixed(1)}%`
+              "
+            />
+          </div>
+          <p v-else-if="failed" class="overview-unavailable">Season history unavailable</p>
           <div
             v-else
             class="chart-placeholder"
             aria-label="Season history loading"
-        /></ClientOnly>
+          />
+          <template #fallback><div class="chart-placeholder" /></template>
+        </ClientOnly>
       </div>
     </div>
   </section>
