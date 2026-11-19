@@ -4,6 +4,11 @@ node_modules
 .nuxt
 .cache
 .generated
+public/data
+public/stats.json
+.output/public/data
+.output/public/stats.json
+.output/public/**/_payload.json
 .env*
 test-results
 playwright-report

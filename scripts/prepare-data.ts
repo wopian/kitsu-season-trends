@@ -14,14 +14,13 @@ const stats = await readDocument<SeasonStatsDocument>('data/stats.json5').catch(
 })
 assert.deepEqual(stats, await statsFromArchives(), 'Season stats stale. Run bun run backfill:stats')
 
-for (const path of ['public/data', 'public/msgpack', 'public/social', '.generated/summaries']) {
-  await mkdir(path, { recursive: true })
-}
-// Generated directories contain no hand-authored files.
-for (const path of ['public/data', 'public/msgpack', 'public/social', '.generated/summaries']) {
+// Clear exports left by older builds before Nuxt copies the public directory.
+await rm('public/data', { recursive: true, force: true })
+await rm('public/stats.json', { force: true })
+for (const path of ['public/msgpack', 'public/social', '.generated']) {
   await rm(path, { recursive: true, force: true })
-  await mkdir(path, { recursive: true })
 }
+await mkdir('.generated/summaries', { recursive: true })
 const catalog: SeasonInfo[] = []
 const previewSources: { info: SeasonInfo; document: SeasonData }[] = []
 for (const path of await sourceFiles()) {
@@ -29,14 +28,9 @@ for (const path of await sourceFiles()) {
   const name = relative('data', path)
     .replaceAll('\\', '/')
     .replace(/\.json5$/, '')
-  for (const [directory, extension, content] of [
-    ['public/data', 'json', JSON.stringify(document)],
-    ['public/msgpack', 'msgpack', encode(document)],
-  ] as const) {
-    const output = join(directory, `${name}.${extension}`)
-    await mkdir(dirname(output), { recursive: true })
-    await writeFile(output, content)
-  }
+  const output = join('public/msgpack', `${name}.msgpack`)
+  await mkdir(dirname(output), { recursive: true })
+  await writeFile(output, encode(document))
   const match = /^(\d{4})-(winter|spring|summer|autumn)$/.exec(name)
   if (match) {
     const seasonDocument = document as SeasonData
@@ -51,8 +45,8 @@ for (const path of await sourceFiles()) {
     catalog.push(info)
     previewSources.push({ info, document: seasonDocument })
     await writeFile(
-      `.generated/summaries/${name}.json`,
-      JSON.stringify({
+      `.generated/summaries/${name}.msgpack`,
+      encode({
         entries: seasonDocument.data.map((anime) => ({
           ...anime,
           d: anime.d.slice(-2),
@@ -68,15 +62,14 @@ catalog.sort(
   (a, b) =>
     b.year - a.year || seasons.indexOf(b.season) - seasons.indexOf(a.season),
 )
-await writeFile('.generated/catalog.json', JSON.stringify(catalog))
-await generateSocialPreviews(previewSources)
-await writeFile('.generated/stats.json', JSON.stringify(stats))
-await writeFile('public/stats.json', JSON.stringify(stats))
+await writeFile('.generated/catalog.msgpack', encode(catalog))
+await writeFile('.generated/social-previews.msgpack', encode(await generateSocialPreviews(previewSources)))
+await writeFile('.generated/stats.msgpack', encode(stats))
 await writeFile('public/stats.msgpack', encode(stats))
 await writeFile(
   'public/sitemap.xml',
   `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['/', '/ratings/', '/stats/', ...catalog.map((item) => `/${item.year}/${item.season}/`)].map((path) => `<url><loc>https://kitsu.wopian.me${path}</loc></url>`).join('')}</urlset>`,
 )
 console.log(
-  `Prepared ${catalog.length} seasons and public JSON/MessagePack archives.`,
+  `Prepared ${catalog.length} seasons and public MessagePack archives.`,
 )

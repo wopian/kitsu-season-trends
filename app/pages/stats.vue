@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { IconDownload } from '@tabler/icons-vue'
-import initialStats from '../../.generated/stats.json'
+import statsAsset from '../../.generated/stats.msgpack?url&inline'
 import { onaShare, seasonGrowth, seasonLabel, seasonOrder, statsTimeline, type SeasonStatsDocument, type SeasonStats } from '../../shared/season-stats'
 import { seasonAt } from '../../shared/trends'
+import { decodeMessagePackAsset } from '../utils/decodeMessagePackAsset'
 
 useHead({ title: 'Stats — Kitsu Season Trends', link: [{ rel: 'canonical', href: 'https://kitsu.wopian.me/stats/' }] })
 useSeoMeta({ description: 'Seasonal anime counts, TV and ONA mix, ratings, and favourites across the Kitsu Season Trends archive.' })
 const { data, loading, error, retry } = useStatsData()
-const document = computed(() => data.value ?? initialStats as SeasonStatsDocument)
+const initialStats = decodeMessagePackAsset<SeasonStatsDocument>(statsAsset)
+const document = computed(() => data.value ?? initialStats)
 const years = computed(() => [...new Set(document.value.seasons.map((row) => row.year))])
 const fromYear = ref(years.value[0] ?? 0)
 const toYear = ref(years.value.at(-1) ?? 0)
@@ -38,7 +40,6 @@ const charts = [
       <div class="stats-page-heading">
         <div><h1>Season stats</h1><p class="stats-description">Counts, ratings, and audience across archived seasons.</p></div>
         <div class="stats-downloads">
-          <a href="/stats.json" class="download-link"><IconDownload :size="16" aria-hidden="true" />JSON</a>
           <a href="/stats.msgpack" class="download-link"><IconDownload :size="16" aria-hidden="true" />MessagePack</a>
           <small>Updated {{ date(document.updated) }} · UTC</small>
         </div>

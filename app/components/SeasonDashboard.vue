@@ -19,9 +19,11 @@ import {
   type Anime,
 } from '../../shared/trends'
 import { seasonCatalog, loadSummary } from '../composables/useSeasonData'
-import previewCatalog from '../../.generated/social-previews.json'
+import previewAsset from '../../.generated/social-previews.msgpack?url&inline'
 import { socialImageUrl, type SocialPreviewCatalog } from '../../shared/social-preview'
+import { decodeMessagePackAsset } from '../utils/decodeMessagePackAsset'
 
+const previewCatalog = decodeMessagePackAsset<SocialPreviewCatalog>(previewAsset)
 const route = useRoute()
 const { markDestination } = usePageMotion()
 const graphs = ref<Metric[]>(metrics.map((metric) => metric.key))
@@ -255,7 +257,7 @@ const canonical = computed(
   () =>
     `https://kitsu.wopian.me/${selected.value!.year}/${selected.value!.season}/`,
 )
-const socialPreview = computed(() => (previewCatalog as SocialPreviewCatalog)[key.value]!)
+const socialPreview = computed(() => previewCatalog[key.value]!)
 const socialImage = computed(() => socialImageUrl(socialPreview.value))
 useHead(() => ({
   title: `${selected.value!.label} — Kitsu Season Trends`,
@@ -474,8 +476,7 @@ useSeoMeta({
         </p>
       </div>
       <div class="downloads">
-        <a :href="`/data/${key}.json`" class="download-link"><IconDownload :size="16" aria-hidden="true" />Download JSON</a
-        ><a :href="`/msgpack/${key}.msgpack`" class="download-link"><IconDownload :size="16" aria-hidden="true" />Download MessagePack</a
+        <a :href="`/msgpack/${key}.msgpack`" class="download-link"><IconDownload :size="16" aria-hidden="true" />Download MessagePack</a
         ><span
           >{{ document.useLaplace ? 'Laplace' : 'Wilson' }} rating ·
           <NuxtLink to="/ratings/">How ratings work</NuxtLink></span
@@ -561,7 +562,6 @@ useSeoMeta({
           <div class="history-downloads" role="group" aria-labelledby="history-downloads-title">
             <p id="history-downloads-title">Download full history</p>
             <div class="history-download-links">
-              <a :href="`/data/id/${expandedAnime.i}.json`" class="download-link" aria-label="Download anime JSON"><IconDownload :size="16" aria-hidden="true" />JSON</a>
               <a :href="`/msgpack/id/${expandedAnime.i}.msgpack`" class="download-link" aria-label="Download anime MessagePack"><IconDownload :size="16" aria-hidden="true" />MessagePack</a>
             </div>
             <p class="history-download-hint">All recorded samples</p>

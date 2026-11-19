@@ -38,6 +38,8 @@ test('season navigation, metrics, filters and expanded history', async ({
   const errors: string[] = []
   page.on('pageerror', (error) => errors.push(error.message))
   await page.goto('/2026/autumn/')
+  await expect(page.getByRole('link', { name: 'Download JSON' })).toHaveCount(0)
+  await expect(page.getByRole('link', { name: 'Download MessagePack' })).toHaveAttribute('href', '/msgpack/2026-autumn.msgpack')
   await expect(
     page.getByRole('link', { name: 'Kitsu Season Trends', exact: true }),
   ).toBeVisible()

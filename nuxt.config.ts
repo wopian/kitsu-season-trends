@@ -1,12 +1,13 @@
 import { readFile } from 'node:fs/promises'
+import { decode } from 'msgpack-lite'
 import { aliasSocialHead, type SocialPreviewCatalog } from './shared/social-preview'
 import type { SeasonInfo } from './shared/trends'
 
-const catalog = JSON.parse(
-  await readFile(new URL('./.generated/catalog.json', import.meta.url), 'utf8'),
+const catalog = decode(
+  await readFile(new URL('./.generated/catalog.msgpack', import.meta.url)),
 ) as SeasonInfo[]
-const socialPreviews: SocialPreviewCatalog = JSON.parse(
-  await readFile(new URL('./.generated/social-previews.json', import.meta.url), 'utf8'),
+const socialPreviews: SocialPreviewCatalog = decode(
+  await readFile(new URL('./.generated/social-previews.msgpack', import.meta.url)),
 )
 export default defineNuxtConfig({
   ssr: true,
@@ -17,7 +18,8 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   devServer: { port: 4001 },
   typescript: { strict: true },
-  experimental: { entryImportMap: false },
+  // Keep hydration data in the prerendered HTML instead of emitting JSON files.
+  experimental: { entryImportMap: false, payloadExtraction: false },
   // Keep server externals absolute so Nitro resolves shared TypeScript on Windows.
   vite: {
     build: { rolldownOptions: { makeAbsoluteExternalsRelative: false } },

@@ -12,7 +12,7 @@ test('season stats charts, filters, downloads and table work across themes', asy
   await expect(page.locator('.stats-plot svg')).toHaveCount(4)
   await expect(page.locator('html')).toHaveClass(/dark/)
   await expect(page.locator('.stats-season-table tbody tr')).toHaveCount(39)
-  await expect(page.getByRole('link', { name: 'JSON', exact: true })).toHaveAttribute('href', '/stats.json')
+  await expect(page.getByRole('link', { name: 'JSON', exact: true })).toHaveCount(0)
   await expect(page.getByRole('link', { name: 'MessagePack', exact: true })).toHaveAttribute('href', '/stats.msgpack')
   const counts = page.getByRole('region', { name: 'New and Leftovers', exact: true })
   await counts.getByRole('button', { name: 'New', exact: true }).click()

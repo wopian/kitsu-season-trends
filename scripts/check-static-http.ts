@@ -22,11 +22,25 @@ for (const path of Object.keys(manifest.files).filter(
   }
 }
 const notFound = await fetch(`${base}/2099/not-a-season/`)
-const statsResponses = await Promise.all(['/stats.json', '/data/stats.json', '/stats.msgpack', '/msgpack/stats.msgpack'].map((path) => fetch(`${base}${path}`)))
-for (const response of statsResponses) assert.equal(response.status, 200, response.url)
-const [stats, statsAlias] = await Promise.all(statsResponses.slice(0, 2).map((response) => response.json()))
+const [stats, statsAlias] = await Promise.all(['/stats.msgpack', '/msgpack/stats.msgpack'].map(async (path) => {
+  const response = await fetch(`${base}${path}`)
+  assert.equal(response.status, 200, path)
+  return decode(new Uint8Array(await response.arrayBuffer()))
+}))
 assert.deepEqual(stats, statsAlias)
-for (const response of statsResponses.slice(2)) assert.deepEqual(decode(new Uint8Array(await response.arrayBuffer())), stats)
+const season = manifest.routes.find((route) => /^\/\d{4}\//.test(route))
+const anime = Object.keys(manifest.files).find((path) => /^msgpack\/id\/\d+\.msgpack$/.test(path))
+assert(season && anime)
+const removed = [
+  '/stats.json',
+  '/data/stats.json',
+  `/data/${season.slice(1).replace('/', '-')}.json`,
+  `/${anime.replace('msgpack/', 'data/').replace('.msgpack', '.json')}`,
+  `${season}/_payload.json`,
+]
+for (const path of removed) {
+  assert.equal((await fetch(`${base}${path}`)).status, 404, path)
+}
 assert.equal(notFound.status, 404)
 assert((await notFound.text()).includes('Season not found'))
 for (const route of manifest.routes.filter((route) => route.endsWith('/autumn'))) {

@@ -153,6 +153,5 @@ export async function generateSocialPreviews(sources: { info: SeasonInfo; docume
     await writeFile(`public${base}.png`, png)
     catalog[model.key] = { png: `${base}.png`, svg: `${base}.svg`, checksum: checksum(png), alt: model.alt }
   }
-  await writeFile('.generated/social-previews.json', JSON.stringify(catalog))
   return catalog
 }

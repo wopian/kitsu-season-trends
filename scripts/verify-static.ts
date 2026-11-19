@@ -10,10 +10,8 @@ import { checksum, xml } from './social-preview'
 import { Resvg } from '@resvg/resvg-js'
 
 const root = resolve('.output/public')
-const catalog = JSON.parse(
-  await readFile('.generated/catalog.json', 'utf8'),
-) as SeasonInfo[]
-const previews: SocialPreviewCatalog = JSON.parse(await readFile('.generated/social-previews.json', 'utf8'))
+const catalog = decode(await readFile('.generated/catalog.msgpack')) as SeasonInfo[]
+const previews: SocialPreviewCatalog = decode(await readFile('.generated/social-previews.msgpack'))
 assert.deepEqual(Object.keys(previews).sort(), catalog.map((item) => item.key).sort(), 'Missing season previews')
 function verifySocialHead(html: string, info: SeasonInfo) {
   const asset = previews[info.key]!
@@ -69,18 +67,12 @@ for (const path of await sourceFiles()) {
   const name = relative('data', path)
     .replaceAll('\\', '/')
     .replace(/\.json5$/, '')
-  const source = await readDocument(path)
-  assert.deepEqual(
-    JSON.parse(await readFile(join(root, `data/${name}.json`), 'utf8')),
-    source,
-  )
   assert.deepEqual(
     decode(await readFile(join(root, `msgpack/${name}.msgpack`))),
-    source,
+    await readDocument(path),
   )
 }
 const stats = await readDocument('data/stats.json5')
-assert.deepEqual(JSON.parse(await readFile(join(root, 'stats.json'), 'utf8')), stats)
 assert.deepEqual(decode(await readFile(join(root, 'stats.msgpack'))), stats)
 const sitemap = await readFile(join(root, 'sitemap.xml'), 'utf8')
 const sitemapLocs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]!)
@@ -109,10 +101,15 @@ async function walk(directory: string) {
     const path = join(directory, entry.name)
     assert(!entry.isSymbolicLink(), 'Unexpected output symlink')
     if (entry.isDirectory()) await walk(path)
-    else if (entry.name !== 'release-manifest.json')
-      files[relative(root, path).replaceAll('\\', '/')] = createHash('sha256')
+    else {
+      const name = relative(root, path).replaceAll('\\', '/')
+      if (name === 'release-manifest.json') continue
+      const isBuildMetadata = /^_nuxt\/builds\/(?:latest|meta\/[^/]+)\.json$/.test(name)
+      assert(!/\.json5?$/i.test(name) || isBuildMetadata, `Unexpected JSON data file: ${name}`)
+      files[name] = createHash('sha256')
         .update(await readFile(path))
         .digest('hex')
+    }
   }
 }
 await walk(root)
@@ -139,5 +136,5 @@ await writeFile(
   ) + '\n',
 )
 console.log(
-  `Verified ${routes.length} routes, every JSON/MessagePack archive, and ${Object.keys(files).length} release files.`,
+  `Verified ${routes.length} routes, every MessagePack archive, and ${Object.keys(files).length} release files.`,
 )

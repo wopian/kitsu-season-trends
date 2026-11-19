@@ -1,13 +1,15 @@
-import catalogData from '../../.generated/catalog.json'
+import catalogData from '../../.generated/catalog.msgpack?url&inline'
 import type { SeasonInfo, Summary } from '../../shared/trends'
+import { decodeMessagePackAsset } from '../utils/decodeMessagePackAsset'
 
-export const seasonCatalog = catalogData as SeasonInfo[]
-const summaries = import.meta.glob<{ default: Summary }>(
-  '../../.generated/summaries/*.json',
+export const seasonCatalog = decodeMessagePackAsset<SeasonInfo[]>(catalogData)
+const summaries = import.meta.glob<string>(
+  '../../.generated/summaries/*.msgpack',
+  { query: '?url&inline', import: 'default' },
 )
 export async function loadSummary(key: string) {
-  const loader = summaries[`../../.generated/summaries/${key}.json`]
+  const loader = summaries[`../../.generated/summaries/${key}.msgpack`]
   if (!loader)
     throw createError({ statusCode: 404, statusMessage: 'Season not found' })
-  return (await loader()).default
+  return decodeMessagePackAsset<Summary>(await loader())
 }

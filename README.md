@@ -27,12 +27,10 @@ and open `http://<LAN-IP>:4001` on the phone.
 
 ## Data
 
-Tracked sources are JSON5 under `data/`. Builds generate public JSON and
-MessagePack using `msgpack-lite`; browser charts load MessagePack.
+Tracked sources are JSON5 under `data/`. Builds export MessagePack using
+`msgpack-lite`. Browser charts load those exports.
 
-- `/data/{year}-{season}.json`
 - `/msgpack/{year}-{season}.msgpack`
-- `/data/id/{id}.json`
 - `/msgpack/id/{id}.msgpack`
 
 Season entries contain `i` (Kitsu ID), `t` (title), `u` (0 TV, 1 ONA), `n` (1 new,
@@ -84,9 +82,8 @@ bun run backfill:stats
 ```
 
 Backfill changes only `data/stats.json5` and uses the collector lock. Build rejects
-stale stats with a backfill instruction. JSON and MessagePack exports are available
-at `/stats.json` and `/stats.msgpack`, with aliases `/data/stats.json` and
-`/msgpack/stats.msgpack`. All exports contain identical versioned data.
+stale stats with a backfill instruction. Download stats from `/stats.msgpack`
+or its alias, `/msgpack/stats.msgpack`.
 
 ## Social previews
 
@@ -107,7 +104,7 @@ server. Generated previews remain build artifacts; source archives stay unchange
 
 ## Static hosting
 
-`bun run build` generates `.output/public`, every archived season page, JSON and
+`bun run build` generates `.output/public`, every archived season page,
 MessagePack downloads, custom 404, sitemap, and SHA-256 release manifest. Root shows
 current season or latest available archive. `/year/fall` aliases same year's autumn.
 Unknown paths return HTTP 404; do not configure an SPA fallback.
