@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 51184,
+  t: 'Punch Punch Forever!',
+  u: 1,
+  poster: 'https://media.kitsu.app/anime/51184/poster_image/small-cda0bb559c2575d55f4b7ed82db53e35.jpeg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 498670,
+   w: 20.65,
+   l: 16.67,
+   p: 1,
+   o: 0,
+   r: 1,
+  },
+ ],
+}
