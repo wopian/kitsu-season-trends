@@ -3,7 +3,7 @@
   i: 50208,
   t: 'Hotel Inhumans 2nd Season',
   u: 0,
-  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50208/poster_image/b9bab3f544f6fa26e46014bad0e22e9c.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261121%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261121T220410Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=eb4037a83874f386bd7d48f3b6f91d0a70889446c043f06a4b9a8c23e544e3ed',
+  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50208/poster_image/b9bab3f544f6fa26e46014bad0e22e9c.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261122%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261122T220351Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=3e6f29649a0a02c54d15d2afa81db91f478827e990fa2c24e0648e464e868bc8',
  },
  data: [
   {
@@ -441,6 +441,15 @@
   {
    i: 48,
    d: 498694,
+   w: 33.16,
+   l: 38.64,
+   p: 4.25,
+   o: 1.75,
+   r: 6,
+  },
+  {
+   i: 49,
+   d: 498718,
    w: 33.16,
    l: 38.64,
    p: 4.25,
