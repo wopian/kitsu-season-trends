@@ -1,6 +1,6 @@
 {
  version: 1,
- updated: '2026-11-22T22:03:39.196Z',
+ updated: '2026-11-23T22:03:35.147Z',
  uniqueAnime: 3019,
  seasons: [
   {
@@ -566,11 +566,11 @@
    ona: 134,
    new: 86,
    leftovers: 230,
-   updated: '2026-11-22T22:03:39.196Z',
-   averageRating: 48.569746835443,
+   updated: '2026-11-23T22:03:35.147Z',
+   averageRating: 48.63490506329109,
    ratedAnime: 316,
-   ratingSubmissions: 211350,
-   favourites: 12725,
+   ratingSubmissions: 211425,
+   favourites: 12726,
    scoringMethod: 'Laplace',
   },
   {
@@ -581,10 +581,10 @@
    ona: 125,
    new: 74,
    leftovers: 208,
-   updated: '2026-11-22T22:03:39.196Z',
-   averageRating: 43.95851063829787,
+   updated: '2026-11-23T22:03:35.147Z',
+   averageRating: 44.02404255319148,
    ratedAnime: 282,
-   ratingSubmissions: 195956,
+   ratingSubmissions: 195983,
    favourites: 12340,
    scoringMethod: 'Laplace',
   },
