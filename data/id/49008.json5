@@ -3,7 +3,7 @@
   i: 49008,
   t: 'Magical Knight Rayearth (2026)',
   u: 0,
-  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/49008/poster_image/cfaa988bcb352985d3ee1f36fd94c444.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261125%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261125T220417Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=c9cb887e899b50c598413100daad0839d6411d389788e520030f91527da165ab',
+  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/49008/poster_image/cfaa988bcb352985d3ee1f36fd94c444.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261126%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261126T220423Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=18b1160e99a7abf3db65be60906ef09f3f8677d1947f217bc9cf1d588e2826c9',
  },
  data: [
   {
@@ -469,6 +469,16 @@
    p: 15.75,
    o: 6.25,
    r: 22,
+   f: 1,
+  },
+  {
+   i: 50,
+   d: 498814,
+   w: 51.31,
+   l: 58.93,
+   p: 16.5,
+   o: 6.5,
+   r: 23,
    f: 1,
   },
  ],

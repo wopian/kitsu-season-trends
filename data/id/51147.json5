@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 51147,
+  t: 'Yi Zhan Cangqiong',
+  u: 1,
+  poster: 'https://media.kitsu.app/anime/51147/poster_image/small-c0cd3ae175335f6cfb81b4d489d7e077.jpeg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 498814,
+   w: 11.79,
+   l: 12.5,
+   p: 0.75,
+   o: 0.25,
+   r: 1,
+  },
+ ],
+}

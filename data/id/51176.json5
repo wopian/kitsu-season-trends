@@ -1,0 +1,19 @@
+{
+ meta: {
+  i: 51176,
+  t: 'Hotaru no Yomeiri: Choitashi',
+  u: 1,
+  poster: 'https://media.kitsu.app/anime/51176/poster_image/small-887eb0a84b64c3dad8b7efd38eda5518.jpeg',
+ },
+ data: [
+  {
+   i: 0,
+   d: 498814,
+   w: 20.65,
+   l: 16.67,
+   p: 1,
+   o: 0,
+   r: 1,
+  },
+ ],
+}
