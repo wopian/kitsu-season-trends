@@ -3,7 +3,7 @@
   i: 50823,
   t: 'Mission: Yozakura Family Season 2 Part 2',
   u: 0,
-  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50823/poster_image/eb862651d9a5bbfb560aa258769de9c0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261126%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261126T220429Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=f3fdbd13a7ff168567563a906589e74bec42667fdd2c3c58cbeee57a1362afbf',
+  poster: 'https://kitsu-production-media.s3.us-west-002.backblazeb2.com/anime/50823/poster_image/eb862651d9a5bbfb560aa258769de9c0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=002d6013655cdc00000000003%2F20261127%2Fus-west-002%2Fs3%2Faws4_request&X-Amz-Date=20261127T220420Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=069fc77089ff45c194e7bb3b7d87ad38a7d13daa8e196fb079675455d920a093',
  },
  data: [
   {
@@ -1107,6 +1107,16 @@
    p: 7.5,
    o: 1.5,
    r: 9,
+   f: 1,
+  },
+  {
+   i: 121,
+   d: 498838,
+   w: 51.52,
+   l: 55,
+   p: 8.25,
+   o: 1.75,
+   r: 10,
    f: 1,
   },
  ],
